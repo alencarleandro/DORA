@@ -1,1 +1,1 @@
-# Minera-o-de-Metricas-DORA
+# DORA
