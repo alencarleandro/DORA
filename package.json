@@ -1,0 +1,6 @@
+{
+  "name": "dora-workflows", "version": "1.0.0", "private": true,
+  "description": "Sprint 1 C: coleta de workflows e métricas DORA",
+  "engines": { "node": ">=22" },
+  "scripts": { "start": "node server.mjs", "pipeline": "node cli.mjs", "test": "node --test --experimental-test-coverage --test-coverage-include=lib/metrics.mjs --test-coverage-lines=80 --test-coverage-branches=80 tests/*.test.mjs" }
+}

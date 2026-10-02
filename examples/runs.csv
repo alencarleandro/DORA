@@ -1,0 +1,7 @@
+repository,default_branch,id,workflow_id,event,head_branch,conclusion,created_at,run_started_at,updated_at
+demo/projeto,main,1,10,push,main,success,2026-01-10T09:00:00Z,2026-01-10T09:00:00Z,2026-01-10T09:05:00Z
+demo/projeto,main,2,10,push,main,failure,2026-01-10T10:00:00Z,2026-01-10T10:00:00Z,2026-01-10T10:05:00Z
+demo/projeto,main,3,10,push,main,failure,2026-01-10T10:30:00Z,2026-01-10T10:30:00Z,2026-01-10T10:35:00Z
+demo/projeto,main,4,10,push,main,success,2026-01-10T11:15:00Z,2026-01-10T11:15:00Z,2026-01-10T11:20:00Z
+demo/projeto,main,5,10,push,main,cancelled,2026-01-10T12:00:00Z,2026-01-10T12:00:00Z,2026-01-10T12:01:00Z
+demo/projeto,main,6,10,push,main,timed_out,2026-01-10T14:00:00Z,2026-01-10T14:00:00Z,2026-01-10T14:10:00Z
