@@ -1,0 +1,12 @@
+{
+  "minStars": 1001,
+  "candidateLimit": 100,
+  "sampleSize": 100,
+  "excludeForks": true,
+  "excludeArchived": true,
+  "start": "2024-01-01",
+  "end": "2024-12-31",
+  "windowSource": "Ano civil de 2024 escolhido pelo grupo; não confirmado como janela do professor",
+  "maxRateLimitWaitMs": 60000,
+  "outputDir": "data/selection-2024"
+}

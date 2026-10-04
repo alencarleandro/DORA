@@ -1,9 +1,9 @@
 
-> **Implementação da Sprint 1 — Pessoa C:** interface web, coleta e testes disponíveis. Consulte [como executar e integrar](docs/PARTE-C.md) e o [dicionário de dados](docs/DATA-DICTIONARY.md). `npm start` abre o app; `npm test` executa os testes.
+> **Isabella — seleção e metadados:** execute `node scripts/select-repos.mjs --config config.json --mode metadata`. Veja [execução, filtros e dicionário da parte A](docs/PARTE-A.md). Para a seleção final, preencha a janela oficial e use `--mode full`.
+
+> **Leandro - Coleta de WorkFlow:** interface web, coleta e testes disponíveis. Consulte [como executar e integrar](docs/PARTE-C.md) e o [dicionário de dados](docs/DATA-DICTIONARY.md). `npm start` abre o app; `npm test` executa os testes.
 
 **App web:** [DORA — Workflows e infraestrutura](https://arsenal.dev.br/dora/). Cadastro salvo no A.R.S.E.N.A.L; a ativação da rota aguarda reabrir o painel para carregar o novo app. O acesso exige a chave local gerada em `data/access-key.txt`.
-
-**Issue da Sprint 1 — Pessoa C:** [#3 — Coleta de workflow runs, cache/rate limit, CFR (a) e tempo de recuperação](https://github.com/alencarleandro/DORA/issues/3), atribuída a `alencarleandro`.
 
 Página
 9
