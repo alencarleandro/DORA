@@ -25,3 +25,16 @@ test('erros de acesso e paginação incompleta são explícitos',async t=>{
   const incomplete=await client(t,async()=>new Response('{"total_count":2,"workflow_runs":[]}'));await assert.rejects(()=>incomplete.interval('a/b','main',0,1000),/incompleta/);
 });
 test('cancelamento interrompe espera',async t=>{const controller=new AbortController();controller.abort();const api=await client(t,async()=>new Response('{}'),{signal:controller.signal});await assert.rejects(()=>api.get('/a'));});
+
+test('rate limit com espera acima do limite permite retomada sem esperar',async t=>{
+  const api=await client(t,async()=>new Response('',{status:429,headers:{'retry-after':'3600'}}),{maxRateLimitWaitMs:60000,sleep:async()=>{assert.fail('Não deveria aguardar');}});
+  await assert.rejects(()=>api.get('/limited'),error=>error.code==='RATE_LIMIT_WAIT'&&/Cache preservado/.test(error.message));
+});
+
+test('resposta JSON interrompida é repetida e nunca salva como completa',async t=>{
+  let calls=0;
+  const api=await client(t,async()=>new Response(++calls===1?'{':'{"ok":true}'));
+  assert.deepEqual((await api.get('/truncated')).data,{ok:true});
+  assert.equal(calls,2);
+  await api.get('/truncated'); assert.equal(calls,2);
+});

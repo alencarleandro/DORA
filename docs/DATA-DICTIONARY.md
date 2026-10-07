@@ -45,3 +45,58 @@ CSV UTF-8 com BOM; taxas em fração 0–1; campos vazios indicam ausência de m
 ## funnel.csv
 
 `stage`: nome da etapa parcial (candidatos, processados, com_actions, 50_runs_validos, erros). `count`: inteiro com total da etapa. Erros não se confundem com exclusão por critério científico. Na importação, presença de runs serve como evidência de Actions; não existe consulta aos workflows.
+
+---
+
+# Dicionário de dados — Pessoa B (Lead Time & Releases)
+
+## lead_time_metrics.csv
+
+| Coluna | Tipo / unidade | Origem ou fórmula |
+|---|---|---|
+| repository | texto | owner/repo |
+| default_branch | texto | Branch principal |
+| releases_in_window | inteiro | Total de releases publicadas na janela inclusiva |
+| releases_evaluated | inteiro | Releases com compare e commits válidos |
+| releases_ignored | inteiro | Total de releases não avaliadas no lead time |
+| releases_ignored_no_previous | inteiro | 1ª release da história (sem base para compare) |
+| releases_ignored_compare_error | inteiro | Releases com compare retornando 404 |
+| releases_ignored_no_commits | inteiro | Releases sem commits novos na comparação |
+| commits_total | inteiro | Total de commits considerados |
+| deployment_frequency | fração | releases_in_window / semanas_da_janela |
+| lead_time_release_median_hours | horas | Mediana do lead time por release (variante a) |
+| lead_time_release_iqr_hours | horas | IQR do lead time por release (variante a) |
+| lead_time_release_median_days | dias | Mediana por release convertida para dias |
+| lead_time_release_iqr_days | dias | IQR por release convertido para dias |
+| lead_time_commit_median_hours | horas | Mediana do lead time por commit (variante b) |
+| lead_time_commit_iqr_hours | horas | IQR do lead time por commit (variante b) |
+| lead_time_commit_median_days | dias | Mediana por commit convertida para dias |
+| lead_time_commit_iqr_days | dias | IQR por commit convertido para dias |
+| eligible_releases | booleano | releases_in_window >= 5 |
+| error | texto | Mensagem de erro de coleta ou vazio |
+
+## releases.csv
+
+| Coluna | Tipo / unidade | Descrição |
+|---|---|---|
+| repository | texto | owner/repo |
+| tag_name | texto | Tag da release |
+| published_at | data ISO | Data de publicação da release |
+| base_tag | texto | Tag da release anterior usada como base |
+| has_previous_release | booleano | Indica se havia release anterior |
+| commits_count | inteiro | Quantidade de commits entre as duas releases |
+| lead_time_hours | horas | Lead time da release (variante a) |
+| lead_time_days | dias | Lead time da release em dias (variante a) |
+| compare_error | texto | Código de erro caso o compare tenha falhado |
+
+## commits.csv
+
+| Coluna | Tipo / unidade | Descrição |
+|---|---|---|
+| repository | texto | owner/repo |
+| release_tag | texto | Tag da release de destino |
+| release_published_at | data ISO | Data de publicação da release de destino |
+| commit_sha | texto | SHA do commit |
+| author_date | data ISO | Data de autoria do commit (`commit.author.date`) |
+| lead_time_hours | horas | Diferença entre published_at e author_date |
+| lead_time_days | dias | Diferença entre published_at e author_date em dias |
