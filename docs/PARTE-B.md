@@ -1,5 +1,7 @@
 # DORA — Sprint 1 / Pessoa B (Luís Henrique)
 
+**Integração no site:** o laboratório web executa A, B ou C separadamente, com transferência da amostra entre partes. O CLI também oferece execução integrada. Consulte [o fluxo integrado](INTEGRACAO.md). Os comandos abaixo continuam disponíveis para cada parte isolada.
+
 Coleta de releases e tags, comparação paginada de commits entre releases consecutivas e cálculo das métricas DORA de **Deployment Frequency (RQ 01)** e **Lead Time for Changes (RQ 02 — variantes a e b)**. Issue referenciada: [#2](https://github.com/alencarleandro/DORA/issues/2).
 
 Desenvolvido em Node.js (ES Modules nativo), sem bibliotecas externas de acesso ao GitHub. Token lido apenas de `GITHUB_TOKEN`; cache e saídas gravados na pasta de dados fora do Git.

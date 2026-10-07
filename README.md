@@ -6,7 +6,9 @@
 
 > **Leandro - Coleta de WorkFlow:** interface web, coleta e testes disponíveis. Consulte [como executar e integrar](docs/PARTE-C.md) e o [dicionário de dados](docs/DATA-DICTIONARY.md). `npm start` abre o app; `npm test` executa os testes.
 
-**App web:** [DORA — Workflows e infraestrutura](https://arsenal.dev.br/dora/). Cadastro salvo no A.R.S.E.N.A.L; a ativação da rota aguarda reabrir o painel para carregar o novo app. O acesso exige a chave local gerada em `data/access-key.txt`.
+**App web:** [DORA — Laboratório integrado](https://arsenal.dev.br/dora/). Laboratório acadêmico público, sem login ou chave de acesso.
+
+**Fluxo A → B → C:** execute uma parte por vez nas abas **A · Seleção**, **B · Releases** e **C · Workflows**. A exporta a amostra; os botões **Usar amostra em B/C** preservam seus repositórios e datas. Cada parte tem resultados, CSVs e retomada próprios. Veja [como executar](docs/INTEGRACAO.md).
 
 ## Informações sobre a avaliação
 

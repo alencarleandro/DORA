@@ -1,5 +1,7 @@
 # Sprint 1 — Isabella / Issue #1
 
+**Integração no site:** o laboratório web executa A, B ou C separadamente, com transferência da amostra entre partes. O CLI também oferece execução integrada. Consulte [o fluxo integrado](INTEGRACAO.md). Os comandos abaixo continuam disponíveis para cada parte isolada.
+
 Seleção e metadados via REST própria, reutilizando `lib/github.mjs`. Sem bibliotecas de acesso ao GitHub. Token somente em `GITHUB_TOKEN`; cache e saídas ficam em `data/`, fora do Git.
 
 ## Coletar candidatos e metadados
@@ -26,7 +28,7 @@ Por definição do grupo, config.json usa o ano civil completo de 2024: de 2024-
 node scripts/select-repos.mjs --config config.json --mode full --output data/selection-full
 ```
 
-O comando executa A e consulta a evidência de releases e runs usando o cliente de C. Ordem: com Actions → pelo menos 5 releases não draft/não prerelease publicadas na janela → pelo menos 50 runs válidos (push, default branch, conclusões success/failure/timed_out/startup_failure) → primeiros sampleSize elegíveis. O módulo de commits/lead time da pessoa B ainda precisa ser integrado pelo grupo; este comando não calcula essas métricas.
+O comando executa A e consulta a evidência de releases e runs usando o cliente de C. Ordem: com Actions → pelo menos 5 releases não draft/não prerelease publicadas na janela → pelo menos 50 runs válidos (push, default branch, conclusões success/failure/timed_out/startup_failure) → primeiros sampleSize elegíveis. Este script isolado não calcula o lead time; a execução integrada do site e do CLI inclui a parte B.
 
 Em modo metadata, repositories.csv contém candidatos coletados, com filtros pendentes. Em modo full, contém apenas selecionados. A existência do CSV no modo metadata não comprova elegibilidade. Erros são pendências de coleta, nunca exclusões nem zeros. A amostra abaixo da meta retorna código de saída 1. collection.json registra estado e contagens. Cada projeto atualiza as saídas; repetir o mesmo comando reaproveita respostas em cache. Para modificar configuração ou renovar fotografia, use outra pasta de saída. SIGINT preserva cache e resultados. O cliente já trata rede, 5xx, rate limit e paginação dos runs com subdivisão mensal.
 

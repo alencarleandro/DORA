@@ -1,18 +1,9 @@
 import http from 'node:http';
 import fs from 'node:fs';
-import path from 'node:path';
-import { randomBytes, timingSafeEqual } from 'node:crypto';
 import { DATA, create, load, list, execute, summary, exportJob } from './lib/pipeline.mjs';
 fs.mkdirSync(DATA,{recursive:true});
-const keyFile = path.join(DATA,'access-key.txt');
-if (!process.env.DORA_ACCESS_KEY && !fs.existsSync(keyFile)) fs.writeFileSync(keyFile,randomBytes(24).toString('base64url'),{mode:0o600});
-const accessKey = process.env.DORA_ACCESS_KEY || fs.readFileSync(keyFile,'utf8').trim();
 const active = new Map();
 for (const job of list()) if (job.status === 'running' || job.status === 'pending') { job.status='paused'; const {save} = await import('./lib/pipeline.mjs'); save(job); }
-function authorized(req) {
-  const supplied = Buffer.from(String(req.headers.authorization || '').replace(/^Bearer /,'')), expected = Buffer.from(accessKey);
-  return supplied.length === expected.length && timingSafeEqual(supplied,expected);
-}
 async function body(req) {
   let size=0; const chunks=[];
   for await (const chunk of req) { size+=chunk.length; if (size>10*1024*1024) throw new Error('Limite de upload: 10 MB.'); chunks.push(chunk); }
@@ -29,10 +20,9 @@ const server=http.createServer(async(req,res)=>{
   try {
     const url=new URL(req.url,'http://localhost'), route=url.pathname;
     if (route.startsWith('/api/')) {
-      if (!authorized(req)) return json(401,{error:'Informe a chave de acesso do DORA.'});
       if (req.method==='POST') {
         const origin=req.headers.origin, host=req.headers['x-forwarded-host'] || req.headers.host;
-        // O proxy do Arsenal troca Host pelo endereço local; o Bearer continua obrigatório.
+        // O proxy do Arsenal troca Host pelo endereço local.
         if (!process.env.ARSENAL_ROUTE && origin && new URL(origin).host !== host) return json(403,{error:'Origem não permitida.'});
       }
       if (route==='/api/jobs' && req.method==='GET') return json(200,list().map(summary));
@@ -57,4 +47,4 @@ const server=http.createServer(async(req,res)=>{
     res.writeHead(200,{...headers,'Content-Type':`${mime}; charset=utf-8`});res.end(fs.readFileSync(new URL(`./public/${file}`,import.meta.url)));
   } catch(error) {json(error.code==='ENOENT'?404:400,{error:error.code==='ENOENT'?'Coleta não encontrada.':error.message});}
 });
-server.listen(Number(process.env.PORT || 4117),'127.0.0.1',()=>console.log(`DORA online em http://127.0.0.1:${process.env.PORT || 4117}. Chave de acesso: ${process.env.DORA_ACCESS_KEY?'variável DORA_ACCESS_KEY':keyFile}`));
+server.listen(Number(process.env.PORT || 4117),'127.0.0.1',()=>console.log(`DORA público em http://127.0.0.1:${process.env.PORT || 4117}.`));
