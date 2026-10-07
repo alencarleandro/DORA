@@ -2,6 +2,8 @@
 
 > **Isabella — seleção e metadados:** execute `node scripts/select-repos.mjs --config config.json --mode metadata`. Veja [Parte A](docs/PARTE-A.md).
 
+> **Luís Henrique — coleta de releases e lead time:** execute `node scripts/collect-releases.mjs --csv examples/repositories.csv --start 2024-01-01 --end 2024-12-31`. Veja [Parte B](docs/PARTE-B.md).
+
 > **Leandro - Coleta de WorkFlow:** interface web, coleta e testes disponíveis. Consulte [como executar e integrar](docs/PARTE-C.md) e o [dicionário de dados](docs/DATA-DICTIONARY.md). `npm start` abre o app; `npm test` executa os testes.
 
 **App web:** [DORA — Workflows e infraestrutura](https://arsenal.dev.br/dora/). Cadastro salvo no A.R.S.E.N.A.L; a ativação da rota aguarda reabrir o painel para carregar o novo app. O acesso exige a chave local gerada em `data/access-key.txt`.
