@@ -38,3 +38,22 @@ test('resposta JSON interrompida é repetida e nunca salva como completa',async 
   assert.equal(calls,2);
   await api.get('/truncated'); assert.equal(calls,2);
 });
+
+function qualifiedRun(id,conclusion='success'){return {id,event:'push',head_branch:'main',conclusion,created_at:'2026-01-01T00:00:00Z'};}
+test('A para ao confirmar 50 runs sem baixar o restante; contagem é limite inferior',async t=>{
+ let calls=0;const api=await client(t,async()=>{calls++;return new Response(JSON.stringify({total_count:2000,workflow_runs:Array.from({length:100},(_,i)=>qualifiedRun(i))}),{headers:{Link:'<https://api.github.com/page2>; rel="next"'}});});
+ assert.deepEqual(await api.qualifyRuns('a/b','main',Date.parse('2026-01-01T00:00:00Z'),Date.parse('2026-12-31T23:59:59Z')),{count:100,complete:false});assert.equal(calls,1);
+});
+test('A confirma ausência de runs em uma chamada para a janela inteira',async t=>{
+ let calls=0;const api=await client(t,async()=>{calls++;return new Response(JSON.stringify({total_count:0,workflow_runs:[]}));});
+ assert.deepEqual(await api.qualifyRuns('a/b','main',Date.parse('2026-01-01T00:00:00Z'),Date.parse('2026-12-31T23:59:59Z')),{count:0,complete:true});assert.equal(calls,1);
+});
+test('A não exclui projetos por runs ignorados na primeira página ou pelo teto de mil',async t=>{
+ let calls=0;const api=await client(t,async()=>{calls++;return new Response(JSON.stringify({total_count:1000,workflow_runs:Array.from({length:100},(_,i)=>qualifiedRun(i,'cancelled'))}));});
+ api.runs=async()=>{calls++;return Array.from({length:60},(_,i)=>qualifiedRun(i));};
+ assert.deepEqual(await api.qualifyRuns('a/b','main',Date.parse('2026-01-01T00:00:00Z'),Date.parse('2026-12-31T23:59:59Z')),{count:60,complete:true});assert.equal(calls,2);
+});
+test('cota e autenticação são informadas; cache não inventa saldo atual',async t=>{
+ const quotas=[];let calls=0;const api=await client(t,async(_url,options)=>{calls++;assert.equal(options.headers.Authorization,'Bearer fixture');return new Response('{}',{headers:{'x-ratelimit-resource':'core','x-ratelimit-limit':'5000','x-ratelimit-remaining':'4999','x-ratelimit-reset':'1800000000'}});},{token:'fixture',onQuota:q=>quotas.push(q)});
+ await api.get('/quota');await api.get('/quota');assert.equal(calls,1);assert.equal(quotas.length,1);assert.equal(quotas[0].authenticated,true);assert.equal(quotas[0].remaining,4999);assert.ok(!JSON.stringify(quotas).includes('fixture'));
+});

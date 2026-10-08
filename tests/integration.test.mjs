@@ -30,8 +30,8 @@ test('A seleciona; B/C usam mesma amostra, branch e janela; exports combinam os 
 });
 test('busca da parte A está disponível sem CSV e preserva fotografia e consultas',async()=>{
   const job=create({...input,source:'search',csv:''}),api=fake();await execute(job,{github:api});
-  assert.equal(job.status,'completed');assert.equal(job.source,'search');assert.equal(job.selection.queries.length,2);assert.ok(job.config.searchUntil);
-  assert.equal(parseCSV(exportJob(job,'queries')).length,2);
+  assert.equal(job.status,'completed');assert.equal(job.source,'search');assert.equal(job.selection.queries.length,1);assert.ok(job.config.searchUntil);
+  assert.equal(parseCSV(exportJob(job,'queries')).length,1);
 });
 test('amostra insuficiente é explícita e erros não viram exclusões',async()=>{
   const job=create({...input,sampleSize:3}),api=fake();await execute(job,{github:api});assert.equal(job.status,'insufficient_sample');assert.equal(summary(job).funnel.selected,2);

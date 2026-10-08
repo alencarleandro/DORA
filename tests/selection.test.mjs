@@ -10,7 +10,7 @@ test('busca particiona acima de mil, deduplica e ordena',async()=>{
     if(q.includes('1001..1002')) return {data:{total_count:2000,items:[]}};
     return {data:{total_count:2,items:[{id:1,full_name:'a/a',stargazers_count:1002},{id:2,full_name:'b/b',stargazers_count:1001}]}};
   }};
-  const rows=await discover(api,config);assert.equal(rows.length,2);assert.equal(rows[0].id,1);assert.equal(calls.length,4);
+  const rows=await discover(api,{...config,candidateLimit:1001});assert.equal(rows.length,2);assert.equal(rows[0].id,1);assert.equal(calls.length,4);
 });
 test('incompletude e paginação ausente não viram sucesso',async()=>{
   await assert.rejects(()=>discover({get:async()=>({data:{incomplete_results:true,items:[]}})},config),/incompleta/);
@@ -46,4 +46,13 @@ test('modo full exige datas oficiais e configuração válida',()=>{
 
 test('janela aceita todo o ano bissexto de 2024',()=>{
   assert.doesNotThrow(()=>validateConfig({...config,start:'2024-01-01',end:'2024-12-31'},'full'));
+});
+
+test('300 candidatos exigem três páginas mesmo quando a busca tem mais de mil resultados',async()=>{
+ let calls=0;const api={get:async url=>{calls++;const page=Number(new URL(url,'https://api.github.com').searchParams.get('page')||1);return {data:{total_count:50000,incomplete_results:false,items:Array.from({length:100},(_,i)=>({id:(page-1)*100+i,full_name:'a/r'+((page-1)*100+i),stargazers_count:100000-((page-1)*100+i)}))},next:'https://api.github.com/search/repositories?page='+(page+1)};}};
+ const rows=await discover(api,{...config,candidateLimit:300});assert.equal(rows.length,300);assert.equal(calls,3);assert.equal(new Set(rows.map(r=>r.id)).size,300);
+});
+test('filtro de A usa qualificação curta e sinaliza contagem incompleta',async()=>{
+ const api={get:async()=>({data:{total_count:1}}),pages:async()=>Array.from({length:5},()=>({published_at:'2026-01-01T00:00:00Z'})),qualifyRuns:async()=>({count:100,complete:false}),runs:async()=>assert.fail('Não deve baixar histórico completo')};
+ const row=await evidence(api,{full_name:'a/b',default_branch:'main'},config);assert.equal(row.decision,'eligible');assert.equal(row.valid_runs_count,100);assert.equal(row.runs_count_complete,false);
 });

@@ -18,7 +18,7 @@ node scripts/select-repos.mjs --config config.json --mode metadata --limit 10 --
 
 `config.json` usa stars >= 1001, exclui forks para evitar cópias e arquivados para priorizar projetos ativos. São decisões de amostragem ajustáveis, não requisitos universais da disciplina. O limite de candidatos é 100, ordenados por estrelas decrescentes e full_name no desempate. Esse lote é de candidatos, não garante 100 aptos: aumente candidateLimit para repor descartes.
 
-A busca encontra o máximo de estrelas e divide recursivamente faixas inteiras sem sobreposição quando há mais de 1.000 resultados ou incomplete_results. Empates de estrelas são divididos por data de criação, em segundos. Páginas são percorridas seguindo Link, contagens verificadas e IDs deduplicados. A busca para depois de completar uma partição que preencha o orçamento de candidatos; não é censo de todos os projetos populares. queries.json registra consultas, contagens, incompletude e datas. Se o probe estiver incompleto, a execução falha explicitamente.
+Até 1.000 candidatos, a busca lê diretamente até o orçamento em páginas de 100. Para orçamentos maiores ou resultados incompletos, encontra o máximo de estrelas e divide recursivamente faixas inteiras sem sobreposição quando há mais de 1.000 resultados ou incomplete_results. Empates de estrelas são divididos por data de criação, em segundos. Páginas são percorridas seguindo Link, contagens verificadas e IDs deduplicados. A busca para depois de completar uma partição que preencha o orçamento de candidatos; não é censo de todos os projetos populares. queries.json registra consultas, contagens, incompletude e datas. Se o probe estiver incompleto, a execução falha explicitamente.
 
 ## Seleção com filtros
 
@@ -54,7 +54,8 @@ CSV UTF-8 com BOM e cabeçalhos, compatível com a parte C. Nulos ficam vazios.
 | metadata_status, error | complete, partial ou created_after_window; erro explícito |
 | selection_decisions.csv: actions_count | Inteiro ou vazio; total_count de actions/workflows |
 | releases_count | Inteiro ou vazio; releases publicadas principais dentro da janela inclusiva |
-| valid_runs_count | Inteiro ou vazio; módulo calculate de C; apenas runs válidos |
+| valid_runs_count | Inteiro ou vazio; apenas runs válidos; pode ser limite inferior quando a elegibilidade já foi comprovada |
+| runs_count_complete | Booleano; false indica contagem parcial suficiente para inclusão, true indica contagem completa; saídas antigas podem não conter este campo |
 | decision, reason, error | pending, error, excluded, selected, not_selected; motivo da primeira etapa reprovada ou não observada |
 | selection_funnel.csv | stage, entered, excluded, errors, pending, not_selected, remaining: contagens exclusivas; entered é a soma das cinco colunas de resultados |
 | queries.json / collection.json | Consultas e estado auditável; não contém credenciais |
