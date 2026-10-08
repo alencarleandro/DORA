@@ -7,7 +7,7 @@ import { validateConfig, discover, metadata, evidence, finalize, funnel, METADAT
 const args={};
 for(let i=2;i<process.argv.length;i+=2) {
   const key=process.argv[i];
-  if (!['--config','--mode','--limit','--output'].includes(key)||!process.argv[i+1]) throw new Error(`Argumento inválido: ${key}`);
+  if (!['--config','--mode','--limit','--output','--cache-dir'].includes(key)||!process.argv[i+1]) throw new Error(`Argumento inválido: ${key}`);
   args[key.slice(2)]=process.argv[i+1];
 }
 try {
@@ -30,7 +30,8 @@ try {
   snapshot.searchUntil=config.searchUntil;
   fs.writeFileSync(snapshotFile,JSON.stringify(snapshot,null,2));
   const controller=new AbortController(); process.on('SIGINT',()=>controller.abort());
-  const api=new GitHub({token:process.env.GITHUB_TOKEN||'',cacheDir:path.join(folder,'cache'),signal:controller.signal,log:console.log,maxRateLimitWaitMs:config.maxRateLimitWaitMs??Infinity});
+  const cacheDir=args['cache-dir']?path.resolve(args['cache-dir']):path.join(folder,'cache');
+  const api=new GitHub({token:process.env.GITHUB_TOKEN||'',cacheDir,signal:controller.signal,log:console.log,maxRateLimitWaitMs:config.maxRateLimitWaitMs??Infinity});
   const queries=[], rows=[], decisions=[];
   let candidates=[], discoveryComplete=false;
   let lastSaveTime=0;
@@ -86,6 +87,8 @@ try {
     const insufficient=mode==='full'&&finalize(finalDecisions,config.sampleSize).filter(r=>r.decision==='selected').length<config.sampleSize;
     save(partial?'partial':insufficient?'insufficient_sample':mode==='full'?'completed':'metadata_completed');
     console.log(`Saídas: ${folder}. ${finalRows.length} metadados; ${mode==='full'?finalize(finalDecisions,config.sampleSize).filter(r=>r.decision==='selected').length+' selecionados':'filtros da amostra pendentes'}.`);
+    const stats=api.getStats();
+    console.log(`Cache: ${stats.hits} hits em disco, ${stats.memoryHits} hits em memória, ${stats.misses} chamadas à API, ${stats.revalidations304} revalidações 304.`);
     if(partial || mode==='full'&&finalize(finalDecisions,config.sampleSize).filter(r=>r.decision==='selected').length<config.sampleSize) process.exitCode=1;
   } catch(error) {save(controller.signal.aborted?'paused':error.code==='RATE_LIMIT_WAIT'?'rate_limited':'failed',error.message);throw error;}
 } catch(error) {console.error(error.message);process.exitCode=1;}

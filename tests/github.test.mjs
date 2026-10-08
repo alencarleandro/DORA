@@ -57,3 +57,90 @@ test('cota e autenticação são informadas; cache não inventa saldo atual',asy
  const quotas=[];let calls=0;const api=await client(t,async(_url,options)=>{calls++;assert.equal(options.headers.Authorization,'Bearer fixture');return new Response('{}',{headers:{'x-ratelimit-resource':'core','x-ratelimit-limit':'5000','x-ratelimit-remaining':'4999','x-ratelimit-reset':'1800000000'}});},{token:'fixture',onQuota:q=>quotas.push(q)});
  await api.get('/quota');await api.get('/quota');assert.equal(calls,1);assert.equal(quotas.length,1);assert.equal(quotas[0].authenticated,true);assert.equal(quotas[0].remaining,4999);assert.ok(!JSON.stringify(quotas).includes('fixture'));
 });
+
+test('singleflight agrupa chamadas concorrentes à mesma URL em uma única requisição', async t => {
+  let fetchCalls = 0;
+  const api = await client(t, async () => {
+    fetchCalls++;
+    await new Promise(r => setTimeout(r, 10));
+    return new Response(JSON.stringify({ repo: 'shared' }));
+  });
+  const [res1, res2, res3] = await Promise.all([
+    api.get('/repos/foo/bar'),
+    api.get('/repos/foo/bar'),
+    api.get('/repos/foo/bar')
+  ]);
+  assert.equal(fetchCalls, 1);
+  assert.deepEqual(res1.data, { repo: 'shared' });
+  assert.deepEqual(res2.data, { repo: 'shared' });
+  assert.deepEqual(res3.data, { repo: 'shared' });
+});
+
+test('cache L1 em memória evita I/O de disco para leituras subsequentes', async t => {
+  let calls = 0;
+  const api = await client(t, async () => {
+    calls++;
+    return new Response(JSON.stringify({ value: 42 }));
+  });
+  await api.get('/val');
+  assert.equal(calls, 1);
+  assert.equal(api.getStats().misses, 1);
+  assert.equal(api.getStats().memoryHits, 0);
+
+  const mem = await api.get('/val');
+  assert.equal(mem.data.value, 42);
+  assert.equal(calls, 1);
+  assert.equal(api.getStats().memoryHits, 1);
+
+  api.clearMemoryCache();
+  const disk = await api.get('/val');
+  assert.equal(disk.data.value, 42);
+  assert.equal(calls, 1);
+  assert.equal(api.getStats().hits, 1);
+});
+
+test('requisições com ETag retornam 304 Not Modified e atualizam metadados sem queimar cota', async t => {
+  let calls = 0;
+  let sentIfNoneMatch = null;
+  const api = await client(t, async (_url, options) => {
+    calls++;
+    sentIfNoneMatch = options.headers?.['If-None-Match'] || null;
+    if (calls === 1) {
+      return new Response(JSON.stringify({ version: '1.0' }), {
+        headers: { etag: '"etag-12345"', 'x-ratelimit-remaining': '5000' }
+      });
+    }
+    if (calls === 2) {
+      assert.equal(sentIfNoneMatch, '"etag-12345"');
+      return new Response(null, {
+        status: 304,
+        headers: { etag: '"etag-12345"', 'x-ratelimit-remaining': '5000' }
+      });
+    }
+  });
+
+  const first = await api.get('/repos/test/version');
+  assert.equal(calls, 1);
+  assert.equal(first.data.version, '1.0');
+  assert.equal(first.etag, '"etag-12345"');
+  assert.equal(first.url, 'https://api.github.com/repos/test/version');
+
+  const revalidated = await api.get('/repos/test/version', { revalidate: true });
+  assert.equal(calls, 2);
+  assert.equal(revalidated.data.version, '1.0');
+  assert.equal(revalidated.etag, '"etag-12345"');
+  assert.equal(api.getStats().revalidations304, 1);
+});
+
+test('escrita atômica concorrente em disco não colide nem corrompe arquivos', async t => {
+  const api = await client(t, async url => {
+    return new Response(JSON.stringify({ url: String(url) }));
+  });
+  const tasks = Array.from({ length: 20 }, (_, i) => api.get(`/page-${i}`));
+  const results = await Promise.all(tasks);
+  assert.equal(results.length, 20);
+  for (let i = 0; i < 20; i++) {
+    assert.equal(results[i].data.url, `https://api.github.com/page-${i}`);
+  }
+});
+
