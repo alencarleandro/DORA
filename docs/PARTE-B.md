@@ -1,5 +1,7 @@
 # DORA — Sprint 1 / Pessoa B (Luís Henrique)
 
+**Fluxo web atualizado:** A seleciona e coleta os dados completos; B importa `release-data.csv` (releases e commits) e C importa `runs.csv`, ou ambas usam os arquivos locais de A. B e C não precisam de token neste fluxo. Os scripts individuais abaixo permanecem como alternativas de coleta legadas.
+
 **Integração no site:** o laboratório web executa A, B ou C separadamente, com transferência da amostra entre partes. O CLI também oferece execução integrada. Consulte [o fluxo integrado](INTEGRACAO.md). Os comandos abaixo continuam disponíveis para cada parte isolada.
 
 Coleta de releases e tags, comparação paginada de commits entre releases consecutivas e cálculo das métricas DORA de **Deployment Frequency (RQ 01)** e **Lead Time for Changes (RQ 02 — variantes a e b)**. Issue referenciada: [#2](https://github.com/alencarleandro/DORA/issues/2).

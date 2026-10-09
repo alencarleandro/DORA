@@ -57,3 +57,13 @@ test('cota e autenticação são informadas; cache não inventa saldo atual',asy
  const quotas=[];let calls=0;const api=await client(t,async(_url,options)=>{calls++;assert.equal(options.headers.Authorization,'Bearer fixture');return new Response('{}',{headers:{'x-ratelimit-resource':'core','x-ratelimit-limit':'5000','x-ratelimit-remaining':'4999','x-ratelimit-reset':'1800000000'}});},{token:'fixture',onQuota:q=>quotas.push(q)});
  await api.get('/quota');await api.get('/quota');assert.equal(calls,1);assert.equal(quotas.length,1);assert.equal(quotas[0].authenticated,true);assert.equal(quotas[0].remaining,4999);assert.ok(!JSON.stringify(quotas).includes('fixture'));
 });
+
+test('cache persiste entre clientes e recupera dados sem token nem rede',async()=>{
+ const folder=await fs.mkdtemp(path.join(os.tmpdir(),'dora-persistent-cache-'));
+ try{
+  const first=new GitHub({token:'token-de-teste',cacheDir:folder,fetcher:async()=>new Response(JSON.stringify({id:123,full_name:'demo/persistente'}),{status:200})});
+  const original=await first.get('/repos/demo/persistente');
+  const restarted=new GitHub({cacheDir:folder,fetcher:async()=>{throw new Error('Não deve consultar a rede');}});
+  const restored=await restarted.get('/repos/demo/persistente');assert.deepEqual(restored,original);
+ }finally{await fs.rm(folder,{recursive:true,force:true});}
+});

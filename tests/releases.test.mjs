@@ -127,3 +127,8 @@ test('collectReleasesAndCommits identifica 1ª release da história', async () =
   assert.equal(res[0].has_previous_release, false);
   assert.equal(res[0].commits.length, 0);
 });
+
+test('compareCommits não aceita histórico truncado como completo',async()=>{
+ const api={get:async()=>({data:{total_commits:2,commits:[{sha:'one',commit:{author:{date:'2026-01-01T00:00:00Z'}}}]}})};
+ await assert.rejects(()=>compareCommits(api,'owner/repo','v1','v2'),/incompleta/);
+});

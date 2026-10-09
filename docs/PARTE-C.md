@@ -1,5 +1,7 @@
 # DORA — Sprint 1 / Pessoa C
 
+**Fluxo web atualizado:** A seleciona e coleta os dados completos; B importa `release-data.csv` (releases e commits) e C importa `runs.csv`, ou ambas usam os arquivos locais de A. B e C não precisam de token neste fluxo. Os scripts individuais abaixo permanecem como alternativas de coleta legadas.
+
 **Integração no site:** o laboratório web executa A, B ou C separadamente, com transferência da amostra entre partes. O CLI também oferece execução integrada. Consulte [o fluxo integrado](INTEGRACAO.md). Os comandos abaixo continuam disponíveis para cada parte isolada.
 
 App web e pipeline independente para coleta de workflow runs, CFR de CI (RQ03 a) e recuperação (RQ04). Node.js 24, sem dependências externas ou banco de dados. As respostas são armazenadas em JSON local. A interface e a CLI usam o mesmo processamento.

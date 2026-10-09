@@ -1,5 +1,7 @@
 # Sprint 1 — Isabella / Issue #1
 
+**Fluxo web atualizado:** A seleciona e coleta os dados completos; B importa `release-data.csv` (releases e commits) e C importa `runs.csv`, ou ambas usam os arquivos locais de A. B e C não precisam de token neste fluxo. Os scripts individuais abaixo permanecem como alternativas de coleta legadas.
+
 **Integração no site:** o laboratório web executa A, B ou C separadamente, com transferência da amostra entre partes. O CLI também oferece execução integrada. Consulte [o fluxo integrado](INTEGRACAO.md). Os comandos abaixo continuam disponíveis para cada parte isolada.
 
 Seleção e metadados via REST própria, reutilizando `lib/github.mjs`. Sem bibliotecas de acesso ao GitHub. Token somente em `GITHUB_TOKEN`; cache e saídas ficam em `data/`, fora do Git.

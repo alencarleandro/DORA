@@ -9,7 +9,7 @@ process.env.DORA_DATA_DIR=temporary;
 const {create,execute,summary,exportJob,load} = await import('../lib/pipeline.mjs');
 const {parseCSV} = await import('../lib/csv.mjs');
 after(()=>fs.rmSync(temporary,{recursive:true,force:true}));
-const input={mode:'integrated',source:'csv',start:'2026-01-01',end:'2026-01-31',candidateLimit:10,sampleSize:1,csv:'full_name,default_branch\na/good,trunk\na/other,trunk\na/noactions,trunk\na/fewreleases,trunk\na/fewruns,trunk'};
+const input={collectData:false,mode:'integrated',source:'csv',start:'2026-01-01',end:'2026-01-31',candidateLimit:10,sampleSize:1,csv:'full_name,default_branch\na/good,trunk\na/other,trunk\na/noactions,trunk\na/fewreleases,trunk\na/fewruns,trunk'};
 test('A seleciona; B/C usam mesma amostra, branch e janela; exports combinam os dados',async()=>{
   const api=fake(),job=create(input);await execute(job,{github:api});
   assert.equal(job.status,'completed');assert.equal(job.results.length,1);
@@ -59,10 +59,10 @@ test('A isolada exporta a amostra sem executar comparações ou métricas de B/C
   const job=create({...input,mode:'selection'}),api=fake();await execute(job,{github:api});
   assert.equal(job.status,'completed');assert.equal(job.results.length,1);assert.equal(job.results[0].lead_time_release_median_hours,undefined);assert.equal(job.results[0].cfr_ci,undefined);
   assert.ok(!api.calls.some(c=>c.includes('/compare/')||c.includes('/tags')));
-  assert.equal(parseCSV(exportJob(job,'repositories'))[0].full_name,'a/good');assert.throws(()=>exportJob(job,'runs'),/indisponível/);
+  assert.equal(parseCSV(exportJob(job,'repositories'))[0].full_name,'a/good');assert.throws(()=>exportJob(job,'runs'),/dados completos/);
 });
 test('B e C usam a amostra e a janela de A, sem executar as outras partes',async()=>{
-  const a=create({...input,mode:'selection'});await execute(a,{github:fake()});
+  const a=create({...input,mode:'selection',collectData:true});await execute(a,{github:fake()});
   const b=create({mode:'releases',sourceJobId:a.id,start:'2020-01-01',end:'2020-02-01'}),bAPI=fake();await execute(b,{github:bAPI});
   assert.equal(b.start,a.start);assert.equal(b.end,a.end);assert.equal(b.total,1);assert.equal(b.source_job_id,a.id);assert.equal(b.status,'completed');assert.equal(b.results[0].releases_in_window,5);
   assert.ok(!bAPI.calls.some(c=>c.startsWith('runs:')||c.includes('/actions/')||c.includes('/contributors')));
@@ -77,4 +77,46 @@ test('B isolada continua erros sem repetir repositórios concluídos',async()=>{
   await execute(job,{github:fake({failCompare:true})});assert.equal(job.status,'partial');assert.equal(job.results.length,0);
   await execute(load(job.id),{github:fake()});const restored=load(job.id);assert.equal(restored.status,'completed');
   const api=fake();await execute(restored,{github:api});assert.equal(api.calls.length,0);
+});
+
+test('ampliação preserva os aprovados e processa somente candidatos novos até completar a amostra',async()=>{
+ const {expandSelection}=await import('../lib/pipeline.mjs');
+ const job=create({...input,mode:'selection',source:'search',candidateLimit:1,sampleSize:1});await execute(job,{github:fake()});
+ const original=job.results[0];job.config.sampleSize=2;expandSelection(job,3);
+ const api=fake();const get=api.get;api.get=async u=>u.includes('/search/')?{data:{total_count:3,items:[{id:1,full_name:'a/good'},{id:2,full_name:'a/other'},{id:3,full_name:'a/unused'}]}}:get(u);
+ await execute(job,{github:api});assert.equal(job.results.length,2);assert.deepEqual(job.results[0],original);assert.equal(job.selection.candidates.length,3);assert.ok(!api.calls.some(u=>u.includes('/a/good')||u.includes('/a/unused')));
+ assert.throws(()=>expandSelection(job,3),/maior/);assert.equal(job.status,'completed');
+});
+
+test('A exporta CSVs completos; B e C calculam com API indisponível, sem token',async()=>{
+ const a=create({...input,mode:'selection',collectData:true});await execute(a,{github:fake()});
+ assert.equal(a.datasets.status,'completed');assert.equal(a.results[0].cfr_ci,undefined);
+ const csvB=exportJob(a,'release-data'),csvC=exportJob(a,'runs');assert.equal(parseCSV(csvB).length,5);assert.equal(parseCSV(csvC).length,50);
+ const denied={get:()=>{throw new Error('API proibida');},pages:()=>{throw new Error('API proibida');},runs:()=>{throw new Error('API proibida');}};
+ const b=create({mode:'releases',dataSource:'csv',csv:csvB,start:a.start,end:a.end});await execute(b,{github:denied});assert.equal(b.status,'completed');assert.equal(b.results[0].releases_in_window,5);assert.equal(b.results[0].commits_total,10);
+ const c=create({mode:'import',csv:csvC,start:a.start,end:a.end});await execute(c,{github:denied});assert.equal(c.status,'completed');assert.equal(c.results[0].cfr_ci,.02);
+ const linkedB=create({mode:'releases',sourceJobId:a.id}),linkedC=create({mode:'collect',sourceJobId:a.id});await execute(linkedB,{github:denied});await execute(linkedC,{github:denied});assert.equal(linkedB.status,'completed');assert.equal(linkedC.status,'completed');
+ assert.equal(linkedB.results[0].lead_time_release_median_hours,b.results[0].lead_time_release_median_hours);assert.equal(linkedC.results[0].recovery_median_hours,c.results[0].recovery_median_hours);
+ assert.throws(()=>create({mode:'releases',dataSource:'csv',csv:csvB,start:'2026-02-01',end:'2026-02-28'}),/janela/);
+});
+test('coleta completa de A retoma arquivos prontos e bloqueia CSVs incompletos',async()=>{
+ const a=create({...input,mode:'selection',collectData:true});const api=fake();api.runs=async()=>{throw new Error('Falha de rede');};
+ // Qualificação independente da coleta completa.
+ api.qualifyRuns=async()=>({count:50,complete:false});await execute(a,{github:api});assert.equal(a.datasets.status,'partial');assert.throws(()=>exportJob(a,'release-data'),/dados completos/);assert.throws(()=>create({mode:'collect',sourceJobId:a.id}),/dados completos/);
+ const retry=fake();await execute(load(a.id),{github:retry});const restored=load(a.id);assert.equal(restored.datasets.status,'completed');assert.ok(!retry.calls.some(u=>u.includes('/compare/')||u.includes('/tags')));assert.equal(parseCSV(exportJob(restored,'runs')).length,50);
+});
+
+test('CSV de B rejeita commits duplicados e comparações incompletas',async()=>{
+ const a=create({...input,mode:'selection',collectData:true});await execute(a,{github:fake()});
+ const {toCSV}=await import('../lib/csv.mjs');const {RELEASE_DATA_HEADERS}=await import('../lib/datasets.mjs');
+ const rows=parseCSV(exportJob(a,'release-data'));const commits=JSON.parse(rows[0].commits_json);rows[0].commits_json=JSON.stringify([...commits,commits[0]]);
+ assert.throws(()=>create({mode:'releases',dataSource:'csv',csv:toCSV(rows,RELEASE_DATA_HEADERS),start:a.start,end:a.end}),/duplicado/);
+ rows[0].commits_json=JSON.stringify(commits);rows[0].compare_error='not_found';assert.throws(()=>create({mode:'releases',dataSource:'csv',csv:toCSV(rows,RELEASE_DATA_HEADERS),start:a.start,end:a.end}),/incompleta/);
+});
+
+test('B/C usam subconjunto local completo, mesmo quando a coleta A não terminou',async()=>{
+ const a=create({...input,mode:'selection',sampleSize:2,collectData:true});const api=fake();const runs=api.runs;api.runs=async(name,...args)=>{if(name==='a/other')throw new Error('interrompido');return runs(name,...args);};api.qualifyRuns=async()=>({count:50,complete:false});await execute(a,{github:api});
+ const denied={get:async()=>{throw new Error('API proibida');}};
+ for(const mode of ['releases','collect']){const local=create({mode,sourceJobId:a.id,allowPartialLocal:true});await execute(local,{github:denied});assert.equal(local.status,'completed');assert.ok(local.local_base.partial||mode==='releases');assert.ok(local.total>=1);assert.match(summary(local).funnel.note,mode==='collect'?/Base local parcial/:/Parte B/);}
+ assert.equal(create({mode:'collect',sourceJobId:a.id,allowPartialLocal:true}).total,1);assert.equal(create({mode:'releases',sourceJobId:a.id,allowPartialLocal:true}).total,2);
 });

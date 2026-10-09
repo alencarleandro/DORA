@@ -1,40 +1,60 @@
-# A → B → C no laboratório web
+# A → CSV → B/C no laboratório web
 
-Abra o [laboratório público](https://arsenal.dev.br/dora/) e execute uma parte por vez nas abas **A · Seleção**, **B · Releases** e **C · Workflows**. Informe as datas oficiais do professor: o app não preenche uma janela presumida. Escolha buscar candidatos no GitHub ou enviar um CSV `full_name,default_branch` (branch opcional, conferido com a API). O CSV é tratado como lista de candidatos, mesmo quando foi exportado por uma coleta anterior: os filtros são verificados novamente na nova fotografia.
+O site executa uma parte por vez. **A seleciona os repositórios e coleta os dados completos. B e C calculam as métricas localmente**, a partir dos arquivos de A ou de CSVs importados. O token é utilizado em A; não é necessário para B/C neste fluxo.
 
-Na busca, até 1.000 candidatos usam diretamente as páginas acessíveis da busca (100 por página), sem subdividir faixas desnecessariamente. Orçamentos maiores pelo CLI ou resultados incompletos usam a estratégia de partições. O mínimo de estrelas é ajustável; forks e arquivados são excluídos. No CSV, os nomes fornecidos definem a lista, sem filtro adicional de popularidade. Ajuste o limite de candidatos (até 1.000) e a meta da amostra (100 para Sprint 1). O orçamento inicial de 300 candidatos não garante 100 elegíveis. Se a amostra ficar abaixo da meta, crie outra execução com mais candidatos; o app informa **amostra insuficiente**, sem completar artificialmente o lote.
+## A — seleção e coleta
 
-1. **A — seleção e metadados:** reutiliza `lib/selection.mjs` para descobrir candidatos, coletar metadados e verificar Actions → ≥ 5 releases → ≥ 50 runs válidos. Os primeiros elegíveis, na ordem da busca ou do CSV, compõem a amostra. Erros e pendências aparecem separados de exclusões no funil.
-2. **B — releases e commits:** selecione uma execução de A no campo **Repositórios para esta parte**, clique **Usar amostra em B** no resultado de A ou envie um CSV. Usar A preserva a janela e o default branch e reaproveita seu cache. Coleta releases principais e tags, compara commits com a release anterior (inclusive fora da janela), calcula frequência por semana e lead time por release e por commit. Uma comparação indisponível gera erro retomável; a primeira release histórica sem base é ignorada somente no lead time.
-3. **C — workflows:** clique **Usar amostra em C**, selecione uma amostra de A ou envie um CSV. Usar A preserva seus nomes, default branches e janela. Reutiliza a coleta mensal com subdivisão, calcula CFR de CI, mediana/IQR da recuperação e censura. As consultas de seleção e métricas compartilham o cache para evitar baixar novamente a evidência de A.
+Informe as datas da janela, a meta da amostra e o limite de candidatos. A busca por estrelas exclui forks e arquivados. A amostra exige Actions, pelo menos 5 releases principais publicadas na janela e 50 runs válidos de push no default branch. A verificação de elegibilidade pode parar ao confirmar 50 runs; essa contagem parcial não substitui o histórico completo.
 
-A não executa comparações de commits ou calcula as métricas finais de B/C: consulta releases e runs apenas para validar a amostra. Para runs, tenta primeiro a janela inteira e para ao comprovar pelo menos 50 válidos. Se a consulta atingir o teto de 1.000 e ainda não comprovar elegibilidade, usa a coleta mensal completa. Não exclui um projeto só porque a primeira página contém runs ignorados. O campo `runs_count_complete=false` em decisões indica que `valid_runs_count` é um limite inferior, mostrado com **≥** no painel; C faz a contagem exata. B não executa A/C; C não executa A/B. Cada parte possui seu histórico, pausa e retomada.
+Depois de selecionar, A coleta releases, tags, commits comparados com a release anterior (inclusive quando a base é anterior à janela) e workflows completos por mês. Intervalos com pelo menos mil runs são subdivididos para superar o teto de resultados. A usa as funções de coleta existentes de B/C, mas não calcula suas métricas finais.
 
-O painel exibe os resultados da parte executada, progresso, erros e logs. Os botões de exportação mostram apenas as saídas aplicáveis àquela parte: **Amostra A → B/C**, **Metadados A**, **Decisões A**, **Buscas A**, **Releases B**, **Commits B**, **Tags B**, **Runs**, **Episódios**, **Métricas** e **Funil**. Tags são inventário atual de nomes/SHAs, não evidência de deploy datado dentro da janela. Os CSVs de B e C incluem os repositórios concluídos em cada parte. A exporta a amostra, metadados, decisões, buscas e funil.
+A seleção e o histórico completo são etapas diferentes: os 100 selecionados permanecem preservados enquanto os dados são preparados. `datasets.completed` registra os repositórios com releases/commits e runs completos. Arquivos de entrada para B/C e a transferência automática ficam bloqueados enquanto algum selecionado não tiver esses dados. Falhas de comparação não são aceitas como commits vazios.
 
-Dados e respostas paginadas ficam em `data/jobs/<id>/`; a configuração e a fronteira temporal da busca ficam fixadas no job. **Pausar** e **Retomar do cache** preservam projetos concluídos. O reinício do servidor converte execuções em andamento em pausadas. Rate limit, erros de rede e 5xx usam o cliente compartilhado. O painel informa se há token e a cota restante de cada recurso conforme os cabeçalhos do GitHub. Sem token, a REST API possui 60 requisições/hora por IP; um token pessoal válido normalmente permite 5.000/hora. Um token opcional pode ser informado no formulário ou em `GITHUB_TOKEN`; nunca é salvo no job nem nos CSVs. Não é necessário banco de dados para este fluxo.
+Para completar uma seleção insuficiente, aumente **Limite de candidatos** e use **Retomar do cache**. A mantém os candidatos anteriores, suas decisões e os aprovados; acrescenta candidatos únicos e para ao atingir a meta. Os dados completos também podem ser retomados: arquivos já prontos e páginas em cache não são baixados novamente.
 
-Na aba **C · Workflows**, escolha **Coletar workflows do GitHub** ou **Importar runs em CSV**. C e B, quando recebem CSV manual, não atestam sozinhas a amostra completa de A.
+## CSVs de A
 
-## Execuções pelo terminal
+- `repositories.csv`: lista da amostra; não contém os eventos necessários para calcular métricas.
+- `metadata.csv`, `decisions.csv`, `queries.csv`, `funnel.csv`: metadados e auditoria da seleção.
+- **`release-data.csv` / CSV de entrada B**: uma linha por release, com `repository`, `default_branch`, `window_start`, `window_end`, `tag_name`, `published_at`, `base_tag`, `has_previous_release`, `compare_error` e `commits_json`. A lista JSON guarda SHA, data do autor e mensagem de cada commit; uma lista vazia preserva a existência da release. Assim um único CSV contém todo o contrato de B.
+- **`runs.csv` / Runs**: `repository`, `default_branch`, `id`, `workflow_id`, `event`, `head_branch`, `conclusion`, `created_at`, `run_started_at`, `updated_at`, `window_start`, `window_end`.
+- `releases.csv`, `commits.csv`, `tags.csv`: saídas separadas para inspeção. Para importar em B, use `release-data.csv`, que preserva também releases sem commits.
 
-Substitua as datas abaixo pelas datas oficiais; os valores são um exemplo, não uma confirmação da janela:
+Não edite `commits_json` manualmente; a biblioteca CSV aplica aspas e escape. B/C verificam a janela declarada no CSV e rejeitam divergências. B rejeita releases duplicadas, commits duplicados na mesma release e comparações incompletas. C valida os campos de runs e rejeita IDs duplicados.
+
+## B — cálculos locais
+
+Na aba B, escolha uma A com dados completos ou importe **CSV de entrada B**. B calcula frequência de releases por semana, lead time por release e por commit, mediana e IQR. Não consulta a API e não pede token. Uma primeira release histórica sem base é ignorada somente no lead time. O cache é desnecessário para o cálculo; os dados de entrada permanecem disponíveis em disco.
+
+## C — cálculos locais
+
+Na aba C, escolha uma A com dados completos ou importe **Runs**. C calcula CFR (a), mediana/IQR da recuperação e episódios censurados. Não consulta a API e não pede token. O branch e a janela de A são preservados na transferência automática.
+
+## Terminal
+
+Substitua as datas do exemplo pela janela definida para o trabalho:
 
 ```powershell
-npm run pipeline -- --mode selection --start 2025-10-01 --end 2026-09-30 --candidate-limit 300 --sample-size 100
-# Depois, use repositories.csv exportado por A:
-npm run pipeline -- --mode releases --csv repositories.csv --start 2025-10-01 --end 2026-09-30
-npm run pipeline -- --mode collect --csv repositories.csv --start 2025-10-01 --end 2026-09-30
+# A seleciona e prepara todos os dados; GITHUB_TOKEN somente para a coleta.
+npm run pipeline -- --mode selection --start 2025-01-07 --end 2025-12-07 --candidate-limit 600 --sample-size 100
+# B e C importam dados completos sem token.
+npm run pipeline -- --mode releases --data-source csv --csv release-data.csv --start 2025-01-07 --end 2025-12-07
+npm run pipeline -- --mode import --csv runs.csv --start 2025-01-07 --end 2025-12-07
+# Ou use os arquivos locais de A, com janela herdada:
+npm run pipeline -- --mode releases --source-job ID-DE-A
+npm run pipeline -- --mode collect --source-job ID-DE-A
 ```
 
-Para partir de candidatos em CSV, acrescente `--csv candidatos.csv`. Para continuar uma execução: `npm run pipeline -- --resume ID`. O terminal exporta os CSVs correspondentes à parte executada em `data/jobs/<id>/exports`. Status parcial, pausado, falha ou amostra insuficiente retornam código de saída 1. Os scripts individuais de A e B seguem disponíveis. O modo `--mode integrated` permanece compatível no CLI e no histórico antigo, mas o formulário web executa somente a parte escolhida.
+Para retomar: `npm run pipeline -- --resume ID`. Para seleção sem a coleta completa no CLI: `--selection-only true`. Os scripts individuais antigos de seleção/coleta e o modo integrado continuam disponíveis para compatibilidade; são alternativas ao novo fluxo web.
 
-## Validação e publicação
+Dados, respostas paginadas e CSVs ficam em `data/jobs/<id>/`, fora do Git. O token não é salvo nos jobs/CSVs. Pausa e retomada preservam o progresso; não execute CLI e site simultaneamente sobre o mesmo ID. Coletar todos os commits e runs de 100 projetos pode exigir várias renovações da cota, mesmo após a seleção já ter terminado.
 
-`npm test` inclui testes de integração com a API simulada: filtros de A, amostra comum, branch/janela, release anterior fora da janela, exportações, erros, retomada, pausa, rate limit e insuficiência. Isso verifica o software, não comprova a coleta real de 100 projetos. A disponibilidade histórica de runs continua sendo uma limitação da API.
+## Verificação e ativação
 
-Depois de atualizar o backend, use **Reiniciar app** no cartão **DORA** do Arsenal e atualize a página. O laboratório é público, sem chave de acesso.
+`npm test` verifica o caminho A → CSV → B/C com API indisponível nas duas análises, igualdade dos resultados entre arquivo local e CSV, retomada após falha e bloqueio de conjuntos incompletos. Os testes simulados não representam a coleta real dos 100 projetos.
 
-## Comparação com o coletor anterior
+Depois de atualizar o backend, reinicie somente o app **DORA** no Arsenal e atualize a página. O laboratório continua público. As alterações desta adaptação são locais; não foram enviadas ao GitHub.
 
-O [coletor de experimentacao-de-software](https://github.com/BGLuis/experimentacao-de-software/blob/main/src/scripts/coleta_n_repo.py) usa GraphQL com token obrigatório e reúne vários metadados e contagens agregadas numa consulta. A mineração DORA também precisa dos eventos datados de releases, commits e Actions; contagens totais do repositório não substituem os critérios da janela. Aproveitamos a estratégia de busca leve e reduzimos chamadas em A, preservando a coleta mensal completa em C. Os limites seguem a [documentação REST do GitHub](https://docs.github.com/en/rest/using-the-rest-api/rate-limits-for-the-rest-api). O token da API é distinto da antiga chave do laboratório: o site continua público.
+## Persistência dos dados
+
+O cache em data/jobs/ID/cache não é temporário: não há expiração automática ou limpeza ao fechar/reiniciar o app. Releases/commits e runs completos são salvos em arquivos JSON no mesmo job; B/C leem esses arquivos diretamente, sem token e sem rede. Reabrir a mesma amostra reaproveita os dados salvos. O token só é necessário para completar consultas que ainda não estão no cache ou atualizar a fotografia. Nunca é necessário um novo token apenas para ler ou recalcular dados completos já salvos.

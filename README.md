@@ -432,3 +432,7 @@ Sim, desde que o pipeline continue executável por outro grupo com um único com
 - Wohlin, C. et al. *Experimentation in Software Engineering*. Springer, 2012 (capítulo sobre ameaças à validade).
 - Romano, J. et al. *Appropriate statistics for ordinal level data*. 2006 (interpretação do Cliff's delta).
 - Landis, J. R.; Koch, G. G. *The measurement of observer agreement for categorical data*. Biometrics, 1977.
+
+### Fluxo local A → CSV → B/C
+
+A agora prepara os dados completos dos selecionados para B e C. O token é usado na coleta A; B e C importam os arquivos locais ou CSVs sem consultar o GitHub. A lista de 100 selecionados não significa que todos os históricos e commits já foram baixados. Consulte [o contrato e a retomada](docs/INTEGRACAO.md).

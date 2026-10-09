@@ -1,12 +1,12 @@
 import http from 'node:http';
 import fs from 'node:fs';
-import { DATA, create, load, list, execute, summary, exportJob } from './lib/pipeline.mjs';
+import { DATA, create, load, list, execute, summary, exportJob, expandSelection } from './lib/pipeline.mjs';
 fs.mkdirSync(DATA,{recursive:true});
 const active = new Map();
 for (const job of list()) if (job.status === 'running' || job.status === 'pending') { job.status='paused'; const {save} = await import('./lib/pipeline.mjs'); save(job); }
 async function body(req) {
   let size=0; const chunks=[];
-  for await (const chunk of req) { size+=chunk.length; if (size>10*1024*1024) throw new Error('Limite de upload: 10 MB.'); chunks.push(chunk); }
+  for await (const chunk of req) { size+=chunk.length; if (size>100*1024*1024) throw new Error('Limite de upload: 100 MB.'); chunks.push(chunk); }
   return JSON.parse(Buffer.concat(chunks).toString());
 }
 function start(job,token) {
@@ -35,13 +35,13 @@ const server=http.createServer(async(req,res)=>{
         const job=load(match[1]), action=match[2];
         if (!action && req.method==='GET') return json(200,summary(job));
         if(action==='pause' && req.method==='POST') {active.get(job.id)?.abort();return json(200,{ok:true});}
-        if(action==='resume' && req.method==='POST') {const input=await body(req);start(job,String(input.token || process.env.GITHUB_TOKEN || ''));return json(200,summary(job));}
+        if(action==='resume' && req.method==='POST') {const input=await body(req);if(active.size)throw new Error('Uma coleta já está em execução.');if(input.candidateLimit)expandSelection(job,input.candidateLimit);if(job.mode==='selection')job.collect_data=true;start(job,String(input.token || process.env.GITHUB_TOKEN || ''));return json(200,summary(job));}
         if(action==='export' && req.method==='GET') {const kind=url.searchParams.get('kind'), csv=exportJob(job,kind);res.writeHead(200,{...headers,'Content-Type':'text/csv; charset=utf-8','Content-Disposition':`attachment; filename="dora-${kind}.csv"`});return res.end(csv);}
       }
       return json(404,{error:'Rota não encontrada.'});
     }
-    const assets={'/':'index.html','/index.html':'index.html','/app.js':'app.js','/style.css':'style.css','/examples/repositories.csv':'../examples/repositories.csv','/examples/runs.csv':'../examples/runs.csv','/health':'health'};
-    if (route==='/health') return json(200,{ok:true});
+    const assets={'/':'index.html','/index.html':'index.html','/app.js':'app.js','/style.css':'style.css','/examples/repositories.csv':'../examples/repositories.csv','/examples/runs.csv':'../examples/runs.csv','/examples/release-data.csv':'../examples/release-data.csv','/health':'health'};
+    if (route==='/health') return json(200,{ok:true,dataset_flow:1,partial_local:true});
     if (!assets[route] || req.method!=='GET') return json(404,{error:'Página não encontrada.'});
     const file=assets[route], mime=file.endsWith('.css')?'text/css':file.endsWith('.js')?'text/javascript':file.endsWith('.csv')?'text/csv':'text/html';
     res.writeHead(200,{...headers,'Content-Type':`${mime}; charset=utf-8`});res.end(fs.readFileSync(new URL(`./public/${file}`,import.meta.url)));
