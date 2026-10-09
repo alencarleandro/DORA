@@ -4,6 +4,8 @@
 
 > **Luís Henrique — coleta de releases e lead time:** execute `node scripts/collect-releases.mjs --csv examples/repositories.csv --start 2024-01-01 --end 2024-12-31`. Veja [Parte B](docs/PARTE-B.md).
 
+> **Luís Henrique — Sprint 2 / Amostra-Ouro, Concordância e Consenso:** execute `node scripts/calculate-agreement.mjs` e `node scripts/consolidate-consensus.mjs`. Veja [Amostra-Ouro](docs/PARTE-AMOSTRA-OURO.md).
+
 > **Leandro - Coleta de WorkFlow:** interface web, coleta e testes disponíveis. Consulte [como executar e integrar](docs/PARTE-C.md) e o [dicionário de dados](docs/DATA-DICTIONARY.md). `npm start` abre o app; `npm test` executa os testes.
 
 **App web:** [DORA — Laboratório integrado](https://arsenal.dev.br/dora/). Laboratório acadêmico público, sem login ou chave de acesso.

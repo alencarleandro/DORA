@@ -2,5 +2,5 @@
   "name": "dora-workflows", "version": "1.0.0", "private": true,
   "description": "Sprint 1: coleta de workflows, releases e métricas DORA",
   "engines": { "node": ">=22" },
-  "scripts": { "start": "node server.mjs", "pipeline": "node cli.mjs", "releases": "node scripts/collect-releases.mjs", "test": "node --test --experimental-test-coverage --test-coverage-include=lib/metrics.mjs --test-coverage-lines=80 --test-coverage-branches=80 tests/*.test.mjs" }
+  "scripts": { "start": "node server.mjs", "pipeline": "node cli.mjs", "releases": "node scripts/collect-releases.mjs", "test": "node --test --experimental-test-coverage --test-coverage-include=lib/metrics.mjs --test-coverage-include=lib/agreement.mjs --test-coverage-lines=80 --test-coverage-branches=80 tests/*.test.mjs" }
 }

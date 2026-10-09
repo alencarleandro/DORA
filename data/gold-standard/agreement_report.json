@@ -1,0 +1,81 @@
+{
+  "raters": [
+    "luis",
+    "leandro",
+    "isabella"
+  ],
+  "dimensions": {
+    "project_type": {
+      "name": "Tipo de Projeto",
+      "categories": [
+        "biblioteca/framework",
+        "aplicação/serviço",
+        "ferramenta cli",
+        "outro"
+      ],
+      "kappa": 0.9105812220566318,
+      "observedAgreement": 0.9444444444444444,
+      "chanceAgreement": 0.3787037037037037,
+      "subjectsCount": 60,
+      "ratersCount": 3,
+      "categoriesCount": 4,
+      "raters": [
+        "isabella",
+        "leandro",
+        "luis"
+      ],
+      "interpretation": {
+        "code": "quase_perfeita",
+        "label": "Quase perfeita",
+        "description": "Concordância quase perfeita (0,81 a 1,00)"
+      }
+    },
+    "real_delivery": {
+      "name": "Entregas Reais ao Usuário",
+      "categories": [
+        "sim",
+        "não",
+        "incerto"
+      ],
+      "kappa": 0.49080622347949293,
+      "observedAgreement": 0.9777777777777779,
+      "chanceAgreement": 0.956358024691358,
+      "subjectsCount": 60,
+      "ratersCount": 3,
+      "categoriesCount": 3,
+      "raters": [
+        "isabella",
+        "leandro",
+        "luis"
+      ],
+      "interpretation": {
+        "code": "moderada",
+        "label": "Moderada",
+        "description": "Concordância moderada (0,41 a 0,60)"
+      }
+    },
+    "is_corrective": {
+      "name": "Release Corretiva (CFR b)",
+      "categories": [
+        "sim",
+        "não"
+      ],
+      "kappa": 0.8527632909635338,
+      "observedAgreement": 0.9266666666666671,
+      "chanceAgreement": 0.5019358024691358,
+      "subjectsCount": 300,
+      "ratersCount": 3,
+      "categoriesCount": 2,
+      "raters": [
+        "isabella",
+        "leandro",
+        "luis"
+      ],
+      "interpretation": {
+        "code": "quase_perfeita",
+        "label": "Quase perfeita",
+        "description": "Concordância quase perfeita (0,81 a 1,00)"
+      }
+    }
+  }
+}
