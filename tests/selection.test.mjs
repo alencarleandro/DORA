@@ -52,7 +52,35 @@ test('300 candidatos exigem três páginas mesmo quando a busca tem mais de mil 
  let calls=0;const api={get:async url=>{calls++;const page=Number(new URL(url,'https://api.github.com').searchParams.get('page')||1);return {data:{total_count:50000,incomplete_results:false,items:Array.from({length:100},(_,i)=>({id:(page-1)*100+i,full_name:'a/r'+((page-1)*100+i),stargazers_count:100000-((page-1)*100+i)}))},next:'https://api.github.com/search/repositories?page='+(page+1)};}};
  const rows=await discover(api,{...config,candidateLimit:300});assert.equal(rows.length,300);assert.equal(calls,3);assert.equal(new Set(rows.map(r=>r.id)).size,300);
 });
+
 test('filtro de A usa qualificação curta e sinaliza contagem incompleta',async()=>{
  const api={get:async()=>({data:{total_count:1}}),pages:async()=>Array.from({length:5},()=>({published_at:'2026-01-01T00:00:00Z'})),qualifyRuns:async()=>({count:100,complete:false}),runs:async()=>assert.fail('Não deve baixar histórico completo')};
  const row=await evidence(api,{full_name:'a/b',default_branch:'main'},config);assert.equal(row.decision,'eligible');assert.equal(row.valid_runs_count,100);assert.equal(row.runs_count_complete,false);
 });
+
+test('busca interrompe paginacao precocemente ao atingir candidateLimit',async()=>{
+  let pagesRequested=0;
+  const api={get:async url=>{
+    pagesRequested++;
+    const page=Number(new URL(url,'https://api.github.com').searchParams.get('page')||1);
+    return {
+      data:{total_count:500,incomplete_results:false,items:Array.from({length:100},(_,i)=>({id:(page-1)*100+i,full_name:`repo/${(page-1)*100+i}`,stargazers_count:4000}))},
+      next:'https://api.github.com/search/repositories?page='+(page+1)
+    };
+  }};
+  const result=await discover(api,{...config,candidateLimit:10});
+  assert.equal(result.length,10);
+  assert.equal(pagesRequested,1); // Interrompe na primeira página sem buscar as seguintes
+});
+
+test('contribuidores com fallback em per_page=100 le bulk.last sem loop infinito',async()=>{
+  const api={get:async url=>{
+    if(url.includes('per_page=1&')) return {data:[{}],next:'https://api.github.com/repos/a/b/contributors?page=2',last:null};
+    if(url.includes('per_page=100&')) return {data:Array(100).fill({}),last:'https://api.github.com/repos/a/b/contributors?per_page=100&page=4'};
+    return {data:{id:1,full_name:'a/b',default_branch:'main',stargazers_count:1000,language:'JS',created_at:'2024-01-01T00:00:00Z'}};
+  }};
+  const row=await metadata(api,{full_name:'a/b'},{start:'2024-01-01',end:'2024-12-31'});
+  assert.equal(row.contributors_count,400);
+  assert.equal(row.contributors_status,'available');
+});
+

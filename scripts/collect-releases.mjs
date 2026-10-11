@@ -9,8 +9,8 @@ try {
   const args = {};
   for (let i = 2; i < process.argv.length; i += 2) {
     const key = process.argv[i];
-    if (!['--config', '--csv', '--start', '--end', '--limit', '--output'].includes(key) || !process.argv[i + 1]) {
-      throw new Error(`Argumento inválido ou sem valor: ${key}\nUso: node scripts/collect-releases.mjs [--config config.json] [--csv repositories.csv] [--start AAAA-MM-DD] [--end AAAA-MM-DD] [--limit N] [--output pasta]`);
+    if (!['--config', '--csv', '--start', '--end', '--limit', '--output', '--cache-dir'].includes(key) || !process.argv[i + 1]) {
+      throw new Error(`Argumento inválido ou sem valor: ${key}\nUso: node scripts/collect-releases.mjs [--config config.json] [--csv repositories.csv] [--start AAAA-MM-DD] [--end AAAA-MM-DD] [--limit N] [--output pasta] [--cache-dir pasta]`);
     }
     args[key.slice(2)] = process.argv[i + 1];
   }
@@ -37,9 +37,10 @@ try {
   const controller = new AbortController();
   process.on('SIGINT', () => controller.abort());
 
+  const cacheDir = args['cache-dir'] ? path.resolve(args['cache-dir']) : path.join(outputDir, 'cache');
   const api = new GitHub({
     token: process.env.GITHUB_TOKEN || '',
-    cacheDir: path.join(outputDir, 'cache'),
+    cacheDir,
     signal: controller.signal,
     log: console.log,
     maxRateLimitWaitMs: config.maxRateLimitWaitMs ?? Infinity
@@ -182,6 +183,8 @@ try {
   const finalStatus = errors.length ? 'partial' : 'completed';
   save(finalStatus);
   console.log(`Concluído! Status: ${finalStatus}. Arquivos salvos em ${outputDir}`);
+  const stats = api.getStats();
+  console.log(`Cache: ${stats.hits} hits em disco, ${stats.memoryHits} hits em memória, ${stats.misses} chamadas à API, ${stats.revalidations304} revalidações 304.`);
   if (errors.length) process.exitCode = 1;
 } catch (error) {
   console.error(error.message);
