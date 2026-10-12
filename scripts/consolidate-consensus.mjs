@@ -59,6 +59,18 @@ export function consolidateConsensus(dataDir = DATA_DIR, raters = RATERS) {
   const firstRater = raters[0];
   const rows = raterData[firstRater];
 
+  // Pré-indexa cada raterData[r] em um Map(repository -> item) para buscas O(1)
+  const raterMaps = new Map();
+  for (const r of raters) {
+    const map = new Map();
+    for (const item of raterData[r] || []) {
+      if (!map.has(item.repository)) {
+        map.set(item.repository, item);
+      }
+    }
+    raterMaps.set(r, map);
+  }
+
   // Mapas para repositórios
   const repoConsensusMap = new Map();
 
@@ -68,7 +80,8 @@ export function consolidateConsensus(dataDir = DATA_DIR, raters = RATERS) {
       const typeVotes = {};
       const deliveryVotes = {};
       for (const r of raters) {
-        const raterRow = raterData[r].find(item => item.repository === repo);
+        const raterMap = raterMaps.get(r);
+        const raterRow = raterMap?.get(repo);
         typeVotes[r] = (raterRow?.project_type || '').trim().toLowerCase();
         deliveryVotes[r] = (raterRow?.real_delivery || '').trim().toLowerCase();
       }

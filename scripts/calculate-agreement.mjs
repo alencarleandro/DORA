@@ -31,6 +31,18 @@ function buildDimensionItems(raterData, raters) {
   const firstRater = raters[0];
   const rows = raterData[firstRater];
 
+  // Pré-indexa cada raterData[rater] em um Map(repository -> row) para buscas O(1)
+  const raterMaps = new Map();
+  for (const rater of raters) {
+    const map = new Map();
+    for (const r of raterData[rater] || []) {
+      if (!map.has(r.repository)) {
+        map.set(r.repository, r);
+      }
+    }
+    raterMaps.set(rater, map);
+  }
+
   // Agrupa por repositório (para project_type e real_delivery)
   const repoItemsMap = new Map();
   const releaseItems = [];
@@ -51,7 +63,8 @@ function buildDimensionItems(raterData, raters) {
       const typeRatings = {};
       const deliveryRatings = {};
       for (const rater of raters) {
-        const raterRow = raterData[rater].find(r => r.repository === repo);
+        const raterMap = raterMaps.get(rater);
+        const raterRow = raterMap?.get(repo);
         typeRatings[rater] = norm(raterRow?.project_type);
         deliveryRatings[rater] = norm(raterRow?.real_delivery);
       }

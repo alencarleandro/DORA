@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { getReleases, getTags, compareCommits, collectReleasesAndCommits } from '../lib/releases.mjs';
+import { getReleases, getTags, compareCommits, collectReleasesAndCommits, asyncPool } from '../lib/releases.mjs';
 
 test('getReleases filtra drafts e ordena cronologicamente', async () => {
   const api = {
@@ -136,4 +136,18 @@ test('compareCommits não aceita histórico truncado como completo',async()=>{
 test('históricos sem ancestral comum permanecem indisponíveis, sem commits fabricados',async()=>{
  const api={get:async()=>{throw Object.assign(new Error('sem ancestral'),{code:'COMPARE_UNAVAILABLE',compare_error:'unrelated_histories'});}};
  assert.deepEqual(await compareCommits(api,'a/b','v1','v2'),{error:'unrelated_histories',commits:[]});
+});
+
+test('asyncPool limita concorrência ao limite especificado e preserva ordem', async () => {
+  let active = 0, maxActive = 0;
+  const items = [1, 2, 3, 4, 5, 6];
+  const results = await asyncPool(2, items, async (item) => {
+    active++;
+    if (active > maxActive) maxActive = active;
+    await new Promise(r => setTimeout(r, 10));
+    active--;
+    return item * 2;
+  });
+  assert.equal(maxActive, 2);
+  assert.deepEqual(results, [2, 4, 6, 8, 10, 12]);
 });

@@ -4,7 +4,18 @@ import { DATA, create, load, list, execute, summary, exportJob, exportKinds, exp
 import path from 'node:path';
 fs.mkdirSync(DATA,{recursive:true});
 const active = new Map();
-for (const job of list()) if (job.status === 'running' || job.status === 'pending') { job.status='paused'; const {save} = await import('./lib/pipeline.mjs'); save(job); }
+const summaryCache = new Map();
+const staticCache = new Map();
+
+for (const job of list()) {
+  if (job.status === 'running' || job.status === 'pending') {
+    job.status = 'paused';
+    const { save } = await import('./lib/pipeline.mjs');
+    save(job, { immediate: true });
+  }
+  summaryCache.set(job.id, summary(job));
+}
+
 async function body(req) {
   let size=0; const chunks=[];
   for await (const chunk of req) { size+=chunk.length; if (size>100*1024*1024) throw new Error('Limite de upload: 100 MB.'); chunks.push(chunk); }
@@ -13,7 +24,21 @@ async function body(req) {
 function start(job,token) {
   if (active.size) throw new Error('Uma coleta já está em execução. Aguarde ou pause.');
   const controller=new AbortController(); active.set(job.id,controller);
-  execute(job,{token,signal:controller.signal}).catch(()=>{}).finally(()=>active.delete(job.id));
+  summaryCache.set(job.id, summary(job));
+  execute(job,{
+    token,
+    signal:controller.signal,
+    onUpdate: j => summaryCache.set(j.id, summary(j))
+  }).catch(()=>{}).finally(()=>{
+    summaryCache.set(job.id, summary(job));
+    active.delete(job.id);
+  });
+}
+function getStatic(file) {
+  if (!staticCache.has(file)) {
+    staticCache.set(file, fs.readFileSync(new URL(`./public/${file}`, import.meta.url)));
+  }
+  return staticCache.get(file);
 }
 const server=http.createServer(async(req,res)=>{
   const headers={'X-Content-Type-Options':'nosniff','Referrer-Policy':'no-referrer','Cache-Control':'no-store','Content-Security-Policy':"default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'self'; base-uri 'self'; form-action 'self'"};
@@ -26,16 +51,28 @@ const server=http.createServer(async(req,res)=>{
         // O proxy do Arsenal troca Host pelo endereço local.
         if (!process.env.ARSENAL_ROUTE && origin && new URL(origin).host !== host) return json(403,{error:'Origem não permitida.'});
       }
-      if (route==='/api/jobs' && req.method==='GET') return json(200,list().map(summary));
+      if (route==='/api/jobs' && req.method==='GET') {
+        return json(200, Array.from(summaryCache.values()).sort((a,b) => b.created_at.localeCompare(a.created_at)));
+      }
       if (route==='/api/jobs' && req.method==='POST') {
         if(active.size) return json(409,{error:'Uma coleta já está em execução.'});
-        const input=await body(req), job=create(input); start(job,String(input.token || process.env.GITHUB_TOKEN || '')); return json(201,summary(job));
+        const input=await body(req), job=create(input);
+        summaryCache.set(job.id, summary(job));
+        start(job,String(input.token || process.env.GITHUB_TOKEN || ''));
+        return json(201,summary(job));
       }
       const match=route.match(/^\/api\/jobs\/([a-f\d-]{36})(?:\/(resume|pause|export))?$/);
       if(match) {
-        const job=load(match[1]), action=match[2];
-        if (!action && req.method==='GET') return json(200,summary(job));
-        if(action==='pause' && req.method==='POST') {active.get(job.id)?.abort();return json(200,{ok:true});}
+        const action=match[2];
+        const cached=summaryCache.get(match[1]);
+        if (!action && req.method==='GET') return json(200, cached || summary(load(match[1])));
+        const job=load(match[1]);
+        if(action==='pause' && req.method==='POST') {
+          active.get(job.id)?.abort();
+          job.status='paused';
+          summaryCache.set(job.id, summary(job));
+          return json(200,{ok:true});
+        }
         if(action==='resume' && req.method==='POST') {const input=await body(req);if(active.size)throw new Error('Uma coleta já está em execução.');if(input.candidateLimit)expandSelection(job,input.candidateLimit);if(job.mode==='selection')job.collect_data=true;start(job,String(input.token || process.env.GITHUB_TOKEN || ''));return json(200,summary(job));}
         if(action==='export' && req.method==='GET') {
           const kind=url.searchParams.get('kind');if(!exportKinds(job.mode).includes(kind))throw new Error('Exportação indisponível para esta parte.');
@@ -52,7 +89,7 @@ const server=http.createServer(async(req,res)=>{
     if (route==='/health') return json(200,{ok:true,dataset_flow:1,partial_local:true});
     if (!assets[route] || req.method!=='GET') return json(404,{error:'Página não encontrada.'});
     const file=assets[route], mime=file.endsWith('.css')?'text/css':file.endsWith('.js')?'text/javascript':file.endsWith('.csv')?'text/csv':'text/html';
-    res.writeHead(200,{...headers,'Content-Type':`${mime}; charset=utf-8`});res.end(fs.readFileSync(new URL(`./public/${file}`,import.meta.url)));
+    res.writeHead(200,{...headers,'Content-Type':`${mime}; charset=utf-8`});res.end(getStatic(file));
   } catch(error) {json(error.code==='ENOENT'?404:400,{error:error.code==='ENOENT'?'Coleta não encontrada.':error.message});}
 });
 server.listen(Number(process.env.PORT || 4117),'127.0.0.1',()=>console.log(`DORA público em http://127.0.0.1:${process.env.PORT || 4117}.`));

@@ -4,9 +4,10 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
+import {randomUUID} from 'node:crypto';
 const temporary = fs.mkdtempSync(path.join(os.tmpdir(),'dora-integrated-'));
 process.env.DORA_DATA_DIR=temporary;
-const {create,execute,summary,exportJob,load} = await import('../lib/pipeline.mjs');
+const {create,execute,summary,exportJob,load,save,flush,saveImmediate} = await import('../lib/pipeline.mjs');
 const {parseCSV} = await import('../lib/csv.mjs');
 test('B calcula CFR b e preserva notas ao importar CSV sem rede',async()=>{
  const {toCSV}=await import('../lib/csv.mjs');const {RELEASE_DATA_HEADERS}=await import('../lib/datasets.mjs');
@@ -128,4 +129,55 @@ test('B/C usam subconjunto local completo, mesmo quando a coleta A não terminou
  const denied={get:async()=>{throw new Error('API proibida');}};
  for(const mode of ['releases','collect']){const local=create({mode,sourceJobId:a.id,allowPartialLocal:true});await execute(local,{github:denied});assert.equal(local.status,'completed');assert.ok(local.local_base.partial||mode==='releases');assert.ok(local.total>=1);assert.match(summary(local).funnel.note,mode==='collect'?/Base local parcial/:/Parte B/);}
  assert.equal(create({mode:'collect',sourceJobId:a.id,allowPartialLocal:true}).total,1);assert.equal(create({mode:'releases',sourceJobId:a.id,allowPartialLocal:true}).total,2);
+});
+
+test('save aplica throttle em 50 escritas intermediárias resultando em escrita única após debounce e immediate grava na hora', async () => {
+  const jobId = randomUUID();
+  const job = { id: jobId, mode: 'collect', status: 'running', progress: 0, results: [], errors: [], logs: [] };
+  const file = path.join(temporary, 'jobs', jobId, 'job.json');
+
+  let writes = 0;
+  const originalWrite = fs.writeFileSync;
+  fs.writeFileSync = function(filePath, ...args) {
+    if (typeof filePath === 'string' && filePath.includes(jobId)) {
+      writes++;
+    }
+    return originalWrite.call(this, filePath, ...args);
+  };
+
+  try {
+    for (let i = 0; i < 50; i++) {
+      job.progress = i;
+      save(job, { immediate: false });
+    }
+    assert.equal(writes, 0, 'nenhuma escrita em disco síncrona durante o throttle');
+    assert.equal(fs.existsSync(file), false, 'arquivo não existe antes do término do debounce');
+
+    await new Promise(r => setTimeout(r, 380));
+
+    assert.equal(writes, 1, 'exatamente uma escrita em disco após o debounce');
+    assert.equal(JSON.parse(fs.readFileSync(file, 'utf8')).progress, 49, 'arquivo gravado reflete o último estado');
+
+    job.progress = 100;
+    save(job, { immediate: true });
+    assert.equal(writes, 2, 'save com immediate: true grava imediatamente em disco');
+    assert.equal(JSON.parse(fs.readFileSync(file, 'utf8')).progress, 100);
+
+    job.progress = 150;
+    saveImmediate(job);
+    assert.equal(writes, 3, 'saveImmediate grava imediatamente');
+    assert.equal(JSON.parse(fs.readFileSync(file, 'utf8')).progress, 150);
+
+    job.progress = 200;
+    save(job, { immediate: false });
+    assert.equal(writes, 3, 'nenhuma escrita imediata ainda');
+    flush(job);
+    assert.equal(writes, 4, 'flush grava imediatamente');
+    assert.equal(JSON.parse(fs.readFileSync(file, 'utf8')).progress, 200);
+
+    await new Promise(r => setTimeout(r, 380));
+    assert.equal(writes, 4, 'timer cancelado por flush não dispara novamente');
+  } finally {
+    fs.writeFileSync = originalWrite;
+  }
 });

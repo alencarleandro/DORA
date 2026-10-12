@@ -169,3 +169,45 @@ test('IDs duplicados não viram coleta completa; cache separado permite recupera
  assert.equal(await fs.readFile(path.join(old.cacheDir,name),'utf8'),before);
 });
 
+test('política LRU real no cache L1 em memória despeja itens menos recentemente acessados', async t => {
+  const api = await client(t, async url => {
+    return new Response(JSON.stringify({ url: String(url) }));
+  }, { memoryCacheSize: 3 });
+
+  // Insere 3 chaves mockadas (A, B, C)
+  await api.get('/a');
+  await api.get('/b');
+  await api.get('/c');
+
+  assert.equal(api.memoryCache.size, 3);
+  assert.ok(api.memoryCache.has('https://api.github.com/a'));
+  assert.ok(api.memoryCache.has('https://api.github.com/b'));
+  assert.ok(api.memoryCache.has('https://api.github.com/c'));
+
+  // Acesse a chave A via get()
+  await api.get('/a');
+
+  // Insira uma 4ª chave D
+  await api.get('/d');
+
+  // Verifique que B foi despejado (pois era o mais antigo não acessado) e que A continua presente no cache
+  assert.equal(api.memoryCache.size, 3);
+  assert.ok(!api.memoryCache.has('https://api.github.com/b'), 'B deve ter sido despejado');
+  assert.ok(api.memoryCache.has('https://api.github.com/a'), 'A continua presente no cache');
+  assert.ok(api.memoryCache.has('https://api.github.com/c'), 'C continua presente no cache');
+  assert.ok(api.memoryCache.has('https://api.github.com/d'), 'D continua presente no cache');
+});
+
+test('memoização da criação de diretório de cache reutiliza promise única por instância', async t => {
+  const api = await client(t, async () => new Response('{}'));
+  assert.equal(api._cacheDirPromise, null);
+  const p1 = api._ensureCacheDir();
+  const cachedPromise = api._cacheDirPromise;
+  assert.ok(cachedPromise instanceof Promise);
+  api._ensureCacheDir();
+  assert.equal(api._cacheDirPromise, cachedPromise);
+  await p1;
+  await api._ensureCacheDir();
+  assert.equal(api._cacheDirPromise, cachedPromise);
+});
+
