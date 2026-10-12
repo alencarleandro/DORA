@@ -4,9 +4,10 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
+import {randomUUID} from 'node:crypto';
 const temporary = fs.mkdtempSync(path.join(os.tmpdir(),'dora-integrated-'));
 process.env.DORA_DATA_DIR=temporary;
-const {create,execute,summary,exportJob,load,save,flush} = await import('../lib/pipeline.mjs');
+const {create,execute,summary,exportJob,load,save,flush,saveImmediate} = await import('../lib/pipeline.mjs');
 const {parseCSV} = await import('../lib/csv.mjs');
 after(()=>fs.rmSync(temporary,{recursive:true,force:true}));
 const input={mode:'integrated',source:'csv',start:'2026-01-01',end:'2026-01-31',candidateLimit:10,sampleSize:1,csv:'full_name,default_branch\na/good,trunk\na/other,trunk\na/noactions,trunk\na/fewreleases,trunk\na/fewruns,trunk'};
@@ -78,17 +79,53 @@ test('B isolada continua erros sem repetir repositórios concluídos',async()=>{
   await execute(load(job.id),{github:fake()});const restored=load(job.id);assert.equal(restored.status,'completed');
   const api=fake();await execute(restored,{github:api});assert.equal(api.calls.length,0);
 });
-test('save aplica throttle em escritas intermediárias e flush garante persistência imediata', async () => {
-  const job = create({ ...input, mode: 'selection' });
-  const file = path.join(temporary, 'jobs', job.id, 'job.json');
-  for (let i = 0; i < 50; i++) {
-    job.progress = i;
+test('save aplica throttle em 50 escritas intermediárias resultando em escrita única após debounce e immediate grava na hora', async () => {
+  const jobId = randomUUID();
+  const job = { id: jobId, mode: 'collect', status: 'running', progress: 0, results: [], errors: [], logs: [] };
+  const file = path.join(temporary, 'jobs', jobId, 'job.json');
+
+  let writes = 0;
+  const originalWrite = fs.writeFileSync;
+  fs.writeFileSync = function(filePath, ...args) {
+    if (typeof filePath === 'string' && filePath.includes(jobId)) {
+      writes++;
+    }
+    return originalWrite.call(this, filePath, ...args);
+  };
+
+  try {
+    for (let i = 0; i < 50; i++) {
+      job.progress = i;
+      save(job, { immediate: false });
+    }
+    assert.equal(writes, 0, 'nenhuma escrita em disco síncrona durante o throttle');
+    assert.equal(fs.existsSync(file), false, 'arquivo não existe antes do término do debounce');
+
+    await new Promise(r => setTimeout(r, 380));
+
+    assert.equal(writes, 1, 'exatamente uma escrita em disco após o debounce');
+    assert.equal(JSON.parse(fs.readFileSync(file, 'utf8')).progress, 49, 'arquivo gravado reflete o último estado');
+
+    job.progress = 100;
+    save(job, { immediate: true });
+    assert.equal(writes, 2, 'save com immediate: true grava imediatamente em disco');
+    assert.equal(JSON.parse(fs.readFileSync(file, 'utf8')).progress, 100);
+
+    job.progress = 150;
+    saveImmediate(job);
+    assert.equal(writes, 3, 'saveImmediate grava imediatamente');
+    assert.equal(JSON.parse(fs.readFileSync(file, 'utf8')).progress, 150);
+
+    job.progress = 200;
     save(job, { immediate: false });
+    assert.equal(writes, 3, 'nenhuma escrita imediata ainda');
+    flush(job);
+    assert.equal(writes, 4, 'flush grava imediatamente');
+    assert.equal(JSON.parse(fs.readFileSync(file, 'utf8')).progress, 200);
+
+    await new Promise(r => setTimeout(r, 380));
+    assert.equal(writes, 4, 'timer cancelado por flush não dispara novamente');
+  } finally {
+    fs.writeFileSync = originalWrite;
   }
-  const loaded = load(job.id);
-  assert.equal(loaded.progress, 49);
-  assert.equal(JSON.parse(fs.readFileSync(file, 'utf8')).progress, 49);
-  job.progress = 100;
-  save(job, { immediate: true });
-  assert.equal(JSON.parse(fs.readFileSync(file, 'utf8')).progress, 100);
 });
