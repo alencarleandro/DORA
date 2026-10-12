@@ -2,6 +2,10 @@
 
 CSV UTF-8 com BOM; taxas em fração 0–1; campos vazios indicam ausência de medição. Fórmulas de planilha potencialmente ativas recebem apóstrofo no export para evitar execução ao abrir em Excel.
 
+Os importadores de B e dos rótulos removem esse apóstrofo de proteção dos CSVs exportados pelo projeto; isso preserva tags como `@scope/pkg@1.0.0` ao comparar com as referências reais. O parser genérico mantém o conteúdo literal por padrão.
+
+Comparações indisponíveis por `not_found` ou `unrelated_histories` permanecem identificadas em `compare_error`, com lista de commits vazia que significa ausência de medição. B exclui essas releases do lead time e contabiliza `releases_ignored_compare_error`; CFR (b) trata uma release corretiva indeterminada como desconhecida quando isso afeta o episódio. C usa os runs e pode ser calculada independentemente. `comparison-quality.json` registra as comparações indisponíveis. Erros de rede, paginação truncada ou autenticação não são convertidos em comparações permanentemente indisponíveis.
+
 ## metrics.csv
 
 | Coluna | Tipo / unidade | Origem ou fórmula |
@@ -74,6 +78,24 @@ CSV UTF-8 com BOM; taxas em fração 0–1; campos vazios indicam ausência de m
 | lead_time_commit_iqr_days | dias | IQR por commit convertido para dias |
 | eligible_releases | booleano | releases_in_window >= 5 |
 | error | texto | Mensagem de erro de coleta ou vazio |
+
+## CFR (b) nas métricas de B e no dataset consolidado
+
+| Coluna | Tipo / unidade | Origem ou fórmula |
+|---|---|---|
+| cfr_b | fração | Releases com correção observada em até 7 dias / releases avaliáveis; vazio se denominador zero |
+| cfr_b_releases_evaluated | inteiro | Denominador após excluir releases censuradas e indeterminadas |
+| cfr_b_releases_failed | inteiro | Releases avaliáveis seguidas por uma release corretiva em até 7 dias |
+| cfr_b_releases_censored | inteiro | Releases sem sete dias completos de acompanhamento até o fim da janela |
+| cfr_b_releases_unknown | inteiro | Releases cujo resultado não pôde ser determinado com as evidências disponíveis |
+| cfr_b_heuristic_version | texto | Versão da regra que classifica releases corretivas |
+| cfr_b_validation | texto | `pending_independent_labels` enquanto faltarem rótulos independentes e validação da amostra real |
+
+CFR (b) permanece exploratória até a validação; ela não substitui `cfr_ci`, calculada com as conclusões de CI. Veja `docs/PARTE-C-S02.md` para as versões da regra e o tratamento das comparações indisponíveis.
+
+## Proveniência do dataset consolidado
+
+`window_start` e `window_end` indicam a janela UTC inclusiva. `source_job_id`, `b_job_id` e `c_job_id` permitem recuperar os arquivos persistentes de cada etapa em `data/jobs`. Há uma linha por repositório, sem substituir medições ausentes por zero. Frequência de deploy é releases por semana; tempos com sufixo `_hours` são horas e `_days` são dias.
 
 ## releases.csv
 

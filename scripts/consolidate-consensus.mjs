@@ -53,7 +53,7 @@ export function consolidateConsensus(dataDir = DATA_DIR, raters = RATERS) {
     if (!fs.existsSync(filePath)) {
       throw new Error(`Arquivo do avaliador não encontrado: ${filePath}`);
     }
-    raterData[rater] = parseCSV(fs.readFileSync(filePath, 'utf8'));
+    raterData[rater] = parseCSV(fs.readFileSync(filePath, 'utf8'),{spreadsheetEscapes:true});
   }
 
   const firstRater = raters[0];

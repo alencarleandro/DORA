@@ -132,3 +132,8 @@ test('compareCommits não aceita histórico truncado como completo',async()=>{
  const api={get:async()=>({data:{total_commits:2,commits:[{sha:'one',commit:{author:{date:'2026-01-01T00:00:00Z'}}}]}})};
  await assert.rejects(()=>compareCommits(api,'owner/repo','v1','v2'),/incompleta/);
 });
+
+test('históricos sem ancestral comum permanecem indisponíveis, sem commits fabricados',async()=>{
+ const api={get:async()=>{throw Object.assign(new Error('sem ancestral'),{code:'COMPARE_UNAVAILABLE',compare_error:'unrelated_histories'});}};
+ assert.deepEqual(await compareCommits(api,'a/b','v1','v2'),{error:'unrelated_histories',commits:[]});
+});

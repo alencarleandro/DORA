@@ -1,5 +1,7 @@
 # DORA
 
+> **Leandro — Sprint 2 / CFR (b), issue #5:** cálculo local, heurísticas e avaliação implementados. Veja [regras e execução](docs/PARTE-C-S02.md) e [roteiro para Isabella](docs/INTEGRACAO-ISABELLA-S02.md). A validação F1 está pendente de referências reais consistentes na amostra-ouro; os rótulos recebidos foram preservados.
+
 > **Isabella — seleção e metadados:** execute `node scripts/select-repos.mjs --config config.json --mode metadata`. Veja [Parte A](docs/PARTE-A.md).
 
 > **Luís Henrique — coleta de releases e lead time:** execute `node scripts/collect-releases.mjs --csv examples/repositories.csv --start 2024-01-01 --end 2024-12-31`. Veja [Parte B](docs/PARTE-B.md).
@@ -438,3 +440,9 @@ Sim, desde que o pipeline continue executável por outro grupo com um único com
 ### Fluxo local A → CSV → B/C
 
 A agora prepara os dados completos dos selecionados para B e C. O token é usado na coleta A; B e C importam os arquivos locais ou CSVs sem consultar o GitHub. A lista de 100 selecionados não significa que todos os históricos e commits já foram baixados. Consulte [o contrato e a retomada](docs/INTEGRACAO.md).
+
+
+<!-- entrega-isabella-s02 -->
+### Entrega local da Sprint 2
+
+Coleta A e métricas B/C concluídas para 300 projetos, janela UTC 2025-01-01 a 2025-12-31. Dataset: `data/dataset-s02-final/dataset.csv`. Pacote: `data/entrega-isabella-s02.zip`. Execute `node scripts/consolidate-dataset.mjs 1deaa513-2c06-4949-bd54-2c591b0eef12` para reproduzir a consolidação sem token. A validação de CFR (b) ainda depende dos rótulos independentes e consenso da amostra real.

@@ -8,6 +8,14 @@ const temporary = fs.mkdtempSync(path.join(os.tmpdir(),'dora-integrated-'));
 process.env.DORA_DATA_DIR=temporary;
 const {create,execute,summary,exportJob,load} = await import('../lib/pipeline.mjs');
 const {parseCSV} = await import('../lib/csv.mjs');
+test('B calcula CFR b e preserva notas ao importar CSV sem rede',async()=>{
+ const {toCSV}=await import('../lib/csv.mjs');const {RELEASE_DATA_HEADERS}=await import('../lib/datasets.mjs');
+ const rows=['2026-01-01','2026-01-03','2026-01-30'].map((date,i)=>({repository:'a/local',default_branch:'main',window_start:'2026-01-01',window_end:'2026-01-31',tag_name:'v1.0.'+i,published_at:date+'T12:00:00Z',base_tag:'v1.0.'+(i-1),has_previous_release:true,compare_error:'',name:'Release',body:i===1?'Hotfix for a crash':'',commits_json:JSON.stringify([{sha:'sha'+i,author_date:date+'T00:00:00Z',message:'feat: update'}])}));
+ const b=create({mode:'releases',dataSource:'csv',csv:toCSV(rows,RELEASE_DATA_HEADERS),start:'2026-01-01',end:'2026-01-31'});
+ const denied=new Proxy({},{get(){throw new Error('API proibida no processamento local');}});await execute(b,{github:denied});
+ assert.equal(b.status,'completed');assert.equal(b.results[0].cfr_b,.5);assert.equal(b.results[0].cfr_b_releases_censored,1);
+ assert.equal(parseCSV(exportJob(b,'metrics'))[0].cfr_b,'0.5');assert.equal(JSON.parse(fs.readFileSync(path.join(temporary,'jobs',b.id,'a%2Flocal.releases.json'),'utf8')).releases[1].body,'Hotfix for a crash');
+});
 after(()=>fs.rmSync(temporary,{recursive:true,force:true}));
 const input={collectData:false,mode:'integrated',source:'csv',start:'2026-01-01',end:'2026-01-31',candidateLimit:10,sampleSize:1,csv:'full_name,default_branch\na/good,trunk\na/other,trunk\na/noactions,trunk\na/fewreleases,trunk\na/fewruns,trunk'};
 test('A seleciona; B/C usam mesma amostra, branch e janela; exports combinam os dados',async()=>{
@@ -112,6 +120,7 @@ test('CSV de B rejeita commits duplicados e comparações incompletas',async()=>
  const rows=parseCSV(exportJob(a,'release-data'));const commits=JSON.parse(rows[0].commits_json);rows[0].commits_json=JSON.stringify([...commits,commits[0]]);
  assert.throws(()=>create({mode:'releases',dataSource:'csv',csv:toCSV(rows,RELEASE_DATA_HEADERS),start:a.start,end:a.end}),/duplicado/);
  rows[0].commits_json=JSON.stringify(commits);rows[0].compare_error='not_found';assert.throws(()=>create({mode:'releases',dataSource:'csv',csv:toCSV(rows,RELEASE_DATA_HEADERS),start:a.start,end:a.end}),/incompleta/);
+ rows[0].commits_json='[]';const b=create({mode:'releases',dataSource:'csv',csv:toCSV(rows,RELEASE_DATA_HEADERS),start:a.start,end:a.end});await execute(b,{github:{get:()=>assert.fail('Não deve usar rede')}});assert.equal(b.status,'completed');assert.equal(b.results[0].releases_ignored_compare_error,1);
 });
 
 test('B/C usam subconjunto local completo, mesmo quando a coleta A não terminou',async()=>{

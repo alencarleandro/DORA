@@ -1,6 +1,7 @@
 import http from 'node:http';
 import fs from 'node:fs';
-import { DATA, create, load, list, execute, summary, exportJob, expandSelection } from './lib/pipeline.mjs';
+import { DATA, create, load, list, execute, summary, exportJob, exportKinds, expandSelection } from './lib/pipeline.mjs';
+import path from 'node:path';
 fs.mkdirSync(DATA,{recursive:true});
 const active = new Map();
 for (const job of list()) if (job.status === 'running' || job.status === 'pending') { job.status='paused'; const {save} = await import('./lib/pipeline.mjs'); save(job); }
@@ -36,7 +37,14 @@ const server=http.createServer(async(req,res)=>{
         if (!action && req.method==='GET') return json(200,summary(job));
         if(action==='pause' && req.method==='POST') {active.get(job.id)?.abort();return json(200,{ok:true});}
         if(action==='resume' && req.method==='POST') {const input=await body(req);if(active.size)throw new Error('Uma coleta já está em execução.');if(input.candidateLimit)expandSelection(job,input.candidateLimit);if(job.mode==='selection')job.collect_data=true;start(job,String(input.token || process.env.GITHUB_TOKEN || ''));return json(200,summary(job));}
-        if(action==='export' && req.method==='GET') {const kind=url.searchParams.get('kind'), csv=exportJob(job,kind);res.writeHead(200,{...headers,'Content-Type':'text/csv; charset=utf-8','Content-Disposition':`attachment; filename="dora-${kind}.csv"`});return res.end(csv);}
+        if(action==='export' && req.method==='GET') {
+          const kind=url.searchParams.get('kind');if(!exportKinds(job.mode).includes(kind))throw new Error('Exportação indisponível para esta parte.');
+          const prepared=path.join(DATA,'jobs',job.id,'exports',kind+'.csv');
+          if(fs.existsSync(prepared)&&(job.mode!=='selection'||job.datasets?.status==='completed')){
+            res.writeHead(200,{...headers,'Content-Type':'text/csv; charset=utf-8','Content-Disposition':`attachment; filename="dora-${kind}.csv"`});fs.createReadStream(prepared).pipe(res);return;
+          }
+          const csv=exportJob(job,kind);res.writeHead(200,{...headers,'Content-Type':'text/csv; charset=utf-8','Content-Disposition':`attachment; filename="dora-${kind}.csv"`});return res.end(csv);
+        }
       }
       return json(404,{error:'Rota não encontrada.'});
     }

@@ -13,10 +13,13 @@ const args = Object.fromEntries(
 const SEED = Number(args.seed || 42);
 const N_REPOS = Number(args['n-repos'] || 60);
 const N_RELEASES = Number(args['n-releases'] || 5);
-const START = args.start || '2024-01-01';
-const END = args.end || '2024-12-31';
+const localDir = args.job ? path.resolve('data/jobs', args.job) : null;
+const localJob = localDir ? JSON.parse(fs.readFileSync(path.join(localDir,'job.json'),'utf8')) : null;
+const START = args.start || localJob?.start || '2024-01-01';
+const END = args.end || localJob?.end || '2024-12-31';
 const OUT_DIR = path.resolve(args['out-dir'] || 'data/gold-standard');
 const FORCE = process.argv.includes('--force');
+const REQUIRE_COMPARISONS=process.argv.includes('--require-comparisons');
 
 const SAMPLE_HEADERS = [
   'repository',
@@ -24,7 +27,7 @@ const SAMPLE_HEADERS = [
   'default_branch',
   'release_tag',
   'release_url',
-  'release_published_at'
+  'release_published_at', 'source'
 ];
 
 const LABEL_HEADERS = [
@@ -109,28 +112,40 @@ async function main() {
   console.log(`Janela: ${START} até ${END}`);
 
   fs.mkdirSync(OUT_DIR, { recursive: true });
+  if(fs.existsSync(path.join(OUT_DIR,'gold_standard_sample.csv'))&&!FORCE)throw new Error('Amostra existente preservada. Use --out-dir para uma nova versão; --force sobrescreve a amostra e os rótulos.');
 
   const dates = windowDates(START, END);
+  if(REQUIRE_COMPARISONS&&!localJob)throw new Error('--require-comparisons exige --job com dados locais.');
+  const eligibleRelease=r=>!r.draft&&!r.prerelease&&timestamp(r.published_at)>=dates.start&&timestamp(r.published_at)<=dates.end&&(!REQUIRE_COMPARISONS||(!r.compare_error&&r.has_previous_release&&Array.isArray(r.commits)));
   const rng = createRNG(SEED);
 
   // 1. Carrega lista de candidatos
   let candidateRepos = [];
   const inputCsv = args.csv || (fs.existsSync('data/selection-2024/repositories.csv') ? 'data/selection-2024/repositories.csv' : null);
 
-  if (inputCsv && fs.existsSync(inputCsv)) {
+  if (localJob) {
+    candidateRepos = localJob.results.filter(r=>{
+      const file=path.join(localDir,encodeURIComponent(r.repository)+'.releases.json');
+      if(!fs.existsSync(file))return false;
+      return JSON.parse(fs.readFileSync(file,'utf8')).releases.filter(eligibleRelease).length>=N_RELEASES;
+    }).map(r=>({full_name:r.repository,default_branch:r.default_branch}));
+  } else if (inputCsv && fs.existsSync(inputCsv)) {
     console.log(`Carregando repositórios de: ${inputCsv}`);
     candidateRepos = repositories(fs.readFileSync(inputCsv, 'utf8'));
   } else {
+    if(!process.argv.includes('--demo'))throw new Error('Informe --job ID ou --csv repositories.csv da coorte selecionada em A. A lista piloto exige --demo.');
     console.log(`Nenhum CSV de candidatos informado; utilizando repositórios de calibração (${CURATED_REPOSITORIES.length}).`);
     candidateRepos = [...CURATED_REPOSITORIES];
   }
+  if(candidateRepos.length<N_REPOS)throw new Error('Repositórios reais suficientes para a amostra: '+candidateRepos.length+'/'+N_REPOS+'.');
 
   // Se houver mais repositórios que a meta, sorteia N_REPOS com a semente
   const sampledRepos = sampleArray(candidateRepos, Math.min(N_REPOS, candidateRepos.length), rng);
   console.log(`Repositórios sorteados na amostra-ouro: ${sampledRepos.length}`);
 
   // 2. Coleta ou sorteia as releases de cada repositório
-  const api = new GitHub({ token: process.env.GITHUB_TOKEN || '' });
+  const api = new GitHub({ token: process.env.GITHUB_TOKEN || '', cacheDir:args['cache-dir']?path.resolve(args['cache-dir']):path.join(OUT_DIR,'cache'), memoryCacheSize:50,
+    ...(process.argv.includes('--offline')?{fetcher:async()=>{throw new Error('Cache local incompleto; consulta de rede desabilitada.');},sleep:async()=>{}}:{}) });
   const sampleRows = [];
 
   for (let i = 0; i < sampledRepos.length; i++) {
@@ -142,25 +157,23 @@ async function main() {
 
     let releasesInWindow = [];
     try {
-      if (process.env.GITHUB_TOKEN) {
-        const allReleases = await getReleases(api, repoName);
-        releasesInWindow = allReleases.filter(r => {
-          const t = timestamp(r.published_at);
-          return t >= dates.start && t <= dates.end;
-        });
+      if (localJob || !process.argv.includes('--demo') || process.env.GITHUB_TOKEN) {
+        const allReleases = localJob ? JSON.parse(fs.readFileSync(path.join(localDir,encodeURIComponent(repoName)+'.releases.json'),'utf8')).releases : await getReleases(api, repoName);
+        releasesInWindow = allReleases.filter(eligibleRelease);
       }
     } catch (err) {
-      console.warn(`Aviso: Falha ao buscar releases de ${repoName} via API (${err.message}). Gerando simulado de calibração.`);
+      console.warn(`Aviso: Falha ao buscar releases de ${repoName} (${err.message}).`);
     }
 
     // Fallback: se não tiver releases suficientes via API (ou sem token), cria slots sintéticos identificados
     if (releasesInWindow.length < N_RELEASES) {
+      if(!process.argv.includes('--demo'))throw new Error(repoName+': releases reais insuficientes. A geração sintética exige --demo e não pode ser usada na validação científica.');
       const needed = N_RELEASES - releasesInWindow.length;
       for (let k = 1; k <= needed; k++) {
         const month = String(k + 2).padStart(2, '0');
         releasesInWindow.push({
           tag_name: `v1.${k}.0`,
-          published_at: `2024-${month}-15T12:00:00Z`
+          published_at: `2024-${month}-15T12:00:00Z`, source:'synthetic_demo'
         });
       }
     }
@@ -177,7 +190,7 @@ async function main() {
         default_branch: repo.default_branch || 'main',
         release_tag: releaseTag,
         release_url: releaseUrl,
-        release_published_at: rel.published_at
+        release_published_at: rel.published_at, source:rel.source||'github_release'
       });
     }
   }
@@ -185,6 +198,7 @@ async function main() {
   // 3. Exporta a amostra-ouro de referência
   const sampleFile = path.join(OUT_DIR, 'gold_standard_sample.csv');
   fs.writeFileSync(sampleFile, toCSV(sampleRows, SAMPLE_HEADERS));
+  fs.writeFileSync(path.join(OUT_DIR,'sampling-manifest.json'),JSON.stringify({source_job_id:localJob?.id||null,window_start:START,window_end:END,seed:SEED,repositories:N_REPOS,releases_per_repository:N_RELEASES,eligible_candidates:candidateRepos.length,require_comparisons:REQUIRE_COMPARISONS,source:process.argv.includes('--demo')?'synthetic_demo':'real_releases'},null,2));
   console.log(`Amostra-ouro salva em: ${sampleFile} (${sampleRows.length} linhas de releases)`);
 
   // 4. Gera templates de trabalho para os três avaliadores

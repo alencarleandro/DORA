@@ -21,7 +21,7 @@ function loadRaterFiles(dataDir, raters) {
     if (!fs.existsSync(filePath)) {
       throw new Error(`Arquivo do avaliador não encontrado: ${filePath}`);
     }
-    const rows = parseCSV(fs.readFileSync(filePath, 'utf8'));
+    const rows = parseCSV(fs.readFileSync(filePath, 'utf8'),{spreadsheetEscapes:true});
     raterData[rater] = rows;
   }
   return raterData;

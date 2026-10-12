@@ -20,6 +20,13 @@ test('janela dividida por mês e runs deduplicados',async t=>{
   const api=await client(t,async()=>new Response('{}'));const calls=[];api.interval=async(repo,branch,start,end)=>{calls.push([start,end]);return[{id:1}];};
   assert.equal((await api.runs('a/b','main',Date.parse('2026-01-15T00:00:00Z'),Date.parse('2026-02-10T23:59:59Z'))).length,1);assert.equal(calls.length,2);assert.equal(calls[0][1]+1000,calls[1][0]);
 });
+test('histórico completo de A é reutilizado sem doze novas consultas e sem payload volumoso',async t=>{
+ let calls=0;const start=Date.parse('2026-01-01T00:00:00Z'),end=Date.parse('2026-12-31T23:59:59Z');
+ const run={id:1,workflow_id:2,event:'push',head_branch:'main',conclusion:'success',created_at:'2026-01-01T00:00:00Z',run_started_at:'2026-01-01T00:00:01Z',updated_at:'2026-01-01T00:00:02Z',unneeded_payload:'large'.repeat(1000)};
+ const api=await client(t,async()=>{calls++;return new Response(JSON.stringify({total_count:1,workflow_runs:[run]}));});
+ await api.qualifyRuns('a/b','main',start,end);api.interval=async()=>{throw new Error('Consulta mensal redundante');};
+ const rows=await api.runs('a/b','main',start,end);assert.equal(calls,1);assert.equal(rows.length,1);assert.equal(rows[0].workflow_id,2);assert.equal(rows[0].unneeded_payload,undefined);
+});
 test('erros de acesso e paginação incompleta são explícitos',async t=>{
   const denied=await client(t,async()=>new Response('',{status:401}));await assert.rejects(()=>denied.get('/a'),/401/);await assert.rejects(()=>denied.get('https://evil.example'),/fora/);
   const incomplete=await client(t,async()=>new Response('{"total_count":2,"workflow_runs":[]}'));await assert.rejects(()=>incomplete.interval('a/b','main',0,1000),/incompleta/);
@@ -151,5 +158,14 @@ test('escrita atômica concorrente em disco não colide nem corrompe arquivos', 
   for (let i = 0; i < 20; i++) {
     assert.equal(results[i].data.url, `https://api.github.com/page-${i}`);
   }
+});
+
+test('IDs duplicados não viram coleta completa; cache separado permite recuperar sem apagar a evidência antiga',async t=>{
+ const old=await client(t,async()=>new Response(JSON.stringify({total_count:2,workflow_runs:[{id:1},{id:1}]})));
+ await assert.rejects(()=>old.interval('a/b','main',0,1000),/incompleta/);
+ const [name]=await fs.readdir(old.cacheDir),before=await fs.readFile(path.join(old.cacheDir,name),'utf8');
+ const fresh=await client(t,async()=>new Response(JSON.stringify({total_count:2,workflow_runs:[{id:1},{id:2}]})));
+ assert.deepEqual((await fresh.interval('a/b','main',0,1000)).map(r=>r.id),[1,2]);
+ assert.equal(await fs.readFile(path.join(old.cacheDir,name),'utf8'),before);
 });
 
