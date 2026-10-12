@@ -6,7 +6,7 @@ import os from 'node:os';
 import path from 'node:path';
 const temporary = fs.mkdtempSync(path.join(os.tmpdir(),'dora-integrated-'));
 process.env.DORA_DATA_DIR=temporary;
-const {create,execute,summary,exportJob,load} = await import('../lib/pipeline.mjs');
+const {create,execute,summary,exportJob,load,save,flush} = await import('../lib/pipeline.mjs');
 const {parseCSV} = await import('../lib/csv.mjs');
 after(()=>fs.rmSync(temporary,{recursive:true,force:true}));
 const input={mode:'integrated',source:'csv',start:'2026-01-01',end:'2026-01-31',candidateLimit:10,sampleSize:1,csv:'full_name,default_branch\na/good,trunk\na/other,trunk\na/noactions,trunk\na/fewreleases,trunk\na/fewruns,trunk'};
@@ -77,4 +77,18 @@ test('B isolada continua erros sem repetir repositórios concluídos',async()=>{
   await execute(job,{github:fake({failCompare:true})});assert.equal(job.status,'partial');assert.equal(job.results.length,0);
   await execute(load(job.id),{github:fake()});const restored=load(job.id);assert.equal(restored.status,'completed');
   const api=fake();await execute(restored,{github:api});assert.equal(api.calls.length,0);
+});
+test('save aplica throttle em escritas intermediárias e flush garante persistência imediata', async () => {
+  const job = create({ ...input, mode: 'selection' });
+  const file = path.join(temporary, 'jobs', job.id, 'job.json');
+  for (let i = 0; i < 50; i++) {
+    job.progress = i;
+    save(job, { immediate: false });
+  }
+  const loaded = load(job.id);
+  assert.equal(loaded.progress, 49);
+  assert.equal(JSON.parse(fs.readFileSync(file, 'utf8')).progress, 49);
+  job.progress = 100;
+  save(job, { immediate: true });
+  assert.equal(JSON.parse(fs.readFileSync(file, 'utf8')).progress, 100);
 });
