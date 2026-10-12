@@ -1,5 +1,7 @@
 # DORA — Sprint 2 / Validação Manual (Amostra-Ouro, Concordância e Consenso)
 
+> **Base final de 2025:** siga o [guia de pastas da equipe](ESTRUTURA-DADOS-S02.md) e use `--data-dir data/gold-standard-final-300-2025` nos scripts de concordância e consenso. As tabelas e resultados abaixo descrevem a amostra antiga de `data/gold-standard/`; não são resultados da nova amostra final. Os rótulos de Isabella na base final foram revisados com uso de IA explícito; as demais avaliações e a validação continuam pendentes.
+
 > **Responsável:** Luís Henrique (`BGLuis`)  
 > **Issue vinculada:** [#4 — Rotular a Amostra-Ouro de Forma Independente + Cálculo de Concordância e Consolidação do Consenso](https://github.com/alencarleandro/DORA/issues/4)  
 > **Artefatos gerados:** `data/gold-standard/` (`rotulos-luis.csv`, `consensus.csv`, `agreement_report.md`, `agreement_report.json`)

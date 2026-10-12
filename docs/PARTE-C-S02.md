@@ -1,6 +1,6 @@
 # Leandro — Sprint 2 / Issue #5
 
-**Coleta final de 300 projetos:** A, B e C foram concluídos sobre a janela 2025-01-01 a 2025-12-31. Dataset local: data/dataset-s02-final/dataset.csv. Pacote para Isabella: data/entrega-isabella-s02.zip. A amostra final está em data/gold-standard-final-300-2025 e usa apenas releases com comparação disponível; os rótulos independentes e a validação F1 continuam pendentes. As medições piloto descritas abaixo são registros da etapa anterior.
+**Coleta final de 300 projetos:** A, B e C foram concluídos sobre a janela 2025-01-01 a 2025-12-31. Dataset: `data/dataset-s02-final/dataset.csv`; exports B/C: `data/dataset-s02-final/metricas/`. A entrega segue o [guia de pastas da equipe](ESTRUTURA-DADOS-S02.md), sem ZIP. A amostra final está em `data/gold-standard-final-300-2025/` e usa apenas releases com comparação disponível. Isabella revisou seus rótulos assistidos; as demais avaliações, consenso e F1 continuam pendentes. Os novos relatórios de CFR (b) devem ficar em `data/dataset-s02-final/validacao/cfr-b/`. As medições piloto descritas abaixo são registros da etapa anterior.
 
 Entrega de código para [CFR (b), issue #5](https://github.com/alencarleandro/DORA/issues/5): heurística de release corretiva, cálculo por repositório, auditoria e avaliação contra o consenso. A validação científica continua pendente da correção das referências da amostra-ouro.
 

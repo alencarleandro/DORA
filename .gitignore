@@ -3,7 +3,7 @@ data/*
 !data/gold-standard/
 !data/dataset-s02-final/
 !data/gold-standard-final-300-2025/
-!data/entrega-isabella-s02.zip
+!data/README.md
 .env
 coverage/
 *.log

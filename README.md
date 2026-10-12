@@ -78,7 +78,7 @@ Trabalho acadêmico da faculdade PUC Minas para a disciplina de Laboratório de 
 
 > **Luís Henrique — coleta de releases e lead time:** execute `node scripts/collect-releases.mjs --csv examples/repositories.csv --start 2024-01-01 --end 2024-12-31`. Veja [Parte B](docs/PARTE-B.md).
 
-> **Luís Henrique — Sprint 2 / Amostra-Ouro, Concordância e Consenso:** execute `node scripts/calculate-agreement.mjs` e `node scripts/consolidate-consensus.mjs`. Veja [Amostra-Ouro](docs/PARTE-AMOSTRA-OURO.md).
+> **Luís Henrique — Sprint 2 / Amostra-Ouro, Concordância e Consenso:** use `--data-dir data/gold-standard-final-300-2025` nos scripts de concordância e consenso. Veja o [guia de pastas e responsabilidades](docs/ESTRUTURA-DADOS-S02.md). Os resultados antigos estão preservados em [Amostra-Ouro](docs/PARTE-AMOSTRA-OURO.md).
 
 > **Leandro - Coleta de WorkFlow:** interface web, coleta e testes disponíveis. Consulte [como executar e integrar](docs/PARTE-C.md) e o [dicionário de dados](docs/DATA-DICTIONARY.md). `npm start` abre o app; `npm test` executa os testes.
 
@@ -519,9 +519,11 @@ A agora prepara os dados completos dos selecionados para B e C. O token é usado
 <!-- entrega-isabella-s02 -->
 ### Entrega local da Sprint 2
 
-Coleta A e métricas B/C concluídas para 300 projetos, janela UTC 2025-01-01 a 2025-12-31. Baixe o [pacote completo para Isabella](data/entrega-isabella-s02.zip), consulte o [dataset consolidado](data/dataset-s02-final/dataset.csv) e as [planilhas da amostra-ouro](data/gold-standard-final-300-2025/). Esses arquivos estão versionados e podem ser usados sem token ou nova coleta. Siga o [roteiro de integração](docs/INTEGRACAO-ISABELLA-S02.md). A validação de CFR (b) ainda depende dos rótulos independentes e consenso da amostra real.
+Coleta A e métricas B/C concluídas para 300 projetos, janela UTC 2025-01-01 a 2025-12-31. A entrega está organizada em pastas versionadas: [dataset consolidado](data/dataset-s02-final/), [amostra-ouro](data/gold-standard-final-300-2025/) e [guia para os três integrantes](docs/ESTRUTURA-DADOS-S02.md). Na pasta do dataset, `selecao/` guarda a origem A, `metricas/` contém os exports B/C e `validacao/` reúne relatórios e testes. Não há ZIP de entrega. Siga o [roteiro de integração](docs/INTEGRACAO-ISABELLA-S02.md). A validação de CFR (b) ainda depende das avaliações do grupo e do consenso da amostra real.
 
-Para reproduzir a consolidação a partir dos arquivos brutos locais, execute `node scripts/consolidate-dataset.mjs 1deaa513-2c06-4949-bd54-2c591b0eef12`. Os caches e históricos volumosos em `data/jobs/` não fazem parte do repositório; o pacote contém os resultados, seleção, referências, templates e documentação necessários para Isabella continuar a entrega.
+Para reproduzir a consolidação dos exports versionados, execute `node scripts/assemble-isabella-dataset.mjs`. Para finalizar novamente A/B/C a partir dos dados brutos locais, execute `node scripts/finalize-isabella.mjs 1deaa513-2c06-4949-bd54-2c591b0eef12`. Os caches e históricos volumosos em `data/jobs/` não fazem parte do repositório; as pastas de entrega contêm os resultados, seleção, referências e documentação necessários para a equipe continuar.
+
+**Issue #6 — consolidação e rotulação assistida:** o [dicionário CSV](data/dataset-s02-final/dictionary.csv) cobre as 55 colunas e o [relatório de qualidade](data/dataset-s02-final/validacao/quality-report.json) registra a conferência. Os [300 rótulos oficiais de Isabella](data/gold-standard-final-300-2025/rotulos-isabella.csv) foram revisados e mantêm explícito o uso de IA. O [rascunho e a rastreabilidade](data/gold-standard-final-300-2025/revisao-isabella/) ficam separados do arquivo oficial. Veja [entrega e pendências da #6](docs/ISSUE-6-S02.md).
 
 # 🤝 Contribuidores
 
