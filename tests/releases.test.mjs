@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { getReleases, getTags, compareCommits, collectReleasesAndCommits } from '../lib/releases.mjs';
+import { getReleases, getTags, compareCommits, collectReleasesAndCommits, asyncPool } from '../lib/releases.mjs';
 
 test('getReleases filtra drafts e ordena cronologicamente', async () => {
   const api = {
@@ -126,4 +126,18 @@ test('collectReleasesAndCommits identifica 1ª release da história', async () =
   assert.equal(res.length, 1);
   assert.equal(res[0].has_previous_release, false);
   assert.equal(res[0].commits.length, 0);
+});
+
+test('asyncPool limita concorrência ao limite especificado e preserva ordem', async () => {
+  let active = 0, maxActive = 0;
+  const items = [1, 2, 3, 4, 5, 6];
+  const results = await asyncPool(2, items, async (item) => {
+    active++;
+    if (active > maxActive) maxActive = active;
+    await new Promise(r => setTimeout(r, 10));
+    active--;
+    return item * 2;
+  });
+  assert.equal(maxActive, 2);
+  assert.deepEqual(results, [2, 4, 6, 8, 10, 12]);
 });
