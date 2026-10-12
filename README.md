@@ -1,4 +1,76 @@
-# DORA
+<p align="center">
+  <picture><source media="(prefers-color-scheme: dark)" srcset="https://shieldcn.dev/header/graph.svg?title=DORA&subtitle=Mineracao+de+metricas+DORA+em+repositorios+open-source&align=left&font=geist-mono&mode=dark" /><img alt="DORA" src="https://shieldcn.dev/header/graph.svg?title=DORA&subtitle=Mineracao+de+metricas+DORA+em+repositorios+open-source&align=left&font=geist-mono&mode=light" /></picture>
+</p>
+
+<p align="center">
+  <picture><source media="(prefers-color-scheme: dark)" srcset="https://shieldcn.dev/github/stars/alencarleandro/DORA.svg?variant=secondary&size=sm&mode=dark" /><img alt="GitHub Stars" src="https://shieldcn.dev/github/stars/alencarleandro/DORA.svg?variant=secondary&size=sm&mode=light" /></picture>
+  <picture><source media="(prefers-color-scheme: dark)" srcset="https://shieldcn.dev/github/forks/alencarleandro/DORA.svg?variant=secondary&size=sm&mode=dark" /><img alt="GitHub Forks" src="https://shieldcn.dev/github/forks/alencarleandro/DORA.svg?variant=secondary&size=sm&mode=light" /></picture>
+  <picture><source media="(prefers-color-scheme: dark)" srcset="https://shieldcn.dev/github/watchers/alencarleandro/DORA.svg?variant=secondary&size=sm&mode=dark" /><img alt="Watchers" src="https://shieldcn.dev/github/watchers/alencarleandro/DORA.svg?variant=secondary&size=sm&mode=light" /></picture>
+  <picture><source media="(prefers-color-scheme: dark)" srcset="https://shieldcn.dev/github/contributors/alencarleandro/DORA.svg?theme=emerald&size=sm&mode=dark" /><img alt="Contributors" src="https://shieldcn.dev/github/contributors/alencarleandro/DORA.svg?theme=emerald&size=sm&mode=light" /></picture>
+  <picture><source media="(prefers-color-scheme: dark)" srcset="https://shieldcn.dev/github/license/alencarleandro/DORA.svg?variant=ghost&size=sm&mode=dark" /><img alt="License" src="https://shieldcn.dev/github/license/alencarleandro/DORA.svg?variant=ghost&size=sm&mode=light" /></picture>
+</p>
+
+<p align="center">
+  <img alt="Node.js" src="https://shieldcn.dev/badge/Runtime-Node.js-5FA04E.svg?logo=nodedotjs&variant=branded&size=sm" />
+  <img alt="JavaScript" src="https://shieldcn.dev/badge/Language-JavaScript-F7DF1E.svg?logo=javascript&variant=branded&size=sm" />
+  <img alt="Python" src="https://shieldcn.dev/badge/Language-Python-3776AB.svg?logo=python&variant=branded&size=sm" />
+  <img alt="GitHub Actions" src="https://shieldcn.dev/badge/Tool-GitHub_Actions-2088FF.svg?logo=githubactions&variant=branded&size=sm" />
+</p>
+
+# 📖 Sobre
+
+O **DORA** é um laboratório acadêmico e pipeline integrado para mineração, cálculo e análise estatística das métricas **DORA** (*DevOps Research and Assessment*) — *Deployment Frequency*, *Lead Time for Changes*, *Change Failure Rate* e *Failed Deployment Recovery Time* — a partir de dados públicos de repositórios open-source reais que utilizam CI/CD com GitHub Actions.
+
+O projeto inclui:
+- **Interface web interativa** (`server.mjs`) para execução integrada das etapas de Seleção, Coleta de Releases e Workflows.
+- **Interface de linha de comando** (`cli.mjs`) e scripts modulares com cache local e gerenciamento automático de *rate limit*.
+- **Suite de testes automatizados** para os algoritmos de cálculo de métricas e verificação de cobertura de código.
+- **Módulo de validação manual (Amostra-Ouro)** com protocolo de rotulação independente, cálculo de concordância interobservador (Kappa de Fleiss) e consolidação de consenso.
+
+# 📋 Motivo
+
+Trabalho acadêmico da faculdade PUC Minas para a disciplina de Laboratório de Experimentação de Software (6º período, Engenharia de Software, prof. Danilo Maia).
+
+# 💻 Como iniciar
+
+### Requisitos
+
+- [Node.js](https://nodejs.org/) >= 22
+- [Python](https://www.python.org/) 3.10+
+
+### Instalação
+
+1. Clone o repositório:
+
+   ```sh
+   git clone https://github.com/alencarleandro/DORA.git
+   ```
+
+2. Entre no diretório do projeto:
+
+   ```sh
+   cd DORA
+   ```
+
+3. Inicie o servidor da aplicação web:
+
+   ```sh
+   npm start
+   ```
+
+4. Execute a suite de testes automatizados:
+
+   ```sh
+   npm test
+   ```
+
+5. Opcionalmente, execute o pipeline via CLI ou scripts específicos:
+
+   ```sh
+   npm run pipeline
+   ```
+
+## 🚀 Módulos e Fluxo de Execução
 
 > **Isabella — seleção e metadados:** execute `node scripts/select-repos.mjs --config config.json --mode metadata`. Veja [Parte A](docs/PARTE-A.md).
 
@@ -11,6 +83,8 @@
 **App web:** [DORA — Laboratório integrado](https://arsenal.dev.br/dora/). Laboratório acadêmico público, sem login ou chave de acesso.
 
 **Fluxo A → B → C:** execute uma parte por vez nas abas **A · Seleção**, **B · Releases** e **C · Workflows**. A exporta a amostra; os botões **Usar amostra em B/C** preservam seus repositórios e datas. Cada parte tem resultados, CSVs e retomada próprios. Veja [como executar](docs/INTEGRACAO.md).
+
+---
 
 ## Informações sobre a avaliação
 
@@ -434,3 +508,13 @@ Sim, desde que o pipeline continue executável por outro grupo com um único com
 - Wohlin, C. et al. *Experimentation in Software Engineering*. Springer, 2012 (capítulo sobre ameaças à validade).
 - Romano, J. et al. *Appropriate statistics for ordinal level data*. 2006 (interpretação do Cliff's delta).
 - Landis, J. R.; Koch, G. G. *The measurement of observer agreement for categorical data*. Biometrics, 1977.
+
+# 🤝 Contribuidores
+
+<a href="https://github.com/alencarleandro/DORA/graphs/contributors">
+  <picture><source media="(prefers-color-scheme: dark)" srcset="https://shieldcn.dev/contributors/alencarleandro/DORA.svg?title=false&preset=transparent&border=false&mode=dark" /><img alt="Contribuidores" src="https://shieldcn.dev/contributors/alencarleandro/DORA.svg?title=false&preset=transparent&border=false&mode=light" /></picture>
+</a>
+
+# 📄 Licença
+
+Distribuído sob a licença [MIT](LICENSE).
