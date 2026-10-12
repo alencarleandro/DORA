@@ -445,4 +445,6 @@ A agora prepara os dados completos dos selecionados para B e C. O token é usado
 <!-- entrega-isabella-s02 -->
 ### Entrega local da Sprint 2
 
-Coleta A e métricas B/C concluídas para 300 projetos, janela UTC 2025-01-01 a 2025-12-31. Dataset: `data/dataset-s02-final/dataset.csv`. Pacote: `data/entrega-isabella-s02.zip`. Execute `node scripts/consolidate-dataset.mjs 1deaa513-2c06-4949-bd54-2c591b0eef12` para reproduzir a consolidação sem token. A validação de CFR (b) ainda depende dos rótulos independentes e consenso da amostra real.
+Coleta A e métricas B/C concluídas para 300 projetos, janela UTC 2025-01-01 a 2025-12-31. Baixe o [pacote completo para Isabella](data/entrega-isabella-s02.zip), consulte o [dataset consolidado](data/dataset-s02-final/dataset.csv) e as [planilhas da amostra-ouro](data/gold-standard-final-300-2025/). Esses arquivos estão versionados e podem ser usados sem token ou nova coleta. Siga o [roteiro de integração](docs/INTEGRACAO-ISABELLA-S02.md). A validação de CFR (b) ainda depende dos rótulos independentes e consenso da amostra real.
+
+Para reproduzir a consolidação a partir dos arquivos brutos locais, execute `node scripts/consolidate-dataset.mjs 1deaa513-2c06-4949-bd54-2c591b0eef12`. Os caches e históricos volumosos em `data/jobs/` não fazem parte do repositório; o pacote contém os resultados, seleção, referências, templates e documentação necessários para Isabella continuar a entrega.

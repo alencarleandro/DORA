@@ -1,0 +1,12 @@
+{
+  "rows": 300,
+  "window_start": "2025-01-01",
+  "window_end": "2025-12-31",
+  "source_job_id": "1deaa513-2c06-4949-bd54-2c591b0eef12",
+  "b_job_id": "23e61b32-c4ef-4864-b0ac-7bcadd6de91b",
+  "c_job_id": "6d27f028-cd1f-4565-a15a-7d95781cdc0f",
+  "cfr_b_validation": "pending_independent_labels",
+  "unavailable_comparisons": 2,
+  "missing_values": "blank, never substituted with zero",
+  "generated_at": "2026-10-11T17:16:10.357Z"
+}

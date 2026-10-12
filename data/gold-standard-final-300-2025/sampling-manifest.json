@@ -1,0 +1,11 @@
+{
+  "source_job_id": "1deaa513-2c06-4949-bd54-2c591b0eef12",
+  "window_start": "2025-01-01",
+  "window_end": "2025-12-31",
+  "seed": 42,
+  "repositories": 60,
+  "releases_per_repository": 5,
+  "eligible_candidates": 299,
+  "require_comparisons": true,
+  "source": "real_releases"
+}
