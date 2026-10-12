@@ -3,3 +3,9 @@
 select{font:inherit;width:100%;margin:8px 0 18px;border:1px solid #304148;background:#0d161c;color:#dce7e7;padding:12px;border-radius:6px;color-scheme:dark}#integration-options>label{margin-top:16px}.definitions{grid-template-columns:repeat(auto-fit,minmax(210px,1fr))}.results-title{flex-wrap:wrap;gap:16px}.downloads{max-width:760px}.stats{grid-template-columns:repeat(auto-fit,minmax(170px,1fr))}
 
 .selection-stages{font-size:10px;margin-bottom:20px}.selection-stages>div{display:flex;justify-content:space-between;gap:10px;border-bottom:1px solid var(--line);padding:9px 0}.selection-stages span{color:var(--muted);text-align:right}
+
+table[data-parts="a"] [data-col]:not([data-col*="a"]),
+table[data-parts="b"] [data-col]:not([data-col*="b"]),
+table[data-parts="c"] [data-col]:not([data-col*="c"]) {
+  display: none;
+}
