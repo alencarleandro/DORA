@@ -1,0 +1,1622 @@
+{
+  "apple/container": [
+    "cli",
+    "sim",
+    "Ferramenta de terminal para criar e executar containers no macOS, distribuída por instalador.",
+    [
+      [
+        "não",
+        "Amplia redes, sockets e comandos. As notas apresentam evolução funcional ampla."
+      ],
+      [
+        "não",
+        "Release mensal com virtualização aninhada, publicação de portas e novas opções de build."
+      ],
+      [
+        "não",
+        "Introduz volumes e opções de rede, além de corrigir problemas existentes."
+      ],
+      [
+        "não",
+        "Acrescenta stats, system df, Rosetta e novas formas de entrada e saída."
+      ],
+      [
+        "não",
+        "Muda APIs e configurações, acrescenta labels e exportação de múltiplas imagens."
+      ]
+    ]
+  ],
+  "langflow-ai/langflow": [
+    "app",
+    "sim",
+    "Plataforma visual e servidor para construir e executar fluxos de IA, instalável pelo usuário.",
+    [
+      [
+        "não",
+        "As notas destacam novos componentes, datasets e integrações."
+      ],
+      [
+        "sim",
+        "Corrige carregamento tardio de settings e ordem de inicialização do ambiente."
+      ],
+      [
+        "não",
+        "A comparação mostra a inclusão do template NVIDIA Remix, além do versionamento."
+      ],
+      [
+        "não",
+        "Acrescenta componentes, modelos, ferramentas e novos templates."
+      ],
+      [
+        "sim",
+        "A comparação corrige incompatibilidade de numpy com Windows e Python 3.13."
+      ]
+    ]
+  ],
+  "tw93/Pake": [
+    "cli",
+    "sim",
+    "CLI que empacota páginas web em aplicativos desktop e distribui pacotes instaláveis.",
+    [
+      [
+        "não",
+        "Acrescenta múltiplas instâncias, ocultação na bandeja e novas opções de inicialização."
+      ],
+      [
+        "sim",
+        "As mudanças próprias desta versão corrigem proxy no Windows e empacotamento Linux. O texto de 3.4.0 é histórico."
+      ],
+      [
+        "não",
+        "Adiciona produtos empacotados, notificações e opções de formato e versão."
+      ],
+      [
+        "não",
+        "Combina otimizações de desempenho e empacotamento com correção de mídia. Propósito misto, revisar."
+      ],
+      [
+        "não",
+        "Acrescenta drag-and-drop, menu contextual e integração via Actions."
+      ]
+    ]
+  ],
+  "agno-agi/agno": [
+    "lib",
+    "sim",
+    "Framework Python para agentes e fluxos, consumido como SDK instalável.",
+    [
+      [
+        "não",
+        "Adiciona toolkits Brightdata, OpenCV e Discord, além de correções."
+      ],
+      [
+        "não",
+        "Acrescenta provedores, chunking e execução em segundo plano."
+      ],
+      [
+        "sim",
+        "Corrige respostas duplicadas com retries, migração de memórias e datas de sessões."
+      ],
+      [
+        "não",
+        "Disponibiliza novo sistema de memória e ferramentas OpenAI e Zep."
+      ],
+      [
+        "não",
+        "Adiciona toolkit Google Maps e leitor de URLs junto a correções de ferramentas."
+      ]
+    ]
+  ],
+  "prisma/orm": [
+    "lib",
+    "sim",
+    "ORM e ferramentas de desenvolvimento distribuídos como pacotes e cliente de acesso a dados.",
+    [
+      [
+        "sim",
+        "Corrige combinações inválidas de adapters e regressão de timers em runtimes não Node."
+      ],
+      [
+        "sim",
+        "As notas explicitam regressão de diff de tipos Unsupported introduzida em 6.17.0."
+      ],
+      [
+        "não",
+        "Apresenta nova experiência de edição e navegação do Prisma Studio."
+      ],
+      [
+        "sim",
+        "Corrige pesquisa NPS e respeito à opção --no-hints."
+      ],
+      [
+        "não",
+        "Introduz proteções em comandos e melhorias no runtime do cliente."
+      ]
+    ]
+  ],
+  "ccxt/ccxt": [
+    "lib",
+    "sim",
+    "Biblioteca de integração com exchanges distribuída em diversas linguagens.",
+    [
+      [
+        "não",
+        "Amplia APIs e métodos de exchanges, além de correções."
+      ],
+      [
+        "não",
+        "Notas cumulativas incluem novas APIs, suporte Go e manutenção. Revisar o intervalo próprio da versão."
+      ],
+      [
+        "não",
+        "Inclui novos métodos e APIs de múltiplas exchanges junto a correções."
+      ],
+      [
+        "não",
+        "Notas cumulativas incluem novos argumentos e portabilidade. Revisar o intervalo próprio da versão."
+      ],
+      [
+        "não",
+        "Notas cumulativas misturam funcionalidades e manutenção. Revisar o intervalo próprio da versão."
+      ]
+    ]
+  ],
+  "curl/curl": [
+    "cli",
+    "sim",
+    "O README apresenta curl como ferramenta de linha de comando. O projeto também distribui libcurl.",
+    [
+      [
+        "não",
+        "Changelog 8.17.0 acrescenta API de notificações, knownhosts e novas opções de saída."
+      ],
+      [
+        "não",
+        "Changelog 8.16.0 acrescenta follow, out-null, limite por host e APIs multi."
+      ],
+      [
+        "não",
+        "Changelog 8.15.0 combina retirada de backends TLS com manutenção extensa. Propósito misto, revisar."
+      ],
+      [
+        "não",
+        "Changelog 8.13.0 acrescenta opções de upload, leitura de URLs de arquivo e early data TLS."
+      ],
+      [
+        "não",
+        "Changelog 8.14.0 acrescenta configuração de assinaturas TLS e controle de websocket."
+      ]
+    ]
+  ],
+  "AlistGo/alist": [
+    "app",
+    "sim",
+    "Aplicação web de listagem de arquivos e integração de storages, executável como servidor.",
+    [
+      [
+        "não",
+        "Amplia gerenciamento de caminhos e papéis de usuários."
+      ],
+      [
+        "não",
+        "Introduz cadastro de usuário e configuração de papéis junto a correções."
+      ],
+      [
+        "não",
+        "Acrescenta suporte de arquivos multipartes e novos drivers."
+      ],
+      [
+        "não",
+        "Implementa gerenciamento de sessões e limites de dispositivos."
+      ],
+      [
+        "não",
+        "Acrescenta drivers, gerenciamento de arquivos e novas opções de storage."
+      ]
+    ]
+  ],
+  "calcom/cal.diy": [
+    "app",
+    "sim",
+    "Aplicação de agendamento auto-hospedável. Disponibilidade da versão não comprova deploy do serviço hospedado.",
+    [
+      [
+        "não",
+        "Combina APIs e mudanças de fluxo de agendamento com várias correções. Propósito misto, revisar."
+      ],
+      [
+        "não",
+        "Inclui backend de blocklist e identificação de mudanças de horário, além de correções."
+      ],
+      [
+        "sim",
+        "Mudanças se concentram em erros de Zoom, reschedule, embed e distribuição de pacotes."
+      ],
+      [
+        "sim",
+        "Corrige erros de agendamento round-robin, credenciais, iCal e cancelamento de assentos."
+      ],
+      [
+        "não",
+        "Amplia relatórios, permissões e onboarding junto a correções."
+      ]
+    ]
+  ],
+  "typeorm/typeorm": [
+    "lib",
+    "sim",
+    "ORM JavaScript e TypeScript consumido por aplicações como biblioteca.",
+    [
+      [
+        "sim",
+        "Predominam correções de consultas, aliases, relações e comparação de datas. Também há novas funcionalidades, revisar."
+      ],
+      [
+        "não",
+        "Combina suporte a novos tipos e pools com correções e mudança de segurança."
+      ],
+      [
+        "sim",
+        "Corrige transações, hidratação, SQL e drivers, com algumas adições menores. Revisar propósito misto."
+      ],
+      [
+        "não",
+        "Notas extensas de manutenção, dependências e documentação, sem objetivo corretivo recente explícito."
+      ],
+      [
+        "não",
+        "Adiciona tipos vector, jsonpath e opções de conexão, junto a manutenção."
+      ]
+    ]
+  ],
+  "mrdoob/three.js": [
+    "lib",
+    "sim",
+    "Biblioteca JavaScript de renderização 3D distribuída para integração em aplicações.",
+    [
+      [
+        "não",
+        "Introduz capacidades de materiais e TSL junto a correções."
+      ],
+      [
+        "não",
+        "Introduz Float16Array, funções de TSL e novos efeitos."
+      ],
+      [
+        "não",
+        "Amplia renderização, amostragem e capacidades de materiais junto a correções."
+      ],
+      [
+        "não",
+        "Acrescenta raymarching, opções de renderização e suporte de stencil."
+      ],
+      [
+        "não",
+        "Acrescenta opções de renderer e altera implementações, junto a correções."
+      ]
+    ]
+  ],
+  "vitejs/vite": [
+    "cli",
+    "sim",
+    "Ferramenta de build e servidor de desenvolvimento utilizada por comandos e pacotes npm.",
+    [
+      [
+        "sim",
+        "Notas e changelog corrigem DNS rebinding, CORS e autenticação de WebSocket."
+      ],
+      [
+        "sim",
+        "Changelog próprio corrige validação de arquivos servidos por sirv."
+      ],
+      [
+        "sim",
+        "Changelog corrige template Redwood e reverte alteração de cópia de arquivos."
+      ],
+      [
+        "sim",
+        "Changelog próprio corrige aplicação de fs.strict a arquivos HTML."
+      ],
+      [
+        "sim",
+        "A comparação 7.2.5...7.2.6 mostra reversão da restrição de gerenciador via devEngines."
+      ]
+    ]
+  ],
+  "crewAIInc/crewAI": [
+    "lib",
+    "sim",
+    "Framework Python de agentes e workflows consumido como pacote.",
+    [
+      [
+        "não",
+        "Adiciona hooks de LLM, mensagens de saída e opções de ferramentas."
+      ],
+      [
+        "não",
+        "Inclui suporte MCP e novos toolkits junto a correções."
+      ],
+      [
+        "sim",
+        "As notas apontam resolução de problemas de conexão."
+      ],
+      [
+        "não",
+        "Acrescenta eventos, rastreamento e capacidades de treinamento."
+      ],
+      [
+        "não",
+        "Amplia execução de agentes, modelos e integrações de memória."
+      ]
+    ]
+  ],
+  "TanStack/query": [
+    "lib",
+    "sim",
+    "Biblioteca de estado assíncrono distribuída em pacotes por framework.",
+    [
+      [
+        "não",
+        "Acrescenta opção de tema ao devtools."
+      ],
+      [
+        "sim",
+        "A dependência query-core 5.90.11 corrige loop infinito com queryKeys duplicadas."
+      ],
+      [
+        "sim",
+        "A dependência query-core 5.90.3 corrige rejeições de promises na hidratação."
+      ],
+      [
+        "não",
+        "Publicação derivada da atualização de React e Next.js. Não evidencia correção própria deste pacote, revisar."
+      ],
+      [
+        "não",
+        "Publicação derivada de atualizações de dependências. Não evidencia correção própria do pacote Svelte, revisar."
+      ]
+    ]
+  ],
+  "HKUDS/LightRAG": [
+    "lib",
+    "sim",
+    "Framework de recuperação aumentada por geração, com pacote Python e servidor auxiliar.",
+    [
+      [
+        "não",
+        "Adiciona integrações MinerU, observabilidade e suporte a citações."
+      ],
+      [
+        "sim",
+        "Corrige ImportError removendo bloco redundante de tratamento de exceções."
+      ],
+      [
+        "sim",
+        "Corrige instalação, inicialização do servidor, indexação e inserção de grafo."
+      ],
+      [
+        "não",
+        "Acrescenta isolamento de workspaces e ferramentas de migração, além de correções."
+      ],
+      [
+        "não",
+        "Introduz referências estruturadas e formato de saída de consultas."
+      ]
+    ]
+  ],
+  "run-llama/llama_index": [
+    "lib",
+    "sim",
+    "Framework Python de indexação e integração de dados para aplicações de IA.",
+    [
+      [
+        "não",
+        "Combina novos modelos e integrações com correções em core e provedores."
+      ],
+      [
+        "sim",
+        "No core, as notas se concentram em parser, mensagens, exceções e warnings. Outras integrações têm adições, revisar."
+      ],
+      [
+        "não",
+        "Adiciona mock function-calling LLM e integração Airweave."
+      ],
+      [
+        "não",
+        "Changelog na tag introduz AgentWorkflow e novas integrações."
+      ],
+      [
+        "não",
+        "Adiciona eventos de raciocínio, caching e backend de chat, além de correções."
+      ]
+    ]
+  ],
+  "oven-sh/bun": [
+    "outro",
+    "sim",
+    "Runtime e toolkit JavaScript distribuído como executável. Classificação de runtime deve ser revisada pela equipe.",
+    [
+      [
+        "sim",
+        "Blog destaca regressões de Hono e bun init introduzidas em 1.2.3, além de correções de streams e buffers."
+      ],
+      [
+        "não",
+        "Blog apresenta heap snapshots e APIs de compatibilidade, junto a correções."
+      ],
+      [
+        "não",
+        "Blog introduz URLPattern, fake timers e opções de proxy."
+      ],
+      [
+        "não",
+        "Blog acrescenta APIs de teste, hoisting e compatibilidade, além de correções."
+      ],
+      [
+        "não",
+        "Release principal introduz novas capacidades do runtime e compatibilidade."
+      ]
+    ]
+  ],
+  "gradio-app/gradio": [
+    "lib",
+    "sim",
+    "Biblioteca Python e componentes web para construir interfaces de modelos e funções.",
+    [
+      [
+        "não",
+        "Acrescenta botões customizados a componentes."
+      ],
+      [
+        "não",
+        "Notas do pacote file informam apenas dependências. Comparação do monorepo inclui funcionalidades e correções de outros pacotes, revisar."
+      ],
+      [
+        "não",
+        "A única alteração indicada corrige título de documentação, sem defeito funcional do componente."
+      ],
+      [
+        "sim",
+        "Corrige flicker do agrupamento de DataFrame."
+      ],
+      [
+        "não",
+        "Melhora experiência de fullscreen e atualiza dependências."
+      ]
+    ]
+  ],
+  "directus/directus": [
+    "app",
+    "sim",
+    "Backend e interface administrativa auto-hospedáveis para bancos SQL.",
+    [
+      [
+        "sim",
+        "Corrige edição inalterada de campo O2M e validação de seleção em flows."
+      ],
+      [
+        "sim",
+        "Corrige carregamento tardio de itens na visualização tabular."
+      ],
+      [
+        "sim",
+        "Corrige flows manuais com chave primária inteira."
+      ],
+      [
+        "não",
+        "Combina mudanças de compatibilidade, Visual Editor e novas capacidades."
+      ],
+      [
+        "não",
+        "Amplia logs de flows, filtros e eventos de extensões."
+      ]
+    ]
+  ],
+  "medusajs/medusa": [
+    "lib",
+    "sim",
+    "Framework e módulos de comércio digital usados para construir aplicações.",
+    [
+      [
+        "não",
+        "O destaque é redução e reorganização de dependências, com correções adicionais. Propósito misto, revisar."
+      ],
+      [
+        "sim",
+        "Notas explicitam regressão ao atualizar peso e dimensões de produtos."
+      ],
+      [
+        "não",
+        "Amplia indexação e filtros entre módulos."
+      ],
+      [
+        "não",
+        "Introduz alterações na conclusão de carrinho. O aviso de regressão descreve um problema causado, não objetivo de correção."
+      ],
+      [
+        "não",
+        "Amplia operadores de Index e tratamento de promoções, junto a correções."
+      ]
+    ]
+  ],
+  "php/php-src": [
+    "outro",
+    "sim",
+    "Interpretador e runtime de linguagem, distribuído para instalação. Revisar categoria de runtimes.",
+    [
+      [
+        "sim",
+        "A equipe identifica explicitamente esta versão como bug fix release."
+      ],
+      [
+        "sim",
+        "A equipe identifica explicitamente esta versão como bug fix release."
+      ],
+      [
+        "não",
+        "Introduz extensão URI, pipe operator e novas funcionalidades de linguagem."
+      ],
+      [
+        "sim",
+        "A equipe identifica explicitamente esta versão como bug fix release."
+      ],
+      [
+        "sim",
+        "A equipe identifica explicitamente esta versão como bug fix release."
+      ]
+    ]
+  ],
+  "rails/rails": [
+    "lib",
+    "sim",
+    "Framework web distribuído como gems para construir aplicações.",
+    [
+      [
+        "sim",
+        "Corrige efeito colateral de otimização que impedia actions com underscore."
+      ],
+      [
+        "sim",
+        "Corrige configuração de conexões, prepared statements e condições de corrida."
+      ],
+      [
+        "sim",
+        "Notas se concentram em correções de coleções, testes paralelos e ActiveRecord."
+      ],
+      [
+        "sim",
+        "Release remete às notas 7.0.9, consultadas como complemento. Revisar reaproveitamento das notas."
+      ],
+      [
+        "sim",
+        "Corrige perda de dados SQLite, testes paralelos e erros de class_attribute."
+      ]
+    ]
+  ],
+  "huggingface/pytorch-image-models": [
+    "lib",
+    "sim",
+    "Biblioteca timm de modelos de visão para PyTorch, consumida como pacote.",
+    [
+      [
+        "não",
+        "Acrescenta DINOv3, MobileCLIP2 e novos pesos de encoders."
+      ],
+      [
+        "sim",
+        "As notas dizem que 1.0.14 foi publicada para distribuir a correção de LeViT."
+      ],
+      [
+        "sim",
+        "Objetivo declarado é corrigir quebra de compatibilidade Python 3.9 em 1.0.18. Notas históricas são secundárias."
+      ],
+      [
+        "não",
+        "Acrescenta MobileNetV5, NaFlexViT e novos pesos."
+      ],
+      [
+        "não",
+        "Amplia modelos PE e resizing de encoders, junto a correções."
+      ]
+    ]
+  ],
+  "sgl-project/sglang": [
+    "lib",
+    "sim",
+    "Framework de inferência com pacotes e gateway. Tipo refere-se ao repositório, não ao subproduto da tag.",
+    [
+      [
+        "não",
+        "Introduz middleware WASM, observabilidade e otimizações do gateway."
+      ],
+      [
+        "não",
+        "Amplia retry configurável, abstrações de workers e API do router."
+      ],
+      [
+        "não",
+        "Adiciona estratégias de roteamento e migra a implementação do gateway."
+      ],
+      [
+        "não",
+        "Amplia modelos, geração multimodal e backends de inferência."
+      ],
+      [
+        "não",
+        "Introduz suporte à Responses API e novas capacidades do gateway."
+      ]
+    ]
+  ],
+  "moby/moby": [
+    "lib",
+    "incerto",
+    "Framework e componentes de containers. Tags misturam engine e biblioteca cliente, sem equivalência uniforme de entrega final.",
+    [
+      [
+        "sim",
+        "Backport de correções de volumes, cgroups, rootless e regras de rede."
+      ],
+      [
+        "sim",
+        "Corrige regressões de rede introduzidas em 28.0.0 e reinício de containers."
+      ],
+      [
+        "não",
+        "Acrescenta comandos e opções de API junto a correções."
+      ],
+      [
+        "sim",
+        "Notas se concentram em resolv.conf, publicação de portas e reconexão de redes."
+      ],
+      [
+        "não",
+        "Acrescenta e muda negociação de API do cliente e depreca opções antigas."
+      ]
+    ]
+  ],
+  "vlang/v": [
+    "cli",
+    "sim",
+    "Compilador de linguagem utilizado por terminal e distribuído em builds semanais.",
+    [
+      [
+        "não",
+        "Comparação semanal combina adições de terminal, exemplos e correções de compilação. Não é hotfix declarado."
+      ],
+      [
+        "não",
+        "Comparação semanal inclui novas ferramentas e APIs, além de correções."
+      ],
+      [
+        "não",
+        "Comparação semanal inclui suporte de pipe, índices e diagnósticos junto a correções."
+      ],
+      [
+        "não",
+        "Comparação semanal adiciona tipos nativos e utilitários, junto a correções."
+      ],
+      [
+        "não",
+        "Comparação semanal inclui APIs, exemplos e alterações do compilador. Propósito misto, revisar."
+      ]
+    ]
+  ],
+  "google-gemini/gemini-cli": [
+    "cli",
+    "sim",
+    "Agente de desenvolvimento executado pelo terminal e distribuído como CLI.",
+    [
+      [
+        "sim",
+        "Notas mostram cherry-picks de correções para a linha preview. Revisar escopo de pré-versões."
+      ],
+      [
+        "sim",
+        "Cherry-pick explicitamente destinado a corrigir a versão 0.22.3."
+      ],
+      [
+        "não",
+        "Mistura novas capacidades e ajustes de interface com correções."
+      ],
+      [
+        "sim",
+        "Corrige bug da imagem de sandbox introduzido em 0.1.6."
+      ],
+      [
+        "não",
+        "A comparação mostra apenas atualização do versionamento nightly, sem correção funcional."
+      ]
+    ]
+  ],
+  "shadcn-ui/ui": [
+    "lib",
+    "sim",
+    "Sistema de componentes de interface, distribuído com CLI de instalação. Categoria segue finalidade dos componentes.",
+    [
+      [
+        "não",
+        "Acrescenta registro local e suporte a frameworks."
+      ],
+      [
+        "não",
+        "Acrescenta migrate-radix. Correções de testes não definem uma release corretiva ao usuário."
+      ],
+      [
+        "sim",
+        "O diff restringe o pedido de flags npm ao conflito React 19 com react-day-picker 8, evitando flags indevidas em outras instalações. Revisar interpretação."
+      ],
+      [
+        "não",
+        "Acrescenta índice de registries."
+      ],
+      [
+        "não",
+        "Amplia resolução de imports e suporte a ambientes."
+      ]
+    ]
+  ],
+  "github/spec-kit": [
+    "cli",
+    "sim",
+    "Toolkit com Specify CLI e templates baixáveis usados em projetos de desenvolvimento.",
+    [
+      [
+        "não",
+        "Acrescenta suporte ao agente OVHcloud SHAI."
+      ],
+      [
+        "não",
+        "Entrega conjunto atualizado de templates para assistentes."
+      ],
+      [
+        "sim",
+        "Comparação corrige último argumento ignorado e verificações falsas de CLI para agentes de IDE."
+      ],
+      [
+        "não",
+        "Amplia agentes e variantes shell e PowerShell dos templates."
+      ],
+      [
+        "não",
+        "Comparação acrescenta devcontainer e padrões de linguagens, além de ajustes de comandos."
+      ]
+    ]
+  ],
+  "facebookresearch/faiss": [
+    "lib",
+    "sim",
+    "Biblioteca de busca vetorial em C++ com wrappers Python e distribuição de pacotes.",
+    [
+      [
+        "não",
+        "Adiciona quantização multibit, Panorama e integração de busca."
+      ],
+      [
+        "não",
+        "Adiciona algoritmos e integração Panorama junto a correções."
+      ],
+      [
+        "não",
+        "Introduz RaBitQ e novas opções de treinamento e índices."
+      ],
+      [
+        "não",
+        "Amplia Fast Scan, serialização e índices Panorama."
+      ],
+      [
+        "não",
+        "Acrescenta APIs, bfloat16 e novas capacidades de índices."
+      ]
+    ]
+  ],
+  "schollz/croc": [
+    "cli",
+    "sim",
+    "Ferramenta CLI de transferência de arquivos com binários instaláveis.",
+    [
+      [
+        "não",
+        "Acrescenta completions fish e suporte RISC-V."
+      ],
+      [
+        "não",
+        "Acrescenta opção ed25519 e ajusta documentação."
+      ],
+      [
+        "não",
+        "Acrescenta controles de clipboard e persistência de relay, além de correções."
+      ],
+      [
+        "sim",
+        "A comparação contém somente correções de CI, build e geração de checksums. Correção da distribuição, revisar equivalência a defeito ao usuário."
+      ],
+      [
+        "não",
+        "Amplia clipboard e healthcheck e corrige uso de relay. Propósito misto, revisar."
+      ]
+    ]
+  ],
+  "nodejs/node": [
+    "outro",
+    "sim",
+    "Runtime JavaScript distribuído como executáveis e instaladores. Revisar categoria de runtimes.",
+    [
+      [
+        "não",
+        "Habilita execução de TypeScript e acrescenta APIs."
+      ],
+      [
+        "não",
+        "Acrescenta APIs de crypto, process, sqlite e util."
+      ],
+      [
+        "sim",
+        "Release de segurança corrige bypass de proteção de caminhos no Windows."
+      ],
+      [
+        "não",
+        "Release principal com V8, npm e novas APIs."
+      ],
+      [
+        "não",
+        "Acrescenta APIs de módulos, glob, processos e TypeScript."
+      ]
+    ]
+  ],
+  "logseq/logseq": [
+    "app",
+    "sim",
+    "Aplicativo de gerenciamento de conhecimento distribuído para desktop e Android.",
+    [
+      [
+        "sim",
+        "Corrige regressões de imagens, temas, busca e PDF da versão 0.10.10."
+      ],
+      [
+        "sim",
+        "Corrige congelamentos, alto uso de CPU e crashes."
+      ],
+      [
+        "sim",
+        "Corrige embeds de YouTube que não funcionavam."
+      ],
+      [
+        "sim",
+        "Corrige vulnerabilidade de execução remota e tratamento de links."
+      ],
+      [
+        "sim",
+        "Corrige embeds de YouTube, com atualização secundária do Electron."
+      ]
+    ]
+  ],
+  "files-community/Files": [
+    "app",
+    "sim",
+    "Gerenciador de arquivos para Windows distribuído como aplicativo instalável.",
+    [
+      [
+        "não",
+        "Blog combina recarga de widgets com correção de drag-and-drop. Propósito misto, revisar."
+      ],
+      [
+        "sim",
+        "Blog identifica correção de crash ao abrir menu contextual, um dia após 4.0.10."
+      ],
+      [
+        "não",
+        "Blog amplia extração, configurações e Status Center junto a várias correções."
+      ],
+      [
+        "não",
+        "Blog acrescenta integração GitLab e melhora startup, além de correções."
+      ],
+      [
+        "não",
+        "Blog acrescenta PowerToys Peek, busca de tags e ações de menu."
+      ]
+    ]
+  ],
+  "mermaid-js/mermaid": [
+    "lib",
+    "sim",
+    "Biblioteca de geração de diagramas consumida em aplicações e pacotes npm.",
+    [
+      [
+        "não",
+        "Introduz novo tipo de diagrama treemap."
+      ],
+      [
+        "não",
+        "Amplia diagramas Gantt, Journey, State e Bar."
+      ],
+      [
+        "não",
+        "Acrescenta layouts, formas e interseções de mindmap."
+      ],
+      [
+        "sim",
+        "Corrige restrição de peerDependencies do pacote ZenUML. Também atualiza dependências, revisar."
+      ],
+      [
+        "sim",
+        "Corrige tratamento de setas com numeração automática."
+      ]
+    ]
+  ],
+  "halo-dev/halo": [
+    "app",
+    "sim",
+    "Aplicação de publicação de sites e blogs distribuída para execução como servidor.",
+    [
+      [
+        "sim",
+        "Notas em chinês explicitam correção do acesso ao Console quebrado em 2.21.4."
+      ],
+      [
+        "não",
+        "Amplia login social e otimiza carregamento e SEO, além de uma correção."
+      ],
+      [
+        "sim",
+        "Corrige falha de startup com bancos e regras de roteamento. Também amplia limite de títulos, revisar."
+      ],
+      [
+        "não",
+        "Acrescenta idioma e formato de URLs junto a otimizações e correções."
+      ],
+      [
+        "sim",
+        "Corrige paginação, thumbnails e upload de imagens no editor."
+      ]
+    ]
+  ],
+  "SillyTavern/SillyTavern": [
+    "app",
+    "sim",
+    "Aplicação de interface de conversação com modelos, executável localmente pelo usuário.",
+    [
+      [
+        "não",
+        "Amplia personas, importadores e integrações de modelos."
+      ],
+      [
+        "não",
+        "Acrescenta fontes de chat, imagens e opções de interface."
+      ],
+      [
+        "não",
+        "Muda templates de formatação e acrescenta provedores."
+      ],
+      [
+        "não",
+        "Amplia raciocínio, modelos e armazenamento de configurações."
+      ],
+      [
+        "não",
+        "Release funcional com novas integrações e mudanças de configuração."
+      ]
+    ]
+  ],
+  "moeru-ai/airi": [
+    "app",
+    "sim",
+    "Aplicação web e desktop de personagem virtual com pacotes instaláveis.",
+    [
+      [
+        "não",
+        "Acrescenta atalhos, suporte de arquivos e bandeja do sistema."
+      ],
+      [
+        "não",
+        "Amplia carregamento de modelos, temas e interface."
+      ],
+      [
+        "não",
+        "Acrescenta character cards, Player2 e lip-sync."
+      ],
+      [
+        "não",
+        "Após as instruções de instalação, as notas introduzem pacote de lip-sync e runtime experimental, junto a correções. Propósito misto, revisar."
+      ],
+      [
+        "não",
+        "Acrescenta playground, componentes de UI e suporte MCP."
+      ]
+    ]
+  ],
+  "anomalyco/opencode": [
+    "cli",
+    "sim",
+    "Agente de programação distribuído como CLI e interface de terminal.",
+    [
+      [
+        "não",
+        "Notas sem mudanças relevantes e comparação com apenas ajuste de CI."
+      ],
+      [
+        "não",
+        "Ajusta prompt de modelos, sem defeito recente explícito."
+      ],
+      [
+        "não",
+        "Introduz suporte a copiar e colar."
+      ],
+      [
+        "sim",
+        "Corrige abort de sessão, leitura de imagens e permissões. Também há adições, revisar propósito misto."
+      ],
+      [
+        "não",
+        "Amplia navegação de listas e seleção de modelos."
+      ]
+    ]
+  ],
+  "fastify/fastify": [
+    "lib",
+    "sim",
+    "Framework web Node.js consumido como biblioteca instalável.",
+    [
+      [
+        "sim",
+        "Corrige caso de segurança não coberto completamente pela versão 5.3.1."
+      ],
+      [
+        "sim",
+        "A principal correção funcional indicada resolve crash de ReadableStream.locked."
+      ],
+      [
+        "sim",
+        "Corrige parser JSON e comportamento interno, junto a manutenção extensa. Revisar propósito misto."
+      ],
+      [
+        "não",
+        "Notas extensas de manutenção e evolução da linha, sem hotfix recente declarado."
+      ],
+      [
+        "sim",
+        "Release de segurança corrige bypass de validação de content-type."
+      ]
+    ]
+  ],
+  "github/github-mcp-server": [
+    "app",
+    "sim",
+    "Servidor MCP instalável que fornece acesso programático ao GitHub.",
+    [
+      [
+        "não",
+        "Acrescenta ferramentas para Projects."
+      ],
+      [
+        "não",
+        "Acrescenta sub-issues, paginação e opções de discussions."
+      ],
+      [
+        "não",
+        "Migra SDK e acrescenta resource completion."
+      ],
+      [
+        "não",
+        "Amplia resolução de arquivos e mudanças de interface de ferramentas."
+      ],
+      [
+        "não",
+        "Acrescenta Gists, reviewers e parâmetros de pull requests."
+      ]
+    ]
+  ],
+  "Stirling-Tools/Stirling-PDF": [
+    "app",
+    "sim",
+    "Aplicativo e servidor de edição de PDFs distribuído em pacotes e containers.",
+    [
+      [
+        "sim",
+        "Hotfix explícito para compatibilidade de flags Docker e download de security jar."
+      ],
+      [
+        "sim",
+        "Notas chamam a versão de hotfix e listam erros de OCR, SMTP, Swagger e desktop."
+      ],
+      [
+        "sim",
+        "Corrige SAML, carregamento WASM e cache do editor. Também inclui novas funções, revisar."
+      ],
+      [
+        "não",
+        "Disponibiliza editor de texto PDF como nova funcionalidade central."
+      ],
+      [
+        "não",
+        "Amplia bookmarks, PSD e configurações, junto a correções."
+      ]
+    ]
+  ],
+  "pmndrs/zustand": [
+    "lib",
+    "sim",
+    "Biblioteca de gerenciamento de estado para aplicações JavaScript e React.",
+    [
+      [
+        "não",
+        "Torna ExtractState público, além de ajustar build."
+      ],
+      [
+        "sim",
+        "Corrige resolução de módulos para usuários React Native."
+      ],
+      [
+        "sim",
+        "Release remete à correção React Native de #3087. Comparação contém apenas o commit patch."
+      ],
+      [
+        "não",
+        "Introduz middleware experimental ssrSafe."
+      ],
+      [
+        "sim",
+        "Corrige valor undefined em shallow. Há pequena melhoria adicional de persist."
+      ]
+    ]
+  ],
+  "react-hook-form/react-hook-form": [
+    "lib",
+    "sim",
+    "Biblioteca de gerenciamento e validação de formulários React.",
+    [
+      [
+        "não",
+        "Amplia reação a mudanças de nome em hooks, junto a correções."
+      ],
+      [
+        "não",
+        "Adiciona suporte a comparação com referências circulares, junto a correções."
+      ],
+      [
+        "sim",
+        "Corrige validade após reset, atualizações em lote e comparação de NaN."
+      ],
+      [
+        "não",
+        "Acrescenta tipos de paths e muda geração de IDs, além de correções."
+      ],
+      [
+        "sim",
+        "Notas incluem várias correções de validação, subscriptions e condições de corrida, além de mudanças de API. Revisar propósito misto."
+      ]
+    ]
+  ],
+  "makeplane/plane": [
+    "app",
+    "sim",
+    "Aplicação de gerenciamento de projetos, issues e ciclos, auto-hospedável.",
+    [
+      [
+        "não",
+        "Amplia configurações, idiomas e interface junto a correções."
+      ],
+      [
+        "sim",
+        "Objetivo declarado é corrigir bugs importantes de 0.25.0."
+      ],
+      [
+        "não",
+        "Notas apresentam melhorias de startup, backup e dependências, sem defeito recente especificado."
+      ],
+      [
+        "não",
+        "Amplia idiomas, navegação e busca junto a correções."
+      ],
+      [
+        "sim",
+        "Notas apresentam somente correções de URLs, layout, traduções e eventos de comentários."
+      ]
+    ]
+  ],
+  "colinhacks/zod": [
+    "lib",
+    "sim",
+    "Biblioteca TypeScript de validação de schemas consumida como pacote.",
+    [
+      [
+        "não",
+        "Muda sistema de build e exports CommonJS junto a correção de wildcard. Propósito misto, revisar."
+      ],
+      [
+        "não",
+        "Objetivo indicado é melhorar tree shaking com Next.js."
+      ],
+      [
+        "sim",
+        "Único commit indicado é a correção de #4961. Descrição é curta e requer revisão do defeito."
+      ],
+      [
+        "não",
+        "Acrescenta locale Pashto e ajustes de tipos e metadados."
+      ],
+      [
+        "não",
+        "Melhora inferência em implementação de funções, sem defeito recente explícito."
+      ]
+    ]
+  ],
+  "spring-projects/spring-boot": [
+    "lib",
+    "sim",
+    "Framework Java distribuído como bibliotecas e starters para construir aplicações.",
+    [
+      [
+        "sim",
+        "Corrige IllegalArgumentException ao filtrar property sources duas vezes."
+      ],
+      [
+        "sim",
+        "Notas listam correções de DataSource, recursos e Kafka."
+      ],
+      [
+        "sim",
+        "Corrige compatibilidade Docker/Testcontainers e múltiplas falhas de execução."
+      ],
+      [
+        "sim",
+        "Notas listam correções de Kafka, recursos e configurações."
+      ],
+      [
+        "sim",
+        "Corrige desempenho, ClassNotFoundException, NPE e heapdump."
+      ]
+    ]
+  ],
+  "openclaw/openclaw": [
+    "app",
+    "sim",
+    "Assistente auto-hospedado com gateway e interfaces. README atual pode diferir da identidade do projeto em 2025.",
+    [
+      [
+        "não",
+        "Introduz envio manual de heartbeat com mensagem e provider."
+      ],
+      [
+        "não",
+        "Introduz ferramentas, transportes, hooks e configuração de sessões."
+      ],
+      [
+        "não",
+        "Amplia UX e ferramentas de heartbeat e estrutura de prompts."
+      ],
+      [
+        "não",
+        "Acrescenta mídia, transcrição e opções de sessões."
+      ],
+      [
+        "sim",
+        "Corrige módulos ausentes do pacote npm incluindo outputs de Discord e hooks."
+      ]
+    ]
+  ],
+  "firecrawl/firecrawl": [
+    "app",
+    "sim",
+    "Serviço de coleta web com API, execução auto-hospedada e SDKs auxiliares.",
+    [
+      [
+        "não",
+        "Muda endpoint extract para processamento assíncrono."
+      ],
+      [
+        "não",
+        "Introduz controle de concorrência, crawl de domínio e Google Docs."
+      ],
+      [
+        "não",
+        "Amplia scraping autenticado, retenção e funcionalidades MCP."
+      ],
+      [
+        "não",
+        "Introduz Google Slides, PDF e screenshots configuráveis."
+      ],
+      [
+        "não",
+        "Amplia MCP, webhooks, queue-status e APIs de uso."
+      ]
+    ]
+  ],
+  "Dokploy/dokploy": [
+    "app",
+    "sim",
+    "PaaS auto-hospedável para deploy e gerenciamento de aplicações.",
+    [
+      [
+        "sim",
+        "Corrige branch de preview remoto. Também há template e tradução, revisar propósito misto."
+      ],
+      [
+        "não",
+        "Amplia monitoramento, serviços e organização de projetos."
+      ],
+      [
+        "sim",
+        "Notas e comparação mostram correção de comando ausente."
+      ],
+      [
+        "não",
+        "Acrescenta templates e opções de preview junto a correções."
+      ],
+      [
+        "sim",
+        "Corrige refetch, variáveis de ambiente, previews e busca de rede, junto a tradução."
+      ]
+    ]
+  ],
+  "ultralytics/ultralytics": [
+    "lib",
+    "sim",
+    "Biblioteca de visão computacional e modelos YOLO, distribuída com CLI auxiliar.",
+    [
+      [
+        "não",
+        "Refatora avaliação COCO e amplia soluções e métricas."
+      ],
+      [
+        "não",
+        "Introduz exportação e inferência para Axelera Metis."
+      ],
+      [
+        "não",
+        "Introduz exportação de resultados em HTML."
+      ],
+      [
+        "sim",
+        "Objetivo central é corrigir quantização INT8 por canal e tamanho de artefatos TFLite."
+      ],
+      [
+        "não",
+        "Introduz validação multi-GPU e novo sampler, embora também corrija agregação."
+      ]
+    ]
+  ],
+  "remotion-dev/remotion": [
+    "lib",
+    "sim",
+    "Framework React e pacotes para criação e renderização programática de vídeos.",
+    [
+      [
+        "sim",
+        "Corrige erros de renderização e transforms CSS, com pequenas adições. Revisar propósito misto."
+      ],
+      [
+        "não",
+        "Amplia APIs de áudio, vídeo e renderização, além de correções."
+      ],
+      [
+        "não",
+        "Atualiza dependências, logging e suporte a ambientes, sem defeito recente central explícito."
+      ],
+      [
+        "não",
+        "Introduz whisper-web e novas capacidades e desempenho de playback."
+      ],
+      [
+        "sim",
+        "Corrige crash de FFmpeg com dimensões desiguais."
+      ]
+    ]
+  ],
+  "mastodon/mastodon": [
+    "app",
+    "sim",
+    "Servidor de rede social federada auto-hospedável.",
+    [
+      [
+        "não",
+        "Combina nova paginação com correção de cache. Avisos de vulnerabilidade não afirmam que esta release os resolve, revisar."
+      ],
+      [
+        "sim",
+        "Corrige posts editados, enquetes e scheduler, além de atualizar dependências."
+      ],
+      [
+        "sim",
+        "Corrige validação de URIs e diversos erros funcionais."
+      ],
+      [
+        "sim",
+        "Corrige rate limit, condições de corrida e crashes da interface."
+      ],
+      [
+        "sim",
+        "Corrige falhas de streaming, suspensão e invalidação de sessões."
+      ]
+    ]
+  ],
+  "bumptech/glide": [
+    "lib",
+    "sim",
+    "Framework Android de carregamento e cache de imagens, distribuído em módulos.",
+    [
+      [
+        "não",
+        "Notas dizem explicitamente que esta versão não corrige os módulos ausentes e encaminham a 5.0.2."
+      ],
+      [
+        "sim",
+        "Corrige módulo compiler ausente nos artefatos publicados."
+      ],
+      [
+        "sim",
+        "Corrige módulos gif_decoder ausentes."
+      ],
+      [
+        "não",
+        "Combina migração de Java e build com mudanças de imagem. Revisar escopo de release candidate."
+      ],
+      [
+        "sim",
+        "Corrige módulos gifdecoder e disklrucache ausentes nos artefatos."
+      ]
+    ]
+  ],
+  "bitcoin/bitcoin": [
+    "app",
+    "sim",
+    "Aplicação e daemon de nó Bitcoin, com binários oficiais externos ao GitHub.",
+    [
+      [
+        "não",
+        "Notas ampliam políticas de mempool e logging junto a correções. Propósito misto, revisar."
+      ],
+      [
+        "não",
+        "Release principal com novas funcionalidades e mudanças de política."
+      ],
+      [
+        "sim",
+        "Notas corrigem falha de startup por colisão de porta introduzida em 28.0."
+      ],
+      [
+        "não",
+        "Muda taxas de relay e política de mempool junto a manutenção. Propósito misto, revisar."
+      ],
+      [
+        "sim",
+        "Notas se concentram em correções de P2P, mempool e RPC."
+      ]
+    ]
+  ],
+  "apache/airflow": [
+    "app",
+    "sim",
+    "Plataforma e serviços de orquestração de workflows, distribuída em pacotes, imagens e chart.",
+    [
+      [
+        "sim",
+        "Notas concentram-se em correções de execução, serialização e logs."
+      ],
+      [
+        "sim",
+        "Corrige acesso a Connections e Variables em contextos de API server."
+      ],
+      [
+        "sim",
+        "Corrige falhas de migração, scheduler, tarefas e memória."
+      ],
+      [
+        "não",
+        "Chart adiciona configurações, HPA e suporte de infraestrutura."
+      ],
+      [
+        "não",
+        "Introduz novos painéis, filtros e suporte a Python 3.13."
+      ]
+    ]
+  ],
+  "2dust/v2rayNG": [
+    "app",
+    "sim",
+    "Cliente Android distribuído como aplicativo instalável.",
+    [
+      [
+        "sim",
+        "Notas em chinês indicam correções de problemas conhecidos e melhoria secundária do teste de latência."
+      ],
+      [
+        "não",
+        "Introduz configuração de balanceamento para o grupo atual, junto a correções."
+      ],
+      [
+        "não",
+        "Amplia interface, fontes de GEO e verificação de updates."
+      ],
+      [
+        "não",
+        "Acrescenta bypass da rede local e atualiza GEO, junto a correções."
+      ],
+      [
+        "não",
+        "Muda configurações TUN, regras de roteamento e opções de URI."
+      ]
+    ]
+  ],
+  "openai/codex": [
+    "cli",
+    "sim",
+    "Agente de programação executado como CLI local com binários instaláveis.",
+    [
+      [
+        "não",
+        "Amplia comandos, protocolo e infraestrutura de rollouts, junto a ajustes."
+      ],
+      [
+        "sim",
+        "Notas destacam conjunto de correções de parsing, patches, feedback e schemas MCP."
+      ],
+      [
+        "não",
+        "Migra servidor de login e acrescenta streaming e suspensão de TUI."
+      ],
+      [
+        "não",
+        "Combina mudanças de comportamento, segurança, infraestrutura e UI. Propósito misto, revisar."
+      ],
+      [
+        "não",
+        "Introduz API de remoção, ações de terminal e informações de execução, além de correções."
+      ]
+    ]
+  ],
+  "sxyazi/yazi": [
+    "cli",
+    "sim",
+    "Gerenciador de arquivos de terminal com binários instaláveis.",
+    [
+      [
+        "não",
+        "Introduz API de busca, navegação e novas configurações."
+      ],
+      [
+        "não",
+        "Changelog da tag introduz filesystem virtual, arquivos remotos e novas APIs."
+      ],
+      [
+        "sim",
+        "Objetivo declarado é corrigir problemas introduzidos em 25.2.7."
+      ],
+      [
+        "não",
+        "Introduz engine rga, novas APIs e mudanças de configuração."
+      ],
+      [
+        "sim",
+        "As notas identificam explicitamente manutenção focada em correções."
+      ]
+    ]
+  ],
+  "FuelLabs/fuel-core": [
+    "app",
+    "sim",
+    "Cliente e daemon de blockchain distribuído para execução em redes Fuel.",
+    [
+      [
+        "sim",
+        "Corrige memória de heap não zerada após reset da VM."
+      ],
+      [
+        "sim",
+        "Comparação mostra downgrade STF na seção Fixed. Aviso de bug posterior não define o objetivo original."
+      ],
+      [
+        "sim",
+        "Corrige dependência netlink-proto fixando a versão."
+      ],
+      [
+        "sim",
+        "Corrige lógica de migração de tabelas históricas e iterações indevidas."
+      ],
+      [
+        "não",
+        "Acrescenta estatísticas de txpool ao endpoint GraphQL."
+      ]
+    ]
+  ]
+}

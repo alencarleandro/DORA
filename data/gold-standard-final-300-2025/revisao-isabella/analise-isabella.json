@@ -1,0 +1,20 @@
+{
+  "issue": 6,
+  "method": "AI-assisted editorial review of public evidence",
+  "human_review": "reviewed_by_isabella",
+  "independent_human_labels": false,
+  "other_raters_consulted": false,
+  "heuristic_predictions_consulted": false,
+  "sample_sha256": "1b912e772066c477bdf8dc686a2e6afdf43bc4809026dd9daaa90cc869a3e686",
+  "repositories": 60,
+  "releases": 300,
+  "references_verified": 300,
+  "corrective_proposals": 108,
+  "non_corrective_proposals": 192,
+  "undecided": [],
+  "official_rater_file": "rotulos-isabella.csv",
+  "assisted_draft": "revisao-isabella/rotulos-isabella-assistidos.csv",
+  "sources": "revisao-isabella/evidencias-isabella.csv",
+  "consensus_status": "pending_other_independent_raters_and_consensus",
+  "review_record": "revisao-isabella/revisao-isabella.json"
+}

@@ -1,0 +1,9 @@
+{
+  "issue": 6,
+  "review_status": "accepted_by_isabella",
+  "confirmation": "Revisei. Eu posso dar pussh?",
+  "review_method": "Human review of AI-assisted labels; not unaided blind annotation",
+  "reviewed_draft_sha256": "4561149bb5111f5e9e87aac3c8d22f26facfff71c67065b4f087e155c225bd7d",
+  "final_labels_sha256": "b92325b4531d8d21d121d6c2d036523854acdd2a77d5c69e3d9cb8eddbdfa3bb",
+  "rows": 300
+}
