@@ -1,0 +1,36 @@
+{
+  "issue": 6,
+  "status": "passed",
+  "rows": 300,
+  "unique_repositories": 300,
+  "columns": 55,
+  "window_start": "2025-01-01",
+  "window_end": "2025-12-31",
+  "assembly": "offline_from_versioned_exports",
+  "raw_metrics_recomputed": false,
+  "source_hashes": {
+    "selecao/repositories.csv": "df3fbf821514b000f15dbf67f594b7488f3d57b75e629e3d44a9f83bc7b1e7ff",
+    "selecao/metadata.csv": "a560fcb6a0365dffb2a6d19ad283b82047457dd013339a1559c0a7833a0d3f6c",
+    "selecao/decisions.csv": "ebc3de4fddb6fd54497fcec175feaa9db7c0705f52909215a3a184b196684b5e",
+    "selecao/funnel.csv": "54062822e75f91d3b866f9e20aaba2b82b201f8fca6571bf14b4908a8729706d",
+    "selecao/queries.csv": "7c31cafdadc75564093bf5184a9b0f6825a29198cd2b63a014929fec79d4b021",
+    "metricas/metrics-b.csv": "adf39fcb8fad69566f995c4b06feabdb80e7e16903ed76d298b5b720a92021b3",
+    "metricas/metrics-c.csv": "01b8bfc5c4affa574c2dffec6eed2bf39420bcb178e6b7c8f372c28e15ff074a"
+  },
+  "missing_values": {
+    "recovery_median_hours": 42,
+    "recovery_q1_hours": 42,
+    "recovery_q3_hours": 42,
+    "recovery_iqr_hours": 42,
+    "censored_fraction": 37
+  },
+  "warnings": [
+    {
+      "repository": "tw93/Mole",
+      "check": "lead_time_commit_negative_observed",
+      "message": "Valor do export original preservado; revisar datas de autoria e publicação."
+    }
+  ],
+  "failures": [],
+  "cfr_b_validation": "pending_independent_labels"
+}

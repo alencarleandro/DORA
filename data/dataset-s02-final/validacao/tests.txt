@@ -1,0 +1,153 @@
+
+> dora-workflows@1.0.0 test
+> node --test --experimental-test-coverage --test-coverage-include=lib/metrics.mjs --test-coverage-include=lib/agreement.mjs --test-coverage-include=lib/corrective.mjs --test-coverage-lines=80 --test-coverage-branches=80 tests/*.test.mjs
+
+✔ exemplo clássico de Fleiss (1971) reproduz valores tabelados (3.8794ms)
+✔ concordância perfeita resulta em kappa = 1.0 (2.8595ms)
+✔ concordância em uma única categoria para todos os itens tem kappa = 1.0 (0.3608ms)
+✔ discordância extrema com categorias distribuídas produz kappa negativo (pobre) (0.5267ms)
+✔ faixas de interpretação de Landis & Koch (1977) (1.3101ms)
+✔ aggregateRaters com categorias fixas e tratamento de erros (1.1325ms)
+✔ fleissKappa valida consistência de linhas, avaliadores e categorias (0.8954ms)
+✔ calculateDimensionAgreement funciona com objetos de sujeitos (0.835ms)
+✔ createRNG e sampleArray são determinísticos com semente fixa (0.8175ms)
+✔ substituição atômica retenta bloqueio temporário sem apagar o estado anterior (10.7631ms)
+✔ patch semver não aceita prerelease, major/minor ou regressão de versão (3.8041ms)
+✔ versões da heurística distinguem patch, correção e documentação (2.5118ms)
+✔ CFR b: fronteira de sete dias, censura e denominador (1.5285ms)
+✔ não mistura repositórios; release inválida, prerelease e histórico desconhecido (0.6692ms)
+✔ matriz de confusão e F1 usam referência humana, sem inventar ausências (2.7388ms)
+✔ auditoria exclui datas divergentes e permite calibração somente com evidência real (2.6788ms)
+✔ auditoria não aceita simulação, tag inexistente ou comparação ausente (0.8911ms)
+✔ CFR b rejeita mistura e janela inválida mesmo sem releases (0.4834ms)
+✔ CLI gera métricas locais e reprova referência incompleta sem apagar relatórios (261.529ms)
+✔ sorteio local herda janela, usa releases existentes e preserva amostra anterior (390.1248ms)
+✔ CSV aceita BOM, ponto e vírgula, aspas e campos multilinha (3.7382ms)
+✔ repositórios normalizados e deduplicados; URLs arbitrárias rejeitadas (1.3396ms)
+✔ exportação impede fórmulas de planilha e escapa aspas (1.1472ms)
+✔ CSV de runs rejeita falta de esquema (1.1302ms)
+✔ CSV exportado preserva tags com escopo ao reimportar para B e a referência humana (4.1239ms)
+✔ coleta concorrente limita chamadas e retoma somente o projeto incompleto (19.5525ms)
+✔ exportação por lotes mantém linhas, aspas e janela para reimportação local (72.234ms)
+✖ histórico Git recupera commits entre tags, datas do autor e tags anotadas (2260.0069ms)
+✔ cache preserva paginação e evita repetir chamadas (100.8479ms)
+✔ retries 5xx e rede e rate limit (14.1722ms)
+✔ teto de 1.000 subdivide intervalo sem truncar (54.9589ms)
+✔ janela dividida por mês e runs deduplicados (6.0205ms)
+✔ histórico completo de A é reutilizado sem doze novas consultas e sem payload volumoso (13.2782ms)
+✔ erros de acesso e paginação incompleta são explícitos (17.3059ms)
+✔ cancelamento interrompe espera (4.1535ms)
+✔ rate limit com espera acima do limite permite retomada sem esperar (6.2929ms)
+✔ resposta JSON interrompida é repetida e nunca salva como completa (9.618ms)
+✔ A para ao confirmar 50 runs sem baixar o restante; contagem é limite inferior (8.6861ms)
+✔ A confirma ausência de runs em uma chamada para a janela inteira (6.295ms)
+✔ A não exclui projetos por runs ignorados na primeira página ou pelo teto de mil (7.2367ms)
+✔ cota e autenticação são informadas; cache não inventa saldo atual (7.644ms)
+✔ cache persiste entre clientes e recupera dados sem token nem rede (7.218ms)
+✔ singleflight agrupa chamadas concorrentes à mesma URL em uma única requisição (18.9732ms)
+✔ cache L1 em memória evita I/O de disco para leituras subsequentes (6.7608ms)
+✔ requisições com ETag retornam 304 Not Modified e atualizam metadados sem queimar cota (11.0899ms)
+✔ escrita atômica concorrente em disco não colide nem corrompe arquivos (33.9702ms)
+✔ IDs duplicados não viram coleta completa; cache separado permite recuperar sem apagar a evidência antiga (16.3222ms)
+✔ política LRU real no cache L1 em memória despeja itens menos recentemente acessados (13.4279ms)
+✔ memoização da criação de diretório de cache reutiliza promise única por instância (2.1772ms)
+✔ B calcula CFR b e preserva notas ao importar CSV sem rede (38.1437ms)
+✔ A seleciona; B/C usam mesma amostra, branch e janela; exports combinam os dados (46.0612ms)
+✔ busca da parte A está disponível sem CSV e preserva fotografia e consultas (13.7226ms)
+✔ amostra insuficiente é explícita e erros não viram exclusões (24.037ms)
+✔ falha de B é retomável sem repetir A; pausa e rate limit preservam estado (53.6077ms)
+✔ branch incorreto do CSV é erro explícito e não alimenta B/C (9.8231ms)
+✔ valida limites antes de iniciar ou persistir uma coleta (1.8956ms)
+✔ A isolada exporta a amostra sem executar comparações ou métricas de B/C (9.5674ms)
+✔ B e C usam a amostra e a janela de A, sem executar as outras partes (38.5753ms)
+✔ B isolada continua erros sem repetir repositórios concluídos (28.2789ms)
+✔ ampliação preserva os aprovados e processa somente candidatos novos até completar a amostra (30.3052ms)
+✔ A exporta CSVs completos; B e C calculam com API indisponível, sem token (63.7612ms)
+✔ coleta completa de A retoma arquivos prontos e bloqueia CSVs incompletos (22.8735ms)
+✔ CSV de B rejeita commits duplicados e comparações incompletas (24.172ms)
+✔ B/C usam subconjunto local completo, mesmo quando a coleta A não terminou (39.81ms)
+✔ save aplica throttle em 50 escritas intermediárias resultando em escrita única após debounce e immediate grava na hora (797.0304ms)
+✔ exemplo README: falhas consecutivas formam um único episódio de 1h20 (6.9414ms)
+✔ conclusões ignoradas, branch, evento, janela e deduplicação (1.1279ms)
+✔ recuperações são isoladas por workflow e ordenadas (0.5994ms)
+✔ primeiras falhas sem sucesso prévio ficam contabilizadas, sem episódio observável (0.3594ms)
+✔ sucesso terminado após janela não encerra episódio (0.3454ms)
+✔ run iniciado após janela não altera episódios (0.2809ms)
+✔ vazio e sem runs válidos não geram taxas zero (0.3679ms)
+✔ limite de 50 runs e quantis interpolados (1.1476ms)
+✔ validação de datas e inconsistências (3.5538ms)
+✔ frequência de deploy calcula releases por semana na janela (0.5408ms)
+✔ exemplo README RQ 02: release v1.1 com 13, 5 e 1 dias de lead time (0.9548ms)
+✔ lead time: múltiplas releases, quantis, exclusões e casos de borda (0.4209ms)
+✔ lead time com janela aberta ou sem releases válidas (0.232ms)
+✔ calculateLeadTime processa release com 100.000 commits sem RangeError (79.7325ms)
+✔ quantiles e IQR calculam valores exatos com e sem interpolação (2.3525ms)
+✔ getReleases filtra drafts e ordena cronologicamente (2.1211ms)
+✔ getTags lista tags e extrai sha (0.4322ms)
+✔ compareCommits suporta paginação e extrai campos de commits (0.6829ms)
+✔ compareCommits trata 404 sem lançar exceção (1.4126ms)
+✔ compareCommits propaga RATE_LIMIT_WAIT e erros genéricos (1.0181ms)
+✔ collectReleasesAndCommits orquestra janela, release anterior e 1ª release (2.0946ms)
+✔ collectReleasesAndCommits identifica 1ª release da história (0.7544ms)
+✔ compareCommits não aceita histórico truncado como completo (0.3886ms)
+✔ históricos sem ancestral comum permanecem indisponíveis, sem commits fabricados (1.7342ms)
+✔ asyncPool limita concorrência ao limite especificado e preserva ordem (72.2213ms)
+✔ busca particiona acima de mil, deduplica e ordena (4.6204ms)
+✔ incompletude e paginação ausente não viram sucesso (4.2907ms)
+✔ contribuidores última página; linguagem ausente e idade fixa (1.7963ms)
+✔ contribuidores indisponíveis não são zero; sem janela não inventa idade (0.5377ms)
+✔ contribuidores vazio é zero e criação após janela é sinalizada (0.354ms)
+✔ filtros aplicam primeira exclusão; errors não são exclusões (3.1882ms)
+✔ funil conserva totais e separa pendentes, erros, não selecionados (1.2772ms)
+✔ modo full exige datas oficiais e configuração válida (0.4963ms)
+✔ janela aceita todo o ano bissexto de 2024 (1.6588ms)
+✔ 300 candidatos exigem três páginas mesmo quando a busca tem mais de mil resultados (7.7862ms)
+✔ filtro de A usa qualificação curta e sinaliza contagem incompleta (0.8337ms)
+✔ busca interrompe paginacao precocemente ao atingir candidateLimit (24.8184ms)
+✔ contribuidores com fallback em per_page=100 le bulk.last sem loop infinito (0.9973ms)
+ℹ tests 103
+ℹ suites 0
+ℹ pass 102
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2738.414
+ℹ start of coverage report
+ℹ ----------------------------------------------------------------
+ℹ file            | line % | branch % | funcs % | uncovered lines
+ℹ ----------------------------------------------------------------
+ℹ lib             |        |          |         | 
+ℹ  agreement.mjs  | 100.00 |   100.00 |  100.00 | 
+ℹ  corrective.mjs | 100.00 |    92.25 |  100.00 | 
+ℹ  metrics.mjs    | 100.00 |    98.17 |  100.00 | 
+ℹ ----------------------------------------------------------------
+ℹ all files       | 100.00 |    96.19 |  100.00 | 
+ℹ ----------------------------------------------------------------
+ℹ end of coverage report
+
+✖ failing tests:
+
+test at tests\git-evidence.test.mjs:10:1
+✖ histórico Git recupera commits entre tags, datas do autor e tags anotadas (2260.0069ms)
+  AssertionError [ERR_ASSERTION]: The input was expected to not match the regular expression /tree|blob/. Input:
+  
+  'tree\ncommit\ntag\ncommit\n'
+  
+      at TestContext.<anonymous> (file:///C:/Users/isabe/OneDrive/Documents/DORA/tests/git-evidence.test.mjs:28:69)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1106:25)
+      at Test.start (node:internal/test_runner/test:1003:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:358:17) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'tree\ncommit\ntag\ncommit\n',
+    expected: /tree|blob/,
+    operator: 'doesNotMatch',
+    diff: 'simple'
+  }
+npm notice
+npm notice New minor version of npm available! 11.6.2 -> 11.21.0
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v11.21.0
+npm notice To update run: npm install -g npm@11.21.0
+npm notice

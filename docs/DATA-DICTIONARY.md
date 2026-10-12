@@ -122,3 +122,69 @@ CFR (b) permanece exploratória até a validação; ela não substitui `cfr_ci`,
 | author_date | data ISO | Data de autoria do commit (`commit.author.date`) |
 | lead_time_hours | horas | Diferença entre published_at e author_date |
 | lead_time_days | dias | Diferença entre published_at e author_date em dias |
+
+<!-- dataset-s02-final-schema -->
+
+# Dataset consolidado — Sprint 2 / Issue #6
+
+Uma linha por repositório, chave `repository` normalizada em minúsculas para junção. Os 300 projetos e a janela 2025-01-01 a 2025-12-31 são preservados. Dicionário legível por máquina: `data/dataset-s02-final/dictionary.csv`.
+
+O CSV final contém 55 colunas. Contagens ausentes e taxas sem denominador continuam vazias. Quartis usam interpolação linear em `(n − 1) × p`. Recuperação resume apenas episódios encerrados. As contagens de censura preservam os episódios não encerrados. Metadados de popularidade são uma fotografia da coleta, não uma medida histórica de 2025.
+
+| Coluna | Tipo | Unidade | Origem ou fórmula |
+|---|---|---|---|
+| window_start | data ISO AAAA-MM-DD | UTC | Início da janela, inclusive às 00:00:00Z; manifesto da coleta A. |
+| window_end | data ISO AAAA-MM-DD | UTC | Fim da janela, inclusive às 23:59:59Z; manifesto da coleta A. |
+| repository | texto | owner/repo | Lista selecionada por A. Chave de junção, comparada em minúsculas. |
+| default_branch | texto | nome de branch | A /repos/{owner}/{repo}; deve coincidir com os exports de B e C. |
+| stars | inteiro | estrelas | A: stargazers_count na fotografia de metadados da coleta. |
+| language | texto | linguagem principal | A: language da API; vazio se a API não informa linguagem. |
+| contributors_count | inteiro | contribuidores | A: endpoint contributors com anon=true e paginação; inclui anônimos. Pode estar vazio se indisponível. |
+| age_days | número real | dias | A: (fim da janela em UTC − created_at do repositório) / 86400000 milissegundos. |
+| releases_in_window | inteiro | releases | B: releases publicadas na janela, sem draft e sem prerelease. |
+| deployment_frequency | número real | releases/semana | B: releases_in_window / ((fim UTC − início UTC) / 604800000 milissegundos). |
+| releases_evaluated | inteiro | releases | B: releases com base anterior, comparação disponível e commits para medir lead time. Diferente do denominador de CFR (b). |
+| releases_ignored | inteiro | releases | B: soma de releases_ignored_no_previous, releases_ignored_compare_error e releases_ignored_no_commits. |
+| releases_ignored_no_previous | inteiro | releases | B: releases sem release anterior para comparação. |
+| releases_ignored_compare_error | inteiro | releases | B: comparações indisponíveis, como not_found ou unrelated_histories; excluídas do lead time. |
+| releases_ignored_no_commits | inteiro | releases | B: comparações disponíveis sem commits novos. |
+| commits_total | inteiro | observações de commits | B: soma de commits associados às releases avaliadas. Não é censo de SHAs únicos do repositório. |
+| lead_time_release_median_hours | número real | horas | B: mediana de (published_at − menor commit.author.date) / 3600000, entre releases avaliadas. |
+| lead_time_release_q1_hours | número real | horas | B: percentil 25 dos lead times por release, interpolação linear. |
+| lead_time_release_q3_hours | número real | horas | B: percentil 75 dos lead times por release, interpolação linear. |
+| lead_time_release_iqr_hours | número real | horas | B: lead_time_release_q3_hours − lead_time_release_q1_hours. |
+| lead_time_release_median_days | número real | dias | B: lead_time_release_median_hours / 24. |
+| lead_time_release_iqr_days | número real | dias | B: lead_time_release_iqr_hours / 24. |
+| lead_time_commit_median_hours | número real | horas | B: mediana de todas as observações (release.published_at − commit.author.date) / 3600000 das releases avaliadas. |
+| lead_time_commit_q1_hours | número real | horas | B: percentil 25 dos lead times por commit, interpolação linear. |
+| lead_time_commit_q3_hours | número real | horas | B: percentil 75 dos lead times por commit, interpolação linear. |
+| lead_time_commit_iqr_hours | número real | horas | B: lead_time_commit_q3_hours − lead_time_commit_q1_hours. |
+| lead_time_commit_median_days | número real | dias | B: lead_time_commit_median_hours / 24. |
+| lead_time_commit_iqr_days | número real | dias | B: lead_time_commit_iqr_hours / 24. |
+| runs_total | inteiro | workflow runs | C: runs únicos de event=push no default branch, com created_at dentro da janela, inclusive conclusões ignoradas. |
+| runs_valid | inteiro | workflow runs | C: failures + successes; conclusões success, failure, timed_out e startup_failure. |
+| runs_ignored | inteiro | workflow runs | C: runs_total − runs_valid; outras conclusões não entram no CFR de CI. |
+| failures | inteiro | workflow runs | C: quantidade com conclusion failure, timed_out ou startup_failure. |
+| successes | inteiro | workflow runs | C: quantidade com conclusion success. |
+| cfr_ci | número real | proporção 0–1 | C: failures / runs_valid; mede falha de pipeline, proxy CFR (a). Vazio sem denominador. |
+| recovery_median_hours | número real | horas | C: mediana de (updated_at do sucesso − run_started_at da primeira falha) / 3600000, por episódios encerrados no mesmo workflow após sucesso anterior. |
+| recovery_q1_hours | número real | horas | C: percentil 25 das recuperações encerradas, interpolação linear; censurados não entram. |
+| recovery_q3_hours | número real | horas | C: percentil 75 das recuperações encerradas, interpolação linear; censurados não entram. |
+| recovery_iqr_hours | número real | horas | C: recovery_q3_hours − recovery_q1_hours. |
+| cfr_b | número real | proporção 0–1 | B: cfr_b_releases_failed / cfr_b_releases_evaluated. Release falha quando seguida por release considerada corretiva em até sete dias, inclusive. Exploratória até validação. |
+| cfr_b_releases_evaluated | inteiro | releases | B: denominador após excluir censuradas e desconhecidas; diferente de releases_evaluated do lead time. |
+| cfr_b_releases_failed | inteiro | releases | B: releases avaliáveis seguidas em até sete dias por release classificada como corretiva. |
+| cfr_b_releases_censored | inteiro | releases | B: releases sem sete dias completos de acompanhamento até o fim da janela; ficam fora do denominador. |
+| cfr_b_releases_unknown | inteiro | releases | B: resultado indeterminado por comparação indisponível que afete a classificação; fica fora do denominador. |
+| cfr_b_heuristic_version | texto | identificador de versão | B: versão da heurística aplicada. Preservada do export, ainda sem validação humana completa. |
+| episodes_total | inteiro | episódios | C: episódios de falha após sucesso anterior, encerrados ou censurados, agrupados por workflow. |
+| episodes_censored | inteiro | episódios | C: episódios sem sucesso de recuperação observado até o fim da janela. |
+| censored_fraction | número real | proporção 0–1 | C: episodes_censored / episodes_total; vazio se não há episódios. |
+| initial_failures_without_success | inteiro | workflow runs | C: falhas antes do primeiro sucesso observado no workflow; não iniciam os episódios medidos. |
+| eligible_releases | booleano true/false | sem unidade | B: releases_in_window >= 5. |
+| eligible_runs | booleano true/false | sem unidade | C: runs_valid >= 50. |
+| selected | booleano true/false | sem unidade | A: presença na lista de 300 repositórios selecionados após os filtros. |
+| cfr_b_validation | texto | estado da validação | pending_independent_labels até revisão dos rótulos, consenso e avaliação da heurística. Rótulos assistidos não concluem a validação. |
+| source_job_id | texto | UUID | Manifesto: identificador da coleta A que define a seleção e janela. |
+| b_job_id | texto | UUID | Manifesto: identificador do processamento de releases, lead time e CFR (b). |
+| c_job_id | texto | UUID | Manifesto: identificador do processamento de workflows e recuperação. |
