@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { calculate, calculateDeploymentFrequency, calculateLeadTime, quantile, timestamp, windowDates } from '../lib/metrics.mjs';
+import { calculate, calculateDeploymentFrequency, calculateLeadTime, quantile, quantiles, sortedQuantile, timestamp, windowDates } from '../lib/metrics.mjs';
 const end='2026-01-10T23:59:59Z';
 function run(id,conclusion,time,workflow=10,extra={}) { return {id,workflow_id:workflow,event:'push',head_branch:'main',conclusion,created_at:`2026-01-10T${time}:00Z`,run_started_at:`2026-01-10T${time}:00Z`,updated_at:`2026-01-10T${time}:00Z`,...extra}; }
 test('exemplo README: falhas consecutivas formam um único episódio de 1h20',()=>{
@@ -103,3 +103,61 @@ test('lead time com janela aberta ou sem releases válidas',()=>{
   assert.equal(resEmpty.lead_time_commit_median_hours, null);
   assert.equal(resEmpty.deployment_frequency, null);
 });
+
+test('calculateLeadTime processa release com 100.000 commits sem RangeError', () => {
+  const wStart = '2024-01-01T00:00:00Z', wEnd = '2024-12-31T23:59:59Z';
+  const pubTime = Date.parse('2024-06-01T12:00:00Z');
+  const count = 100000;
+  const commits = new Array(count);
+  for (let i = 0; i < count; i++) {
+    commits[i] = { author_date: '2024-05-01T00:00:00Z' };
+  }
+  commits[0] = { author_date: '2024-04-01T00:00:00Z' };
+  const releases = [{
+    tag_name: 'v100k',
+    published_at: '2024-06-01T12:00:00Z',
+    has_previous_release: true,
+    commits
+  }];
+  const res = calculateLeadTime(releases, wEnd, wStart);
+  assert.equal(res.commits_total, 100000);
+  assert.equal(res.releases_evaluated, 1);
+  const oldestCommit = Date.parse('2024-04-01T00:00:00Z');
+  const expectedReleaseLeadHours = (pubTime - oldestCommit) / 3600000;
+  assert.equal(res.lead_time_release_median_hours, expectedReleaseLeadHours);
+  assert.equal(res.lead_time_release_median_days, expectedReleaseLeadHours / 24);
+  assert.ok(res.lead_time_commit_median_hours > 0);
+});
+
+test('quantiles e IQR calculam valores exatos com e sem interpolação', () => {
+  assert.deepEqual(quantiles([]), { median: null, q1: null, q3: null, iqr: null });
+  assert.equal(sortedQuantile([], 0.5), null);
+
+  assert.deepEqual(quantiles([42]), { median: 42, q1: 42, q3: 42, iqr: 0 });
+
+  assert.deepEqual(quantiles([10, 20, 30, 40, 50]), { median: 30, q1: 20, q3: 40, iqr: 20 });
+  assert.equal(sortedQuantile([10, 20, 30, 40, 50], 0.25), 20);
+  assert.equal(sortedQuantile([10, 20, 30, 40, 50], 0.5), 30);
+  assert.equal(sortedQuantile([10, 20, 30, 40, 50], 0.75), 40);
+
+  assert.deepEqual(quantiles([1, 2, 4, 8]), { median: 3, q1: 1.75, q3: 5, iqr: 3.25 });
+  assert.equal(quantile([8, 1, 4, 2], 0.25), 1.75);
+  assert.equal(quantile([8, 1, 4, 2], 0.5), 3);
+  assert.equal(quantile([8, 1, 4, 2], 0.75), 5);
+
+  const runs = [
+    run(1, 'success', '08:00'),
+    run(2, 'failure', '09:00'),
+    run(3, 'success', '11:00'),
+    run(4, 'failure', '12:00'),
+    run(5, 'success', '16:00'),
+    run(6, 'failure', '17:00'),
+    run(7, 'success', '23:00', 10, { run_started_at: '2026-01-11T01:00:00Z', updated_at: '2026-01-11T01:00:00Z' })
+  ];
+  const m = calculate(runs, 'main', '2026-01-12T00:00:00Z');
+  assert.equal(m.recovery_median_hours, 4);
+  assert.equal(m.recovery_q1_hours, 3);
+  assert.equal(m.recovery_q3_hours, 6);
+  assert.equal(m.recovery_iqr_hours, 3);
+});
+
