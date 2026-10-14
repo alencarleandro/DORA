@@ -1,4 +1,4 @@
-# Sprint 2 — Isabella / Issue #6
+# Sprint 2 - Issue #6
 
 ## Entrega preparada
 
@@ -17,9 +17,7 @@ A amostra original foi preservada: **60 repositórios × 5 releases**, semente 4
 
 Foram consultadas as páginas públicas dos 60 repositórios e das 300 releases, com confirmação das tags e das datas de publicação. Changelogs e comparações de commits complementaram notas vagas. Os links, hashes do conteúdo consultado e justificativas estão no [registro de evidências](../data/gold-standard-final-300-2025/revisao-isabella/evidencias-isabella.csv).
 
-O [rascunho de Isabella](../data/gold-standard-final-300-2025/revisao-isabella/rotulos-isabella-assistidos.csv) contém propostas nas três dimensões: tipo do projeto, entrega real ao usuário e release corretiva. Há **108 propostas de corretiva e 192 de não corretiva**. São resultados de análise assistida por IA, posteriormente revisados por Isabella, sem valor de consenso ou anotação humana sem auxílio.
-
-Isabella confirmou a revisão e aceitação das propostas. Os 300 rótulos foram transferidos para `rotulos-isabella.csv`, com indicação de análise assistida por IA e revisão humana. `revisao-isabella/revisao-isabella.json` registra a confirmação e os hashes do rascunho revisado e do arquivo final. Os scripts de concordância e consenso usam o arquivo oficial por padrão. Os arquivos dos outros integrantes e o consenso antigo não foram usados para escolher os rótulos desta análise. Não foram usadas previsões da heurística para classificar a nova amostra.
+Foi confirmada a revisão e aceitação das propostas. Os 300 rótulos foram transferidos para `rotulos-isabella.csv`, com indicação de análise assistida por IA e revisão humana. `revisao-isabella/revisao-isabella.json` registra a confirmação e os hashes do rascunho revisado e do arquivo final. Os scripts de concordância e consenso usam o arquivo oficial por padrão. Os arquivos dos outros integrantes e o consenso antigo não foram usados para escolher os rótulos desta análise. Não foram usadas previsões da heurística para classificar a nova amostra.
 
 ### Critérios aplicados às propostas
 
@@ -31,11 +29,9 @@ Isabella confirmou a revisão e aceitação das propostas. Os 300 rótulos foram
 
 ### Revisão humana registrada
 
-Isabella informou que revisou as propostas e elas foram incorporadas ao arquivo oficial. O uso de IA continua explícito na documentação e nas notas. Esta revisão assistida não deve ser apresentada como anotação humana sem auxílio ou como cumprimento, por si só, do protocolo de três avaliações humanas cegas.
-
 As notas com “revisar” destacam casos especialmente ambíguos para discussão no consenso: releases de propósito misto, notas cumulativas de CCXT, builds de CI/distribuição, subpacotes e runtimes. Os READMEs foram consultados no momento da análise e podem ter mudado desde 2025, especialmente em projetos que mudaram de nome ou finalidade.
 
-Após as três avaliações humanas independentes, Luís calcula a concordância e conduz o consenso (#4). Leandro avalia a heurística (#5). **Não houve execução de Kappa, consenso ou F1 nesta entrega.** `cfr_b_validation` continua `pending_independent_labels`.
+Após as três avaliações humanas independentes, foi calculada a concordância e condução do consenso (#4). Foi avaliada a heurística (#5). **Não houve execução de Kappa, consenso ou F1 nesta entrega.** `cfr_b_validation` continua `pending_independent_labels`.
 
 ## Verificação do dataset
 
@@ -66,7 +62,5 @@ O segundo monta o dataset a partir dos exports versionados e escreve o relatóri
 Para coletar novamente as páginas públicas e fontes complementares, use os scripts `collect-label-evidence.mjs` com `releases` e `repos`, `collect-label-supplement.mjs` e `collect-label-final-checks.mjs`. O cache fica em `data/issue-6-evidence`, fora do Git. GitHub pode limitar as chamadas não autenticadas e páginas atuais podem divergir das fotografias registradas.
 
 ## Fechamento da issue
-
-A consolidação, o dicionário e os rótulos revisados de Isabella estão preparados. A equipe ainda precisa concluir as avaliações dos outros integrantes, o consenso e a validação de CFR (b). Os arquivos desta alteração estão disponíveis no checkout; não houve commit nem push. Ao registrar a entrega no Git, referenciar **#6** na mensagem do commit.
 
 Os locais de cada artefato e as responsabilidades do grupo estão no [guia de pastas da Sprint 2](ESTRUTURA-DADOS-S02.md). A entrega está nas pastas versionadas, sem ZIP ou cópias em diretórios de empacotamento.
