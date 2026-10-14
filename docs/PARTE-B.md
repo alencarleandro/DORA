@@ -1,4 +1,4 @@
-# DORA — Sprint 1 / Pessoa B (Luís Henrique)
+# Sprint 1 - Issue #2
 
 **Fluxo web atualizado:** A seleciona e coleta os dados completos; B importa `release-data.csv` (releases e commits) e C importa `runs.csv`, ou ambas usam os arquivos locais de A. B e C não precisam de token neste fluxo. Os scripts individuais abaixo permanecem como alternativas de coleta legadas.
 
