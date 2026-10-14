@@ -2,7 +2,7 @@
 
 O site executa uma parte por vez. **A seleciona os repositórios e coleta os dados completos. B e C calculam as métricas localmente**, a partir dos arquivos de A ou de CSVs importados. O token é utilizado em A; não é necessário para B/C neste fluxo.
 
-## A — seleção e coleta
+## A - seleção e coleta
 
 Informe as datas da janela, a meta da amostra e o limite de candidatos. A busca por estrelas exclui forks e arquivados. A amostra exige Actions, pelo menos 5 releases principais publicadas na janela e 50 runs válidos de push no default branch. A verificação de elegibilidade pode parar ao confirmar 50 runs; essa contagem parcial não substitui o histórico completo.
 
@@ -22,11 +22,11 @@ Para completar uma seleção insuficiente, aumente **Limite de candidatos** e us
 
 Não edite `commits_json` manualmente; a biblioteca CSV aplica aspas e escape. B/C verificam a janela declarada no CSV e rejeitam divergências. B rejeita releases duplicadas, commits duplicados na mesma release e comparações incompletas. C valida os campos de runs e rejeita IDs duplicados.
 
-## B — cálculos locais
+## B - cálculos locais
 
 Na aba B, escolha uma A com dados completos ou importe **CSV de entrada B**. B calcula frequência de releases por semana, lead time por release e por commit, mediana e IQR. Não consulta a API e não pede token. Uma primeira release histórica sem base é ignorada somente no lead time. O cache é desnecessário para o cálculo; os dados de entrada permanecem disponíveis em disco.
 
-## C — cálculos locais
+## C - cálculos locais
 
 Na aba C, escolha uma A com dados completos ou importe **Runs**. C calcula CFR (a), mediana/IQR da recuperação e episódios censurados. Não consulta a API e não pede token. O branch e a janela de A são preservados na transferência automática.
 
