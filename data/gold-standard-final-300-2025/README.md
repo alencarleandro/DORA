@@ -8,6 +8,8 @@ Os três integrantes usam `gold_standard_sample.csv`: **60 repositórios × 5 re
 - `rotulos-luis.csv`: arquivo individual de Luís para a mesma amostra.
 - `rotulos-leandro.csv`: arquivo individual de Leandro para a mesma amostra.
 
+Leandro tem um [rascunho assistido e evidências](revisao-leandro/README.md): 300 referências examinadas, 262 sugestões e 38 casos sem decisão. A revisão humana está pendente; os scripts não usam esse rascunho e a planilha oficial foi preservada.
+
 Cada pessoa altera somente suas classificações e notas. Manter referências, cabeçalhos e ordem das linhas. Não consultar avaliações dos colegas ou previsões da heurística antes de concluir a avaliação independente. Os comandos de concordância procuram esses três nomes nesta pasta.
 
 `revisao-isabella/` guarda rascunho, decisões, evidências e hashes da revisão. O rascunho não é a entrada dos scripts de consenso. O uso de IA deve ser informado na metodologia.

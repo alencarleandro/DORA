@@ -1,0 +1,27 @@
+{
+  "rater": "leandro",
+  "method": "AI-assisted source review; NOT independent human annotation",
+  "human_review_status": "pending",
+  "generated_at": "2026-10-14T19:26:26.203Z",
+  "sample_sha256": "1b912e772066c477bdf8dc686a2e6afdf43bc4809026dd9daaa90cc869a3e686",
+  "source_job_id": "1deaa513-2c06-4949-bd54-2c591b0eef12",
+  "rows": 300,
+  "repositories": 60,
+  "corrective_yes": 90,
+  "corrective_no": 172,
+  "corrective_unresolved": 38,
+  "delivery_uncertain": 15,
+  "protected_files_sha256": {
+    "data\\gold-standard-final-300-2025\\rotulos-leandro.csv": "300b383e940de9fe9235d5f910491cd935c57cd328983c2091d3b9f288721c63",
+    "data\\gold-standard-final-300-2025\\rotulos-luis.csv": "300b383e940de9fe9235d5f910491cd935c57cd328983c2091d3b9f288721c63",
+    "data\\gold-standard-final-300-2025\\rotulos-isabella.csv": "b92325b4531d8d21d121d6c2d036523854acdd2a77d5c69e3d9cb8eddbdfa3bb"
+  },
+  "limitations": [
+    "Drafts are not inputs for agreement/consensus.",
+    "Read current repository READMEs; historical project purpose requires human confirmation.",
+    "Did not read other raters classification CSVs or call CFR classification/prediction code for these judgments.",
+    "Prior conversation included heuristic descriptions; strict assessor blinding is not established.",
+    "Quoted evidence is brief; inspect linked full notes and changelogs before accepting.",
+    "Mixed-purpose, dependency-only and CI-only cases remain unresolved rather than defaulting to no."
+  ]
+}
