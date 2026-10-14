@@ -1,4 +1,4 @@
-# Dicionário de dados — Pessoa C
+# Dicionário de dados - Leandro
 
 CSV UTF-8 com BOM; taxas em fração 0–1; campos vazios indicam ausência de medição. Fórmulas de planilha potencialmente ativas recebem apóstrofo no export para evitar execução ao abrir em Excel.
 
@@ -52,7 +52,7 @@ Comparações indisponíveis por `not_found` ou `unrelated_histories` permanecem
 
 ---
 
-# Dicionário de dados — Pessoa B (Lead Time & Releases)
+# Dicionário de dados - Luis (Lead Time & Releases)
 
 ## lead_time_metrics.csv
 
@@ -125,7 +125,7 @@ CFR (b) permanece exploratória até a validação; ela não substitui `cfr_ci`,
 
 <!-- dataset-s02-final-schema -->
 
-# Dataset consolidado — Sprint 2 / Issue #6
+# Dataset consolidado - Sprint 2 / Issue #6
 
 Uma linha por repositório, chave `repository` normalizada em minúsculas para junção. Os 300 projetos e a janela 2025-01-01 a 2025-12-31 são preservados. Dicionário legível por máquina: `data/dataset-s02-final/dictionary.csv`.
 
