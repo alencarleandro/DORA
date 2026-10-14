@@ -1,4 +1,4 @@
-# Leandro — Sprint 2 / Issue #5
+# Sprint 1 - Issue #3
 
 **Coleta final de 300 projetos:** A, B e C foram concluídos sobre a janela 2025-01-01 a 2025-12-31. Dataset: `data/dataset-s02-final/dataset.csv`; exports B/C: `data/dataset-s02-final/metricas/`. A entrega segue o [guia de pastas da equipe](ESTRUTURA-DADOS-S02.md), sem ZIP. A amostra final está em `data/gold-standard-final-300-2025/` e usa apenas releases com comparação disponível. Isabella revisou seus rótulos assistidos; as demais avaliações, consenso e F1 continuam pendentes. Os novos relatórios de CFR (b) devem ficar em `data/dataset-s02-final/validacao/cfr-b/`. As medições piloto descritas abaixo são registros da etapa anterior.
 
@@ -62,11 +62,3 @@ O gerador anterior preenchia slots simulados quando não obtinha releases. Agora
 No cálculo exploratório, foram reutilizados os 99 arquivos locais de releases disponíveis em 2025. Isso não equivale à coorte final de pelo menos 300 repositórios da Sprint 2, nem à conclusão de todas as coletas de workflows.
 
 Uma nova amostra piloto com 300 releases reais de 60 repositórios foi gerada em `data/gold-standard-real-2025/`, com semente 42, junto a três templates vazios para rotulação. Ela usa a base local de 100 selecionados e permanece local. Para a coleta final ampliada, a equipe deve confirmar se precisa sortear novamente a amostra.
-
-## Explicando como para uma criança
-
-Imagine que cada release é uma versão nova de um brinquedo. Se logo depois, em até sete dias, sai outra versão dizendo que consertou um defeito, marcamos a versão anterior como possível problema. Contamos quantas versões tiveram esse sinal e dividimos pelas versões que conseguimos acompanhar.
-
-Se o acompanhamento termina amanhã, não podemos dizer se a versão de hoje precisará de conserto nos próximos sete dias. Ela fica de fora da conta. E, se a lista de referência traz a data errada, precisamos corrigir a lista antes de dizer que nosso detector acertou.
-
-Para o próximo passo de Isabella, veja [o roteiro de integração](INTEGRACAO-ISABELLA-S02.md).
