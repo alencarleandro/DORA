@@ -11,6 +11,8 @@
     "pipeline": "node cli.mjs",
     "releases": "node scripts/collect-releases.mjs",
     "test": "node --test --experimental-test-coverage --test-coverage-include=lib/metrics.mjs --test-coverage-include=lib/agreement.mjs --test-coverage-include=lib/corrective.mjs --test-coverage-lines=80 --test-coverage-branches=80 tests/*.test.mjs",
-    "cfr-b": "node scripts/calculate-cfr-b.mjs"
+    "cfr-b": "node scripts/calculate-cfr-b.mjs",
+    "rq07": "node scripts/analyze-rq07-rq08.mjs"
   }
 }
+

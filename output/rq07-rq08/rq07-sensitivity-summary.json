@@ -1,0 +1,401 @@
+{
+  "dataset": "data/dataset-s02-final/dataset.csv",
+  "total_repositories": 300,
+  "complete_cases_count": 258,
+  "missing_recovery_count": 42,
+  "distributions": {
+    "C1_reference": {
+      "Elite": 9,
+      "High": 111,
+      "Medium": 151,
+      "Low": 29
+    },
+    "C2_alternative": {
+      "Elite": 3,
+      "High": 80,
+      "Medium": 177,
+      "Low": 40
+    },
+    "C3_mixed_lt_release_cfr_b": {
+      "Elite": 3,
+      "High": 84,
+      "Medium": 176,
+      "Low": 37
+    },
+    "C4_mixed_lt_commit_cfr_ci": {
+      "Elite": 9,
+      "High": 107,
+      "Medium": 153,
+      "Low": 31
+    }
+  },
+  "pairwise_sensitivity": [
+    {
+      "name": "C1 x C2 (Referência vs Alternativa Completa)",
+      "code": "C1_C2",
+      "focus": "Mudança conjunta de Lead Time (release -> commit) e CFR (CI -> entrega)",
+      "total": 300,
+      "changed": 84,
+      "changed_percent": 28.000000000000004,
+      "same": 216,
+      "same_percent": 72,
+      "upgraded": 19,
+      "upgraded_percent": 6.333333333333334,
+      "downgraded": 65,
+      "downgraded_percent": 21.666666666666668,
+      "mean_category_distance": 0.30666666666666664,
+      "kappa": 0.5612501192255113,
+      "kappa_interpretation": "Moderada (0,41 a 0,60)",
+      "contingency_matrix": [
+        [
+          21,
+          8,
+          0,
+          0
+        ],
+        [
+          13,
+          129,
+          9,
+          0
+        ],
+        [
+          6,
+          38,
+          65,
+          2
+        ],
+        [
+          0,
+          2,
+          6,
+          1
+        ]
+      ]
+    },
+    {
+      "name": "C1 x C3 (Isolamento do CFR)",
+      "code": "C1_C3",
+      "focus": "Efeito isolado da mudança de CFR (CI -> entrega), mantendo Lead Time por release",
+      "total": 300,
+      "changed": 53,
+      "changed_percent": 17.666666666666668,
+      "same": 247,
+      "same_percent": 82.33333333333334,
+      "upgraded": 4,
+      "upgraded_percent": 1.3333333333333335,
+      "downgraded": 49,
+      "downgraded_percent": 16.333333333333332,
+      "mean_category_distance": 0.18333333333333332,
+      "kappa": 0.7356616469080427,
+      "kappa_interpretation": "Substancial (0,61 a 0,80)",
+      "contingency_matrix": [
+        [
+          27,
+          2,
+          0,
+          0
+        ],
+        [
+          8,
+          141,
+          2,
+          0
+        ],
+        [
+          2,
+          33,
+          76,
+          0
+        ],
+        [
+          0,
+          0,
+          6,
+          3
+        ]
+      ]
+    },
+    {
+      "name": "C1 x C4 (Isolamento do Lead Time)",
+      "code": "C1_C4",
+      "focus": "Efeito isolado da mudança de Lead Time (release -> commit), mantendo CFR de CI",
+      "total": 300,
+      "changed": 53,
+      "changed_percent": 17.666666666666668,
+      "same": 247,
+      "same_percent": 82.33333333333334,
+      "upgraded": 24,
+      "upgraded_percent": 8,
+      "downgraded": 29,
+      "downgraded_percent": 9.666666666666666,
+      "mean_category_distance": 0.18,
+      "kappa": 0.7484472049689442,
+      "kappa_interpretation": "Substancial (0,61 a 0,80)",
+      "contingency_matrix": [
+        [
+          23,
+          6,
+          0,
+          0
+        ],
+        [
+          7,
+          130,
+          14,
+          0
+        ],
+        [
+          1,
+          17,
+          89,
+          4
+        ],
+        [
+          0,
+          0,
+          4,
+          5
+        ]
+      ]
+    },
+    {
+      "name": "C2 x C3 (Lead Time sob CFR de entrega)",
+      "code": "C2_C3",
+      "focus": "Efeito de Lead Time (commit vs release) tendo o CFR de entrega como base",
+      "total": 300,
+      "changed": 47,
+      "changed_percent": 15.666666666666668,
+      "same": 253,
+      "same_percent": 84.33333333333334,
+      "upgraded": 27,
+      "upgraded_percent": 9,
+      "downgraded": 20,
+      "downgraded_percent": 6.666666666666667,
+      "mean_category_distance": 0.15666666666666668,
+      "kappa": 0.7588919288645698,
+      "kappa_interpretation": "Substancial (0,61 a 0,80)",
+      "contingency_matrix": [
+        [
+          30,
+          10,
+          0,
+          0
+        ],
+        [
+          7,
+          155,
+          15,
+          0
+        ],
+        [
+          0,
+          11,
+          67,
+          2
+        ],
+        [
+          0,
+          0,
+          2,
+          1
+        ]
+      ]
+    },
+    {
+      "name": "C2 x C4 (CFR sob Lead Time por commit)",
+      "code": "C2_C4",
+      "focus": "Efeito de CFR (entrega vs CI) tendo o Lead Time por commit como base",
+      "total": 300,
+      "changed": 58,
+      "changed_percent": 19.333333333333332,
+      "same": 242,
+      "same_percent": 80.66666666666666,
+      "upgraded": 53,
+      "upgraded_percent": 17.666666666666668,
+      "downgraded": 5,
+      "downgraded_percent": 1.6666666666666667,
+      "mean_category_distance": 0.19333333333333333,
+      "kappa": 0.7229740487183569,
+      "kappa_interpretation": "Substancial (0,61 a 0,80)",
+      "contingency_matrix": [
+        [
+          28,
+          12,
+          0,
+          0
+        ],
+        [
+          3,
+          139,
+          35,
+          0
+        ],
+        [
+          0,
+          2,
+          72,
+          6
+        ],
+        [
+          0,
+          0,
+          0,
+          3
+        ]
+      ]
+    },
+    {
+      "name": "C3 x C4 (Cruzamento das Mistas)",
+      "code": "C3_C4",
+      "focus": "Comparação entre as duas definições operacionais híbridas",
+      "total": 300,
+      "changed": 70,
+      "changed_percent": 23.333333333333332,
+      "same": 230,
+      "same_percent": 76.66666666666667,
+      "upgraded": 56,
+      "upgraded_percent": 18.666666666666668,
+      "downgraded": 14,
+      "downgraded_percent": 4.666666666666667,
+      "mean_category_distance": 0.23666666666666666,
+      "kappa": 0.6584787070292453,
+      "kappa_interpretation": "Substancial (0,61 a 0,80)",
+      "contingency_matrix": [
+        [
+          23,
+          14,
+          0,
+          0
+        ],
+        [
+          7,
+          134,
+          35,
+          0
+        ],
+        [
+          1,
+          5,
+          71,
+          7
+        ],
+        [
+          0,
+          0,
+          1,
+          2
+        ]
+      ]
+    }
+  ],
+  "imputation_sensitivity": [
+    {
+      "name": "C1 x C2 (Com Imputação Elite para 0 Falhas)",
+      "code": "C1_C2_imputed",
+      "total": 300,
+      "changed": 91,
+      "changed_percent": 30.333333333333336,
+      "same": 209,
+      "same_percent": 69.66666666666667,
+      "upgraded": 18,
+      "upgraded_percent": 6,
+      "downgraded": 73,
+      "downgraded_percent": 24.333333333333336,
+      "mean_category_distance": 0.33,
+      "kappa": 0.5179354000973868,
+      "kappa_interpretation": "Moderada (0,41 a 0,60)",
+      "contingency_matrix": [
+        [
+          14,
+          8,
+          0,
+          0
+        ],
+        [
+          13,
+          123,
+          8,
+          0
+        ],
+        [
+          6,
+          46,
+          71,
+          2
+        ],
+        [
+          0,
+          2,
+          6,
+          1
+        ]
+      ]
+    }
+  ],
+  "complete_cases_sensitivity": [
+    {
+      "name": "C1 x C2 (Apenas N=258 Casos com MTTR Observado)",
+      "code": "C1_C2_complete",
+      "total": 258,
+      "changed": 71,
+      "changed_percent": 27.51937984496124,
+      "same": 187,
+      "same_percent": 72.48062015503875,
+      "upgraded": 14,
+      "upgraded_percent": 5.426356589147287,
+      "downgraded": 57,
+      "downgraded_percent": 22.093023255813954,
+      "mean_category_distance": 0.29844961240310075,
+      "kappa": 0.5440022035532294,
+      "kappa_interpretation": "Moderada (0,41 a 0,60)",
+      "contingency_matrix": [
+        [
+          9,
+          7,
+          0,
+          0
+        ],
+        [
+          13,
+          115,
+          6,
+          0
+        ],
+        [
+          4,
+          33,
+          62,
+          1
+        ],
+        [
+          0,
+          2,
+          5,
+          1
+        ]
+      ]
+    }
+  ],
+  "rq08_rework_rate": {
+    "descriptive_statistics": {
+      "n": 300,
+      "mean": 0.30303899104921916,
+      "std": 0.27770643733566347,
+      "min": 0,
+      "q1": 0.060160427807486636,
+      "median": 0.25,
+      "q3": 0.4856243154435926,
+      "iqr": 0.42546388763610593,
+      "max": 0.9976744186046511
+    },
+    "zero_rework_count": 62,
+    "zero_rework_percent": 20.666666666666668,
+    "spearman_correlations": {
+      "rework_rate_vs_cfr_b": 0.9991759605057572,
+      "rework_rate_vs_cfr_ci": 0.1345458055081912,
+      "rework_rate_vs_deployment_frequency": 0.5746029473355694,
+      "rework_rate_vs_lead_time_release": -0.5424229277841617
+    }
+  }
+}
