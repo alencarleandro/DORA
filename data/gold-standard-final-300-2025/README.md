@@ -5,7 +5,7 @@ Os três integrantes usam `gold_standard_sample.csv`: **60 repositórios × 5 re
 ## Arquivos oficiais
 
 - `rotulos-isabella.csv`: 300 rótulos assistidos por IA, revisados e aceitos por Isabella.
-- `rotulos-luis.csv`: arquivo individual de Luís para a mesma amostra.
+- `rotulos-luis.csv`: arquivo individual de Luis para a mesma amostra.
 - `rotulos-leandro.csv`: arquivo individual de Leandro para a mesma amostra.
 
 Leandro tem um [rascunho assistido e evidências](revisao-leandro/README.md): 300 referências examinadas, 262 sugestões e 38 casos sem decisão. A revisão humana está pendente; os scripts não usam esse rascunho e a planilha oficial foi preservada.
@@ -16,7 +16,7 @@ Cada pessoa altera somente suas classificações e notas. Manter referências, c
 
 ## Concordância e consenso
 
-Após os três arquivos estarem completos, Luís executa, na raiz do projeto:
+Após os três arquivos estarem completos, Luis executa, na raiz do projeto:
 
 ```powershell
 node scripts/calculate-agreement.mjs --data-dir data/gold-standard-final-300-2025

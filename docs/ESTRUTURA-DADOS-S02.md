@@ -28,7 +28,7 @@ data/
 │   ├── gold_standard_sample.csv     # amostra comum; não editar as referências
 │   ├── sampling-manifest.json       # origem, seed e população sorteável
 │   ├── rotulos-isabella.csv         # arquivo oficial de Isabella, revisado
-│   ├── rotulos-luis.csv             # arquivo oficial de Luís
+│   ├── rotulos-luis.csv             # arquivo oficial de Luis
 │   ├── rotulos-leandro.csv          # arquivo oficial de Leandro
 │   └── revisao-isabella/            # rastreabilidade da análise assistida
 │       ├── rotulos-isabella-assistidos.csv
@@ -46,7 +46,7 @@ data/
 | Pessoa / issue | Lê | Atualiza | Próximo entregável |
 |---|---|---|---|
 | Isabella / #6 | seleção e métricas B/C; amostra e suas evidências | `rotulos-isabella.csv`, dataset, dicionário e relatório de qualidade | base consolidada e rastreabilidade dos seus rótulos |
-| Luís / #4 | amostra comum; seus rótulos; depois, os três arquivos concluídos | `rotulos-luis.csv`; relatórios de concordância e consenso | Kappa das três dimensões e consenso documentado |
+| Luis / #4 | amostra comum; seus rótulos; depois, os três arquivos concluídos | `rotulos-luis.csv`; relatórios de concordância e consenso | Kappa das três dimensões e consenso documentado |
 | Leandro / #5 | amostra comum; seus rótulos; depois, consenso e dados brutos de releases | `rotulos-leandro.csv`; resultados de avaliação de CFR (b) | precisão, recall, F1 e versão da heurística |
 
 ## Fluxo

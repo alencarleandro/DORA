@@ -18,7 +18,7 @@ Foram examinadas as referências públicas das 300 releases da amostra final (60
 5. Após sua revisão, transfira as decisões aceitas para `../rotulos-leandro.csv`, mantendo os campos de referência e registrando uso de IA nas notas. **Não copie automaticamente o rascunho antes de revisar.**
 6. Com os três arquivos oficiais concluídos, execute concordância e consenso apontando para `data/gold-standard-final-300-2025`.
 
-Nenhum arquivo de Isabella ou Luís foi alterado. O arquivo oficial de Leandro também permanece preservado até a revisão. Os scripts de concordância/consenso não leem esta subpasta.
+Nenhum arquivo de Isabella ou Luis foi alterado. O arquivo oficial de Leandro também permanece preservado até a revisão. Os scripts de concordância/consenso não leem esta subpasta.
 
 ## Método e limites
 
