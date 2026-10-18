@@ -1,8 +1,8 @@
-# Isabella - roteiro passo a passo da Sprint 3
+# Issue #8 - roteiro passo a passo da Sprint 3
 
 **Sua tarefa: issue #8, RQ05 e RQ06.**
 
-Este é um material de orientação temporário, publicado no GitHub para Isabella acessar. Está inteiro na pasta `data/temporario-roteiro-isa-sprint3/`. Depois de usar, pode excluir somente essa pasta em um commit de limpeza. Os dados e resultados do projeto ficam fora dela.
+Este é um material de orientação temporário, publicado no GitHub para a pessoa responsável pela issue #8 acessar. Está inteiro na pasta `data/temporario-issue-8-sprint3/`. Depois de usar, pode excluir somente essa pasta em um commit de limpeza. Os dados e resultados do projeto ficam fora dela.
 
 ## 1. Entender o que você precisa responder
 
@@ -244,4 +244,4 @@ Depois de implementar e executar, adapte aos resultados reais:
 
 ## Depois de usar
 
-Pode excluir **somente `data/temporario-roteiro-isa-sprint3/`**. A pasta contém apenas este roteiro e não é entrada de nenhum script. Não exclua `data/dataset-s02-final`, a amostra-ouro, `scripts`, `tests`, `docs` ou os resultados permanentes de `output`.
+Pode excluir **somente `data/temporario-issue-8-sprint3/`**. A pasta contém apenas este roteiro e não é entrada de nenhum script. Não exclua `data/dataset-s02-final`, a amostra-ouro, `scripts`, `tests`, `docs` ou os resultados permanentes de `output`.
