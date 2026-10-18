@@ -1,0 +1,33 @@
+{
+  "issue": 7,
+  "dataset": "data/dataset-s02-final/dataset.csv",
+  "dataset_sha256": "c109078a7ba40e3c982749a5cdb638b700dd1d6bbe21d0e868287ae9115a8fc5",
+  "rows": 300,
+  "window": {
+    "start": "2025-01-01",
+    "end": "2025-12-31"
+  },
+  "cfr_b_validation": [
+    "pending_independent_labels"
+  ],
+  "quartiles": "Hyndman-Fan type 7, linear interpolation",
+  "analysis_unit": "repository; unweighted",
+  "missing_policy": "no imputation; strict C1 requires four valid metrics; available C1 exploratory",
+  "invalid_policy": "exclude affected metric, preserve source, emit warning",
+  "plots_requested": true,
+  "plots_completed": true,
+  "rq07_comparison": {
+    "available": true,
+    "source": "output/rq07-rq08/rq07-classifications.csv",
+    "source_sha256": "631a9fd5edcac9783c02dd8065465272e1b5bb324a26be32950a4e2aab7596ee",
+    "matched": 300,
+    "differences": 5
+  },
+  "scripts_sha256": {
+    "lib/descriptive.mjs": "ab3a2ce7f91df6791264cbc0c66b26a419fff79c47caee95dbc456c47cd4e995",
+    "lib/sensitivity.mjs": "6da9ec848e378135f01071415f28d85dfec419bb67debeb66507614b8eca7b39",
+    "lib/metrics.mjs": "69c0bff519ac7fc67e603657c2996c30d64d2457d302ccea86589b74eb2fe1a9",
+    "scripts/analyze-rq01-rq04.mjs": "5988f089713f2bb4ec98156e45258ed9fc87c6bca558a56b21f143c4fa5050ca",
+    "scripts/plot-rq01-rq04.py": "76cff4209c99180181b5d082a30247237e67c9d75d9fc0ed4c1924528c6858fa"
+  }
+}

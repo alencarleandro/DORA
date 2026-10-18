@@ -435,6 +435,8 @@ Cada componente é uma Issue própria, testável isoladamente antes de ser integ
 - **B:** implementação e refinamento da heurística de release corretiva (CFR b) a partir da validação.
 - **C:** coleta completa, consolidação do dataset e dicionário de dados.
 
+**Entrega de Leandro - Sprint 3 / issue #7:** análise local das RQ01 a RQ04, estatísticas, gráficos e classificação C1 disponíveis no [guia de execução](docs/ISSUE-7-S03.md) e no [relatório de resultados e discussão](output/rq01-rq04/REPORT.md). Execute `npm run rq01` (Python com Matplotlib para as figuras). A análise distingue C1 completa/parcial e mantém o CFR (b) como exploratório enquanto sua validação estiver pendente.
+
 **Lab03S03** (5 pontos):
 - Análise completa das RQ 01 a RQ 07:
   - estatística descritiva (mediana e IQR) e classificação DORA;
