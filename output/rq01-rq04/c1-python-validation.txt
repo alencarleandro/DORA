@@ -1,0 +1,21 @@
+======================================================================
+ REPLICAÇÃO EM PYTHON: ANÁLISE DE SENSIBILIDADE DORA (RQ 07 / RQ 08)
+======================================================================
+Carregados 300 repositórios.
+
+Resultados da Análise de Sensibilidade (RQ 07):
+  • C1 x C2 (Referência vs Alternativa Completa):
+      Mudança: 82/300 (27.3%) | Kappa Linear: 0.5745
+  • C1 x C3 (Isolamento do CFR):
+      Mudança: 53/300 (17.7%) | Kappa Linear: 0.7377
+  • C1 x C4 (Isolamento do Lead Time):
+      Mudança: 51/300 (17.0%) | Kappa Linear: 0.7555
+  • C2 x C3 (Lead Time sob CFR de Entrega):
+      Mudança: 44/300 (14.7%) | Kappa Linear: 0.7710
+  • C2 x C4 (CFR sob Lead Time por Commit):
+      Mudança: 56/300 (18.7%) | Kappa Linear: 0.7290
+  • C3 x C4 (Cruzamento das Mistas):
+      Mudança: 67/300 (22.3%) | Kappa Linear: 0.6697
+
+Validação cruzada Node.js vs Python:
+  ✓ Todas as 6 métricas de Kappa Linear conferem com precisão exata (< 10^-9)!

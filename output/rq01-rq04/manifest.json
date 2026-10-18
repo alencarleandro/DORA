@@ -19,9 +19,9 @@
   "rq07_comparison": {
     "available": true,
     "source": "output/rq07-rq08/rq07-classifications.csv",
-    "source_sha256": "631a9fd5edcac9783c02dd8065465272e1b5bb324a26be32950a4e2aab7596ee",
+    "source_sha256": "7bd97fca5666d8f9cc31cc248fd1f8964c4b19b9490f195cb9252cd4b2d95458",
     "matched": 300,
-    "differences": 5
+    "differences": 0
   },
   "scripts_sha256": {
     "lib/descriptive.mjs": "ab3a2ce7f91df6791264cbc0c66b26a419fff79c47caee95dbc456c47cd4e995",

@@ -37,7 +37,9 @@ Os gráficos são ECDFs: a altura indica a proporção de projetos com valor at�
 
 ## Integração com Luis e Isabella
 
-Luis já publicou a sensibilidade em `output/rq07-rq08/`. A comparação com aquela C1 disponível encontra **cinco diferenças** no escore geral devido ao limite mensal. Elas estão em [c1-rq07-comparison.csv](../output/rq01-rq04/c1-rq07-comparison.csv). Os resultados da #9 foram preservados; antes de montar o artigo, a equipe deve harmonizar a política de classificação e decidir se recalcula aquela análise. Além disso, o n=258 da C1 completa não deve ser apresentado como equivalente ao resultado parcial dos 300 projetos.
+A C1 disponível de RQ01-04 e RQ07 foi alinhada em 18/10/2026. Ambos usam `classifyWindowFrequency`, com 12 releases por ano civil como limite mensal. A comparação tem **300 chaves e zero divergências**. O script e os resultados da sensibilidade foram recalculados e a réplica Python foi atualizada. O histórico anterior (cinco diferenças de escore) permanece no Git. Os 258 casos completos continuam separados dos 300 com dimensões disponíveis; não houve imputação.
+
+A confirmação da validação do CFR (b) está em [STATUS.md](../data/dataset-s02-final/validacao/cfr-b/STATUS.md). Há evidência local para as 300 releases, mas os arquivos oficiais de Leandro e Luis ainda não têm rótulos corretivos preenchidos e o consenso final não existe. A ausência do consenso impede concluir o F1.
 
 Isabella pode usar `descriptive-summary.csv` e `analysis.json` como base das RQ05/RQ06, sempre mantendo as mesmas unidades, n por variante e a ressalva do CFR (b). Comparações pareadas devem excluir somente projetos sem uma das variáveis, sem transformar ausentes em zero.
 
@@ -45,6 +47,6 @@ O [REPORT.md](../output/rq01-rq04/REPORT.md) é a contribuição de resultados/d
 
 ## Fala curta para a daily
 
-“Na issue 7, implementei a análise das quatro métricas DORA sobre os 300 projetos. Gerei estatísticas, gráficos e a classificação C1, separando os 258 projetos completos dos 42 com dados parciais. Também sinalizei um lead time negativo e documentei o tratamento dos dados ausentes. A análise está reproduzível sem token; falta a equipe alinhar a C1 com a sensibilidade e resolver a validação pendente do CFR baseado em releases.”
+“Na issue 7, implementei a análise das quatro métricas DORA sobre os 300 projetos. Gerei estatísticas, gráficos e a classificação C1, separando os 258 projetos completos dos 42 com dados parciais. Também sinalizei um lead time negativo e documentei o tratamento dos dados ausentes. A análise está reproduzível sem token; a C1 está alinhada com a sensibilidade e falta concluir a validação do CFR baseado em releases.”
 
 **Explicando de forma simples:** peguei as contas que já tínhamos, resumi os resultados e organizei os projetos por faixa de desempenho. Quando faltava uma informação, deixei isso visível, em vez de inventar uma nota.

@@ -6,6 +6,7 @@ import path from 'node:path';
 import {parseCSV,toCSV} from '../lib/csv.mjs';
 import {descriptiveStats,classifyWindowFrequency,analyzeDescriptive} from '../lib/descriptive.mjs';
 import {runDescriptive} from '../scripts/analyze-rq01-rq04.mjs';
+import {runAnalysis} from '../scripts/analyze-rq07-rq08.mjs';
 
 const base=(overrides={})=>({repository:'a/b',default_branch:'main',window_start:'2025-01-01',window_end:'2025-12-31',releases_in_window:'52',deployment_frequency:String(52/(365/7)),lead_time_release_median_hours:'24',lead_time_commit_median_hours:'12',cfr_ci:'.2',cfr_b:'.1',recovery_median_hours:'24',censored_fraction:'.5',failures:'20',successes:'80',runs_valid:'100',runs_total:'100',runs_ignored:'0',episodes_total:'10',episodes_censored:'5',cfr_b_releases_evaluated:'50',cfr_b_releases_failed:'5',cfr_b_releases_censored:'2',cfr_b_releases_unknown:'0',cfr_b_validation:'pending_independent_labels',...overrides});
 test('quartis de projetos: interpolação tipo 7, vazios separados de zero',()=>{
@@ -59,4 +60,14 @@ test('CLI local gera artefatos portáteis sem rede, sem alterar fonte e explicit
  assert.equal(fs.readFileSync(source,'utf8'),csv);assert.match(fs.readFileSync(path.join(output,'REPORT.md'),'utf8'),/EXPLORATÓRIO/);
  assert.equal(parseCSV(fs.readFileSync(path.join(output,'c1-classifications.csv'),'utf8')).length,1);
  const manifest=JSON.parse(fs.readFileSync(path.join(output,'manifest.json'),'utf8'));assert.equal(manifest.plots_completed,false);assert.equal(manifest.dataset_sha256.length,64);
+});
+
+test('RQ07 e RQ01-04 compartilham C1 disponível para os 300 projetos, incluindo o limite mensal',t=>{
+ const tmp=fs.mkdtempSync(path.join(os.tmpdir(),'dora-c1-integration-'));t.after(()=>fs.rmSync(tmp,{recursive:true,force:true}));
+ const dataset='data/dataset-s02-final/dataset.csv';
+ runAnalysis({dataset,output:tmp});
+ const old=new Map(parseCSV(fs.readFileSync(path.join(tmp,'rq07-classifications.csv'),'utf8'),{spreadsheetEscapes:true}).map(r=>[r.repository,Number(r.c1_score)]));
+ const current=analyzeDescriptive(parseCSV(fs.readFileSync(dataset,'utf8'),{spreadsheetEscapes:true}));
+ assert.equal(current.n,300);assert.equal(current.c1.complete_n,258);
+ for(const row of current.rows)assert.equal(row.c1_available_score,old.get(row.repository),row.repository);
 });

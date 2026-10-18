@@ -1,4 +1,6 @@
-# Sprint 2 - Issue #6
+# Sprint 2 - Leandro - Issue #5
+
+**Conferência da validação final (18/10/2026):** as 300 releases têm evidência local correspondente, mas Leandro e Luis ainda têm zero rótulos corretivos preenchidos nos arquivos oficiais da amostra final, e não há `consensus.csv` nessa pasta. Os relatórios históricos têm zero referências verificadas e não comprovam F1. Veja o [diagnóstico e os comandos para concluir](../data/dataset-s02-final/validacao/cfr-b/STATUS.md). A auditoria não alterou rótulos ou dataset; o CFR (b) continua exploratório.
 
 **Coleta final de 300 projetos:** A, B e C foram concluídos sobre a janela 2025-01-01 a 2025-12-31. Dataset: `data/dataset-s02-final/dataset.csv`; exports B/C: `data/dataset-s02-final/metricas/`. A entrega segue o [guia de pastas da equipe](ESTRUTURA-DADOS-S02.md), sem ZIP. A amostra final está em `data/gold-standard-final-300-2025/` e usa apenas releases com comparação disponível. Isabella revisou seus rótulos assistidos; as demais avaliações, consenso e F1 continuam pendentes. Os novos relatórios de CFR (b) devem ficar em `data/dataset-s02-final/validacao/cfr-b/`. As medições piloto descritas abaixo são registros da etapa anterior.
 

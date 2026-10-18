@@ -72,7 +72,7 @@ Trabalho acadêmico da faculdade PUC Minas para a disciplina de Laboratório de 
 
 ## 🚀 Módulos e Fluxo de Execução
 
-> **Leandro — Sprint 2 / CFR (b), issue #5:** cálculo local, heurísticas e avaliação implementados. Veja [regras e execução](docs/PARTE-C-S02.md) e [roteiro para Isabella](docs/INTEGRACAO-ISABELLA-S02.md). A validação F1 está pendente de referências reais consistentes na amostra-ouro; os rótulos recebidos foram preservados.
+> **Leandro — Sprint 2 / CFR (b), issue #5:** cálculo local, heurísticas e avaliação implementados. Veja [regras e execução](docs/PARTE-C-S02.md) e [roteiro para Isabella](docs/INTEGRACAO-ISABELLA-S02.md). A conferência da validação final está em [STATUS.md](data/dataset-s02-final/validacao/cfr-b/STATUS.md): há evidência para as 300 releases, mas faltam rótulos oficiais de Leandro/Luis e consenso. O F1 segue pendente.
 
 > **Isabella — seleção e metadados:** execute `node scripts/select-repos.mjs --config config.json --mode metadata`. Veja [Parte A](docs/PARTE-A.md).
 

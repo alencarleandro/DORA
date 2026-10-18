@@ -1,0 +1,78 @@
+{
+  "status": "blocked_missing_prerequisites",
+  "issue": 5,
+  "sample_file": "data\\gold-standard-final-300-2025\\gold_standard_sample.csv",
+  "sample_sha256": "1b912e772066c477bdf8dc686a2e6afdf43bc4809026dd9daaa90cc869a3e686",
+  "sample_rows": 300,
+  "source_job_id": "1deaa513-2c06-4949-bd54-2c591b0eef12",
+  "raters": [
+    {
+      "name": "leandro",
+      "file": "data\\gold-standard-final-300-2025\\rotulos-leandro.csv",
+      "sha256": "300b383e940de9fe9235d5f910491cd935c57cd328983c2091d3b9f288721c63",
+      "rows": 300,
+      "matching_sample": true,
+      "corrective_filled": 0,
+      "corrective_missing_or_invalid": 300,
+      "complete_dimensions": 0
+    },
+    {
+      "name": "luis",
+      "file": "data\\gold-standard-final-300-2025\\rotulos-luis.csv",
+      "sha256": "300b383e940de9fe9235d5f910491cd935c57cd328983c2091d3b9f288721c63",
+      "rows": 300,
+      "matching_sample": true,
+      "corrective_filled": 0,
+      "corrective_missing_or_invalid": 300,
+      "complete_dimensions": 0
+    },
+    {
+      "name": "isabella",
+      "file": "data\\gold-standard-final-300-2025\\rotulos-isabella.csv",
+      "sha256": "b92325b4531d8d21d121d6c2d036523854acdd2a77d5c69e3d9cb8eddbdfa3bb",
+      "rows": 300,
+      "matching_sample": true,
+      "corrective_filled": 300,
+      "corrective_missing_or_invalid": 0,
+      "complete_dimensions": 300
+    }
+  ],
+  "consensus": {
+    "exists": false,
+    "matching_sample": false,
+    "complete": false,
+    "sha256": null
+  },
+  "local_evidence": {
+    "matching": 300,
+    "missing": 0,
+    "comparison_unavailable": 0
+  },
+  "historical_reports": [
+    {
+      "file": "data/cfr-b/local-2025/validation.json",
+      "sha256": "ec10a413cb40c4f27e89c35e5f8696a06eb85014418c5735bcf5883a39c03e16",
+      "status": "reference_pending",
+      "reference_rows": 300,
+      "verified_rows": 0,
+      "belongs_to_final_sample": false
+    },
+    {
+      "file": "data/cfr-b/reference-validation/validation.json",
+      "sha256": "a4db0f5c2de28bb6c6faccce1fec360bcaa31c3791d0f578a9d49835c5c03675",
+      "status": "reference_pending",
+      "reference_rows": 300,
+      "verified_rows": 0,
+      "belongs_to_final_sample": false
+    }
+  ],
+  "blockers": [
+    "leandro: 300 rótulos corretivos ausentes/inválidos",
+    "luis: 300 rótulos corretivos ausentes/inválidos",
+    "Consenso completo correspondente à amostra final ausente"
+  ],
+  "f1": null,
+  "f1_calculated": false,
+  "dataset_validation_unchanged": "pending_independent_labels",
+  "method": "Read-only prerequisite audit; no human labels inferred or changed"
+}

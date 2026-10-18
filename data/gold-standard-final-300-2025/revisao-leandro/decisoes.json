@@ -191,11 +191,13 @@
     "release_tag": "v2.3.20",
     "project_type": "biblioteca/framework",
     "real_delivery": "incerto",
-    "is_corrective": "",
-    "reason": "Toolkits e integrações novos; 2.3.20 mistura correções de memória com melhorias e requer julgamento humano.",
-    "status": "evidencia_ambigua",
+    "is_corrective": "sim",
+    "reason": "Quatro correções de retries, migração/memória, datas e ordenação sustentam manutenção de confiabilidade, apesar de duas melhorias.",
+    "status": "sugestao_ia_ambiguidade_resolvida",
     "review_priority": "alta",
-    "human_reviewed": false
+    "human_reviewed": false,
+    "confidence": "media",
+    "ai_resolved_from_ambiguous": true
   },
   {
     "repository": "agno-agi/agno",
@@ -356,11 +358,13 @@
     "release_tag": "curl-8_15_0",
     "project_type": "ferramenta CLI",
     "real_delivery": "sim",
-    "is_corrective": "",
-    "reason": "Changelog por versão: novas opções/protocolos; 8.15.0 mistura remoção de suporte TLS com manutenção.",
-    "status": "evidencia_ambigua",
+    "is_corrective": "não",
+    "reason": "Changelog da versão mistura retirada de suporte TLS e manutenção ampla; não há indicação de hotfix ou defeito recente predominante.",
+    "status": "sugestao_ia_ambiguidade_resolvida",
     "review_priority": "alta",
-    "human_reviewed": false
+    "human_reviewed": false,
+    "confidence": "baixa",
+    "ai_resolved_from_ambiguous": true
   },
   {
     "repository": "curl/curl",
@@ -510,11 +514,13 @@
     "release_tag": "0.3.26",
     "project_type": "biblioteca/framework",
     "real_delivery": "sim",
-    "is_corrective": "",
-    "reason": "0.3.22 corrige transações e drivers; 0.3.26 e 0.3.21 misturam manutenção, segurança e mudanças de API.",
-    "status": "evidencia_ambigua",
+    "is_corrective": "não",
+    "reason": "Inclui proteção MySQL, mas também substituição do pool SAP e suporte a novos tipos; julgo atualização funcional mista.",
+    "status": "sugestao_ia_ambiguidade_resolvida",
     "review_priority": "alta",
-    "human_reviewed": false
+    "human_reviewed": false,
+    "confidence": "baixa",
+    "ai_resolved_from_ambiguous": true
   },
   {
     "repository": "typeorm/typeorm",
@@ -532,11 +538,13 @@
     "release_tag": "0.3.21",
     "project_type": "biblioteca/framework",
     "real_delivery": "sim",
-    "is_corrective": "",
-    "reason": "0.3.22 corrige transações e drivers; 0.3.26 e 0.3.21 misturam manutenção, segurança e mudanças de API.",
-    "status": "evidencia_ambigua",
+    "is_corrective": "não",
+    "reason": "Publicação reúne dependências, mudanças de distribuição, CI e manutenção; não reconheço uma finalidade corretiva predominante.",
+    "status": "sugestao_ia_ambiguidade_resolvida",
     "review_priority": "alta",
-    "human_reviewed": false
+    "human_reviewed": false,
+    "confidence": "baixa",
+    "ai_resolved_from_ambiguous": true
   },
   {
     "repository": "typeorm/typeorm",
@@ -730,44 +738,52 @@
     "release_tag": "@tanstack/query-persist-client-core@5.91.10",
     "project_type": "biblioteca/framework",
     "real_delivery": "incerto",
-    "is_corrective": "",
-    "reason": "Devtools recebe tema; outras quatro releases apenas atualizam dependências, sem finalidade corretiva comprovada.",
-    "status": "evidencia_ambigua",
+    "is_corrective": "não",
+    "reason": "Notas apenas atualizam query-core. Não há explicação de defeito corrigido neste pacote; decisão conservadora, não prova de ausência de correção.",
+    "status": "sugestao_ia_ambiguidade_resolvida",
     "review_priority": "alta",
-    "human_reviewed": false
+    "human_reviewed": false,
+    "confidence": "baixa",
+    "ai_resolved_from_ambiguous": true
   },
   {
     "repository": "TanStack/query",
     "release_tag": "@tanstack/solid-query@5.90.4",
     "project_type": "biblioteca/framework",
     "real_delivery": "incerto",
-    "is_corrective": "",
-    "reason": "Devtools recebe tema; outras quatro releases apenas atualizam dependências, sem finalidade corretiva comprovada.",
-    "status": "evidencia_ambigua",
+    "is_corrective": "não",
+    "reason": "Notas apenas atualizam query-core. Não deduzo finalidade corretiva a partir da versão da dependência.",
+    "status": "sugestao_ia_ambiguidade_resolvida",
     "review_priority": "alta",
-    "human_reviewed": false
+    "human_reviewed": false,
+    "confidence": "baixa",
+    "ai_resolved_from_ambiguous": true
   },
   {
     "repository": "TanStack/query",
     "release_tag": "@tanstack/react-query-persist-client@5.90.14",
     "project_type": "biblioteca/framework",
     "real_delivery": "incerto",
-    "is_corrective": "",
-    "reason": "Devtools recebe tema; outras quatro releases apenas atualizam dependências, sem finalidade corretiva comprovada.",
-    "status": "evidencia_ambigua",
+    "is_corrective": "não",
+    "reason": "Somente atualização de dependências publicada; finalidade corretiva do pacote sorteado não está demonstrada nas notas.",
+    "status": "sugestao_ia_ambiguidade_resolvida",
     "review_priority": "alta",
-    "human_reviewed": false
+    "human_reviewed": false,
+    "confidence": "baixa",
+    "ai_resolved_from_ambiguous": true
   },
   {
     "repository": "TanStack/query",
     "release_tag": "@tanstack/svelte-query-persist-client@6.0.12",
     "project_type": "biblioteca/framework",
     "real_delivery": "incerto",
-    "is_corrective": "",
-    "reason": "Devtools recebe tema; outras quatro releases apenas atualizam dependências, sem finalidade corretiva comprovada.",
-    "status": "evidencia_ambigua",
+    "is_corrective": "não",
+    "reason": "Somente atualização de dependências; julgo sincronização de pacotes, com possível correção indireta não comprovada.",
+    "status": "sugestao_ia_ambiguidade_resolvida",
     "review_priority": "alta",
-    "human_reviewed": false
+    "human_reviewed": false,
+    "confidence": "baixa",
+    "ai_resolved_from_ambiguous": true
   },
   {
     "repository": "HKUDS/LightRAG",
@@ -829,11 +845,13 @@
     "release_tag": "v0.14.9",
     "project_type": "biblioteca/framework",
     "real_delivery": "sim",
-    "is_corrective": "",
-    "reason": "0.14.8 destaca correções do core; 0.14.10/0.12.12 trazem funcionalidades; versões mistas requerem revisão.",
-    "status": "evidencia_ambigua",
+    "is_corrective": "sim",
+    "reason": "Notas enfatizam consistência de contexto/memória e compatibilidade de dependências, embora também tragam integração/modelo novos.",
+    "status": "sugestao_ia_ambiguidade_resolvida",
     "review_priority": "alta",
-    "human_reviewed": false
+    "human_reviewed": false,
+    "confidence": "baixa",
+    "ai_resolved_from_ambiguous": true
   },
   {
     "repository": "run-llama/llama_index",
@@ -873,33 +891,39 @@
     "release_tag": "v0.13.5",
     "project_type": "biblioteca/framework",
     "real_delivery": "sim",
-    "is_corrective": "",
-    "reason": "0.14.8 destaca correções do core; 0.14.10/0.12.12 trazem funcionalidades; versões mistas requerem revisão.",
-    "status": "evidencia_ambigua",
+    "is_corrective": "não",
+    "reason": "Novos campos de streaming, cache de prompt e chat store dividem protagonismo com correções; julgo release funcional mista.",
+    "status": "sugestao_ia_ambiguidade_resolvida",
     "review_priority": "alta",
-    "human_reviewed": false
+    "human_reviewed": false,
+    "confidence": "baixa",
+    "ai_resolved_from_ambiguous": true
   },
   {
     "repository": "oven-sh/bun",
     "release_tag": "bun-v1.2.4",
     "project_type": "ferramenta CLI",
     "real_delivery": "sim",
-    "is_corrective": "",
-    "reason": "Blogs oficiais: 1.2.0 e 1.3.4 trazem APIs novas; demais misturam funcionalidades/velocidade e regressões.",
-    "status": "evidencia_ambigua",
+    "is_corrective": "sim",
+    "reason": "Blog identifica regressões de Hono e bun init, travamento de stdin e falhas de Buffer/Socket; essas correções justificam o rótulo apesar de codesigning/performance.",
+    "status": "sugestao_ia_ambiguidade_resolvida",
     "review_priority": "alta",
-    "human_reviewed": false
+    "human_reviewed": false,
+    "confidence": "media",
+    "ai_resolved_from_ambiguous": true
   },
   {
     "repository": "oven-sh/bun",
     "release_tag": "bun-v1.2.15",
     "project_type": "ferramenta CLI",
     "real_delivery": "sim",
-    "is_corrective": "",
-    "reason": "Blogs oficiais: 1.2.0 e 1.3.4 trazem APIs novas; demais misturam funcionalidades/velocidade e regressões.",
-    "status": "evidencia_ambigua",
+    "is_corrective": "não",
+    "reason": "bun audit, bun pm view e implementação de APIs Node são novos recursos destacados; onze correções coexistem com esse lançamento funcional.",
+    "status": "sugestao_ia_ambiguidade_resolvida",
     "review_priority": "alta",
-    "human_reviewed": false
+    "human_reviewed": false,
+    "confidence": "media",
+    "ai_resolved_from_ambiguous": true
   },
   {
     "repository": "oven-sh/bun",
@@ -917,11 +941,13 @@
     "release_tag": "bun-v1.3.1",
     "project_type": "ferramenta CLI",
     "real_delivery": "sim",
-    "is_corrective": "",
-    "reason": "Blogs oficiais: 1.2.0 e 1.3.4 trazem APIs novas; demais misturam funcionalidades/velocidade e regressões.",
-    "status": "evidencia_ambigua",
+    "is_corrective": "não",
+    "reason": "Blog destaca velocidade de build, sourcemaps e comportamento CommonJS; julgo evolução da ferramenta, não hotfix predominante.",
+    "status": "sugestao_ia_ambiguidade_resolvida",
     "review_priority": "alta",
-    "human_reviewed": false
+    "human_reviewed": false,
+    "confidence": "baixa",
+    "ai_resolved_from_ambiguous": true
   },
   {
     "repository": "oven-sh/bun",
@@ -1379,55 +1405,65 @@
     "release_tag": "weekly.2025.21",
     "project_type": "ferramenta CLI",
     "real_delivery": "sim",
-    "is_corrective": "",
-    "reason": "Snapshots semanais sem notas, com correções e funcionalidades; commits não demonstram intenção predominante.",
-    "status": "evidencia_ambigua",
+    "is_corrective": "não",
+    "reason": "Snapshot semanal combina debugger OpenBSD, term e ferramentas com correções de compilador; não há propósito corretivo exclusivo ou predominante claro.",
+    "status": "sugestao_ia_ambiguidade_resolvida",
     "review_priority": "alta",
-    "human_reviewed": false
+    "human_reviewed": false,
+    "confidence": "baixa",
+    "ai_resolved_from_ambiguous": true
   },
   {
     "repository": "vlang/v",
     "release_tag": "weekly.2025.06",
     "project_type": "ferramenta CLI",
     "real_delivery": "sim",
-    "is_corrective": "",
-    "reason": "Snapshots semanais sem notas, com correções e funcionalidades; commits não demonstram intenção predominante.",
-    "status": "evidencia_ambigua",
+    "is_corrective": "não",
+    "reason": "Snapshot adiciona disk_usage e ferramenta reduce junto de correções de parser/cgen; julgo manutenção e evolução contínuas.",
+    "status": "sugestao_ia_ambiguidade_resolvida",
     "review_priority": "alta",
-    "human_reviewed": false
+    "human_reviewed": false,
+    "confidence": "baixa",
+    "ai_resolved_from_ambiguous": true
   },
   {
     "repository": "vlang/v",
     "release_tag": "weekly.2025.47",
     "project_type": "ferramenta CLI",
     "real_delivery": "sim",
-    "is_corrective": "",
-    "reason": "Snapshots semanais sem notas, com correções e funcionalidades; commits não demonstram intenção predominante.",
-    "status": "evidencia_ambigua",
+    "is_corrective": "não",
+    "reason": "Commits misturam exemplos, avisos do parser, instrumentação e correções; ausência de notas limita a confiança sobre finalidade principal.",
+    "status": "sugestao_ia_ambiguidade_resolvida",
     "review_priority": "alta",
-    "human_reviewed": false
+    "human_reviewed": false,
+    "confidence": "baixa",
+    "ai_resolved_from_ambiguous": true
   },
   {
     "repository": "vlang/v",
     "release_tag": "weekly.2025.09",
     "project_type": "ferramenta CLI",
     "real_delivery": "sim",
-    "is_corrective": "",
-    "reason": "Snapshots semanais sem notas, com correções e funcionalidades; commits não demonstram intenção predominante.",
-    "status": "evidencia_ambigua",
+    "is_corrective": "não",
+    "reason": "Suporte a literais negativos e helpers atoi coexistem com ajustes do checker; julgo evolução semanal mista.",
+    "status": "sugestao_ia_ambiguidade_resolvida",
     "review_priority": "alta",
-    "human_reviewed": false
+    "human_reviewed": false,
+    "confidence": "baixa",
+    "ai_resolved_from_ambiguous": true
   },
   {
     "repository": "vlang/v",
     "release_tag": "weekly.2025.1",
     "project_type": "ferramenta CLI",
     "real_delivery": "sim",
-    "is_corrective": "",
-    "reason": "Snapshots semanais sem notas, com correções e funcionalidades; commits não demonstram intenção predominante.",
-    "status": "evidencia_ambigua",
+    "is_corrective": "não",
+    "reason": "Ferramentas novas e otimizações coexistem com correções do checker/cgen; julgo snapshot evolutivo, com baixa confiança.",
+    "status": "sugestao_ia_ambiguidade_resolvida",
     "review_priority": "alta",
-    "human_reviewed": false
+    "human_reviewed": false,
+    "confidence": "baixa",
+    "ai_resolved_from_ambiguous": true
   },
   {
     "repository": "google-gemini/gemini-cli",
@@ -1511,11 +1547,13 @@
     "release_tag": "shadcn@2.6.1",
     "project_type": "biblioteca/framework",
     "real_delivery": "sim",
-    "is_corrective": "",
-    "reason": "CLI de componentes adiciona comandos/registries; 2.6.1 altera flag npm sem defeito específico explicado.",
-    "status": "evidencia_ambigua",
+    "is_corrective": "sim",
+    "reason": "Nota específica altera flag npm; interpreto como ajuste de compatibilidade da instalação, mas não há descrição explícita do defeito.",
+    "status": "sugestao_ia_ambiguidade_resolvida",
     "review_priority": "alta",
-    "human_reviewed": false
+    "human_reviewed": false,
+    "confidence": "baixa",
+    "ai_resolved_from_ambiguous": true
   },
   {
     "repository": "shadcn-ui/ui",
@@ -1687,11 +1725,13 @@
     "release_tag": "v10.2.4",
     "project_type": "ferramenta CLI",
     "real_delivery": "sim",
-    "is_corrective": "",
-    "reason": "Croc adiciona arquitetura, clipboard e opções; 10.2.4 tem ajustes de CI/build sem efeito usuário comprovado.",
-    "status": "evidencia_ambigua",
+    "is_corrective": "sim",
+    "reason": "Comparação local repete correções de build até a publicação; interpreto reparo de distribuição, embora o efeito final ao usuário exija revisão.",
+    "status": "sugestao_ia_ambiguidade_resolvida",
     "review_priority": "alta",
-    "human_reviewed": false
+    "human_reviewed": false,
+    "confidence": "baixa",
+    "ai_resolved_from_ambiguous": true
   },
   {
     "repository": "schollz/croc",
@@ -1907,11 +1947,13 @@
     "release_tag": "@mermaid-js/mermaid-zenuml@0.2.1",
     "project_type": "biblioteca/framework",
     "real_delivery": "sim",
-    "is_corrective": "",
-    "reason": "Mermaid adiciona diagramas/layouts; 11.10.1 corrige setas; ZenUML mistura dependências e compatibilidade.",
-    "status": "evidencia_ambigua",
+    "is_corrective": "sim",
+    "reason": "Há correção explícita da faixa de peerDependencies para Mermaid v10/v11, associada à compatibilidade do pacote.",
+    "status": "sugestao_ia_ambiguidade_resolvida",
     "review_priority": "alta",
-    "human_reviewed": false
+    "human_reviewed": false,
+    "confidence": "media",
+    "ai_resolved_from_ambiguous": true
   },
   {
     "repository": "mermaid-js/mermaid",
@@ -2127,11 +2169,13 @@
     "release_tag": "v1.0.24",
     "project_type": "ferramenta CLI",
     "real_delivery": "sim",
-    "is_corrective": "",
-    "reason": "Opencode altera prompts/clipboard/navegação; 1.0.24 divide notas entre três correções e três adições.",
-    "status": "evidencia_ambigua",
+    "is_corrective": "sim",
+    "reason": "Notas iniciam com abort de sessão, erro de imagem e ESC sem resposta; julgo estabilidade prioritária apesar das três funcionalidades adicionadas.",
+    "status": "sugestao_ia_ambiguidade_resolvida",
     "review_priority": "alta",
-    "human_reviewed": false
+    "human_reviewed": false,
+    "confidence": "baixa",
+    "ai_resolved_from_ambiguous": true
   },
   {
     "repository": "anomalyco/opencode",
@@ -2160,22 +2204,26 @@
     "release_tag": "v5.2.1",
     "project_type": "biblioteca/framework",
     "real_delivery": "sim",
-    "is_corrective": "",
-    "reason": "Fastify security releases são corretivas; 5.2.1/5.2.2 misturam build/testes/performance e correções.",
-    "status": "evidencia_ambigua",
+    "is_corrective": "sim",
+    "reason": "O reparo de crash em ReadableStream.locked é a mudança funcional destacável; grande parte do restante é teste/documentação.",
+    "status": "sugestao_ia_ambiguidade_resolvida",
     "review_priority": "alta",
-    "human_reviewed": false
+    "human_reviewed": false,
+    "confidence": "media",
+    "ai_resolved_from_ambiguous": true
   },
   {
     "repository": "fastify/fastify",
     "release_tag": "v5.2.2",
     "project_type": "biblioteca/framework",
     "real_delivery": "sim",
-    "is_corrective": "",
-    "reason": "Fastify security releases são corretivas; 5.2.1/5.2.2 misturam build/testes/performance e correções.",
-    "status": "evidencia_ambigua",
+    "is_corrective": "sim",
+    "reason": "Ajusta verificação de payload no parser JSON; demais entradas são em grande parte testes, build e manutenção.",
+    "status": "sugestao_ia_ambiguidade_resolvida",
     "review_priority": "alta",
-    "human_reviewed": false
+    "human_reviewed": false,
+    "confidence": "media",
+    "ai_resolved_from_ambiguous": true
   },
   {
     "repository": "fastify/fastify",
@@ -2281,11 +2329,13 @@
     "release_tag": "v2.1.4",
     "project_type": "aplicação/serviço",
     "real_delivery": "sim",
-    "is_corrective": "",
-    "reason": "PDF 1.0.1 corrige flag Docker; 2.0.2 declara hotfix; 2.1.4 mistura três bugs e três recursos.",
-    "status": "evidencia_ambigua",
+    "is_corrective": "sim",
+    "reason": "Notas abrem com SAML, carregamento wasm e erro de cache do editor; julgo correção prioritária, mas há funcionalidades novas relevantes.",
+    "status": "sugestao_ia_ambiguidade_resolvida",
     "review_priority": "alta",
-    "human_reviewed": false
+    "human_reviewed": false,
+    "confidence": "baixa",
+    "ai_resolved_from_ambiguous": true
   },
   {
     "repository": "Stirling-Tools/Stirling-PDF",
@@ -2336,11 +2386,13 @@
     "release_tag": "4.5.7",
     "project_type": "biblioteca/framework",
     "real_delivery": "sim",
-    "is_corrective": "",
-    "reason": "Zustand 5.0.4 corrige React Native; 5.0.8 corrige shallow; 4.5.7 só referencia comentário externo.",
-    "status": "evidencia_ambigua",
+    "is_corrective": "sim",
+    "reason": "A release remete ao PR 3087, o mesmo da correção React Native descrita na versão 5.0.4; inferência de backport, não verificação do diff completo da branch 4.x.",
+    "status": "sugestao_ia_ambiguidade_resolvida",
     "review_priority": "alta",
-    "human_reviewed": false
+    "human_reviewed": false,
+    "confidence": "baixa",
+    "ai_resolved_from_ambiguous": true
   },
   {
     "repository": "pmndrs/zustand",
@@ -2369,11 +2421,13 @@
     "release_tag": "v7.66.0",
     "project_type": "biblioteca/framework",
     "real_delivery": "sim",
-    "is_corrective": "",
-    "reason": "RHF 7.59.0/7.66.1 predominam correções; 7.69.0 inclui CVEs; versões com novos tipos/hooks são ambíguas.",
-    "status": "evidencia_ambigua",
+    "is_corrective": "não",
+    "reason": "Novo comportamento de useWatch/useController para mudança de nome recebe destaque; duas correções coexistem, portanto julgo finalidade mista funcional.",
+    "status": "sugestao_ia_ambiguidade_resolvida",
     "review_priority": "alta",
-    "human_reviewed": false
+    "human_reviewed": false,
+    "confidence": "baixa",
+    "ai_resolved_from_ambiguous": true
   },
   {
     "repository": "react-hook-form/react-hook-form",
@@ -2402,11 +2456,13 @@
     "release_tag": "v7.58.0",
     "project_type": "biblioteca/framework",
     "real_delivery": "sim",
-    "is_corrective": "",
-    "reason": "RHF 7.59.0/7.66.1 predominam correções; 7.69.0 inclui CVEs; versões com novos tipos/hooks são ambíguas.",
-    "status": "evidencia_ambigua",
+    "is_corrective": "não",
+    "reason": "Novos tipos, tratamento de caminhos e geração de IDs dividem a release com reparos de useFieldArray; julgo evolução funcional.",
+    "status": "sugestao_ia_ambiguidade_resolvida",
     "review_priority": "alta",
-    "human_reviewed": false
+    "human_reviewed": false,
+    "confidence": "baixa",
+    "ai_resolved_from_ambiguous": true
   },
   {
     "repository": "react-hook-form/react-hook-form",
@@ -2424,11 +2480,13 @@
     "release_tag": "v0.25.2",
     "project_type": "aplicação/serviço",
     "real_delivery": "sim",
-    "is_corrective": "",
-    "reason": "Plane 0.25.1 declara quick patch; 0.27.1 lista bugs; 0.25.2 combina features, segurança e defeitos.",
-    "status": "evidencia_ambigua",
+    "is_corrective": "não",
+    "reason": "Melhorias de interface, idiomas e configuração HTTPS são o primeiro bloco; correções e atualização de segurança coexistem sem propósito único claro.",
+    "status": "sugestao_ia_ambiguidade_resolvida",
     "review_priority": "alta",
-    "human_reviewed": false
+    "human_reviewed": false,
+    "confidence": "baixa",
+    "ai_resolved_from_ambiguous": true
   },
   {
     "repository": "makeplane/plane",
@@ -2479,11 +2537,13 @@
     "release_tag": "v3.25.17",
     "project_type": "biblioteca/framework",
     "real_delivery": "sim",
-    "is_corrective": "",
-    "reason": "Zod 4.0.8 corrige issue 4961; outras versões melhoram build, tree-shaking, inferência ou locales.",
-    "status": "evidencia_ambigua",
+    "is_corrective": "sim",
+    "reason": "Fix de locale wildcard e publicação dos tipos CommonJS sugerem correção de resolução/distribuição; descrição do impacto é limitada.",
+    "status": "sugestao_ia_ambiguidade_resolvida",
     "review_priority": "alta",
-    "human_reviewed": false
+    "human_reviewed": false,
+    "confidence": "baixa",
+    "ai_resolved_from_ambiguous": true
   },
   {
     "repository": "colinhacks/zod",
@@ -2809,22 +2869,26 @@
     "release_tag": "v4.0.378",
     "project_type": "biblioteca/framework",
     "real_delivery": "sim",
-    "is_corrective": "",
-    "reason": "Remotion 4.0.355 corrige crash FFmpeg; duas versões misturam correções com APIs/componentes novos.",
-    "status": "evidencia_ambigua",
+    "is_corrective": "sim",
+    "reason": "Erros durante render e transformação CSS são corrigidos; predominância de confiabilidade é minha interpretação, com novo Textarea também presente.",
+    "status": "sugestao_ia_ambiguidade_resolvida",
     "review_priority": "alta",
-    "human_reviewed": false
+    "human_reviewed": false,
+    "confidence": "baixa",
+    "ai_resolved_from_ambiguous": true
   },
   {
     "repository": "remotion-dev/remotion",
     "release_tag": "v4.0.329",
     "project_type": "biblioteca/framework",
     "real_delivery": "sim",
-    "is_corrective": "",
-    "reason": "Remotion 4.0.355 corrige crash FFmpeg; duas versões misturam correções com APIs/componentes novos.",
-    "status": "evidencia_ambigua",
+    "is_corrective": "não",
+    "reason": "Inclui mudança incompatível de rotação e nova API getPartialAudioData além de correções; julgo release ampla de evolução.",
+    "status": "sugestao_ia_ambiguidade_resolvida",
     "review_priority": "alta",
-    "human_reviewed": false
+    "human_reviewed": false,
+    "confidence": "baixa",
+    "ai_resolved_from_ambiguous": true
   },
   {
     "repository": "remotion-dev/remotion",
@@ -2864,11 +2928,13 @@
     "release_tag": "v4.1.25",
     "project_type": "aplicação/serviço",
     "real_delivery": "sim",
-    "is_corrective": "",
-    "reason": "Branches Mastodon recebem correções/segurança; 4.1.25 mistura paginação nova com cache e aviso de vulnerabilidade.",
-    "status": "evidencia_ambigua",
+    "is_corrective": "não",
+    "reason": "Changelog adiciona paginação e corrige cache; o aviso SAML recomenda outra branch e não é uma correção desta release. Julgo manutenção mista.",
+    "status": "sugestao_ia_ambiguidade_resolvida",
     "review_priority": "alta",
-    "human_reviewed": false
+    "human_reviewed": false,
+    "confidence": "baixa",
+    "ai_resolved_from_ambiguous": true
   },
   {
     "repository": "mastodon/mastodon",
@@ -2919,11 +2985,13 @@
     "release_tag": "v5.0.1",
     "project_type": "biblioteca/framework",
     "real_delivery": "sim",
-    "is_corrective": "",
-    "reason": "Glide 5.0.2/3/4 corrigem artefatos ausentes; 5.0.1 admite que não resolve bug; rc05 mistura build/reverts/correções.",
-    "status": "evidencia_ambigua",
+    "is_corrective": "não",
+    "reason": "Notas declaram que módulos ausentes não foram corrigidos e apontam próxima versão. Não conto o aviso como evidência de correção entregue.",
+    "status": "sugestao_ia_ambiguidade_resolvida",
     "review_priority": "alta",
-    "human_reviewed": false
+    "human_reviewed": false,
+    "confidence": "baixa",
+    "ai_resolved_from_ambiguous": true
   },
   {
     "repository": "bumptech/glide",
@@ -2952,11 +3020,13 @@
     "release_tag": "v5.0.0-rc05",
     "project_type": "biblioteca/framework",
     "real_delivery": "sim",
-    "is_corrective": "",
-    "reason": "Glide 5.0.2/3/4 corrigem artefatos ausentes; 5.0.1 admite que não resolve bug; rc05 mistura build/reverts/correções.",
-    "status": "evidencia_ambigua",
+    "is_corrective": "sim",
+    "reason": "Reverte mudanças Compose e corrige AVIF/gainmaps e carregamento; julgo estabilização, embora atualize toolchain e seja candidata a release.",
+    "status": "sugestao_ia_ambiguidade_resolvida",
     "review_priority": "alta",
-    "human_reviewed": false
+    "human_reviewed": false,
+    "confidence": "baixa",
+    "ai_resolved_from_ambiguous": true
   },
   {
     "repository": "bumptech/glide",
@@ -2996,11 +3066,13 @@
     "release_tag": "v28.1",
     "project_type": "aplicação/serviço",
     "real_delivery": "sim",
-    "is_corrective": "",
-    "reason": "Bitcoin 29.1/28.3/29.2 declaram bug fixes; 30.0 traz features; 28.1 mistura features e correções.",
-    "status": "evidencia_ambigua",
+    "is_corrective": "sim",
+    "reason": "Release de manutenção da branch 28 com correções e desempenho; cabeçalho também menciona novos recursos, portanto confiança baixa na finalidade predominante.",
+    "status": "sugestao_ia_ambiguidade_resolvida",
     "review_priority": "alta",
-    "human_reviewed": false
+    "human_reviewed": false,
+    "confidence": "baixa",
+    "ai_resolved_from_ambiguous": true
   },
   {
     "repository": "bitcoin/bitcoin",
@@ -3084,11 +3156,13 @@
     "release_tag": "1.10.7",
     "project_type": "aplicação/serviço",
     "real_delivery": "sim",
-    "is_corrective": "",
-    "reason": "V2rayNG mistura núcleo, opções e UI; 1.10.7 corrige bugs mas também muda testes de latência.",
-    "status": "evidencia_ambigua",
+    "is_corrective": "sim",
+    "reason": "Notas chinesas citam correções de problemas conhecidos com referências específicas; otimização do teste de latência é secundária nesta leitura.",
+    "status": "sugestao_ia_ambiguidade_resolvida",
     "review_priority": "alta",
-    "human_reviewed": false
+    "human_reviewed": false,
+    "confidence": "media",
+    "ai_resolved_from_ambiguous": true
   },
   {
     "repository": "2dust/v2rayNG",
@@ -3260,11 +3334,13 @@
     "release_tag": "v0.41.4",
     "project_type": "aplicação/serviço",
     "real_delivery": "sim",
-    "is_corrective": "",
-    "reason": "Fuel corrige memória/migração/dependência; 0.41.4 só publica versão com aviso de bug ainda existente; 0.40.3 adiciona stats.",
-    "status": "evidencia_ambigua",
+    "is_corrective": "não",
+    "reason": "Notas registram publicação e um defeito corrigido apenas em 0.41.6; não atribuo a esta release a correção posterior.",
+    "status": "sugestao_ia_ambiguidade_resolvida",
     "review_priority": "alta",
-    "human_reviewed": false
+    "human_reviewed": false,
+    "confidence": "media",
+    "ai_resolved_from_ambiguous": true
   },
   {
     "repository": "FuelLabs/fuel-core",

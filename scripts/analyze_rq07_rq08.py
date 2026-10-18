@@ -12,6 +12,9 @@ import math
 import sys
 from pathlib import Path
 
+if hasattr(sys.stdout, 'reconfigure'):
+    sys.stdout.reconfigure(encoding='utf-8')
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 DATASET_PATH = BASE_DIR / "data" / "dataset-s02-final" / "dataset.csv"
 OUTPUT_DIR = BASE_DIR / "output" / "rq07-rq08"
@@ -35,14 +38,16 @@ def clean_val(val):
         return None
 
 
-def classify_df(val):
+def classify_df(val, row=None):
     if val is None or not math.isfinite(val):
         return None
     if val >= 7.0:
         return 4
     if val >= 1.0:
         return 3
-    if val >= (12.0 / 52.14):
+    if row and row.get('window_start', '').endswith('-01-01') and row.get('window_end') == row['window_start'][:4] + '-12-31':
+        return 2 if float(row['releases_in_window']) >= 12 else 1
+    if val >= (12.0 / (365.25 / 7)):
         return 2
     return 1
 
@@ -135,16 +140,17 @@ def main():
     c1_scores, c2_scores, c3_scores, c4_scores = [], [], [], []
     for r in rows:
         df = clean_val(r.get("deployment_frequency"))
+        df_score = classify_df(df, r)
         lt_rel = clean_val(r.get("lead_time_release_median_days"))
         lt_com = clean_val(r.get("lead_time_commit_median_days"))
         cfr_ci = clean_val(r.get("cfr_ci"))
         cfr_b = clean_val(r.get("cfr_b"))
         rec = clean_val(r.get("recovery_median_hours"))
 
-        c1 = overall_dora([classify_df(df), classify_lead_time(lt_rel), classify_cfr(cfr_ci), classify_recovery(rec)])
-        c2 = overall_dora([classify_df(df), classify_lead_time(lt_com), classify_cfr(cfr_b), classify_recovery(rec)])
-        c3 = overall_dora([classify_df(df), classify_lead_time(lt_rel), classify_cfr(cfr_b), classify_recovery(rec)])
-        c4 = overall_dora([classify_df(df), classify_lead_time(lt_com), classify_cfr(cfr_ci), classify_recovery(rec)])
+        c1 = overall_dora([df_score, classify_lead_time(lt_rel), classify_cfr(cfr_ci), classify_recovery(rec)])
+        c2 = overall_dora([df_score, classify_lead_time(lt_com), classify_cfr(cfr_b), classify_recovery(rec)])
+        c3 = overall_dora([df_score, classify_lead_time(lt_rel), classify_cfr(cfr_b), classify_recovery(rec)])
+        c4 = overall_dora([df_score, classify_lead_time(lt_com), classify_cfr(cfr_ci), classify_recovery(rec)])
 
         c1_scores.append(c1)
         c2_scores.append(c2)

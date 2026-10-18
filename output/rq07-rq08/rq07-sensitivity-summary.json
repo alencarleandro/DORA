@@ -6,27 +6,27 @@
   "distributions": {
     "C1_reference": {
       "Elite": 9,
-      "High": 111,
-      "Medium": 151,
-      "Low": 29
+      "High": 114,
+      "Medium": 150,
+      "Low": 27
     },
     "C2_alternative": {
       "Elite": 3,
-      "High": 80,
-      "Medium": 177,
-      "Low": 40
+      "High": 83,
+      "Medium": 178,
+      "Low": 36
     },
     "C3_mixed_lt_release_cfr_b": {
       "Elite": 3,
-      "High": 84,
+      "High": 87,
       "Medium": 176,
-      "Low": 37
+      "Low": 34
     },
     "C4_mixed_lt_commit_cfr_ci": {
       "Elite": 9,
-      "High": 107,
-      "Medium": 153,
-      "Low": 31
+      "High": 110,
+      "Medium": 152,
+      "Low": 29
     }
   },
   "pairwise_sensitivity": [
@@ -35,34 +35,34 @@
       "code": "C1_C2",
       "focus": "Mudança conjunta de Lead Time (release -> commit) e CFR (CI -> entrega)",
       "total": 300,
-      "changed": 84,
-      "changed_percent": 28.000000000000004,
-      "same": 216,
-      "same_percent": 72,
-      "upgraded": 19,
-      "upgraded_percent": 6.333333333333334,
-      "downgraded": 65,
-      "downgraded_percent": 21.666666666666668,
-      "mean_category_distance": 0.30666666666666664,
-      "kappa": 0.5612501192255113,
+      "changed": 82,
+      "changed_percent": 27.333333333333332,
+      "same": 218,
+      "same_percent": 72.66666666666667,
+      "upgraded": 18,
+      "upgraded_percent": 6,
+      "downgraded": 64,
+      "downgraded_percent": 21.333333333333336,
+      "mean_category_distance": 0.29333333333333333,
+      "kappa": 0.5745092350836476,
       "kappa_interpretation": "Moderada (0,41 a 0,60)",
       "contingency_matrix": [
         [
-          21,
-          8,
+          20,
+          7,
           0,
           0
         ],
         [
-          13,
+          12,
           129,
           9,
           0
         ],
         [
-          6,
-          38,
-          65,
+          4,
+          40,
+          68,
           2
         ],
         [
@@ -86,26 +86,26 @@
       "upgraded_percent": 1.3333333333333335,
       "downgraded": 49,
       "downgraded_percent": 16.333333333333332,
-      "mean_category_distance": 0.18333333333333332,
-      "kappa": 0.7356616469080427,
+      "mean_category_distance": 0.18,
+      "kappa": 0.7377367654201066,
       "kappa_interpretation": "Substancial (0,61 a 0,80)",
       "contingency_matrix": [
         [
-          27,
+          25,
           2,
           0,
           0
         ],
         [
           8,
-          141,
+          140,
           2,
           0
         ],
         [
-          2,
-          33,
-          76,
+          1,
+          34,
+          79,
           0
         ],
         [
@@ -121,26 +121,26 @@
       "code": "C1_C4",
       "focus": "Efeito isolado da mudança de Lead Time (release -> commit), mantendo CFR de CI",
       "total": 300,
-      "changed": 53,
-      "changed_percent": 17.666666666666668,
-      "same": 247,
-      "same_percent": 82.33333333333334,
-      "upgraded": 24,
-      "upgraded_percent": 8,
-      "downgraded": 29,
-      "downgraded_percent": 9.666666666666666,
-      "mean_category_distance": 0.18,
-      "kappa": 0.7484472049689442,
+      "changed": 51,
+      "changed_percent": 17,
+      "same": 249,
+      "same_percent": 83,
+      "upgraded": 23,
+      "upgraded_percent": 7.666666666666666,
+      "downgraded": 28,
+      "downgraded_percent": 9.333333333333334,
+      "mean_category_distance": 0.17333333333333334,
+      "kappa": 0.7554782281576222,
       "kappa_interpretation": "Substancial (0,61 a 0,80)",
       "contingency_matrix": [
         [
-          23,
-          6,
+          22,
+          5,
           0,
           0
         ],
         [
-          7,
+          6,
           130,
           14,
           0
@@ -148,7 +148,7 @@
         [
           1,
           17,
-          89,
+          92,
           4
         ],
         [
@@ -164,34 +164,34 @@
       "code": "C2_C3",
       "focus": "Efeito de Lead Time (commit vs release) tendo o CFR de entrega como base",
       "total": 300,
-      "changed": 47,
-      "changed_percent": 15.666666666666668,
-      "same": 253,
-      "same_percent": 84.33333333333334,
-      "upgraded": 27,
-      "upgraded_percent": 9,
-      "downgraded": 20,
-      "downgraded_percent": 6.666666666666667,
-      "mean_category_distance": 0.15666666666666668,
-      "kappa": 0.7588919288645698,
+      "changed": 44,
+      "changed_percent": 14.666666666666666,
+      "same": 256,
+      "same_percent": 85.33333333333334,
+      "upgraded": 25,
+      "upgraded_percent": 8.333333333333332,
+      "downgraded": 19,
+      "downgraded_percent": 6.333333333333334,
+      "mean_category_distance": 0.14666666666666667,
+      "kappa": 0.7710479758559685,
       "kappa_interpretation": "Substancial (0,61 a 0,80)",
       "contingency_matrix": [
         [
-          30,
-          10,
+          28,
+          8,
           0,
           0
         ],
         [
-          7,
-          155,
+          6,
+          157,
           15,
           0
         ],
         [
           0,
           11,
-          67,
+          70,
           2
         ],
         [
@@ -207,34 +207,34 @@
       "code": "C2_C4",
       "focus": "Efeito de CFR (entrega vs CI) tendo o Lead Time por commit como base",
       "total": 300,
-      "changed": 58,
-      "changed_percent": 19.333333333333332,
-      "same": 242,
-      "same_percent": 80.66666666666666,
-      "upgraded": 53,
-      "upgraded_percent": 17.666666666666668,
+      "changed": 56,
+      "changed_percent": 18.666666666666668,
+      "same": 244,
+      "same_percent": 81.33333333333333,
+      "upgraded": 51,
+      "upgraded_percent": 17,
       "downgraded": 5,
       "downgraded_percent": 1.6666666666666667,
-      "mean_category_distance": 0.19333333333333333,
-      "kappa": 0.7229740487183569,
+      "mean_category_distance": 0.18666666666666668,
+      "kappa": 0.7289885465397646,
       "kappa_interpretation": "Substancial (0,61 a 0,80)",
       "contingency_matrix": [
         [
-          28,
-          12,
+          26,
+          10,
           0,
           0
         ],
         [
           3,
-          139,
+          140,
           35,
           0
         ],
         [
           0,
           2,
-          72,
+          75,
           6
         ],
         [
@@ -250,34 +250,34 @@
       "code": "C3_C4",
       "focus": "Comparação entre as duas definições operacionais híbridas",
       "total": 300,
-      "changed": 70,
-      "changed_percent": 23.333333333333332,
-      "same": 230,
-      "same_percent": 76.66666666666667,
-      "upgraded": 56,
-      "upgraded_percent": 18.666666666666668,
-      "downgraded": 14,
-      "downgraded_percent": 4.666666666666667,
-      "mean_category_distance": 0.23666666666666666,
-      "kappa": 0.6584787070292453,
+      "changed": 67,
+      "changed_percent": 22.333333333333332,
+      "same": 233,
+      "same_percent": 77.66666666666666,
+      "upgraded": 54,
+      "upgraded_percent": 18,
+      "downgraded": 13,
+      "downgraded_percent": 4.333333333333334,
+      "mean_category_distance": 0.22666666666666666,
+      "kappa": 0.6696570262655053,
       "kappa_interpretation": "Substancial (0,61 a 0,80)",
       "contingency_matrix": [
         [
-          23,
-          14,
+          22,
+          12,
           0,
           0
         ],
         [
-          7,
-          134,
+          6,
+          135,
           35,
           0
         ],
         [
           1,
           5,
-          71,
+          74,
           7
         ],
         [
@@ -294,34 +294,34 @@
       "name": "C1 x C2 (Com Imputação Elite para 0 Falhas)",
       "code": "C1_C2_imputed",
       "total": 300,
-      "changed": 91,
-      "changed_percent": 30.333333333333336,
-      "same": 209,
-      "same_percent": 69.66666666666667,
-      "upgraded": 18,
-      "upgraded_percent": 6,
-      "downgraded": 73,
-      "downgraded_percent": 24.333333333333336,
-      "mean_category_distance": 0.33,
-      "kappa": 0.5179354000973868,
+      "changed": 89,
+      "changed_percent": 29.666666666666668,
+      "same": 211,
+      "same_percent": 70.33333333333334,
+      "upgraded": 17,
+      "upgraded_percent": 5.666666666666666,
+      "downgraded": 72,
+      "downgraded_percent": 24,
+      "mean_category_distance": 0.31666666666666665,
+      "kappa": 0.5342680654966177,
       "kappa_interpretation": "Moderada (0,41 a 0,60)",
       "contingency_matrix": [
         [
           14,
-          8,
+          7,
           0,
           0
         ],
         [
-          13,
-          123,
+          12,
+          121,
           8,
           0
         ],
         [
-          6,
-          46,
-          71,
+          4,
+          48,
+          75,
           2
         ],
         [
@@ -338,34 +338,34 @@
       "name": "C1 x C2 (Apenas N=258 Casos com MTTR Observado)",
       "code": "C1_C2_complete",
       "total": 258,
-      "changed": 71,
-      "changed_percent": 27.51937984496124,
-      "same": 187,
-      "same_percent": 72.48062015503875,
-      "upgraded": 14,
-      "upgraded_percent": 5.426356589147287,
-      "downgraded": 57,
-      "downgraded_percent": 22.093023255813954,
-      "mean_category_distance": 0.29844961240310075,
-      "kappa": 0.5440022035532294,
+      "changed": 69,
+      "changed_percent": 26.744186046511626,
+      "same": 189,
+      "same_percent": 73.25581395348837,
+      "upgraded": 13,
+      "upgraded_percent": 5.038759689922481,
+      "downgraded": 56,
+      "downgraded_percent": 21.705426356589147,
+      "mean_category_distance": 0.2868217054263566,
+      "kappa": 0.5594424958464096,
       "kappa_interpretation": "Moderada (0,41 a 0,60)",
       "contingency_matrix": [
         [
           9,
-          7,
+          6,
           0,
           0
         ],
         [
-          13,
-          115,
+          12,
+          114,
           6,
           0
         ],
         [
-          4,
-          33,
-          62,
+          3,
+          34,
+          65,
           1
         ],
         [

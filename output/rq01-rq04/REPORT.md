@@ -52,7 +52,7 @@ Lead time: <24 h, <168 h, <720 h e >=720 h; CFR: <=15%, <=30%, <=45% e >45%; rec
 
 **C1 completa:** 258 projetos; Low: 15; Medium: 132; High: 103; Elite: 8. **Sem C1 completa:** 42. Publicamos separadamente c1_available_score, uma extensão exploratória baseada apenas nas dimensões observadas, para integração com RQ07. Ela não deve ser misturada com a C1 completa nem interpretada como quatro dimensões medidas. Não foi feita imputação.
 
-Conferência do export de Luis: 300 chaves correspondentes; 5 diferenças na classificação disponível. Consulte c1-rq07-comparison.csv; diferenças de política/limiar não foram escondidas. Os resultados de RQ07 não foram recalculados ou sobrescritos por este script.
+Conferência do export de Luis: 300 chaves correspondentes; 0 diferenças na classificação disponível. Consulte c1-rq07-comparison.csv; diferenças de política/limiar não foram escondidas. Os resultados de RQ07 não foram recalculados ou sobrescritos por este script.
 
 ## Limites e integração
 

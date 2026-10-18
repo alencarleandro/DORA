@@ -12,9 +12,9 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { parseCSV, toCSV } from '../lib/csv.mjs';
+import {classifyWindowFrequency} from '../lib/descriptive.mjs';
 import {
   cleanNumeric,
-  classifyDeploymentFrequency,
   classifyLeadTime,
   classifyCfr,
   classifyRecovery,
@@ -117,7 +117,7 @@ export function runAnalysis(options) {
     const cfrBReleasesCensored = cleanNumeric(r.cfr_b_releases_censored) || 0;
 
     // Classificação individual
-    const dfScore = classifyDeploymentFrequency(df);
+    const dfScore = df === null ? null : classifyWindowFrequency(releasesInWindow,r.window_start,r.window_end);
     const ltReleaseScore = classifyLeadTime(ltRelease);
     const ltCommitScore = classifyLeadTime(ltCommit);
     const cfrCiScore = classifyCfr(cfrCi);
@@ -427,6 +427,8 @@ Para responder a esta questão, avaliamos quatro combinações operacionais de m
 
 A classificação geral é obtida pela **mediana das 4 dimensões (ou dimensões observadas), arredondada para baixo**, nas faixas: **Elite (4)**, **High (3)**, **Medium (2)** e **Low (1)**.
 
+**Alinhamento da C1:** este script compartilha o corte de frequência com RQ01-04: em ano civil completo, 12 releases atendem a uma por mês, sem arredondar o ano para 52,14 semanas. Esta C1 usa dimensões disponíveis nos 300 projetos; a C1 completa de RQ01-04 usa somente os 258 com quatro dimensões. O CFR (b) permanece exploratório enquanto a validação contra o consenso final estiver pendente.
+
 ---
 
 ## 2. Distribuição das Categorias DORA por Definição
@@ -472,10 +474,10 @@ ${formatMatrixMd(pairResults[2].contingency_matrix, 'C1 (Linhas)', 'C4 (Colunas)
 1. **Impacto da Mudança Conjunta (C1 $\\times$ C2):**
    Ao adotar a definição alternativa completa (Lead Time por commit e CFR por releases corretivas), **${pairResults[0].changed_percent.toFixed(1)}% dos repositórios mudam de patamar DORA** (${pairResults[0].changed} de ${nTotal}). O Kappa de Cohen ponderado linearmente é de **${pairResults[0].kappa.toFixed(4)}**, indicando uma concordância **moderada**. Isso demonstra que conclusões baseadas em cortes fixos de patamar DORA são sensíveis à escolha operacional.
 2. **Decomposição dos Efeitos:**
-   - **Efeito do CFR isolado (C1 $\\times$ C3):** A troca de proxy do CFR (de CI para entrega) alterou a classificação de **${pairResults[1].changed_percent.toFixed(1)}%** dos repositórios, com $\\kappa = ${pairResults[1].kappa.toFixed(4)}$ (concordância substancial). Como o proxy de CI costuma ser mais rigoroso (${distC1.Low} repositórios Low em C1 vs ${distC3.Low} em C3), vários projetos sobem de patamar ao adotar CFR de entrega.
+   - **Efeito do CFR isolado (C1 $\\times$ C3):** A troca de proxy do CFR (de CI para entrega) alterou a classificação de **${pairResults[1].changed_percent.toFixed(1)}%** dos repositórios, com $\\kappa = ${pairResults[1].kappa.toFixed(4)}$ (concordância substancial). Há ${distC1.Low} projetos Low em C1 e ${distC3.Low} em C3. As matrizes mostram a direção das transições; as contagens marginais não demonstram que um proxy é sempre mais rigoroso.
    - **Efeito do Lead Time isolado (C1 $\\times$ C4):** A troca de Lead Time (de release mais antiga para commit mediano) alterou exatamente **${pairResults[2].changed_percent.toFixed(1)}%** dos repositórios, com $\\kappa = ${pairResults[2].kappa.toFixed(4)}$ (concordância substancial).
 3. **Robustez das Conclusões das RQ 01 a 06:**
-   Embora os percentuais absolutos de repositórios em cada patamar mudem, **mais de 70% dos repositórios mantêm sua classificação idêntica** entre qualquer par de definições, e a grande maioria das alterações é de apenas **um nível adjacente** (ex.: High $\\leftrightarrow$ Medium), com saltos extremos de 2 ou mais níveis ocorrendo em menos de 3% dos casos. Portanto, tendências globais e correlações monotônicas (como Spearman) mostram-se **robustas**, enquanto alegações categóricas estritas ("empresa X é Elite") são **altamente sensíveis** à definição escolhida.
+   A permanência ou troca de categorias descreve a sensibilidade da classificação nesta coorte. Ela não comprova robustez das correlações de Spearman ou dos testes das RQ05/RQ06: isso exige recalcular esses resultados sob as variantes. As conclusões que usam CFR (b) são exploratórias até sua validação. A análise sobre dimensões disponíveis também não substitui a avaliação restrita aos casos completos.
 `;
 
   const reportMdPath = path.join(outputDir, 'rq07-sensitivity-report.md');
