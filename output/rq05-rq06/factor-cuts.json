@@ -1,0 +1,125 @@
+{
+  "stars": {
+    "factor_n": 300,
+    "quantiles": [
+      40030.5,
+      50393.5,
+      76679.75
+    ],
+    "cuts": [
+      40030.5,
+      50393.5,
+      76679.75
+    ],
+    "groups": [
+      {
+        "group": "Q1",
+        "lower_exclusive": null,
+        "upper_inclusive": 40030.5,
+        "factor_n": 75
+      },
+      {
+        "group": "Q2",
+        "lower_exclusive": 40030.5,
+        "upper_inclusive": 50393.5,
+        "factor_n": 75
+      },
+      {
+        "group": "Q3",
+        "lower_exclusive": 50393.5,
+        "upper_inclusive": 76679.75,
+        "factor_n": 75
+      },
+      {
+        "group": "Q4",
+        "lower_exclusive": 76679.75,
+        "upper_inclusive": null,
+        "factor_n": 75
+      }
+    ],
+    "groups_reduced": false,
+    "boundary_rule": "(lower, upper]; unbounded endpoints; empty intervals coalesced"
+  },
+  "contributors_count": {
+    "factor_n": 300,
+    "quantiles": [
+      268.0,
+      539.5,
+      1135.75
+    ],
+    "cuts": [
+      268.0,
+      539.5,
+      1135.75
+    ],
+    "groups": [
+      {
+        "group": "Q1",
+        "lower_exclusive": null,
+        "upper_inclusive": 268.0,
+        "factor_n": 75
+      },
+      {
+        "group": "Q2",
+        "lower_exclusive": 268.0,
+        "upper_inclusive": 539.5,
+        "factor_n": 75
+      },
+      {
+        "group": "Q3",
+        "lower_exclusive": 539.5,
+        "upper_inclusive": 1135.75,
+        "factor_n": 75
+      },
+      {
+        "group": "Q4",
+        "lower_exclusive": 1135.75,
+        "upper_inclusive": null,
+        "factor_n": 75
+      }
+    ],
+    "groups_reduced": false,
+    "boundary_rule": "(lower, upper]; unbounded endpoints; empty intervals coalesced"
+  },
+  "age_days": {
+    "factor_n": 300,
+    "quantiles": [
+      1171.7891782407407,
+      2442.250439814815,
+      3825.337361111111
+    ],
+    "cuts": [
+      1171.7891782407407,
+      2442.250439814815,
+      3825.337361111111
+    ],
+    "groups": [
+      {
+        "group": "Q1",
+        "lower_exclusive": null,
+        "upper_inclusive": 1171.7891782407407,
+        "factor_n": 75
+      },
+      {
+        "group": "Q2",
+        "lower_exclusive": 1171.7891782407407,
+        "upper_inclusive": 2442.250439814815,
+        "factor_n": 75
+      },
+      {
+        "group": "Q3",
+        "lower_exclusive": 2442.250439814815,
+        "upper_inclusive": 3825.337361111111,
+        "factor_n": 75
+      },
+      {
+        "group": "Q4",
+        "lower_exclusive": 3825.337361111111,
+        "upper_inclusive": null,
+        "factor_n": 75
+      }
+    ],
+    "groups_reduced": false,
+    "boundary_rule": "(lower, upper]; unbounded endpoints; empty intervals coalesced"
+  }
+}

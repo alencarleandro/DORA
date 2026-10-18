@@ -1,0 +1,199 @@
+{
+  "issue": 8,
+  "input": "C:\\Users\\isabe\\OneDrive\\Documents\\DORA\\data\\dataset-s02-final\\dataset.csv",
+  "dataset_sha256": "c109078a7ba40e3c982749a5cdb638b700dd1d6bbe21d0e868287ae9115a8fc5",
+  "script_sha256": "0eac41ca1cf652e08b29d4daa4c2dc451e96d538a5edb5fe0bcbf87cf7a3acf0",
+  "rows": 300,
+  "window_start": "2025-01-01",
+  "window_end": "2025-12-31",
+  "unit_of_analysis": "repository",
+  "source_modified": false,
+  "plan": {
+    "factors": [
+      "stars",
+      "contributors_count",
+      "age_days"
+    ],
+    "metrics": [
+      "deployment_frequency",
+      "lead_time_release_median_hours",
+      "lead_time_commit_median_hours",
+      "cfr_ci",
+      "cfr_b",
+      "recovery_median_hours"
+    ],
+    "rq05_pairs": 2,
+    "rq06_family_planned": 18,
+    "alpha": 0.05,
+    "holm_scope": "all_estimable_RQ06_tests",
+    "quantile_method": "linear_type_7",
+    "quartile_ties": "coalesce_empty_intervals; never split equal values",
+    "kw_effect": "H/(n-1)",
+    "mw_effect": "2*U1/(n1*n2)-1",
+    "permutations": 9999,
+    "seed": 42,
+    "spearman_p": "two_sided_asymptotic_plus_preplanned_two_sided_permutation_check"
+  },
+  "valid_counts": {
+    "deployment_frequency": 300,
+    "lead_time_release_median_hours": 300,
+    "lead_time_commit_median_hours": 299,
+    "cfr_ci": 300,
+    "cfr_b": 300,
+    "recovery_median_hours": 258
+  },
+  "cfr_b_validation": [
+    "pending_independent_labels"
+  ],
+  "rq06_family_estimable": 18,
+  "rq06_rejected_holm": 8,
+  "quality_occurrences": 43,
+  "invalid_occurrences": 1,
+  "factor_cuts": {
+    "stars": {
+      "factor_n": 300,
+      "quantiles": [
+        40030.5,
+        50393.5,
+        76679.75
+      ],
+      "cuts": [
+        40030.5,
+        50393.5,
+        76679.75
+      ],
+      "groups": [
+        {
+          "group": "Q1",
+          "lower_exclusive": null,
+          "upper_inclusive": 40030.5,
+          "factor_n": 75
+        },
+        {
+          "group": "Q2",
+          "lower_exclusive": 40030.5,
+          "upper_inclusive": 50393.5,
+          "factor_n": 75
+        },
+        {
+          "group": "Q3",
+          "lower_exclusive": 50393.5,
+          "upper_inclusive": 76679.75,
+          "factor_n": 75
+        },
+        {
+          "group": "Q4",
+          "lower_exclusive": 76679.75,
+          "upper_inclusive": null,
+          "factor_n": 75
+        }
+      ],
+      "groups_reduced": false,
+      "boundary_rule": "(lower, upper]; unbounded endpoints; empty intervals coalesced"
+    },
+    "contributors_count": {
+      "factor_n": 300,
+      "quantiles": [
+        268.0,
+        539.5,
+        1135.75
+      ],
+      "cuts": [
+        268.0,
+        539.5,
+        1135.75
+      ],
+      "groups": [
+        {
+          "group": "Q1",
+          "lower_exclusive": null,
+          "upper_inclusive": 268.0,
+          "factor_n": 75
+        },
+        {
+          "group": "Q2",
+          "lower_exclusive": 268.0,
+          "upper_inclusive": 539.5,
+          "factor_n": 75
+        },
+        {
+          "group": "Q3",
+          "lower_exclusive": 539.5,
+          "upper_inclusive": 1135.75,
+          "factor_n": 75
+        },
+        {
+          "group": "Q4",
+          "lower_exclusive": 1135.75,
+          "upper_inclusive": null,
+          "factor_n": 75
+        }
+      ],
+      "groups_reduced": false,
+      "boundary_rule": "(lower, upper]; unbounded endpoints; empty intervals coalesced"
+    },
+    "age_days": {
+      "factor_n": 300,
+      "quantiles": [
+        1171.7891782407407,
+        2442.250439814815,
+        3825.337361111111
+      ],
+      "cuts": [
+        1171.7891782407407,
+        2442.250439814815,
+        3825.337361111111
+      ],
+      "groups": [
+        {
+          "group": "Q1",
+          "lower_exclusive": null,
+          "upper_inclusive": 1171.7891782407407,
+          "factor_n": 75
+        },
+        {
+          "group": "Q2",
+          "lower_exclusive": 1171.7891782407407,
+          "upper_inclusive": 2442.250439814815,
+          "factor_n": 75
+        },
+        {
+          "group": "Q3",
+          "lower_exclusive": 2442.250439814815,
+          "upper_inclusive": 3825.337361111111,
+          "factor_n": 75
+        },
+        {
+          "group": "Q4",
+          "lower_exclusive": 3825.337361111111,
+          "upper_inclusive": null,
+          "factor_n": 75
+        }
+      ],
+      "groups_reduced": false,
+      "boundary_rule": "(lower, upper]; unbounded endpoints; empty intervals coalesced"
+    }
+  },
+  "versions": {
+    "numpy": "2.5.4",
+    "pandas": "3.0.6",
+    "scipy": "1.18.1",
+    "statsmodels": "0.15.0",
+    "matplotlib": "3.11.2"
+  },
+  "python": "3.12.14",
+  "created_at": "2026-10-18T19:32:20.931384+00:00",
+  "figures_generated": true,
+  "figures": [
+    "rq05-cfr-ci.png",
+    "rq05-cfr-ci.svg",
+    "rq05-cfr-b.png",
+    "rq05-cfr-b.svg",
+    "rq06-stars.png",
+    "rq06-stars.svg",
+    "rq06-contributors-count.png",
+    "rq06-contributors-count.svg",
+    "rq06-age-days.png",
+    "rq06-age-days.svg"
+  ]
+}

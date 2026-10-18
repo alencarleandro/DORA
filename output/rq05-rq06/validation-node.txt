@@ -1,0 +1,176 @@
+
+> dora-workflows@1.0.0 test
+> node --test --experimental-test-coverage --test-coverage-include=lib/metrics.mjs --test-coverage-include=lib/agreement.mjs --test-coverage-include=lib/corrective.mjs --test-coverage-lines=80 --test-coverage-branches=80 tests/*.test.mjs
+
+✔ exemplo clássico de Fleiss (1971) reproduz valores tabelados (5.3619ms)
+✔ concordância perfeita resulta em kappa = 1.0 (3.474ms)
+✔ concordância em uma única categoria para todos os itens tem kappa = 1.0 (0.2206ms)
+✔ discordância extrema com categorias distribuídas produz kappa negativo (pobre) (0.2544ms)
+✔ faixas de interpretação de Landis & Koch (1977) (1.6132ms)
+✔ aggregateRaters com categorias fixas e tratamento de erros (0.4562ms)
+✔ fleissKappa valida consistência de linhas, avaliadores e categorias (0.2953ms)
+✔ calculateDimensionAgreement funciona com objetos de sujeitos (4.4865ms)
+✔ createRNG e sampleArray são determinísticos com semente fixa (0.8914ms)
+✔ substituição atômica retenta bloqueio temporário sem apagar o estado anterior (9.1679ms)
+✔ auditoria não transforma rótulos vazios em consenso nem validação de F1 (290.5576ms)
+✔ patch semver não aceita prerelease, major/minor ou regressão de versão (2.6285ms)
+✔ versões da heurística distinguem patch, correção e documentação (1.5463ms)
+✔ CFR b: fronteira de sete dias, censura e denominador (1.397ms)
+✔ não mistura repositórios; release inválida, prerelease e histórico desconhecido (0.8234ms)
+✔ matriz de confusão e F1 usam referência humana, sem inventar ausências (1.7764ms)
+✔ auditoria exclui datas divergentes e permite calibração somente com evidência real (1.9154ms)
+✔ auditoria não aceita simulação, tag inexistente ou comparação ausente (0.5214ms)
+✔ CFR b rejeita mistura e janela inválida mesmo sem releases (1.5625ms)
+✔ CLI gera métricas locais e reprova referência incompleta sem apagar relatórios (282.804ms)
+✔ sorteio local herda janela, usa releases existentes e preserva amostra anterior (453.607ms)
+✔ CSV aceita BOM, ponto e vírgula, aspas e campos multilinha (3.6619ms)
+✔ repositórios normalizados e deduplicados; URLs arbitrárias rejeitadas (0.9409ms)
+✔ exportação impede fórmulas de planilha e escapa aspas (0.8369ms)
+✔ CSV de runs rejeita falta de esquema (0.7092ms)
+✔ CSV exportado preserva tags com escopo ao reimportar para B e a referência humana (4.6371ms)
+✔ coleta concorrente limita chamadas e retoma somente o projeto incompleto (29.8692ms)
+Carregados 300 repositórios de C:\Users\isabe\OneDrive\Documents\DORA\data\dataset-s02-final\dataset.csv
+Processados 300 repositórios com sucesso.
+Gerado: C:\Users\isabe\AppData\Local\Temp\dora-c1-integration-azpVBT\rq07-classifications.csv
+Gerado: C:\Users\isabe\AppData\Local\Temp\dora-c1-integration-azpVBT\rq07-sensitivity-summary.json
+Gerado: C:\Users\isabe\AppData\Local\Temp\dora-c1-integration-azpVBT\rq07-sensitivity-report.md
+Gerado: C:\Users\isabe\AppData\Local\Temp\dora-c1-integration-azpVBT\rq08-rework-rate.csv
+Gerado: C:\Users\isabe\AppData\Local\Temp\dora-c1-integration-azpVBT\rq08-rework-report.md
+✔ quartis de projetos: interpolação tipo 7, vazios separados de zero (3.2252ms)
+✔ limites da frequência mensal em ano civil normal e bissexto não arredondam semanas (2.9644ms)
+✔ C1 completa usa quatro dimensões; recuperação ausente não vira Elite (5.3252ms)
+✔ zero CFR e recuperação zero reais são preservados, censura completa explicada (0.6399ms)
+✔ negativos, valores não numéricos e taxas inválidas não entram nas estatísticas nem são alterados na fonte (0.5702ms)
+✔ taxas inconsistentes com contagens são sinalizadas e excluídas (0.4748ms)
+✔ não mistura janelas, duplicatas e denominador zero com taxa definida (1.4379ms)
+✔ comparação pareada exclui apenas projetos sem ambas as variantes (0.8299ms)
+✔ CLI local gera artefatos portáteis sem rede, sem alterar fonte e explicita CFR exploratório (206.6558ms)
+✔ RQ07 e RQ01-04 compartilham C1 disponível para os 300 projetos, incluindo o limite mensal (111.967ms)
+✔ exportação por lotes mantém linhas, aspas e janela para reimportação local (89.499ms)
+✖ histórico Git recupera commits entre tags, datas do autor e tags anotadas (1775.9062ms)
+✔ cache preserva paginação e evita repetir chamadas (116.418ms)
+✔ retries 5xx e rede e rate limit (56.7291ms)
+✔ teto de 1.000 subdivide intervalo sem truncar (44.5591ms)
+✔ janela dividida por mês e runs deduplicados (16.675ms)
+✔ histórico completo de A é reutilizado sem doze novas consultas e sem payload volumoso (21.8619ms)
+✔ erros de acesso e paginação incompleta são explícitos (16.8952ms)
+✔ cancelamento interrompe espera (4.3183ms)
+✔ rate limit com espera acima do limite permite retomada sem esperar (10.364ms)
+✔ resposta JSON interrompida é repetida e nunca salva como completa (10.2377ms)
+✔ A para ao confirmar 50 runs sem baixar o restante; contagem é limite inferior (7.3918ms)
+✔ A confirma ausência de runs em uma chamada para a janela inteira (8.7378ms)
+✔ A não exclui projetos por runs ignorados na primeira página ou pelo teto de mil (8.2413ms)
+✔ cota e autenticação são informadas; cache não inventa saldo atual (7.2715ms)
+✔ cache persiste entre clientes e recupera dados sem token nem rede (9.5568ms)
+✔ singleflight agrupa chamadas concorrentes à mesma URL em uma única requisição (23.6726ms)
+✔ cache L1 em memória evita I/O de disco para leituras subsequentes (8.5948ms)
+✔ requisições com ETag retornam 304 Not Modified e atualizam metadados sem queimar cota (12.5847ms)
+✔ escrita atômica concorrente em disco não colide nem corrompe arquivos (33.9277ms)
+✔ IDs duplicados não viram coleta completa; cache separado permite recuperar sem apagar a evidência antiga (15.9527ms)
+✔ política LRU real no cache L1 em memória despeja itens menos recentemente acessados (16.0383ms)
+✔ memoização da criação de diretório de cache reutiliza promise única por instância (2.3257ms)
+✔ B calcula CFR b e preserva notas ao importar CSV sem rede (38.0116ms)
+✔ A seleciona; B/C usam mesma amostra, branch e janela; exports combinam os dados (95.1384ms)
+✔ busca da parte A está disponível sem CSV e preserva fotografia e consultas (16.0618ms)
+✔ amostra insuficiente é explícita e erros não viram exclusões (29.7313ms)
+✔ falha de B é retomável sem repetir A; pausa e rate limit preservam estado (76.272ms)
+✔ branch incorreto do CSV é erro explícito e não alimenta B/C (8.7394ms)
+✔ valida limites antes de iniciar ou persistir uma coleta (1.3521ms)
+✔ A isolada exporta a amostra sem executar comparações ou métricas de B/C (11.2492ms)
+✔ B e C usam a amostra e a janela de A, sem executar as outras partes (50.5373ms)
+✔ B isolada continua erros sem repetir repositórios concluídos (25.2482ms)
+✔ ampliação preserva os aprovados e processa somente candidatos novos até completar a amostra (33.6318ms)
+✔ A exporta CSVs completos; B e C calculam com API indisponível, sem token (62.9768ms)
+✔ coleta completa de A retoma arquivos prontos e bloqueia CSVs incompletos (26.0433ms)
+✔ CSV de B rejeita commits duplicados e comparações incompletas (25.1248ms)
+✔ B/C usam subconjunto local completo, mesmo quando a coleta A não terminou (47.8414ms)
+✔ save aplica throttle em 50 escritas intermediárias resultando em escrita única após debounce e immediate grava na hora (778.6152ms)
+✔ resoluções de IA completam apenas 38 casos sem alterar os três avaliadores oficiais (555.1938ms)
+✔ exemplo README: falhas consecutivas formam um único episódio de 1h20 (3.8931ms)
+✔ conclusões ignoradas, branch, evento, janela e deduplicação (0.5061ms)
+✔ recuperações são isoladas por workflow e ordenadas (0.3393ms)
+✔ primeiras falhas sem sucesso prévio ficam contabilizadas, sem episódio observável (0.2158ms)
+✔ sucesso terminado após janela não encerra episódio (0.8143ms)
+✔ run iniciado após janela não altera episódios (0.3232ms)
+✔ vazio e sem runs válidos não geram taxas zero (0.3371ms)
+✔ limite de 50 runs e quantis interpolados (0.7269ms)
+✔ validação de datas e inconsistências (1.9091ms)
+✔ frequência de deploy calcula releases por semana na janela (0.4367ms)
+✔ exemplo README RQ 02: release v1.1 com 13, 5 e 1 dias de lead time (4.9191ms)
+✔ lead time: múltiplas releases, quantis, exclusões e casos de borda (13.7129ms)
+✔ lead time com janela aberta ou sem releases válidas (0.3062ms)
+✔ calculateLeadTime processa release com 100.000 commits sem RangeError (84.2166ms)
+✔ quantiles e IQR calculam valores exatos com e sem interpolação (1.691ms)
+✔ getReleases filtra drafts e ordena cronologicamente (2.6384ms)
+✔ getTags lista tags e extrai sha (0.5162ms)
+✔ compareCommits suporta paginação e extrai campos de commits (0.7563ms)
+✔ compareCommits trata 404 sem lançar exceção (1.9762ms)
+✔ compareCommits propaga RATE_LIMIT_WAIT e erros genéricos (1.3517ms)
+✔ collectReleasesAndCommits orquestra janela, release anterior e 1ª release (1.2713ms)
+✔ collectReleasesAndCommits identifica 1ª release da história (0.4618ms)
+✔ compareCommits não aceita histórico truncado como completo (0.3558ms)
+✔ históricos sem ancestral comum permanecem indisponíveis, sem commits fabricados (0.5313ms)
+✔ asyncPool limita concorrência ao limite especificado e preserva ordem (40.6485ms)
+✔ cleanNumeric trata números, prefixos de proteção e vazios (2.0242ms)
+✔ classifyDeploymentFrequency classifica faixas e limites corretamente (0.4098ms)
+✔ classifyLeadTime classifica faixas e limites em dias (0.2321ms)
+✔ classifyCfr classifica faixas de taxa de falha (0.2236ms)
+✔ classifyRecovery classifica faixas de recuperação em horas (0.2841ms)
+✔ calculateOverallDora calcula mediana e arredonda para baixo (0.3732ms)
+✔ weightedCohenKappaLinear e compareClassifications conferem concordância e transições (1.9722ms)
+✔ interpretKappa classifica as faixas de concordância (0.4459ms)
+✔ rank e spearmanCorrelation calculam ordenação com empates e correlação de Spearman (2.8997ms)
+✔ busca particiona acima de mil, deduplica e ordena (8.8008ms)
+✔ incompletude e paginação ausente não viram sucesso (2.6493ms)
+✔ contribuidores última página; linguagem ausente e idade fixa (1.7338ms)
+✔ contribuidores indisponíveis não são zero; sem janela não inventa idade (0.5728ms)
+✔ contribuidores vazio é zero e criação após janela é sinalizada (0.3652ms)
+✔ filtros aplicam primeira exclusão; errors não são exclusões (1.051ms)
+✔ funil conserva totais e separa pendentes, erros, não selecionados (1.1135ms)
+✔ modo full exige datas oficiais e configuração válida (0.6262ms)
+✔ janela aceita todo o ano bissexto de 2024 (0.3735ms)
+✔ 300 candidatos exigem três páginas mesmo quando a busca tem mais de mil resultados (3.3977ms)
+✔ filtro de A usa qualificação curta e sinaliza contagem incompleta (0.5445ms)
+✔ busca interrompe paginacao precocemente ao atingir candidateLimit (16.0474ms)
+✔ contribuidores com fallback em per_page=100 le bulk.last sem loop infinito (0.6341ms)
+ℹ tests 124
+ℹ suites 0
+ℹ pass 123
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2075.8797
+ℹ start of coverage report
+ℹ ----------------------------------------------------------------
+ℹ file            | line % | branch % | funcs % | uncovered lines
+ℹ ----------------------------------------------------------------
+ℹ lib             |        |          |         | 
+ℹ  agreement.mjs  | 100.00 |   100.00 |  100.00 | 
+ℹ  corrective.mjs | 100.00 |    92.25 |  100.00 | 
+ℹ  metrics.mjs    | 100.00 |    98.17 |  100.00 | 
+ℹ ----------------------------------------------------------------
+ℹ all files       | 100.00 |    96.19 |  100.00 | 
+ℹ ----------------------------------------------------------------
+ℹ end of coverage report
+
+✖ failing tests:
+
+test at tests\git-evidence.test.mjs:10:1
+✖ histórico Git recupera commits entre tags, datas do autor e tags anotadas (1775.9062ms)
+  AssertionError [ERR_ASSERTION]: The input was expected to not match the regular expression /tree|blob/. Input:
+  
+  'tree\ncommit\ntag\ncommit\n'
+  
+      at TestContext.<anonymous> (file:///C:/Users/isabe/OneDrive/Documents/DORA/tests/git-evidence.test.mjs:28:69)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1106:25)
+      at Test.start (node:internal/test_runner/test:1003:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:358:17) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'tree\ncommit\ntag\ncommit\n',
+    expected: /tree|blob/,
+    operator: 'doesNotMatch',
+    diff: 'simple'
+  }

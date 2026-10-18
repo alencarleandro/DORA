@@ -1,0 +1,3 @@
+﻿variant,x,y,rho,p_value,p_permutation,n,excluded_n,status,reason,permutations,seed,metric_validation
+RQ05a,deployment_frequency,cfr_ci,0.06378345013716324,0.27077852619611714,0.2718,300,0,estimated,,9999,42,not_applicable
+RQ05b,deployment_frequency,cfr_b,0.5712756187262449,2.191975261220141e-27,0.0001,300,0,estimated,,9999,43,exploratory:pending_independent_labels

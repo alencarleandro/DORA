@@ -527,6 +527,10 @@ Para reproduzir a consolidação dos exports versionados, execute `node scripts/
 
 **Issue #6 — consolidação e rotulação assistida:** o [dicionário CSV](data/dataset-s02-final/dictionary.csv) cobre as 55 colunas e o [relatório de qualidade](data/dataset-s02-final/validacao/quality-report.json) registra a conferência. Os [300 rótulos oficiais de Isabella](data/gold-standard-final-300-2025/rotulos-isabella.csv) foram revisados e mantêm explícito o uso de IA. O [rascunho e a rastreabilidade](data/gold-standard-final-300-2025/revisao-isabella/) ficam separados do arquivo oficial. Veja [entrega e pendências da #6](docs/ISSUE-6-S02.md).
 
+### Sprint 3 — RQ05 e RQ06 (issue #8)
+
+A análise de associação de Isabella usa o dataset local dos 300 projetos: duas correlações de Spearman e 18 comparações entre quartis de estrelas, contribuidores e idade, com tamanhos de efeito e correção de Holm. Veja [instruções e decisões](docs/ISSUE-8-S03.md), [resultados e discussão](output/rq05-rq06/REPORT.md) e [validação](output/rq05-rq06/VALIDATION.md). Com Python 3.12 e as dependências de `scripts/requirements-rq05-rq06.txt` instaladas, execute `npm run rq05` e `npm run test:rq05`. O CFR por releases continua exploratório, pendente da validação da amostra-ouro.
+
 # 🤝 Contribuidores
 
 <a href="https://github.com/alencarleandro/DORA/graphs/contributors">

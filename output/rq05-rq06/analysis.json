@@ -1,0 +1,4703 @@
+{
+  "correlations": [
+    {
+      "variant": "RQ05a",
+      "x": "deployment_frequency",
+      "y": "cfr_ci",
+      "rho": 0.06378345013716324,
+      "p_value": 0.27077852619611714,
+      "p_permutation": 0.2718,
+      "n": 300,
+      "excluded_n": 0,
+      "status": "estimated",
+      "reason": "",
+      "permutations": 9999,
+      "seed": 42,
+      "metric_validation": "not_applicable"
+    },
+    {
+      "variant": "RQ05b",
+      "x": "deployment_frequency",
+      "y": "cfr_b",
+      "rho": 0.5712756187262449,
+      "p_value": 2.191975261220141e-27,
+      "p_permutation": 0.0001,
+      "n": 300,
+      "excluded_n": 0,
+      "status": "estimated",
+      "reason": "",
+      "permutations": 9999,
+      "seed": 43,
+      "metric_validation": "exploratory:pending_independent_labels"
+    }
+  ],
+  "tests": [
+    {
+      "status": "estimated",
+      "reason": "",
+      "test": "kruskal_wallis",
+      "statistic": 12.419575578634802,
+      "p_value": 0.006075746975816941,
+      "effect_name": "epsilon_squared_H_over_n_minus_1",
+      "effect": 0.041537042069012715,
+      "effect_magnitude": "",
+      "n": 300,
+      "groups_used": 4,
+      "method": "chi_square_asymptotic; tie correction",
+      "small_group": false,
+      "group_order": "Q1;Q2;Q3;Q4",
+      "factor": "stars",
+      "metric": "deployment_frequency",
+      "unit": "releases/semana",
+      "excluded_n": 0,
+      "groups_planned": 4,
+      "metric_validation": "not_applicable",
+      "p_adjusted": 0.06075746975816941,
+      "reject_holm": false,
+      "family_planned": 18,
+      "family_estimable": 18
+    },
+    {
+      "status": "estimated",
+      "reason": "",
+      "test": "kruskal_wallis",
+      "statistic": 1.2937231450719082,
+      "p_value": 0.7306241147558736,
+      "effect_name": "epsilon_squared_H_over_n_minus_1",
+      "effect": 0.004326833261110061,
+      "effect_magnitude": "",
+      "n": 300,
+      "groups_used": 4,
+      "method": "chi_square_asymptotic; tie correction",
+      "small_group": false,
+      "group_order": "Q1;Q2;Q3;Q4",
+      "factor": "stars",
+      "metric": "lead_time_release_median_hours",
+      "unit": "horas",
+      "excluded_n": 0,
+      "groups_planned": 4,
+      "metric_validation": "not_applicable",
+      "p_adjusted": 1.0,
+      "reject_holm": false,
+      "family_planned": 18,
+      "family_estimable": 18
+    },
+    {
+      "status": "estimated",
+      "reason": "",
+      "test": "kruskal_wallis",
+      "statistic": 4.437014119135824,
+      "p_value": 0.21797776279346123,
+      "effect_name": "epsilon_squared_H_over_n_minus_1",
+      "effect": 0.01488930912461686,
+      "effect_magnitude": "",
+      "n": 299,
+      "groups_used": 4,
+      "method": "chi_square_asymptotic; tie correction",
+      "small_group": false,
+      "group_order": "Q1;Q2;Q3;Q4",
+      "factor": "stars",
+      "metric": "lead_time_commit_median_hours",
+      "unit": "horas",
+      "excluded_n": 1,
+      "groups_planned": 4,
+      "metric_validation": "not_applicable",
+      "p_adjusted": 1.0,
+      "reject_holm": false,
+      "family_planned": 18,
+      "family_estimable": 18
+    },
+    {
+      "status": "estimated",
+      "reason": "",
+      "test": "kruskal_wallis",
+      "statistic": 0.8959437718755181,
+      "p_value": 0.8264065584365484,
+      "effect_name": "epsilon_squared_H_over_n_minus_1",
+      "effect": 0.002996467464466616,
+      "effect_magnitude": "",
+      "n": 300,
+      "groups_used": 4,
+      "method": "chi_square_asymptotic; tie correction",
+      "small_group": false,
+      "group_order": "Q1;Q2;Q3;Q4",
+      "factor": "stars",
+      "metric": "cfr_ci",
+      "unit": "proporção",
+      "excluded_n": 0,
+      "groups_planned": 4,
+      "metric_validation": "not_applicable",
+      "p_adjusted": 1.0,
+      "reject_holm": false,
+      "family_planned": 18,
+      "family_estimable": 18
+    },
+    {
+      "status": "estimated",
+      "reason": "",
+      "test": "kruskal_wallis",
+      "statistic": 21.310103957388645,
+      "p_value": 9.076321778538399e-05,
+      "effect_name": "epsilon_squared_H_over_n_minus_1",
+      "effect": 0.07127125069360751,
+      "effect_magnitude": "",
+      "n": 300,
+      "groups_used": 4,
+      "method": "chi_square_asymptotic; tie correction",
+      "small_group": false,
+      "group_order": "Q1;Q2;Q3;Q4",
+      "factor": "stars",
+      "metric": "cfr_b",
+      "unit": "proporção",
+      "excluded_n": 0,
+      "groups_planned": 4,
+      "metric_validation": "exploratory:pending_independent_labels",
+      "p_adjusted": 0.0010891586134246078,
+      "reject_holm": true,
+      "family_planned": 18,
+      "family_estimable": 18
+    },
+    {
+      "status": "estimated",
+      "reason": "",
+      "test": "kruskal_wallis",
+      "statistic": 5.389634712789189,
+      "p_value": 0.14539073747427034,
+      "effect_name": "epsilon_squared_H_over_n_minus_1",
+      "effect": 0.020971341294899568,
+      "effect_magnitude": "",
+      "n": 258,
+      "groups_used": 4,
+      "method": "chi_square_asymptotic; tie correction",
+      "small_group": false,
+      "group_order": "Q1;Q2;Q3;Q4",
+      "factor": "stars",
+      "metric": "recovery_median_hours",
+      "unit": "horas",
+      "excluded_n": 42,
+      "groups_planned": 4,
+      "metric_validation": "not_applicable",
+      "p_adjusted": 1.0,
+      "reject_holm": false,
+      "family_planned": 18,
+      "family_estimable": 18
+    },
+    {
+      "status": "estimated",
+      "reason": "",
+      "test": "kruskal_wallis",
+      "statistic": 13.69348885349856,
+      "p_value": 0.003353494514305598,
+      "effect_name": "epsilon_squared_H_over_n_minus_1",
+      "effect": 0.04579762158360722,
+      "effect_magnitude": "",
+      "n": 300,
+      "groups_used": 4,
+      "method": "chi_square_asymptotic; tie correction",
+      "small_group": false,
+      "group_order": "Q1;Q2;Q3;Q4",
+      "factor": "contributors_count",
+      "metric": "deployment_frequency",
+      "unit": "releases/semana",
+      "excluded_n": 0,
+      "groups_planned": 4,
+      "metric_validation": "not_applicable",
+      "p_adjusted": 0.03688843965736158,
+      "reject_holm": true,
+      "family_planned": 18,
+      "family_estimable": 18
+    },
+    {
+      "status": "estimated",
+      "reason": "",
+      "test": "kruskal_wallis",
+      "statistic": 28.88942458471763,
+      "p_value": 2.3624956223123314e-06,
+      "effect_name": "epsilon_squared_H_over_n_minus_1",
+      "effect": 0.09662014911276799,
+      "effect_magnitude": "",
+      "n": 300,
+      "groups_used": 4,
+      "method": "chi_square_asymptotic; tie correction",
+      "small_group": false,
+      "group_order": "Q1;Q2;Q3;Q4",
+      "factor": "contributors_count",
+      "metric": "lead_time_release_median_hours",
+      "unit": "horas",
+      "excluded_n": 0,
+      "groups_planned": 4,
+      "metric_validation": "not_applicable",
+      "p_adjusted": 3.307493871237264e-05,
+      "reject_holm": true,
+      "family_planned": 18,
+      "family_estimable": 18
+    },
+    {
+      "status": "estimated",
+      "reason": "",
+      "test": "kruskal_wallis",
+      "statistic": 50.8112606224953,
+      "p_value": 5.366647625948562e-11,
+      "effect_name": "epsilon_squared_H_over_n_minus_1",
+      "effect": 0.17050758598152785,
+      "effect_magnitude": "",
+      "n": 299,
+      "groups_used": 4,
+      "method": "chi_square_asymptotic; tie correction",
+      "small_group": false,
+      "group_order": "Q1;Q2;Q3;Q4",
+      "factor": "contributors_count",
+      "metric": "lead_time_commit_median_hours",
+      "unit": "horas",
+      "excluded_n": 1,
+      "groups_planned": 4,
+      "metric_validation": "not_applicable",
+      "p_adjusted": 8.5866362015177e-10,
+      "reject_holm": true,
+      "family_planned": 18,
+      "family_estimable": 18
+    },
+    {
+      "status": "estimated",
+      "reason": "",
+      "test": "kruskal_wallis",
+      "statistic": 2.6755115732971437,
+      "p_value": 0.4444048997800495,
+      "effect_name": "epsilon_squared_H_over_n_minus_1",
+      "effect": 0.008948199241796467,
+      "effect_magnitude": "",
+      "n": 300,
+      "groups_used": 4,
+      "method": "chi_square_asymptotic; tie correction",
+      "small_group": false,
+      "group_order": "Q1;Q2;Q3;Q4",
+      "factor": "contributors_count",
+      "metric": "cfr_ci",
+      "unit": "proporção",
+      "excluded_n": 0,
+      "groups_planned": 4,
+      "metric_validation": "not_applicable",
+      "p_adjusted": 1.0,
+      "reject_holm": false,
+      "family_planned": 18,
+      "family_estimable": 18
+    },
+    {
+      "status": "estimated",
+      "reason": "",
+      "test": "kruskal_wallis",
+      "statistic": 11.343057376274757,
+      "p_value": 0.010008365769852449,
+      "effect_name": "epsilon_squared_H_over_n_minus_1",
+      "effect": 0.03793664674339384,
+      "effect_magnitude": "",
+      "n": 300,
+      "groups_used": 4,
+      "method": "chi_square_asymptotic; tie correction",
+      "small_group": false,
+      "group_order": "Q1;Q2;Q3;Q4",
+      "factor": "contributors_count",
+      "metric": "cfr_b",
+      "unit": "proporção",
+      "excluded_n": 0,
+      "groups_planned": 4,
+      "metric_validation": "exploratory:pending_independent_labels",
+      "p_adjusted": 0.09007529192867204,
+      "reject_holm": false,
+      "family_planned": 18,
+      "family_estimable": 18
+    },
+    {
+      "status": "estimated",
+      "reason": "",
+      "test": "kruskal_wallis",
+      "statistic": 10.099775567055872,
+      "p_value": 0.017736771616592432,
+      "effect_name": "epsilon_squared_H_over_n_minus_1",
+      "effect": 0.03929873761500339,
+      "effect_magnitude": "",
+      "n": 258,
+      "groups_used": 4,
+      "method": "chi_square_asymptotic; tie correction",
+      "small_group": false,
+      "group_order": "Q1;Q2;Q3;Q4",
+      "factor": "contributors_count",
+      "metric": "recovery_median_hours",
+      "unit": "horas",
+      "excluded_n": 42,
+      "groups_planned": 4,
+      "metric_validation": "not_applicable",
+      "p_adjusted": 0.14189417293273945,
+      "reject_holm": false,
+      "family_planned": 18,
+      "family_estimable": 18
+    },
+    {
+      "status": "estimated",
+      "reason": "",
+      "test": "kruskal_wallis",
+      "statistic": 21.491597944127445,
+      "p_value": 8.321252419501602e-05,
+      "effect_name": "epsilon_squared_H_over_n_minus_1",
+      "effect": 0.07187825399373728,
+      "effect_magnitude": "",
+      "n": 300,
+      "groups_used": 4,
+      "method": "chi_square_asymptotic; tie correction",
+      "small_group": false,
+      "group_order": "Q1;Q2;Q3;Q4",
+      "factor": "age_days",
+      "metric": "deployment_frequency",
+      "unit": "releases/semana",
+      "excluded_n": 0,
+      "groups_planned": 4,
+      "metric_validation": "not_applicable",
+      "p_adjusted": 0.0010817628145352084,
+      "reject_holm": true,
+      "family_planned": 18,
+      "family_estimable": 18
+    },
+    {
+      "status": "estimated",
+      "reason": "",
+      "test": "kruskal_wallis",
+      "statistic": 87.99505825027677,
+      "p_value": 5.903900442887081e-19,
+      "effect_name": "epsilon_squared_H_over_n_minus_1",
+      "effect": 0.2942978536798554,
+      "effect_magnitude": "",
+      "n": 300,
+      "groups_used": 4,
+      "method": "chi_square_asymptotic; tie correction",
+      "small_group": false,
+      "group_order": "Q1;Q2;Q3;Q4",
+      "factor": "age_days",
+      "metric": "lead_time_release_median_hours",
+      "unit": "horas",
+      "excluded_n": 0,
+      "groups_planned": 4,
+      "metric_validation": "not_applicable",
+      "p_adjusted": 1.0036630752908038e-17,
+      "reject_holm": true,
+      "family_planned": 18,
+      "family_estimable": 18
+    },
+    {
+      "status": "estimated",
+      "reason": "",
+      "test": "kruskal_wallis",
+      "statistic": 88.7367959263612,
+      "p_value": 4.0912455624700963e-19,
+      "effect_name": "epsilon_squared_H_over_n_minus_1",
+      "effect": 0.29777448297436643,
+      "effect_magnitude": "",
+      "n": 299,
+      "groups_used": 4,
+      "method": "chi_square_asymptotic; tie correction",
+      "small_group": false,
+      "group_order": "Q1;Q2;Q3;Q4",
+      "factor": "age_days",
+      "metric": "lead_time_commit_median_hours",
+      "unit": "horas",
+      "excluded_n": 1,
+      "groups_planned": 4,
+      "metric_validation": "not_applicable",
+      "p_adjusted": 7.364242012446174e-18,
+      "reject_holm": true,
+      "family_planned": 18,
+      "family_estimable": 18
+    },
+    {
+      "status": "estimated",
+      "reason": "",
+      "test": "kruskal_wallis",
+      "statistic": 3.672167376384501,
+      "p_value": 0.29910943240804855,
+      "effect_name": "epsilon_squared_H_over_n_minus_1",
+      "effect": 0.012281496242088632,
+      "effect_magnitude": "",
+      "n": 300,
+      "groups_used": 4,
+      "method": "chi_square_asymptotic; tie correction",
+      "small_group": false,
+      "group_order": "Q1;Q2;Q3;Q4",
+      "factor": "age_days",
+      "metric": "cfr_ci",
+      "unit": "proporção",
+      "excluded_n": 0,
+      "groups_planned": 4,
+      "metric_validation": "not_applicable",
+      "p_adjusted": 1.0,
+      "reject_holm": false,
+      "family_planned": 18,
+      "family_estimable": 18
+    },
+    {
+      "status": "estimated",
+      "reason": "",
+      "test": "kruskal_wallis",
+      "statistic": 39.03617815483708,
+      "p_value": 1.7053035872720282e-08,
+      "effect_name": "epsilon_squared_H_over_n_minus_1",
+      "effect": 0.1305557797820638,
+      "effect_magnitude": "",
+      "n": 300,
+      "groups_used": 4,
+      "method": "chi_square_asymptotic; tie correction",
+      "small_group": false,
+      "group_order": "Q1;Q2;Q3;Q4",
+      "factor": "age_days",
+      "metric": "cfr_b",
+      "unit": "proporção",
+      "excluded_n": 0,
+      "groups_planned": 4,
+      "metric_validation": "exploratory:pending_independent_labels",
+      "p_adjusted": 2.557955380908042e-07,
+      "reject_holm": true,
+      "family_planned": 18,
+      "family_estimable": 18
+    },
+    {
+      "status": "estimated",
+      "reason": "",
+      "test": "kruskal_wallis",
+      "statistic": 4.548163779497941,
+      "p_value": 0.2080342121292283,
+      "effect_name": "epsilon_squared_H_over_n_minus_1",
+      "effect": 0.017697135328785762,
+      "effect_magnitude": "",
+      "n": 258,
+      "groups_used": 4,
+      "method": "chi_square_asymptotic; tie correction",
+      "small_group": false,
+      "group_order": "Q1;Q2;Q3;Q4",
+      "factor": "age_days",
+      "metric": "recovery_median_hours",
+      "unit": "horas",
+      "excluded_n": 42,
+      "groups_planned": 4,
+      "metric_validation": "not_applicable",
+      "p_adjusted": 1.0,
+      "reject_holm": false,
+      "family_planned": 18,
+      "family_estimable": 18
+    }
+  ],
+  "group_summary": [
+    {
+      "factor": "stars",
+      "metric": "deployment_frequency",
+      "unit": "releases/semana",
+      "group": "Q1",
+      "lower_exclusive": null,
+      "upper_inclusive": 40030.5,
+      "factor_n": 75,
+      "n": 75,
+      "q1": 0.19178082799913837,
+      "median": 0.38356165599827674,
+      "q3": 0.7479452291966396,
+      "iqr": 0.5561644011975013,
+      "metric_validation": "not_applicable"
+    },
+    {
+      "factor": "stars",
+      "metric": "deployment_frequency",
+      "unit": "releases/semana",
+      "group": "Q2",
+      "lower_exclusive": 40030.5,
+      "upper_inclusive": 50393.5,
+      "factor_n": 75,
+      "n": 75,
+      "q1": 0.23013699359896606,
+      "median": 0.44109590439801827,
+      "q3": 0.9876712641955626,
+      "iqr": 0.7575342705965966,
+      "metric_validation": "not_applicable"
+    },
+    {
+      "factor": "stars",
+      "metric": "deployment_frequency",
+      "unit": "releases/semana",
+      "group": "Q3",
+      "lower_exclusive": 50393.5,
+      "upper_inclusive": 76679.75,
+      "factor_n": 75,
+      "n": 75,
+      "q1": 0.2013698693990953,
+      "median": 0.4027397387981906,
+      "q3": 0.7287671463967258,
+      "iqr": 0.5273972769976305,
+      "metric_validation": "not_applicable"
+    },
+    {
+      "factor": "stars",
+      "metric": "deployment_frequency",
+      "unit": "releases/semana",
+      "group": "Q4",
+      "lower_exclusive": 76679.75,
+      "upper_inclusive": null,
+      "factor_n": 75,
+      "n": 75,
+      "q1": 0.31643836619857835,
+      "median": 0.6904109807968982,
+      "q3": 1.3520548373939256,
+      "iqr": 1.0356164711953473,
+      "metric_validation": "not_applicable"
+    },
+    {
+      "factor": "stars",
+      "metric": "lead_time_release_median_hours",
+      "unit": "horas",
+      "group": "Q1",
+      "lower_exclusive": null,
+      "upper_inclusive": 40030.5,
+      "factor_n": 75,
+      "n": 75,
+      "q1": 106.40861111111111,
+      "median": 317.7676388888889,
+      "q3": 893.0527777777778,
+      "iqr": 786.6441666666667,
+      "metric_validation": "not_applicable"
+    },
+    {
+      "factor": "stars",
+      "metric": "lead_time_release_median_hours",
+      "unit": "horas",
+      "group": "Q2",
+      "lower_exclusive": 40030.5,
+      "upper_inclusive": 50393.5,
+      "factor_n": 75,
+      "n": 75,
+      "q1": 122.59222222222222,
+      "median": 330.5133333333333,
+      "q3": 892.3125694444444,
+      "iqr": 769.7203472222222,
+      "metric_validation": "not_applicable"
+    },
+    {
+      "factor": "stars",
+      "metric": "lead_time_release_median_hours",
+      "unit": "horas",
+      "group": "Q3",
+      "lower_exclusive": 50393.5,
+      "upper_inclusive": 76679.75,
+      "factor_n": 75,
+      "n": 75,
+      "q1": 149.48805555555555,
+      "median": 418.0073611111111,
+      "q3": 1333.8420833333334,
+      "iqr": 1184.354027777778,
+      "metric_validation": "not_applicable"
+    },
+    {
+      "factor": "stars",
+      "metric": "lead_time_release_median_hours",
+      "unit": "horas",
+      "group": "Q4",
+      "lower_exclusive": 76679.75,
+      "upper_inclusive": null,
+      "factor_n": 75,
+      "n": 75,
+      "q1": 104.97597222222223,
+      "median": 259.9175,
+      "q3": 1177.114722222222,
+      "iqr": 1072.1387499999998,
+      "metric_validation": "not_applicable"
+    },
+    {
+      "factor": "stars",
+      "metric": "lead_time_commit_median_hours",
+      "unit": "horas",
+      "group": "Q1",
+      "lower_exclusive": null,
+      "upper_inclusive": 40030.5,
+      "factor_n": 75,
+      "n": 75,
+      "q1": 111.73319444444445,
+      "median": 373.06444444444446,
+      "q3": 1180.3147222222224,
+      "iqr": 1068.5815277777779,
+      "metric_validation": "not_applicable"
+    },
+    {
+      "factor": "stars",
+      "metric": "lead_time_commit_median_hours",
+      "unit": "horas",
+      "group": "Q2",
+      "lower_exclusive": 40030.5,
+      "upper_inclusive": 50393.5,
+      "factor_n": 75,
+      "n": 75,
+      "q1": 100.99111111111111,
+      "median": 295.37694444444446,
+      "q3": 1730.2119444444443,
+      "iqr": 1629.220833333333,
+      "metric_validation": "not_applicable"
+    },
+    {
+      "factor": "stars",
+      "metric": "lead_time_commit_median_hours",
+      "unit": "horas",
+      "group": "Q3",
+      "lower_exclusive": 50393.5,
+      "upper_inclusive": 76679.75,
+      "factor_n": 75,
+      "n": 74,
+      "q1": 177.99357638888887,
+      "median": 645.2813888888888,
+      "q3": 2406.120694444445,
+      "iqr": 2228.127118055556,
+      "metric_validation": "not_applicable"
+    },
+    {
+      "factor": "stars",
+      "metric": "lead_time_commit_median_hours",
+      "unit": "horas",
+      "group": "Q4",
+      "lower_exclusive": 76679.75,
+      "upper_inclusive": null,
+      "factor_n": 75,
+      "n": 75,
+      "q1": 125.48354166666668,
+      "median": 461.3497222222222,
+      "q3": 2889.9524305555556,
+      "iqr": 2764.468888888889,
+      "metric_validation": "not_applicable"
+    },
+    {
+      "factor": "stars",
+      "metric": "cfr_ci",
+      "unit": "proporção",
+      "group": "Q1",
+      "lower_exclusive": null,
+      "upper_inclusive": 40030.5,
+      "factor_n": 75,
+      "n": 75,
+      "q1": 0.016984067532916536,
+      "median": 0.06266318537859007,
+      "q3": 0.18959712284847455,
+      "iqr": 0.172613055315558,
+      "metric_validation": "not_applicable"
+    },
+    {
+      "factor": "stars",
+      "metric": "cfr_ci",
+      "unit": "proporção",
+      "group": "Q2",
+      "lower_exclusive": 40030.5,
+      "upper_inclusive": 50393.5,
+      "factor_n": 75,
+      "n": 75,
+      "q1": 0.011815587658284287,
+      "median": 0.05175899716942984,
+      "q3": 0.1161541734354452,
+      "iqr": 0.1043385857771609,
+      "metric_validation": "not_applicable"
+    },
+    {
+      "factor": "stars",
+      "metric": "cfr_ci",
+      "unit": "proporção",
+      "group": "Q3",
+      "lower_exclusive": 50393.5,
+      "upper_inclusive": 76679.75,
+      "factor_n": 75,
+      "n": 75,
+      "q1": 0.017120954678136745,
+      "median": 0.05341614906832298,
+      "q3": 0.10905888014930362,
+      "iqr": 0.09193792547116687,
+      "metric_validation": "not_applicable"
+    },
+    {
+      "factor": "stars",
+      "metric": "cfr_ci",
+      "unit": "proporção",
+      "group": "Q4",
+      "lower_exclusive": 76679.75,
+      "upper_inclusive": null,
+      "factor_n": 75,
+      "n": 75,
+      "q1": 0.01207485634415282,
+      "median": 0.061028192371475956,
+      "q3": 0.1313747482146127,
+      "iqr": 0.11929989187045989,
+      "metric_validation": "not_applicable"
+    },
+    {
+      "factor": "stars",
+      "metric": "cfr_b",
+      "unit": "proporção",
+      "group": "Q1",
+      "lower_exclusive": null,
+      "upper_inclusive": 40030.5,
+      "factor_n": 75,
+      "n": 75,
+      "q1": 0.10555555555555556,
+      "median": 0.3,
+      "q3": 0.5243519245875883,
+      "iqr": 0.4187963690320327,
+      "metric_validation": "exploratory:pending_independent_labels"
+    },
+    {
+      "factor": "stars",
+      "metric": "cfr_b",
+      "unit": "proporção",
+      "group": "Q2",
+      "lower_exclusive": 40030.5,
+      "upper_inclusive": 50393.5,
+      "factor_n": 75,
+      "n": 75,
+      "q1": 0.20869565217391306,
+      "median": 0.3333333333333333,
+      "q3": 0.5690322000359778,
+      "iqr": 0.3603365478620647,
+      "metric_validation": "exploratory:pending_independent_labels"
+    },
+    {
+      "factor": "stars",
+      "metric": "cfr_b",
+      "unit": "proporção",
+      "group": "Q3",
+      "lower_exclusive": 50393.5,
+      "upper_inclusive": 76679.75,
+      "factor_n": 75,
+      "n": 75,
+      "q1": 0.052564102564102565,
+      "median": 0.2413793103448276,
+      "q3": 0.48397590361445786,
+      "iqr": 0.4314118010503553,
+      "metric_validation": "exploratory:pending_independent_labels"
+    },
+    {
+      "factor": "stars",
+      "metric": "cfr_b",
+      "unit": "proporção",
+      "group": "Q4",
+      "lower_exclusive": 76679.75,
+      "upper_inclusive": null,
+      "factor_n": 75,
+      "n": 75,
+      "q1": 0.0,
+      "median": 0.09090909090909091,
+      "q3": 0.2967032967032967,
+      "iqr": 0.2967032967032967,
+      "metric_validation": "exploratory:pending_independent_labels"
+    },
+    {
+      "factor": "stars",
+      "metric": "recovery_median_hours",
+      "unit": "horas",
+      "group": "Q1",
+      "lower_exclusive": null,
+      "upper_inclusive": 40030.5,
+      "factor_n": 75,
+      "n": 62,
+      "q1": 1.452013888888889,
+      "median": 5.30263888888889,
+      "q3": 24.454444444444444,
+      "iqr": 23.002430555555556,
+      "metric_validation": "not_applicable"
+    },
+    {
+      "factor": "stars",
+      "metric": "recovery_median_hours",
+      "unit": "horas",
+      "group": "Q2",
+      "lower_exclusive": 40030.5,
+      "upper_inclusive": 50393.5,
+      "factor_n": 75,
+      "n": 60,
+      "q1": 1.533611111111111,
+      "median": 2.9234722222222222,
+      "q3": 8.433402777777777,
+      "iqr": 6.899791666666666,
+      "metric_validation": "not_applicable"
+    },
+    {
+      "factor": "stars",
+      "metric": "recovery_median_hours",
+      "unit": "horas",
+      "group": "Q3",
+      "lower_exclusive": 50393.5,
+      "upper_inclusive": 76679.75,
+      "factor_n": 75,
+      "n": 68,
+      "q1": 1.6882638888888888,
+      "median": 4.7965277777777775,
+      "q3": 12.670729166666668,
+      "iqr": 10.982465277777779,
+      "metric_validation": "not_applicable"
+    },
+    {
+      "factor": "stars",
+      "metric": "recovery_median_hours",
+      "unit": "horas",
+      "group": "Q4",
+      "lower_exclusive": 76679.75,
+      "upper_inclusive": null,
+      "factor_n": 75,
+      "n": 68,
+      "q1": 1.0691666666666666,
+      "median": 2.6261805555555555,
+      "q3": 11.764270833333333,
+      "iqr": 10.695104166666667,
+      "metric_validation": "not_applicable"
+    },
+    {
+      "factor": "contributors_count",
+      "metric": "deployment_frequency",
+      "unit": "releases/semana",
+      "group": "Q1",
+      "lower_exclusive": null,
+      "upper_inclusive": 268.0,
+      "factor_n": 75,
+      "n": 75,
+      "q1": 0.17260274519922456,
+      "median": 0.32602740759853527,
+      "q3": 0.5849315253973721,
+      "iqr": 0.41232878019814756,
+      "metric_validation": "not_applicable"
+    },
+    {
+      "factor": "contributors_count",
+      "metric": "deployment_frequency",
+      "unit": "releases/semana",
+      "group": "Q2",
+      "lower_exclusive": 268.0,
+      "upper_inclusive": 539.5,
+      "factor_n": 75,
+      "n": 75,
+      "q1": 0.23972603499892298,
+      "median": 0.4986301527977598,
+      "q3": 1.3424657959939688,
+      "iqr": 1.1027397609950458,
+      "metric_validation": "not_applicable"
+    },
+    {
+      "factor": "contributors_count",
+      "metric": "deployment_frequency",
+      "unit": "releases/semana",
+      "group": "Q3",
+      "lower_exclusive": 539.5,
+      "upper_inclusive": 1135.75,
+      "factor_n": 75,
+      "n": 75,
+      "q1": 0.23013699359896606,
+      "median": 0.594520566797329,
+      "q3": 1.3808219615937962,
+      "iqr": 1.15068496799483,
+      "metric_validation": "not_applicable"
+    },
+    {
+      "factor": "contributors_count",
+      "metric": "deployment_frequency",
+      "unit": "releases/semana",
+      "group": "Q4",
+      "lower_exclusive": 1135.75,
+      "upper_inclusive": null,
+      "factor_n": 75,
+      "n": 75,
+      "q1": 0.23013699359896606,
+      "median": 0.44109590439801827,
+      "q3": 1.073972636795175,
+      "iqr": 0.8438356431962089,
+      "metric_validation": "not_applicable"
+    },
+    {
+      "factor": "contributors_count",
+      "metric": "lead_time_release_median_hours",
+      "unit": "horas",
+      "group": "Q1",
+      "lower_exclusive": null,
+      "upper_inclusive": 268.0,
+      "factor_n": 75,
+      "n": 75,
+      "q1": 104.81118055555555,
+      "median": 221.5715277777778,
+      "q3": 520.650763888889,
+      "iqr": 415.8395833333334,
+      "metric_validation": "not_applicable"
+    },
+    {
+      "factor": "contributors_count",
+      "metric": "lead_time_release_median_hours",
+      "unit": "horas",
+      "group": "Q2",
+      "lower_exclusive": 268.0,
+      "upper_inclusive": 539.5,
+      "factor_n": 75,
+      "n": 75,
+      "q1": 106.45361111111112,
+      "median": 262.84555555555556,
+      "q3": 889.4043750000001,
+      "iqr": 782.950763888889,
+      "metric_validation": "not_applicable"
+    },
+    {
+      "factor": "contributors_count",
+      "metric": "lead_time_release_median_hours",
+      "unit": "horas",
+      "group": "Q3",
+      "lower_exclusive": 539.5,
+      "upper_inclusive": 1135.75,
+      "factor_n": 75,
+      "n": 75,
+      "q1": 102.09458333333333,
+      "median": 274.67055555555555,
+      "q3": 757.1020833333333,
+      "iqr": 655.0074999999999,
+      "metric_validation": "not_applicable"
+    },
+    {
+      "factor": "contributors_count",
+      "metric": "lead_time_release_median_hours",
+      "unit": "horas",
+      "group": "Q4",
+      "lower_exclusive": 1135.75,
+      "upper_inclusive": null,
+      "factor_n": 75,
+      "n": 75,
+      "q1": 260.49625000000003,
+      "median": 1009.4983333333333,
+      "q3": 4230.495277777778,
+      "iqr": 3969.999027777778,
+      "metric_validation": "not_applicable"
+    },
+    {
+      "factor": "contributors_count",
+      "metric": "lead_time_commit_median_hours",
+      "unit": "horas",
+      "group": "Q1",
+      "lower_exclusive": null,
+      "upper_inclusive": 268.0,
+      "factor_n": 75,
+      "n": 74,
+      "q1": 85.94340277777778,
+      "median": 205.37194444444447,
+      "q3": 637.1517361111111,
+      "iqr": 551.2083333333333,
+      "metric_validation": "not_applicable"
+    },
+    {
+      "factor": "contributors_count",
+      "metric": "lead_time_commit_median_hours",
+      "unit": "horas",
+      "group": "Q2",
+      "lower_exclusive": 268.0,
+      "upper_inclusive": 539.5,
+      "factor_n": 75,
+      "n": 75,
+      "q1": 85.928125,
+      "median": 283.7004166666667,
+      "q3": 975.1955555555555,
+      "iqr": 889.2674305555555,
+      "metric_validation": "not_applicable"
+    },
+    {
+      "factor": "contributors_count",
+      "metric": "lead_time_commit_median_hours",
+      "unit": "horas",
+      "group": "Q3",
+      "lower_exclusive": 539.5,
+      "upper_inclusive": 1135.75,
+      "factor_n": 75,
+      "n": 75,
+      "q1": 115.93548611111112,
+      "median": 295.37694444444446,
+      "q3": 1663.7693055555555,
+      "iqr": 1547.8338194444445,
+      "metric_validation": "not_applicable"
+    },
+    {
+      "factor": "contributors_count",
+      "metric": "lead_time_commit_median_hours",
+      "unit": "horas",
+      "group": "Q4",
+      "lower_exclusive": 1135.75,
+      "upper_inclusive": null,
+      "factor_n": 75,
+      "n": 75,
+      "q1": 504.52215277777776,
+      "median": 2041.9673611111111,
+      "q3": 5130.497777777778,
+      "iqr": 4625.975625,
+      "metric_validation": "not_applicable"
+    },
+    {
+      "factor": "contributors_count",
+      "metric": "cfr_ci",
+      "unit": "proporção",
+      "group": "Q1",
+      "lower_exclusive": null,
+      "upper_inclusive": 268.0,
+      "factor_n": 75,
+      "n": 75,
+      "q1": 0.008895717658230353,
+      "median": 0.04827586206896552,
+      "q3": 0.17028985507246375,
+      "iqr": 0.1613941374142334,
+      "metric_validation": "not_applicable"
+    },
+    {
+      "factor": "contributors_count",
+      "metric": "cfr_ci",
+      "unit": "proporção",
+      "group": "Q2",
+      "lower_exclusive": 268.0,
+      "upper_inclusive": 539.5,
+      "factor_n": 75,
+      "n": 75,
+      "q1": 0.00947405431205145,
+      "median": 0.05585106382978723,
+      "q3": 0.10516424181395187,
+      "iqr": 0.09569018750190042,
+      "metric_validation": "not_applicable"
+    },
+    {
+      "factor": "contributors_count",
+      "metric": "cfr_ci",
+      "unit": "proporção",
+      "group": "Q3",
+      "lower_exclusive": 539.5,
+      "upper_inclusive": 1135.75,
+      "factor_n": 75,
+      "n": 75,
+      "q1": 0.027436415531493712,
+      "median": 0.06277827248441674,
+      "q3": 0.15232089726874604,
+      "iqr": 0.12488448173725232,
+      "metric_validation": "not_applicable"
+    },
+    {
+      "factor": "contributors_count",
+      "metric": "cfr_ci",
+      "unit": "proporção",
+      "group": "Q4",
+      "lower_exclusive": 1135.75,
+      "upper_inclusive": null,
+      "factor_n": 75,
+      "n": 75,
+      "q1": 0.017838265972009194,
+      "median": 0.05198019801980198,
+      "q3": 0.1183189989180389,
+      "iqr": 0.10048073294602972,
+      "metric_validation": "not_applicable"
+    },
+    {
+      "factor": "contributors_count",
+      "metric": "cfr_b",
+      "unit": "proporção",
+      "group": "Q1",
+      "lower_exclusive": null,
+      "upper_inclusive": 268.0,
+      "factor_n": 75,
+      "n": 75,
+      "q1": 0.11607142857142858,
+      "median": 0.26666666666666666,
+      "q3": 0.4780952380952381,
+      "iqr": 0.3620238095238095,
+      "metric_validation": "exploratory:pending_independent_labels"
+    },
+    {
+      "factor": "contributors_count",
+      "metric": "cfr_b",
+      "unit": "proporção",
+      "group": "Q2",
+      "lower_exclusive": 268.0,
+      "upper_inclusive": 539.5,
+      "factor_n": 75,
+      "n": 75,
+      "q1": 0.08166666666666667,
+      "median": 0.3076923076923077,
+      "q3": 0.5655314757481941,
+      "iqr": 0.4838648090815274,
+      "metric_validation": "exploratory:pending_independent_labels"
+    },
+    {
+      "factor": "contributors_count",
+      "metric": "cfr_b",
+      "unit": "proporção",
+      "group": "Q3",
+      "lower_exclusive": 539.5,
+      "upper_inclusive": 1135.75,
+      "factor_n": 75,
+      "n": 75,
+      "q1": 0.08712121212121213,
+      "median": 0.25,
+      "q3": 0.5177033492822967,
+      "iqr": 0.4305821371610845,
+      "metric_validation": "exploratory:pending_independent_labels"
+    },
+    {
+      "factor": "contributors_count",
+      "metric": "cfr_b",
+      "unit": "proporção",
+      "group": "Q4",
+      "lower_exclusive": 1135.75,
+      "upper_inclusive": null,
+      "factor_n": 75,
+      "n": 75,
+      "q1": 0.0,
+      "median": 0.1111111111111111,
+      "q3": 0.3978787878787879,
+      "iqr": 0.3978787878787879,
+      "metric_validation": "exploratory:pending_independent_labels"
+    },
+    {
+      "factor": "contributors_count",
+      "metric": "recovery_median_hours",
+      "unit": "horas",
+      "group": "Q1",
+      "lower_exclusive": null,
+      "upper_inclusive": 268.0,
+      "factor_n": 75,
+      "n": 57,
+      "q1": 1.6975,
+      "median": 10.528055555555556,
+      "q3": 40.23027777777777,
+      "iqr": 38.532777777777774,
+      "metric_validation": "not_applicable"
+    },
+    {
+      "factor": "contributors_count",
+      "metric": "recovery_median_hours",
+      "unit": "horas",
+      "group": "Q2",
+      "lower_exclusive": 268.0,
+      "upper_inclusive": 539.5,
+      "factor_n": 75,
+      "n": 62,
+      "q1": 1.3075347222222224,
+      "median": 3.654583333333333,
+      "q3": 12.199791666666666,
+      "iqr": 10.892256944444444,
+      "metric_validation": "not_applicable"
+    },
+    {
+      "factor": "contributors_count",
+      "metric": "recovery_median_hours",
+      "unit": "horas",
+      "group": "Q3",
+      "lower_exclusive": 539.5,
+      "upper_inclusive": 1135.75,
+      "factor_n": 75,
+      "n": 68,
+      "q1": 1.5883333333333334,
+      "median": 3.664305555555556,
+      "q3": 12.605138888888888,
+      "iqr": 11.016805555555555,
+      "metric_validation": "not_applicable"
+    },
+    {
+      "factor": "contributors_count",
+      "metric": "recovery_median_hours",
+      "unit": "horas",
+      "group": "Q4",
+      "lower_exclusive": 1135.75,
+      "upper_inclusive": null,
+      "factor_n": 75,
+      "n": 71,
+      "q1": 1.4101388888888888,
+      "median": 2.8247222222222224,
+      "q3": 5.645555555555555,
+      "iqr": 4.235416666666667,
+      "metric_validation": "not_applicable"
+    },
+    {
+      "factor": "age_days",
+      "metric": "deployment_frequency",
+      "unit": "releases/semana",
+      "group": "Q1",
+      "lower_exclusive": null,
+      "upper_inclusive": 1171.7891782407407,
+      "factor_n": 75,
+      "n": 75,
+      "q1": 0.32602740759853527,
+      "median": 0.6904109807968982,
+      "q3": 1.4575342927934516,
+      "iqr": 1.1315068851949164,
+      "metric_validation": "not_applicable"
+    },
+    {
+      "factor": "age_days",
+      "metric": "deployment_frequency",
+      "unit": "releases/semana",
+      "group": "Q2",
+      "lower_exclusive": 1171.7891782407407,
+      "upper_inclusive": 2442.250439814815,
+      "factor_n": 75,
+      "n": 75,
+      "q1": 0.23013699359896606,
+      "median": 0.5753424839974152,
+      "q3": 1.1027397609950458,
+      "iqr": 0.8726027673960797,
+      "metric_validation": "not_applicable"
+    },
+    {
+      "factor": "age_days",
+      "metric": "deployment_frequency",
+      "unit": "releases/semana",
+      "group": "Q3",
+      "lower_exclusive": 2442.250439814815,
+      "upper_inclusive": 3825.337361111111,
+      "factor_n": 75,
+      "n": 75,
+      "q1": 0.19178082799913837,
+      "median": 0.32602740759853527,
+      "q3": 0.8917808501959934,
+      "iqr": 0.700000022196855,
+      "metric_validation": "not_applicable"
+    },
+    {
+      "factor": "age_days",
+      "metric": "deployment_frequency",
+      "unit": "releases/semana",
+      "group": "Q4",
+      "lower_exclusive": 3825.337361111111,
+      "upper_inclusive": null,
+      "factor_n": 75,
+      "n": 75,
+      "q1": 0.2013698693990953,
+      "median": 0.3452054903984491,
+      "q3": 0.6041096081972859,
+      "iqr": 0.4027397387981906,
+      "metric_validation": "not_applicable"
+    },
+    {
+      "factor": "age_days",
+      "metric": "lead_time_release_median_hours",
+      "unit": "horas",
+      "group": "Q1",
+      "lower_exclusive": null,
+      "upper_inclusive": 1171.7891782407407,
+      "factor_n": 75,
+      "n": 75,
+      "q1": 43.77569444444444,
+      "median": 109.06569444444445,
+      "q3": 307.9454861111111,
+      "iqr": 264.1697916666667,
+      "metric_validation": "not_applicable"
+    },
+    {
+      "factor": "age_days",
+      "metric": "lead_time_release_median_hours",
+      "unit": "horas",
+      "group": "Q2",
+      "lower_exclusive": 1171.7891782407407,
+      "upper_inclusive": 2442.250439814815,
+      "factor_n": 75,
+      "n": 75,
+      "q1": 100.2523611111111,
+      "median": 223.025,
+      "q3": 639.6521527777778,
+      "iqr": 539.3997916666667,
+      "metric_validation": "not_applicable"
+    },
+    {
+      "factor": "age_days",
+      "metric": "lead_time_release_median_hours",
+      "unit": "horas",
+      "group": "Q3",
+      "lower_exclusive": 2442.250439814815,
+      "upper_inclusive": 3825.337361111111,
+      "factor_n": 75,
+      "n": 75,
+      "q1": 160.91229166666668,
+      "median": 572.0456944444444,
+      "q3": 1819.0411111111111,
+      "iqr": 1658.1288194444444,
+      "metric_validation": "not_applicable"
+    },
+    {
+      "factor": "age_days",
+      "metric": "lead_time_release_median_hours",
+      "unit": "horas",
+      "group": "Q4",
+      "lower_exclusive": 3825.337361111111,
+      "upper_inclusive": null,
+      "factor_n": 75,
+      "n": 75,
+      "q1": 353.3820138888889,
+      "median": 1415.5683333333334,
+      "q3": 4016.2204861111113,
+      "iqr": 3662.8384722222227,
+      "metric_validation": "not_applicable"
+    },
+    {
+      "factor": "age_days",
+      "metric": "lead_time_commit_median_hours",
+      "unit": "horas",
+      "group": "Q1",
+      "lower_exclusive": null,
+      "upper_inclusive": 1171.7891782407407,
+      "factor_n": 75,
+      "n": 74,
+      "q1": 40.279444444444444,
+      "median": 101.04402777777779,
+      "q3": 253.36038194444444,
+      "iqr": 213.0809375,
+      "metric_validation": "not_applicable"
+    },
+    {
+      "factor": "age_days",
+      "metric": "lead_time_commit_median_hours",
+      "unit": "horas",
+      "group": "Q2",
+      "lower_exclusive": 1171.7891782407407,
+      "upper_inclusive": 2442.250439814815,
+      "factor_n": 75,
+      "n": 75,
+      "q1": 146.20409722222223,
+      "median": 260.7754166666667,
+      "q3": 989.1626388888889,
+      "iqr": 842.9585416666666,
+      "metric_validation": "not_applicable"
+    },
+    {
+      "factor": "age_days",
+      "metric": "lead_time_commit_median_hours",
+      "unit": "horas",
+      "group": "Q3",
+      "lower_exclusive": 2442.250439814815,
+      "upper_inclusive": 3825.337361111111,
+      "factor_n": 75,
+      "n": 75,
+      "q1": 217.53173611111112,
+      "median": 816.2016666666667,
+      "q3": 2176.0855555555554,
+      "iqr": 1958.5538194444443,
+      "metric_validation": "not_applicable"
+    },
+    {
+      "factor": "age_days",
+      "metric": "lead_time_commit_median_hours",
+      "unit": "horas",
+      "group": "Q4",
+      "lower_exclusive": 3825.337361111111,
+      "upper_inclusive": null,
+      "factor_n": 75,
+      "n": 75,
+      "q1": 464.47062500000004,
+      "median": 1843.7929166666668,
+      "q3": 5130.497777777778,
+      "iqr": 4666.027152777778,
+      "metric_validation": "not_applicable"
+    },
+    {
+      "factor": "age_days",
+      "metric": "cfr_ci",
+      "unit": "proporção",
+      "group": "Q1",
+      "lower_exclusive": null,
+      "upper_inclusive": 1171.7891782407407,
+      "factor_n": 75,
+      "n": 75,
+      "q1": 0.019737510584250634,
+      "median": 0.07006369426751592,
+      "q3": 0.17795019396821424,
+      "iqr": 0.1582126833839636,
+      "metric_validation": "not_applicable"
+    },
+    {
+      "factor": "age_days",
+      "metric": "cfr_ci",
+      "unit": "proporção",
+      "group": "Q2",
+      "lower_exclusive": 1171.7891782407407,
+      "upper_inclusive": 2442.250439814815,
+      "factor_n": 75,
+      "n": 75,
+      "q1": 0.017586122043935386,
+      "median": 0.05175899716942984,
+      "q3": 0.1161541734354452,
+      "iqr": 0.09856805139150981,
+      "metric_validation": "not_applicable"
+    },
+    {
+      "factor": "age_days",
+      "metric": "cfr_ci",
+      "unit": "proporção",
+      "group": "Q3",
+      "lower_exclusive": 2442.250439814815,
+      "upper_inclusive": 3825.337361111111,
+      "factor_n": 75,
+      "n": 75,
+      "q1": 0.008895717658230353,
+      "median": 0.05341614906832298,
+      "q3": 0.12015595463137996,
+      "iqr": 0.1112602369731496,
+      "metric_validation": "not_applicable"
+    },
+    {
+      "factor": "age_days",
+      "metric": "cfr_ci",
+      "unit": "proporção",
+      "group": "Q4",
+      "lower_exclusive": 3825.337361111111,
+      "upper_inclusive": null,
+      "factor_n": 75,
+      "n": 75,
+      "q1": 0.009592653209674486,
+      "median": 0.04739336492890995,
+      "q3": 0.10816584502591328,
+      "iqr": 0.0985731918162388,
+      "metric_validation": "not_applicable"
+    },
+    {
+      "factor": "age_days",
+      "metric": "cfr_b",
+      "unit": "proporção",
+      "group": "Q1",
+      "lower_exclusive": null,
+      "upper_inclusive": 1171.7891782407407,
+      "factor_n": 75,
+      "n": 75,
+      "q1": 0.15268065268065267,
+      "median": 0.4090909090909091,
+      "q3": 0.7055555555555555,
+      "iqr": 0.5528749028749028,
+      "metric_validation": "exploratory:pending_independent_labels"
+    },
+    {
+      "factor": "age_days",
+      "metric": "cfr_b",
+      "unit": "proporção",
+      "group": "Q2",
+      "lower_exclusive": 1171.7891782407407,
+      "upper_inclusive": 2442.250439814815,
+      "factor_n": 75,
+      "n": 75,
+      "q1": 0.18695652173913044,
+      "median": 0.35714285714285715,
+      "q3": 0.5177157689811811,
+      "iqr": 0.33075924724205064,
+      "metric_validation": "exploratory:pending_independent_labels"
+    },
+    {
+      "factor": "age_days",
+      "metric": "cfr_b",
+      "unit": "proporção",
+      "group": "Q3",
+      "lower_exclusive": 2442.250439814815,
+      "upper_inclusive": 3825.337361111111,
+      "factor_n": 75,
+      "n": 75,
+      "q1": 0.006172839506172839,
+      "median": 0.13636363636363635,
+      "q3": 0.42857142857142855,
+      "iqr": 0.42239858906525574,
+      "metric_validation": "exploratory:pending_independent_labels"
+    },
+    {
+      "factor": "age_days",
+      "metric": "cfr_b",
+      "unit": "proporção",
+      "group": "Q4",
+      "lower_exclusive": 3825.337361111111,
+      "upper_inclusive": null,
+      "factor_n": 75,
+      "n": 75,
+      "q1": 0.0,
+      "median": 0.10256410256410256,
+      "q3": 0.27329192546583847,
+      "iqr": 0.27329192546583847,
+      "metric_validation": "exploratory:pending_independent_labels"
+    },
+    {
+      "factor": "age_days",
+      "metric": "recovery_median_hours",
+      "unit": "horas",
+      "group": "Q1",
+      "lower_exclusive": null,
+      "upper_inclusive": 1171.7891782407407,
+      "factor_n": 75,
+      "n": 65,
+      "q1": 1.2905555555555557,
+      "median": 2.5141666666666667,
+      "q3": 11.451666666666666,
+      "iqr": 10.161111111111111,
+      "metric_validation": "not_applicable"
+    },
+    {
+      "factor": "age_days",
+      "metric": "recovery_median_hours",
+      "unit": "horas",
+      "group": "Q2",
+      "lower_exclusive": 1171.7891782407407,
+      "upper_inclusive": 2442.250439814815,
+      "factor_n": 75,
+      "n": 67,
+      "q1": 1.4962499999999999,
+      "median": 4.6530555555555555,
+      "q3": 20.34708333333333,
+      "iqr": 18.85083333333333,
+      "metric_validation": "not_applicable"
+    },
+    {
+      "factor": "age_days",
+      "metric": "recovery_median_hours",
+      "unit": "horas",
+      "group": "Q3",
+      "lower_exclusive": 2442.250439814815,
+      "upper_inclusive": 3825.337361111111,
+      "factor_n": 75,
+      "n": 64,
+      "q1": 1.7252083333333335,
+      "median": 6.002083333333333,
+      "q3": 17.247916666666665,
+      "iqr": 15.522708333333332,
+      "metric_validation": "not_applicable"
+    },
+    {
+      "factor": "age_days",
+      "metric": "recovery_median_hours",
+      "unit": "horas",
+      "group": "Q4",
+      "lower_exclusive": 3825.337361111111,
+      "upper_inclusive": null,
+      "factor_n": 75,
+      "n": 62,
+      "q1": 1.5628472222222223,
+      "median": 3.2063194444444445,
+      "q3": 7.175902777777777,
+      "iqr": 5.613055555555555,
+      "metric_validation": "not_applicable"
+    }
+  ],
+  "factors": {
+    "stars": {
+      "factor_n": 300,
+      "quantiles": [
+        40030.5,
+        50393.5,
+        76679.75
+      ],
+      "cuts": [
+        40030.5,
+        50393.5,
+        76679.75
+      ],
+      "groups": [
+        {
+          "group": "Q1",
+          "lower_exclusive": null,
+          "upper_inclusive": 40030.5,
+          "factor_n": 75
+        },
+        {
+          "group": "Q2",
+          "lower_exclusive": 40030.5,
+          "upper_inclusive": 50393.5,
+          "factor_n": 75
+        },
+        {
+          "group": "Q3",
+          "lower_exclusive": 50393.5,
+          "upper_inclusive": 76679.75,
+          "factor_n": 75
+        },
+        {
+          "group": "Q4",
+          "lower_exclusive": 76679.75,
+          "upper_inclusive": null,
+          "factor_n": 75
+        }
+      ],
+      "groups_reduced": false,
+      "boundary_rule": "(lower, upper]; unbounded endpoints; empty intervals coalesced"
+    },
+    "contributors_count": {
+      "factor_n": 300,
+      "quantiles": [
+        268.0,
+        539.5,
+        1135.75
+      ],
+      "cuts": [
+        268.0,
+        539.5,
+        1135.75
+      ],
+      "groups": [
+        {
+          "group": "Q1",
+          "lower_exclusive": null,
+          "upper_inclusive": 268.0,
+          "factor_n": 75
+        },
+        {
+          "group": "Q2",
+          "lower_exclusive": 268.0,
+          "upper_inclusive": 539.5,
+          "factor_n": 75
+        },
+        {
+          "group": "Q3",
+          "lower_exclusive": 539.5,
+          "upper_inclusive": 1135.75,
+          "factor_n": 75
+        },
+        {
+          "group": "Q4",
+          "lower_exclusive": 1135.75,
+          "upper_inclusive": null,
+          "factor_n": 75
+        }
+      ],
+      "groups_reduced": false,
+      "boundary_rule": "(lower, upper]; unbounded endpoints; empty intervals coalesced"
+    },
+    "age_days": {
+      "factor_n": 300,
+      "quantiles": [
+        1171.7891782407407,
+        2442.250439814815,
+        3825.337361111111
+      ],
+      "cuts": [
+        1171.7891782407407,
+        2442.250439814815,
+        3825.337361111111
+      ],
+      "groups": [
+        {
+          "group": "Q1",
+          "lower_exclusive": null,
+          "upper_inclusive": 1171.7891782407407,
+          "factor_n": 75
+        },
+        {
+          "group": "Q2",
+          "lower_exclusive": 1171.7891782407407,
+          "upper_inclusive": 2442.250439814815,
+          "factor_n": 75
+        },
+        {
+          "group": "Q3",
+          "lower_exclusive": 2442.250439814815,
+          "upper_inclusive": 3825.337361111111,
+          "factor_n": 75
+        },
+        {
+          "group": "Q4",
+          "lower_exclusive": 3825.337361111111,
+          "upper_inclusive": null,
+          "factor_n": 75
+        }
+      ],
+      "groups_reduced": false,
+      "boundary_rule": "(lower, upper]; unbounded endpoints; empty intervals coalesced"
+    }
+  },
+  "assignments": [
+    {
+      "repository": "openclaw/openclaw",
+      "stars_group": "Q4",
+      "contributors_count_group": "Q4",
+      "age_days_group": "Q1"
+    },
+    {
+      "repository": "react/react",
+      "stars_group": "Q4",
+      "contributors_count_group": "Q4",
+      "age_days_group": "Q4"
+    },
+    {
+      "repository": "anomalyco/opencode",
+      "stars_group": "Q4",
+      "contributors_count_group": "Q3",
+      "age_days_group": "Q1"
+    },
+    {
+      "repository": "n8n-io/n8n",
+      "stars_group": "Q4",
+      "contributors_count_group": "Q3",
+      "age_days_group": "Q2"
+    },
+    {
+      "repository": "yt-dlp/yt-dlp",
+      "stars_group": "Q4",
+      "contributors_count_group": "Q4",
+      "age_days_group": "Q2"
+    },
+    {
+      "repository": "microsoft/vscode",
+      "stars_group": "Q4",
+      "contributors_count_group": "Q4",
+      "age_days_group": "Q3"
+    },
+    {
+      "repository": "firecrawl/firecrawl",
+      "stars_group": "Q4",
+      "contributors_count_group": "Q1",
+      "age_days_group": "Q1"
+    },
+    {
+      "repository": "Significant-Gravitas/AutoGPT",
+      "stars_group": "Q4",
+      "contributors_count_group": "Q3",
+      "age_days_group": "Q1"
+    },
+    {
+      "repository": "twbs/bootstrap",
+      "stars_group": "Q4",
+      "contributors_count_group": "Q4",
+      "age_days_group": "Q4"
+    },
+    {
+      "repository": "huggingface/transformers",
+      "stars_group": "Q4",
+      "contributors_count_group": "Q4",
+      "age_days_group": "Q3"
+    },
+    {
+      "repository": "langgenius/dify",
+      "stars_group": "Q4",
+      "contributors_count_group": "Q4",
+      "age_days_group": "Q1"
+    },
+    {
+      "repository": "langflow-ai/langflow",
+      "stars_group": "Q4",
+      "contributors_count_group": "Q2",
+      "age_days_group": "Q1"
+    },
+    {
+      "repository": "open-webui/open-webui",
+      "stars_group": "Q4",
+      "contributors_count_group": "Q3",
+      "age_days_group": "Q1"
+    },
+    {
+      "repository": "langchain-ai/langchain",
+      "stars_group": "Q4",
+      "contributors_count_group": "Q4",
+      "age_days_group": "Q2"
+    },
+    {
+      "repository": "vercel/next.js",
+      "stars_group": "Q4",
+      "contributors_count_group": "Q4",
+      "age_days_group": "Q3"
+    },
+    {
+      "repository": "github/spec-kit",
+      "stars_group": "Q4",
+      "contributors_count_group": "Q2",
+      "age_days_group": "Q1"
+    },
+    {
+      "repository": "microsoft/PowerToys",
+      "stars_group": "Q4",
+      "contributors_count_group": "Q3",
+      "age_days_group": "Q2"
+    },
+    {
+      "repository": "Comfy-Org/ComfyUI",
+      "stars_group": "Q4",
+      "contributors_count_group": "Q2",
+      "age_days_group": "Q1"
+    },
+    {
+      "repository": "ggml-org/llama.cpp",
+      "stars_group": "Q4",
+      "contributors_count_group": "Q4",
+      "age_days_group": "Q1"
+    },
+    {
+      "repository": "openai/codex",
+      "stars_group": "Q4",
+      "contributors_count_group": "Q3",
+      "age_days_group": "Q1"
+    },
+    {
+      "repository": "react/react-native",
+      "stars_group": "Q4",
+      "contributors_count_group": "Q4",
+      "age_days_group": "Q4"
+    },
+    {
+      "repository": "rustdesk/rustdesk",
+      "stars_group": "Q4",
+      "contributors_count_group": "Q2",
+      "age_days_group": "Q2"
+    },
+    {
+      "repository": "shadcn-ui/ui",
+      "stars_group": "Q4",
+      "contributors_count_group": "Q3",
+      "age_days_group": "Q1"
+    },
+    {
+      "repository": "electron/electron",
+      "stars_group": "Q4",
+      "contributors_count_group": "Q4",
+      "age_days_group": "Q4"
+    },
+    {
+      "repository": "nodejs/node",
+      "stars_group": "Q4",
+      "contributors_count_group": "Q4",
+      "age_days_group": "Q4"
+    },
+    {
+      "repository": "rust-lang/rust",
+      "stars_group": "Q4",
+      "contributors_count_group": "Q4",
+      "age_days_group": "Q4"
+    },
+    {
+      "repository": "godotengine/godot",
+      "stars_group": "Q4",
+      "contributors_count_group": "Q4",
+      "age_days_group": "Q4"
+    },
+    {
+      "repository": "2dust/v2rayN",
+      "stars_group": "Q4",
+      "contributors_count_group": "Q1",
+      "age_days_group": "Q2"
+    },
+    {
+      "repository": "browser-use/browser-use",
+      "stars_group": "Q4",
+      "contributors_count_group": "Q2",
+      "age_days_group": "Q1"
+    },
+    {
+      "repository": "mrdoob/three.js",
+      "stars_group": "Q4",
+      "contributors_count_group": "Q4",
+      "age_days_group": "Q4"
+    },
+    {
+      "repository": "immich-app/immich",
+      "stars_group": "Q4",
+      "contributors_count_group": "Q3",
+      "age_days_group": "Q2"
+    },
+    {
+      "repository": "earendil-works/pi",
+      "stars_group": "Q4",
+      "contributors_count_group": "Q2",
+      "age_days_group": "Q1"
+    },
+    {
+      "repository": "tauri-apps/tauri",
+      "stars_group": "Q4",
+      "contributors_count_group": "Q3",
+      "age_days_group": "Q2"
+    },
+    {
+      "repository": "microsoft/TypeScript",
+      "stars_group": "Q4",
+      "contributors_count_group": "Q3",
+      "age_days_group": "Q4"
+    },
+    {
+      "repository": "supabase/supabase",
+      "stars_group": "Q4",
+      "contributors_count_group": "Q4",
+      "age_days_group": "Q2"
+    },
+    {
+      "repository": "axios/axios",
+      "stars_group": "Q4",
+      "contributors_count_group": "Q3",
+      "age_days_group": "Q4"
+    },
+    {
+      "repository": "denoland/deno",
+      "stars_group": "Q4",
+      "contributors_count_group": "Q4",
+      "age_days_group": "Q3"
+    },
+    {
+      "repository": "google-gemini/gemini-cli",
+      "stars_group": "Q4",
+      "contributors_count_group": "Q3",
+      "age_days_group": "Q1"
+    },
+    {
+      "repository": "microsoft/terminal",
+      "stars_group": "Q4",
+      "contributors_count_group": "Q2",
+      "age_days_group": "Q3"
+    },
+    {
+      "repository": "pytorch/pytorch",
+      "stars_group": "Q4",
+      "contributors_count_group": "Q4",
+      "age_days_group": "Q3"
+    },
+    {
+      "repository": "neovim/neovim",
+      "stars_group": "Q4",
+      "contributors_count_group": "Q4",
+      "age_days_group": "Q4"
+    },
+    {
+      "repository": "fastapi/fastapi",
+      "stars_group": "Q4",
+      "contributors_count_group": "Q3",
+      "age_days_group": "Q3"
+    },
+    {
+      "repository": "angular/angular",
+      "stars_group": "Q4",
+      "contributors_count_group": "Q4",
+      "age_days_group": "Q4"
+    },
+    {
+      "repository": "ant-design/ant-design",
+      "stars_group": "Q4",
+      "contributors_count_group": "Q4",
+      "age_days_group": "Q4"
+    },
+    {
+      "repository": "mui/material-ui",
+      "stars_group": "Q4",
+      "contributors_count_group": "Q4",
+      "age_days_group": "Q4"
+    },
+    {
+      "repository": "tailwindlabs/tailwindcss",
+      "stars_group": "Q4",
+      "contributors_count_group": "Q2",
+      "age_days_group": "Q3"
+    },
+    {
+      "repository": "microsoft/playwright",
+      "stars_group": "Q4",
+      "contributors_count_group": "Q3",
+      "age_days_group": "Q2"
+    },
+    {
+      "repository": "oven-sh/bun",
+      "stars_group": "Q4",
+      "contributors_count_group": "Q3",
+      "age_days_group": "Q2"
+    },
+    {
+      "repository": "puppeteer/puppeteer",
+      "stars_group": "Q4",
+      "contributors_count_group": "Q3",
+      "age_days_group": "Q3"
+    },
+    {
+      "repository": "Stirling-Tools/Stirling-PDF",
+      "stars_group": "Q4",
+      "contributors_count_group": "Q2",
+      "age_days_group": "Q1"
+    },
+    {
+      "repository": "vllm-project/vllm",
+      "stars_group": "Q4",
+      "contributors_count_group": "Q4",
+      "age_days_group": "Q1"
+    },
+    {
+      "repository": "infiniflow/ragflow",
+      "stars_group": "Q4",
+      "contributors_count_group": "Q3",
+      "age_days_group": "Q1"
+    },
+    {
+      "repository": "zed-industries/zed",
+      "stars_group": "Q4",
+      "contributors_count_group": "Q4",
+      "age_days_group": "Q2"
+    },
+    {
+      "repository": "home-assistant/core",
+      "stars_group": "Q4",
+      "contributors_count_group": "Q4",
+      "age_days_group": "Q4"
+    },
+    {
+      "repository": "storybookjs/storybook",
+      "stars_group": "Q4",
+      "contributors_count_group": "Q4",
+      "age_days_group": "Q3"
+    },
+    {
+      "repository": "modelcontextprotocol/servers",
+      "stars_group": "Q4",
+      "contributors_count_group": "Q3",
+      "age_days_group": "Q1"
+    },
+    {
+      "repository": "PaddlePaddle/PaddleOCR",
+      "stars_group": "Q4",
+      "contributors_count_group": "Q2",
+      "age_days_group": "Q2"
+    },
+    {
+      "repository": "mermaid-js/mermaid",
+      "stars_group": "Q4",
+      "contributors_count_group": "Q3",
+      "age_days_group": "Q4"
+    },
+    {
+      "repository": "astral-sh/uv",
+      "stars_group": "Q4",
+      "contributors_count_group": "Q3",
+      "age_days_group": "Q1"
+    },
+    {
+      "repository": "bitcoin/bitcoin",
+      "stars_group": "Q4",
+      "contributors_count_group": "Q4",
+      "age_days_group": "Q4"
+    },
+    {
+      "repository": "OpenHands/OpenHands",
+      "stars_group": "Q4",
+      "contributors_count_group": "Q3",
+      "age_days_group": "Q1"
+    },
+    {
+      "repository": "gohugoio/hugo",
+      "stars_group": "Q4",
+      "contributors_count_group": "Q3",
+      "age_days_group": "Q4"
+    },
+    {
+      "repository": "syncthing/syncthing",
+      "stars_group": "Q4",
+      "contributors_count_group": "Q2",
+      "age_days_group": "Q4"
+    },
+    {
+      "repository": "sveltejs/svelte",
+      "stars_group": "Q4",
+      "contributors_count_group": "Q3",
+      "age_days_group": "Q3"
+    },
+    {
+      "repository": "junegunn/fzf",
+      "stars_group": "Q4",
+      "contributors_count_group": "Q2",
+      "age_days_group": "Q4"
+    },
+    {
+      "repository": "vitejs/vite",
+      "stars_group": "Q4",
+      "contributors_count_group": "Q4",
+      "age_days_group": "Q2"
+    },
+    {
+      "repository": "jesseduffield/lazygit",
+      "stars_group": "Q4",
+      "contributors_count_group": "Q2",
+      "age_days_group": "Q3"
+    },
+    {
+      "repository": "spring-projects/spring-boot",
+      "stars_group": "Q4",
+      "contributors_count_group": "Q4",
+      "age_days_group": "Q4"
+    },
+    {
+      "repository": "opendatalab/MinerU",
+      "stars_group": "Q4",
+      "contributors_count_group": "Q1",
+      "age_days_group": "Q1"
+    },
+    {
+      "repository": "netdata/netdata",
+      "stars_group": "Q4",
+      "contributors_count_group": "Q3",
+      "age_days_group": "Q4"
+    },
+    {
+      "repository": "ventoy/Ventoy",
+      "stars_group": "Q4",
+      "contributors_count_group": "Q1",
+      "age_days_group": "Q2"
+    },
+    {
+      "repository": "elastic/elasticsearch",
+      "stars_group": "Q4",
+      "contributors_count_group": "Q4",
+      "age_days_group": "Q4"
+    },
+    {
+      "repository": "grafana/grafana",
+      "stars_group": "Q4",
+      "contributors_count_group": "Q4",
+      "age_days_group": "Q4"
+    },
+    {
+      "repository": "obsproject/obs-studio",
+      "stars_group": "Q4",
+      "contributors_count_group": "Q3",
+      "age_days_group": "Q4"
+    },
+    {
+      "repository": "nestjs/nest",
+      "stars_group": "Q4",
+      "contributors_count_group": "Q3",
+      "age_days_group": "Q3"
+    },
+    {
+      "repository": "redis/redis",
+      "stars_group": "Q3",
+      "contributors_count_group": "Q3",
+      "age_days_group": "Q4"
+    },
+    {
+      "repository": "ocornut/imgui",
+      "stars_group": "Q3",
+      "contributors_count_group": "Q3",
+      "age_days_group": "Q4"
+    },
+    {
+      "repository": "apache/superset",
+      "stars_group": "Q3",
+      "contributors_count_group": "Q4",
+      "age_days_group": "Q3"
+    },
+    {
+      "repository": "Eugeny/tabby",
+      "stars_group": "Q3",
+      "contributors_count_group": "Q1",
+      "age_days_group": "Q3"
+    },
+    {
+      "repository": "unionlabs/union",
+      "stars_group": "Q3",
+      "contributors_count_group": "Q1",
+      "age_days_group": "Q1"
+    },
+    {
+      "repository": "toeverything/AFFiNE",
+      "stars_group": "Q3",
+      "contributors_count_group": "Q2",
+      "age_days_group": "Q2"
+    },
+    {
+      "repository": "strapi/strapi",
+      "stars_group": "Q3",
+      "contributors_count_group": "Q4",
+      "age_days_group": "Q3"
+    },
+    {
+      "repository": "moby/moby",
+      "stars_group": "Q3",
+      "contributors_count_group": "Q4",
+      "age_days_group": "Q4"
+    },
+    {
+      "repository": "protocolbuffers/protobuf",
+      "stars_group": "Q3",
+      "contributors_count_group": "Q4",
+      "age_days_group": "Q4"
+    },
+    {
+      "repository": "Fission-AI/OpenSpec",
+      "stars_group": "Q3",
+      "contributors_count_group": "Q1",
+      "age_days_group": "Q1"
+    },
+    {
+      "repository": "cline/cline",
+      "stars_group": "Q3",
+      "contributors_count_group": "Q2",
+      "age_days_group": "Q1"
+    },
+    {
+      "repository": "code-yeongyu/oh-my-openagent",
+      "stars_group": "Q3",
+      "contributors_count_group": "Q2",
+      "age_days_group": "Q1"
+    },
+    {
+      "repository": "tw93/Mole",
+      "stars_group": "Q3",
+      "contributors_count_group": "Q1",
+      "age_days_group": "Q1"
+    },
+    {
+      "repository": "expressjs/express",
+      "stars_group": "Q3",
+      "contributors_count_group": "Q2",
+      "age_days_group": "Q4"
+    },
+    {
+      "repository": "dani-garcia/vaultwarden",
+      "stars_group": "Q3",
+      "contributors_count_group": "Q1",
+      "age_days_group": "Q3"
+    },
+    {
+      "repository": "docling-project/docling",
+      "stars_group": "Q3",
+      "contributors_count_group": "Q2",
+      "age_days_group": "Q1"
+    },
+    {
+      "repository": "scikit-learn/scikit-learn",
+      "stars_group": "Q3",
+      "contributors_count_group": "Q4",
+      "age_days_group": "Q4"
+    },
+    {
+      "repository": "Mintplex-Labs/anything-llm",
+      "stars_group": "Q3",
+      "contributors_count_group": "Q1",
+      "age_days_group": "Q1"
+    },
+    {
+      "repository": "xtekky/gpt4free",
+      "stars_group": "Q3",
+      "contributors_count_group": "Q2",
+      "age_days_group": "Q1"
+    },
+    {
+      "repository": "facebook/docusaurus",
+      "stars_group": "Q3",
+      "contributors_count_group": "Q4",
+      "age_days_group": "Q3"
+    },
+    {
+      "repository": "prometheus/prometheus",
+      "stars_group": "Q3",
+      "contributors_count_group": "Q4",
+      "age_days_group": "Q4"
+    },
+    {
+      "repository": "webpack/webpack",
+      "stars_group": "Q3",
+      "contributors_count_group": "Q3",
+      "age_days_group": "Q4"
+    },
+    {
+      "repository": "nocodb/nocodb",
+      "stars_group": "Q3",
+      "contributors_count_group": "Q2",
+      "age_days_group": "Q3"
+    },
+    {
+      "repository": "traefik/traefik",
+      "stars_group": "Q3",
+      "contributors_count_group": "Q3",
+      "age_days_group": "Q3"
+    },
+    {
+      "repository": "scrapy/scrapy",
+      "stars_group": "Q3",
+      "contributors_count_group": "Q3",
+      "age_days_group": "Q4"
+    },
+    {
+      "repository": "keras-team/keras",
+      "stars_group": "Q3",
+      "contributors_count_group": "Q4",
+      "age_days_group": "Q4"
+    },
+    {
+      "repository": "commaai/openpilot",
+      "stars_group": "Q3",
+      "contributors_count_group": "Q3",
+      "age_days_group": "Q3"
+    },
+    {
+      "repository": "ChrisTitusTech/winutil",
+      "stars_group": "Q3",
+      "contributors_count_group": "Q1",
+      "age_days_group": "Q2"
+    },
+    {
+      "repository": "2dust/v2rayNG",
+      "stars_group": "Q3",
+      "contributors_count_group": "Q1",
+      "age_days_group": "Q2"
+    },
+    {
+      "repository": "usememos/memos",
+      "stars_group": "Q3",
+      "contributors_count_group": "Q2",
+      "age_days_group": "Q2"
+    },
+    {
+      "repository": "withastro/astro",
+      "stars_group": "Q3",
+      "contributors_count_group": "Q4",
+      "age_days_group": "Q2"
+    },
+    {
+      "repository": "upstash/context7",
+      "stars_group": "Q3",
+      "contributors_count_group": "Q1",
+      "age_days_group": "Q1"
+    },
+    {
+      "repository": "remotion-dev/remotion",
+      "stars_group": "Q3",
+      "contributors_count_group": "Q2",
+      "age_days_group": "Q2"
+    },
+    {
+      "repository": "ultralytics/ultralytics",
+      "stars_group": "Q3",
+      "contributors_count_group": "Q2",
+      "age_days_group": "Q2"
+    },
+    {
+      "repository": "pathwaycom/pathway",
+      "stars_group": "Q3",
+      "contributors_count_group": "Q1",
+      "age_days_group": "Q1"
+    },
+    {
+      "repository": "tw93/Pake",
+      "stars_group": "Q3",
+      "contributors_count_group": "Q1",
+      "age_days_group": "Q2"
+    },
+    {
+      "repository": "FuelLabs/sway",
+      "stars_group": "Q3",
+      "contributors_count_group": "Q1",
+      "age_days_group": "Q2"
+    },
+    {
+      "repository": "microsoft/autogen",
+      "stars_group": "Q3",
+      "contributors_count_group": "Q2",
+      "age_days_group": "Q1"
+    },
+    {
+      "repository": "nuxt/nuxt",
+      "stars_group": "Q3",
+      "contributors_count_group": "Q4",
+      "age_days_group": "Q3"
+    },
+    {
+      "repository": "penpot/penpot",
+      "stars_group": "Q3",
+      "contributors_count_group": "Q2",
+      "age_days_group": "Q3"
+    },
+    {
+      "repository": "makeplane/plane",
+      "stars_group": "Q3",
+      "contributors_count_group": "Q1",
+      "age_days_group": "Q1"
+    },
+    {
+      "repository": "BerriAI/litellm",
+      "stars_group": "Q3",
+      "contributors_count_group": "Q4",
+      "age_days_group": "Q1"
+    },
+    {
+      "repository": "spring-projects/spring-framework",
+      "stars_group": "Q3",
+      "contributors_count_group": "Q4",
+      "age_days_group": "Q4"
+    },
+    {
+      "repository": "rclone/rclone",
+      "stars_group": "Q3",
+      "contributors_count_group": "Q4",
+      "age_days_group": "Q4"
+    },
+    {
+      "repository": "meilisearch/meilisearch",
+      "stars_group": "Q3",
+      "contributors_count_group": "Q1",
+      "age_days_group": "Q3"
+    },
+    {
+      "repository": "crewAIInc/crewAI",
+      "stars_group": "Q3",
+      "contributors_count_group": "Q2",
+      "age_days_group": "Q1"
+    },
+    {
+      "repository": "rails/rails",
+      "stars_group": "Q3",
+      "contributors_count_group": "Q4",
+      "age_days_group": "Q4"
+    },
+    {
+      "repository": "pmndrs/zustand",
+      "stars_group": "Q3",
+      "contributors_count_group": "Q2",
+      "age_days_group": "Q3"
+    },
+    {
+      "repository": "go-gitea/gitea",
+      "stars_group": "Q3",
+      "contributors_count_group": "Q4",
+      "age_days_group": "Q3"
+    },
+    {
+      "repository": "twentyhq/twenty",
+      "stars_group": "Q3",
+      "contributors_count_group": "Q3",
+      "age_days_group": "Q1"
+    },
+    {
+      "repository": "jellyfin/jellyfin",
+      "stars_group": "Q3",
+      "contributors_count_group": "Q4",
+      "age_days_group": "Q3"
+    },
+    {
+      "repository": "FuelLabs/fuel-core",
+      "stars_group": "Q3",
+      "contributors_count_group": "Q1",
+      "age_days_group": "Q2"
+    },
+    {
+      "repository": "laurent22/joplin",
+      "stars_group": "Q3",
+      "contributors_count_group": "Q3",
+      "age_days_group": "Q3"
+    },
+    {
+      "repository": "remix-run/react-router",
+      "stars_group": "Q3",
+      "contributors_count_group": "Q4",
+      "age_days_group": "Q4"
+    },
+    {
+      "repository": "typst/typst",
+      "stars_group": "Q3",
+      "contributors_count_group": "Q2",
+      "age_days_group": "Q2"
+    },
+    {
+      "repository": "PowerShell/PowerShell",
+      "stars_group": "Q3",
+      "contributors_count_group": "Q3",
+      "age_days_group": "Q3"
+    },
+    {
+      "repository": "TryGhost/Ghost",
+      "stars_group": "Q3",
+      "contributors_count_group": "Q3",
+      "age_days_group": "Q4"
+    },
+    {
+      "repository": "freqtrade/freqtrade",
+      "stars_group": "Q3",
+      "contributors_count_group": "Q2",
+      "age_days_group": "Q3"
+    },
+    {
+      "repository": "aaif-goose/goose",
+      "stars_group": "Q3",
+      "contributors_count_group": "Q3",
+      "age_days_group": "Q1"
+    },
+    {
+      "repository": "WerWolv/ImHex",
+      "stars_group": "Q3",
+      "contributors_count_group": "Q1",
+      "age_days_group": "Q2"
+    },
+    {
+      "repository": "vuejs/core",
+      "stars_group": "Q3",
+      "contributors_count_group": "Q3",
+      "age_days_group": "Q3"
+    },
+    {
+      "repository": "ggml-org/whisper.cpp",
+      "stars_group": "Q3",
+      "contributors_count_group": "Q3",
+      "age_days_group": "Q2"
+    },
+    {
+      "repository": "bmad-code-org/BMAD-METHOD",
+      "stars_group": "Q3",
+      "contributors_count_group": "Q1",
+      "age_days_group": "Q1"
+    },
+    {
+      "repository": "mozilla/pdf.js",
+      "stars_group": "Q3",
+      "contributors_count_group": "Q2",
+      "age_days_group": "Q4"
+    },
+    {
+      "repository": "ChromeDevTools/chrome-devtools-mcp",
+      "stars_group": "Q3",
+      "contributors_count_group": "Q1",
+      "age_days_group": "Q1"
+    },
+    {
+      "repository": "ionic-team/ionic-framework",
+      "stars_group": "Q3",
+      "contributors_count_group": "Q3",
+      "age_days_group": "Q4"
+    },
+    {
+      "repository": "run-llama/llama_index",
+      "stars_group": "Q3",
+      "contributors_count_group": "Q4",
+      "age_days_group": "Q1"
+    },
+    {
+      "repository": "prettier/prettier",
+      "stars_group": "Q3",
+      "contributors_count_group": "Q3",
+      "age_days_group": "Q3"
+    },
+    {
+      "repository": "etcd-io/etcd",
+      "stars_group": "Q3",
+      "contributors_count_group": "Q4",
+      "age_days_group": "Q4"
+    },
+    {
+      "repository": "dbeaver/dbeaver",
+      "stars_group": "Q3",
+      "contributors_count_group": "Q2",
+      "age_days_group": "Q3"
+    },
+    {
+      "repository": "google/guava",
+      "stars_group": "Q3",
+      "contributors_count_group": "Q2",
+      "age_days_group": "Q4"
+    },
+    {
+      "repository": "ethereum/go-ethereum",
+      "stars_group": "Q3",
+      "contributors_count_group": "Q4",
+      "age_days_group": "Q4"
+    },
+    {
+      "repository": "tldraw/tldraw",
+      "stars_group": "Q3",
+      "contributors_count_group": "Q1",
+      "age_days_group": "Q2"
+    },
+    {
+      "repository": "apple/container",
+      "stars_group": "Q3",
+      "contributors_count_group": "Q1",
+      "age_days_group": "Q1"
+    },
+    {
+      "repository": "TanStack/query",
+      "stars_group": "Q3",
+      "contributors_count_group": "Q3",
+      "age_days_group": "Q2"
+    },
+    {
+      "repository": "mastodon/mastodon",
+      "stars_group": "Q2",
+      "contributors_count_group": "Q3",
+      "age_days_group": "Q3"
+    },
+    {
+      "repository": "ClickHouse/ClickHouse",
+      "stars_group": "Q2",
+      "contributors_count_group": "Q4",
+      "age_days_group": "Q3"
+    },
+    {
+      "repository": "AlistGo/alist",
+      "stars_group": "Q2",
+      "contributors_count_group": "Q1",
+      "age_days_group": "Q2"
+    },
+    {
+      "repository": "moeru-ai/airi",
+      "stars_group": "Q2",
+      "contributors_count_group": "Q1",
+      "age_days_group": "Q1"
+    },
+    {
+      "repository": "astral-sh/ruff",
+      "stars_group": "Q2",
+      "contributors_count_group": "Q3",
+      "age_days_group": "Q2"
+    },
+    {
+      "repository": "Homebrew/brew",
+      "stars_group": "Q2",
+      "contributors_count_group": "Q4",
+      "age_days_group": "Q3"
+    },
+    {
+      "repository": "hashicorp/terraform",
+      "stars_group": "Q2",
+      "contributors_count_group": "Q4",
+      "age_days_group": "Q4"
+    },
+    {
+      "repository": "metabase/metabase",
+      "stars_group": "Q2",
+      "contributors_count_group": "Q2",
+      "age_days_group": "Q4"
+    },
+    {
+      "repository": "mudler/LocalAI",
+      "stars_group": "Q2",
+      "contributors_count_group": "Q1",
+      "age_days_group": "Q1"
+    },
+    {
+      "repository": "Aider-AI/aider",
+      "stars_group": "Q2",
+      "contributors_count_group": "Q1",
+      "age_days_group": "Q1"
+    },
+    {
+      "repository": "JuliaLang/julia",
+      "stars_group": "Q2",
+      "contributors_count_group": "Q4",
+      "age_days_group": "Q4"
+    },
+    {
+      "repository": "slidevjs/slidev",
+      "stars_group": "Q2",
+      "contributors_count_group": "Q2",
+      "age_days_group": "Q2"
+    },
+    {
+      "repository": "calcom/cal.diy",
+      "stars_group": "Q2",
+      "contributors_count_group": "Q3",
+      "age_days_group": "Q2"
+    },
+    {
+      "repository": "bevyengine/bevy",
+      "stars_group": "Q2",
+      "contributors_count_group": "Q4",
+      "age_days_group": "Q2"
+    },
+    {
+      "repository": "pixijs/pixijs",
+      "stars_group": "Q2",
+      "contributors_count_group": "Q3",
+      "age_days_group": "Q4"
+    },
+    {
+      "repository": "vectorize-io/hindsight",
+      "stars_group": "Q2",
+      "contributors_count_group": "Q2",
+      "age_days_group": "Q1"
+    },
+    {
+      "repository": "MHSanaei/3x-ui",
+      "stars_group": "Q2",
+      "contributors_count_group": "Q2",
+      "age_days_group": "Q1"
+    },
+    {
+      "repository": "prisma/orm",
+      "stars_group": "Q2",
+      "contributors_count_group": "Q1",
+      "age_days_group": "Q2"
+    },
+    {
+      "repository": "usebruno/bruno",
+      "stars_group": "Q2",
+      "contributors_count_group": "Q2",
+      "age_days_group": "Q2"
+    },
+    {
+      "repository": "apache/airflow",
+      "stars_group": "Q2",
+      "contributors_count_group": "Q4",
+      "age_days_group": "Q4"
+    },
+    {
+      "repository": "cli/cli",
+      "stars_group": "Q2",
+      "contributors_count_group": "Q3",
+      "age_days_group": "Q2"
+    },
+    {
+      "repository": "jgm/pandoc",
+      "stars_group": "Q2",
+      "contributors_count_group": "Q3",
+      "age_days_group": "Q4"
+    },
+    {
+      "repository": "paperless-ngx/paperless-ngx",
+      "stars_group": "Q2",
+      "contributors_count_group": "Q2",
+      "age_days_group": "Q2"
+    },
+    {
+      "repository": "milvus-io/milvus",
+      "stars_group": "Q2",
+      "contributors_count_group": "Q2",
+      "age_days_group": "Q2"
+    },
+    {
+      "repository": "RocketChat/Rocket.Chat",
+      "stars_group": "Q2",
+      "contributors_count_group": "Q3",
+      "age_days_group": "Q4"
+    },
+    {
+      "repository": "streamlit/streamlit",
+      "stars_group": "Q2",
+      "contributors_count_group": "Q2",
+      "age_days_group": "Q2"
+    },
+    {
+      "repository": "files-community/Files",
+      "stars_group": "Q2",
+      "contributors_count_group": "Q2",
+      "age_days_group": "Q3"
+    },
+    {
+      "repository": "google/zx",
+      "stars_group": "Q2",
+      "contributors_count_group": "Q1",
+      "age_days_group": "Q2"
+    },
+    {
+      "repository": "jestjs/jest",
+      "stars_group": "Q2",
+      "contributors_count_group": "Q4",
+      "age_days_group": "Q4"
+    },
+    {
+      "repository": "getsentry/sentry",
+      "stars_group": "Q2",
+      "contributors_count_group": "Q3",
+      "age_days_group": "Q4"
+    },
+    {
+      "repository": "mitmproxy/mitmproxy",
+      "stars_group": "Q2",
+      "contributors_count_group": "Q3",
+      "age_days_group": "Q4"
+    },
+    {
+      "repository": "grpc/grpc",
+      "stars_group": "Q2",
+      "contributors_count_group": "Q4",
+      "age_days_group": "Q4"
+    },
+    {
+      "repository": "juspay/hyperswitch",
+      "stars_group": "Q2",
+      "contributors_count_group": "Q1",
+      "age_days_group": "Q1"
+    },
+    {
+      "repository": "logseq/logseq",
+      "stars_group": "Q2",
+      "contributors_count_group": "Q2",
+      "age_days_group": "Q2"
+    },
+    {
+      "repository": "payloadcms/payload",
+      "stars_group": "Q2",
+      "contributors_count_group": "Q3",
+      "age_days_group": "Q2"
+    },
+    {
+      "repository": "pyenv/pyenv",
+      "stars_group": "Q2",
+      "contributors_count_group": "Q2",
+      "age_days_group": "Q4"
+    },
+    {
+      "repository": "zen-browser/desktop",
+      "stars_group": "Q2",
+      "contributors_count_group": "Q1",
+      "age_days_group": "Q1"
+    },
+    {
+      "repository": "react-hook-form/react-hook-form",
+      "stars_group": "Q2",
+      "contributors_count_group": "Q2",
+      "age_days_group": "Q3"
+    },
+    {
+      "repository": "juanfont/headscale",
+      "stars_group": "Q2",
+      "contributors_count_group": "Q2",
+      "age_days_group": "Q2"
+    },
+    {
+      "repository": "ccxt/ccxt",
+      "stars_group": "Q2",
+      "contributors_count_group": "Q3",
+      "age_days_group": "Q3"
+    },
+    {
+      "repository": "danielmiessler/Fabric",
+      "stars_group": "Q2",
+      "contributors_count_group": "Q2",
+      "age_days_group": "Q1"
+    },
+    {
+      "repository": "babel/babel",
+      "stars_group": "Q2",
+      "contributors_count_group": "Q4",
+      "age_days_group": "Q4"
+    },
+    {
+      "repository": "colinhacks/zod",
+      "stars_group": "Q2",
+      "contributors_count_group": "Q3",
+      "age_days_group": "Q2"
+    },
+    {
+      "repository": "gradio-app/gradio",
+      "stars_group": "Q2",
+      "contributors_count_group": "Q2",
+      "age_days_group": "Q3"
+    },
+    {
+      "repository": "deepspeedai/DeepSpeed",
+      "stars_group": "Q2",
+      "contributors_count_group": "Q2",
+      "age_days_group": "Q2"
+    },
+    {
+      "repository": "curl/curl",
+      "stars_group": "Q2",
+      "contributors_count_group": "Q4",
+      "age_days_group": "Q4"
+    },
+    {
+      "repository": "langchain-ai/langgraph",
+      "stars_group": "Q2",
+      "contributors_count_group": "Q2",
+      "age_days_group": "Q1"
+    },
+    {
+      "repository": "sxyazi/yazi",
+      "stars_group": "Q2",
+      "contributors_count_group": "Q1",
+      "age_days_group": "Q1"
+    },
+    {
+      "repository": "gkd-kit/gkd",
+      "stars_group": "Q2",
+      "contributors_count_group": "Q1",
+      "age_days_group": "Q1"
+    },
+    {
+      "repository": "agno-agi/agno",
+      "stars_group": "Q2",
+      "contributors_count_group": "Q3",
+      "age_days_group": "Q2"
+    },
+    {
+      "repository": "saadeghi/daisyui",
+      "stars_group": "Q2",
+      "contributors_count_group": "Q2",
+      "age_days_group": "Q2"
+    },
+    {
+      "repository": "exelban/stats",
+      "stars_group": "Q2",
+      "contributors_count_group": "Q1",
+      "age_days_group": "Q2"
+    },
+    {
+      "repository": "LizardByte/Sunshine",
+      "stars_group": "Q2",
+      "contributors_count_group": "Q1",
+      "age_days_group": "Q2"
+    },
+    {
+      "repository": "XTLS/Xray-core",
+      "stars_group": "Q2",
+      "contributors_count_group": "Q2",
+      "age_days_group": "Q2"
+    },
+    {
+      "repository": "tabler/tabler",
+      "stars_group": "Q2",
+      "contributors_count_group": "Q1",
+      "age_days_group": "Q3"
+    },
+    {
+      "repository": "AstrBotDevs/AstrBot",
+      "stars_group": "Q2",
+      "contributors_count_group": "Q2",
+      "age_days_group": "Q1"
+    },
+    {
+      "repository": "apache/dubbo",
+      "stars_group": "Q2",
+      "contributors_count_group": "Q3",
+      "age_days_group": "Q4"
+    },
+    {
+      "repository": "facebookresearch/faiss",
+      "stars_group": "Q2",
+      "contributors_count_group": "Q2",
+      "age_days_group": "Q3"
+    },
+    {
+      "repository": "appsmithorg/appsmith",
+      "stars_group": "Q2",
+      "contributors_count_group": "Q2",
+      "age_days_group": "Q2"
+    },
+    {
+      "repository": "vuetifyjs/vuetify",
+      "stars_group": "Q2",
+      "contributors_count_group": "Q4",
+      "age_days_group": "Q3"
+    },
+    {
+      "repository": "llvm/llvm-project",
+      "stars_group": "Q2",
+      "contributors_count_group": "Q4",
+      "age_days_group": "Q3"
+    },
+    {
+      "repository": "outline/outline",
+      "stars_group": "Q2",
+      "contributors_count_group": "Q1",
+      "age_days_group": "Q3"
+    },
+    {
+      "repository": "trpc/trpc",
+      "stars_group": "Q2",
+      "contributors_count_group": "Q2",
+      "age_days_group": "Q2"
+    },
+    {
+      "repository": "chakra-ui/chakra-ui",
+      "stars_group": "Q2",
+      "contributors_count_group": "Q3",
+      "age_days_group": "Q2"
+    },
+    {
+      "repository": "nushell/nushell",
+      "stars_group": "Q2",
+      "contributors_count_group": "Q3",
+      "age_days_group": "Q2"
+    },
+    {
+      "repository": "pingcap/tidb",
+      "stars_group": "Q2",
+      "contributors_count_group": "Q3",
+      "age_days_group": "Q3"
+    },
+    {
+      "repository": "schollz/croc",
+      "stars_group": "Q2",
+      "contributors_count_group": "Q1",
+      "age_days_group": "Q3"
+    },
+    {
+      "repository": "php/php-src",
+      "stars_group": "Q2",
+      "contributors_count_group": "Q4",
+      "age_days_group": "Q4"
+    },
+    {
+      "repository": "PostHog/posthog",
+      "stars_group": "Q2",
+      "contributors_count_group": "Q3",
+      "age_days_group": "Q2"
+    },
+    {
+      "repository": "novuhq/novu",
+      "stars_group": "Q2",
+      "contributors_count_group": "Q2",
+      "age_days_group": "Q2"
+    },
+    {
+      "repository": "pola-rs/polars",
+      "stars_group": "Q2",
+      "contributors_count_group": "Q3",
+      "age_days_group": "Q2"
+    },
+    {
+      "repository": "evanw/esbuild",
+      "stars_group": "Q2",
+      "contributors_count_group": "Q1",
+      "age_days_group": "Q3"
+    },
+    {
+      "repository": "HKUDS/LightRAG",
+      "stars_group": "Q2",
+      "contributors_count_group": "Q2",
+      "age_days_group": "Q1"
+    },
+    {
+      "repository": "lfnovo/open-notebook",
+      "stars_group": "Q2",
+      "contributors_count_group": "Q1",
+      "age_days_group": "Q1"
+    },
+    {
+      "repository": "Kong/insomnia",
+      "stars_group": "Q2",
+      "contributors_count_group": "Q2",
+      "age_days_group": "Q3"
+    },
+    {
+      "repository": "aseprite/aseprite",
+      "stars_group": "Q1",
+      "contributors_count_group": "Q1",
+      "age_days_group": "Q4"
+    },
+    {
+      "repository": "halo-dev/halo",
+      "stars_group": "Q1",
+      "contributors_count_group": "Q1",
+      "age_days_group": "Q3"
+    },
+    {
+      "repository": "DioxusLabs/dioxus",
+      "stars_group": "Q1",
+      "contributors_count_group": "Q2",
+      "age_days_group": "Q2"
+    },
+    {
+      "repository": "mattermost/mattermost",
+      "stars_group": "Q1",
+      "contributors_count_group": "Q4",
+      "age_days_group": "Q4"
+    },
+    {
+      "repository": "bytedance/UI-TARS-desktop",
+      "stars_group": "Q1",
+      "contributors_count_group": "Q1",
+      "age_days_group": "Q1"
+    },
+    {
+      "repository": "RSSNext/Folo",
+      "stars_group": "Q1",
+      "contributors_count_group": "Q1",
+      "age_days_group": "Q1"
+    },
+    {
+      "repository": "google/langextract",
+      "stars_group": "Q1",
+      "contributors_count_group": "Q1",
+      "age_days_group": "Q1"
+    },
+    {
+      "repository": "hyprwm/Hyprland",
+      "stars_group": "Q1",
+      "contributors_count_group": "Q3",
+      "age_days_group": "Q2"
+    },
+    {
+      "repository": "ueberdosis/tiptap",
+      "stars_group": "Q1",
+      "contributors_count_group": "Q3",
+      "age_days_group": "Q3"
+    },
+    {
+      "repository": "xyflow/xyflow",
+      "stars_group": "Q1",
+      "contributors_count_group": "Q1",
+      "age_days_group": "Q2"
+    },
+    {
+      "repository": "stanfordnlp/dspy",
+      "stars_group": "Q1",
+      "contributors_count_group": "Q2",
+      "age_days_group": "Q1"
+    },
+    {
+      "repository": "harness/harness",
+      "stars_group": "Q1",
+      "contributors_count_group": "Q1",
+      "age_days_group": "Q4"
+    },
+    {
+      "repository": "directus/directus",
+      "stars_group": "Q1",
+      "contributors_count_group": "Q3",
+      "age_days_group": "Q4"
+    },
+    {
+      "repository": "docker/compose",
+      "stars_group": "Q1",
+      "contributors_count_group": "Q2",
+      "age_days_group": "Q4"
+    },
+    {
+      "repository": "TriliumNext/Trilium",
+      "stars_group": "Q1",
+      "contributors_count_group": "Q2",
+      "age_days_group": "Q3"
+    },
+    {
+      "repository": "microsoft/playwright-mcp",
+      "stars_group": "Q1",
+      "contributors_count_group": "Q1",
+      "age_days_group": "Q1"
+    },
+    {
+      "repository": "vlang/v",
+      "stars_group": "Q1",
+      "contributors_count_group": "Q3",
+      "age_days_group": "Q3"
+    },
+    {
+      "repository": "pbatard/rufus",
+      "stars_group": "Q1",
+      "contributors_count_group": "Q1",
+      "age_days_group": "Q4"
+    },
+    {
+      "repository": "CopilotKit/CopilotKit",
+      "stars_group": "Q1",
+      "contributors_count_group": "Q1",
+      "age_days_group": "Q1"
+    },
+    {
+      "repository": "Dokploy/dokploy",
+      "stars_group": "Q1",
+      "contributors_count_group": "Q2",
+      "age_days_group": "Q1"
+    },
+    {
+      "repository": "chatwoot/chatwoot",
+      "stars_group": "Q1",
+      "contributors_count_group": "Q2",
+      "age_days_group": "Q2"
+    },
+    {
+      "repository": "khoj-ai/khoj",
+      "stars_group": "Q1",
+      "contributors_count_group": "Q1",
+      "age_days_group": "Q2"
+    },
+    {
+      "repository": "alibaba/arthas",
+      "stars_group": "Q1",
+      "contributors_count_group": "Q1",
+      "age_days_group": "Q3"
+    },
+    {
+      "repository": "Textualize/textual",
+      "stars_group": "Q1",
+      "contributors_count_group": "Q1",
+      "age_days_group": "Q2"
+    },
+    {
+      "repository": "tailscale/tailscale",
+      "stars_group": "Q1",
+      "contributors_count_group": "Q2",
+      "age_days_group": "Q2"
+    },
+    {
+      "repository": "AdguardTeam/AdGuardHome",
+      "stars_group": "Q1",
+      "contributors_count_group": "Q1",
+      "age_days_group": "Q3"
+    },
+    {
+      "repository": "keycloak/keycloak",
+      "stars_group": "Q1",
+      "contributors_count_group": "Q4",
+      "age_days_group": "Q4"
+    },
+    {
+      "repository": "firecracker-microvm/firecracker",
+      "stars_group": "Q1",
+      "contributors_count_group": "Q2",
+      "age_days_group": "Q3"
+    },
+    {
+      "repository": "fastify/fastify",
+      "stars_group": "Q1",
+      "contributors_count_group": "Q3",
+      "age_days_group": "Q3"
+    },
+    {
+      "repository": "ItzCrazyKns/Vane",
+      "stars_group": "Q1",
+      "contributors_count_group": "Q1",
+      "age_days_group": "Q1"
+    },
+    {
+      "repository": "markedjs/marked",
+      "stars_group": "Q1",
+      "contributors_count_group": "Q1",
+      "age_days_group": "Q4"
+    },
+    {
+      "repository": "huggingface/pytorch-image-models",
+      "stars_group": "Q1",
+      "contributors_count_group": "Q1",
+      "age_days_group": "Q3"
+    },
+    {
+      "repository": "1Panel-dev/1Panel",
+      "stars_group": "Q1",
+      "contributors_count_group": "Q1",
+      "age_days_group": "Q2"
+    },
+    {
+      "repository": "nextcloud/server",
+      "stars_group": "Q1",
+      "contributors_count_group": "Q4",
+      "age_days_group": "Q3"
+    },
+    {
+      "repository": "gitroomhq/postiz-app",
+      "stars_group": "Q1",
+      "contributors_count_group": "Q1",
+      "age_days_group": "Q1"
+    },
+    {
+      "repository": "sgl-project/sglang",
+      "stars_group": "Q1",
+      "contributors_count_group": "Q4",
+      "age_days_group": "Q1"
+    },
+    {
+      "repository": "pnpm/pnpm",
+      "stars_group": "Q1",
+      "contributors_count_group": "Q3",
+      "age_days_group": "Q3"
+    },
+    {
+      "repository": "medusajs/medusa",
+      "stars_group": "Q1",
+      "contributors_count_group": "Q3",
+      "age_days_group": "Q2"
+    },
+    {
+      "repository": "typeorm/typeorm",
+      "stars_group": "Q1",
+      "contributors_count_group": "Q4",
+      "age_days_group": "Q3"
+    },
+    {
+      "repository": "permissionlesstech/bitchat",
+      "stars_group": "Q1",
+      "contributors_count_group": "Q1",
+      "age_days_group": "Q1"
+    },
+    {
+      "repository": "wailsapp/wails",
+      "stars_group": "Q1",
+      "contributors_count_group": "Q2",
+      "age_days_group": "Q3"
+    },
+    {
+      "repository": "blakeblackshear/frigate",
+      "stars_group": "Q1",
+      "contributors_count_group": "Q2",
+      "age_days_group": "Q3"
+    },
+    {
+      "repository": "jax-ml/jax",
+      "stars_group": "Q1",
+      "contributors_count_group": "Q4",
+      "age_days_group": "Q3"
+    },
+    {
+      "repository": "hashicorp/vault",
+      "stars_group": "Q1",
+      "contributors_count_group": "Q4",
+      "age_days_group": "Q4"
+    },
+    {
+      "repository": "microsoft/graphrag",
+      "stars_group": "Q1",
+      "contributors_count_group": "Q1",
+      "age_days_group": "Q1"
+    },
+    {
+      "repository": "casey/just",
+      "stars_group": "Q1",
+      "contributors_count_group": "Q1",
+      "age_days_group": "Q3"
+    },
+    {
+      "repository": "continuedev/continue",
+      "stars_group": "Q1",
+      "contributors_count_group": "Q2",
+      "age_days_group": "Q1"
+    },
+    {
+      "repository": "DayuanJiang/next-ai-draw-io",
+      "stars_group": "Q1",
+      "contributors_count_group": "Q1",
+      "age_days_group": "Q1"
+    },
+    {
+      "repository": "refinedev/refine",
+      "stars_group": "Q1",
+      "contributors_count_group": "Q2",
+      "age_days_group": "Q2"
+    },
+    {
+      "repository": "langfuse/langfuse",
+      "stars_group": "Q1",
+      "contributors_count_group": "Q1",
+      "age_days_group": "Q1"
+    },
+    {
+      "repository": "seaweedfs/seaweedfs",
+      "stars_group": "Q1",
+      "contributors_count_group": "Q3",
+      "age_days_group": "Q4"
+    },
+    {
+      "repository": "kovidgoyal/kitty",
+      "stars_group": "Q1",
+      "contributors_count_group": "Q2",
+      "age_days_group": "Q3"
+    },
+    {
+      "repository": "qdrant/qdrant",
+      "stars_group": "Q1",
+      "contributors_count_group": "Q1",
+      "age_days_group": "Q2"
+    },
+    {
+      "repository": "bumptech/glide",
+      "stars_group": "Q1",
+      "contributors_count_group": "Q1",
+      "age_days_group": "Q4"
+    },
+    {
+      "repository": "aristocratos/btop",
+      "stars_group": "Q1",
+      "contributors_count_group": "Q1",
+      "age_days_group": "Q2"
+    },
+    {
+      "repository": "jdx/mise",
+      "stars_group": "Q1",
+      "contributors_count_group": "Q3",
+      "age_days_group": "Q1"
+    },
+    {
+      "repository": "dgtlmoon/changedetection.io",
+      "stars_group": "Q1",
+      "contributors_count_group": "Q1",
+      "age_days_group": "Q2"
+    },
+    {
+      "repository": "huggingface/diffusers",
+      "stars_group": "Q1",
+      "contributors_count_group": "Q4",
+      "age_days_group": "Q2"
+    },
+    {
+      "repository": "v2fly/v2ray-core",
+      "stars_group": "Q1",
+      "contributors_count_group": "Q1",
+      "age_days_group": "Q3"
+    },
+    {
+      "repository": "backstage/backstage",
+      "stars_group": "Q1",
+      "contributors_count_group": "Q4",
+      "age_days_group": "Q2"
+    },
+    {
+      "repository": "SeleniumHQ/selenium",
+      "stars_group": "Q1",
+      "contributors_count_group": "Q3",
+      "age_days_group": "Q4"
+    },
+    {
+      "repository": "SillyTavern/SillyTavern",
+      "stars_group": "Q1",
+      "contributors_count_group": "Q2",
+      "age_days_group": "Q1"
+    },
+    {
+      "repository": "python-poetry/poetry",
+      "stars_group": "Q1",
+      "contributors_count_group": "Q3",
+      "age_days_group": "Q3"
+    },
+    {
+      "repository": "fish-shell/fish-shell",
+      "stars_group": "Q1",
+      "contributors_count_group": "Q4",
+      "age_days_group": "Q4"
+    },
+    {
+      "repository": "swc-project/swc",
+      "stars_group": "Q1",
+      "contributors_count_group": "Q2",
+      "age_days_group": "Q3"
+    },
+    {
+      "repository": "k3s-io/k3s",
+      "stars_group": "Q1",
+      "contributors_count_group": "Q2",
+      "age_days_group": "Q3"
+    },
+    {
+      "repository": "microsoft/WSL",
+      "stars_group": "Q1",
+      "contributors_count_group": "Q1",
+      "age_days_group": "Q3"
+    },
+    {
+      "repository": "nicolargo/glances",
+      "stars_group": "Q1",
+      "contributors_count_group": "Q2",
+      "age_days_group": "Q4"
+    },
+    {
+      "repository": "pear-devs/pear-desktop",
+      "stars_group": "Q1",
+      "contributors_count_group": "Q3",
+      "age_days_group": "Q3"
+    },
+    {
+      "repository": "VSCodium/vscodium",
+      "stars_group": "Q1",
+      "contributors_count_group": "Q1",
+      "age_days_group": "Q3"
+    },
+    {
+      "repository": "vbenjs/vue-vben-admin",
+      "stars_group": "Q1",
+      "contributors_count_group": "Q1",
+      "age_days_group": "Q2"
+    },
+    {
+      "repository": "github/github-mcp-server",
+      "stars_group": "Q1",
+      "contributors_count_group": "Q1",
+      "age_days_group": "Q1"
+    },
+    {
+      "repository": "alibaba/nacos",
+      "stars_group": "Q1",
+      "contributors_count_group": "Q3",
+      "age_days_group": "Q3"
+    },
+    {
+      "repository": "iOfficeAI/AionUi",
+      "stars_group": "Q1",
+      "contributors_count_group": "Q1",
+      "age_days_group": "Q1"
+    },
+    {
+      "repository": "tokio-rs/tokio",
+      "stars_group": "Q1",
+      "contributors_count_group": "Q3",
+      "age_days_group": "Q3"
+    }
+  ],
+  "exclusions": [
+    {
+      "analysis": "RQ06:stars:lead_time_commit_median_hours",
+      "repository": "tw93/Mole",
+      "column": "lead_time_commit_median_hours",
+      "raw_value": "'-14.639722222222222",
+      "reason": "negative_value"
+    },
+    {
+      "analysis": "RQ06:stars:recovery_median_hours",
+      "repository": "microsoft/PowerToys",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing"
+    },
+    {
+      "analysis": "RQ06:stars:recovery_median_hours",
+      "repository": "rust-lang/rust",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing"
+    },
+    {
+      "analysis": "RQ06:stars:recovery_median_hours",
+      "repository": "mrdoob/three.js",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing"
+    },
+    {
+      "analysis": "RQ06:stars:recovery_median_hours",
+      "repository": "microsoft/terminal",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing"
+    },
+    {
+      "analysis": "RQ06:stars:recovery_median_hours",
+      "repository": "oven-sh/bun",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing"
+    },
+    {
+      "analysis": "RQ06:stars:recovery_median_hours",
+      "repository": "ventoy/Ventoy",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing"
+    },
+    {
+      "analysis": "RQ06:stars:recovery_median_hours",
+      "repository": "nestjs/nest",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing"
+    },
+    {
+      "analysis": "RQ06:stars:recovery_median_hours",
+      "repository": "expressjs/express",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing"
+    },
+    {
+      "analysis": "RQ06:stars:recovery_median_hours",
+      "repository": "dani-garcia/vaultwarden",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing"
+    },
+    {
+      "analysis": "RQ06:stars:recovery_median_hours",
+      "repository": "docling-project/docling",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing"
+    },
+    {
+      "analysis": "RQ06:stars:recovery_median_hours",
+      "repository": "microsoft/autogen",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing"
+    },
+    {
+      "analysis": "RQ06:stars:recovery_median_hours",
+      "repository": "typst/typst",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing"
+    },
+    {
+      "analysis": "RQ06:stars:recovery_median_hours",
+      "repository": "bmad-code-org/BMAD-METHOD",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing"
+    },
+    {
+      "analysis": "RQ06:stars:recovery_median_hours",
+      "repository": "ionic-team/ionic-framework",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing"
+    },
+    {
+      "analysis": "RQ06:stars:recovery_median_hours",
+      "repository": "AlistGo/alist",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing"
+    },
+    {
+      "analysis": "RQ06:stars:recovery_median_hours",
+      "repository": "Aider-AI/aider",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing"
+    },
+    {
+      "analysis": "RQ06:stars:recovery_median_hours",
+      "repository": "JuliaLang/julia",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing"
+    },
+    {
+      "analysis": "RQ06:stars:recovery_median_hours",
+      "repository": "pixijs/pixijs",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing"
+    },
+    {
+      "analysis": "RQ06:stars:recovery_median_hours",
+      "repository": "MHSanaei/3x-ui",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing"
+    },
+    {
+      "analysis": "RQ06:stars:recovery_median_hours",
+      "repository": "grpc/grpc",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing"
+    },
+    {
+      "analysis": "RQ06:stars:recovery_median_hours",
+      "repository": "pyenv/pyenv",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing"
+    },
+    {
+      "analysis": "RQ06:stars:recovery_median_hours",
+      "repository": "zen-browser/desktop",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing"
+    },
+    {
+      "analysis": "RQ06:stars:recovery_median_hours",
+      "repository": "react-hook-form/react-hook-form",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing"
+    },
+    {
+      "analysis": "RQ06:stars:recovery_median_hours",
+      "repository": "danielmiessler/Fabric",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing"
+    },
+    {
+      "analysis": "RQ06:stars:recovery_median_hours",
+      "repository": "exelban/stats",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing"
+    },
+    {
+      "analysis": "RQ06:stars:recovery_median_hours",
+      "repository": "facebookresearch/faiss",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing"
+    },
+    {
+      "analysis": "RQ06:stars:recovery_median_hours",
+      "repository": "appsmithorg/appsmith",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing"
+    },
+    {
+      "analysis": "RQ06:stars:recovery_median_hours",
+      "repository": "outline/outline",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing"
+    },
+    {
+      "analysis": "RQ06:stars:recovery_median_hours",
+      "repository": "pingcap/tidb",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing"
+    },
+    {
+      "analysis": "RQ06:stars:recovery_median_hours",
+      "repository": "aseprite/aseprite",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing"
+    },
+    {
+      "analysis": "RQ06:stars:recovery_median_hours",
+      "repository": "google/langextract",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing"
+    },
+    {
+      "analysis": "RQ06:stars:recovery_median_hours",
+      "repository": "harness/harness",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing"
+    },
+    {
+      "analysis": "RQ06:stars:recovery_median_hours",
+      "repository": "pbatard/rufus",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing"
+    },
+    {
+      "analysis": "RQ06:stars:recovery_median_hours",
+      "repository": "Textualize/textual",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing"
+    },
+    {
+      "analysis": "RQ06:stars:recovery_median_hours",
+      "repository": "firecracker-microvm/firecracker",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing"
+    },
+    {
+      "analysis": "RQ06:stars:recovery_median_hours",
+      "repository": "ItzCrazyKns/Vane",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing"
+    },
+    {
+      "analysis": "RQ06:stars:recovery_median_hours",
+      "repository": "markedjs/marked",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing"
+    },
+    {
+      "analysis": "RQ06:stars:recovery_median_hours",
+      "repository": "huggingface/pytorch-image-models",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing"
+    },
+    {
+      "analysis": "RQ06:stars:recovery_median_hours",
+      "repository": "casey/just",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing"
+    },
+    {
+      "analysis": "RQ06:stars:recovery_median_hours",
+      "repository": "bumptech/glide",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing"
+    },
+    {
+      "analysis": "RQ06:stars:recovery_median_hours",
+      "repository": "SillyTavern/SillyTavern",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing"
+    },
+    {
+      "analysis": "RQ06:stars:recovery_median_hours",
+      "repository": "python-poetry/poetry",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing"
+    },
+    {
+      "analysis": "RQ06:contributors_count:lead_time_commit_median_hours",
+      "repository": "tw93/Mole",
+      "column": "lead_time_commit_median_hours",
+      "raw_value": "'-14.639722222222222",
+      "reason": "negative_value"
+    },
+    {
+      "analysis": "RQ06:contributors_count:recovery_median_hours",
+      "repository": "microsoft/PowerToys",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing"
+    },
+    {
+      "analysis": "RQ06:contributors_count:recovery_median_hours",
+      "repository": "rust-lang/rust",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing"
+    },
+    {
+      "analysis": "RQ06:contributors_count:recovery_median_hours",
+      "repository": "mrdoob/three.js",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing"
+    },
+    {
+      "analysis": "RQ06:contributors_count:recovery_median_hours",
+      "repository": "microsoft/terminal",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing"
+    },
+    {
+      "analysis": "RQ06:contributors_count:recovery_median_hours",
+      "repository": "oven-sh/bun",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing"
+    },
+    {
+      "analysis": "RQ06:contributors_count:recovery_median_hours",
+      "repository": "ventoy/Ventoy",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing"
+    },
+    {
+      "analysis": "RQ06:contributors_count:recovery_median_hours",
+      "repository": "nestjs/nest",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing"
+    },
+    {
+      "analysis": "RQ06:contributors_count:recovery_median_hours",
+      "repository": "expressjs/express",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing"
+    },
+    {
+      "analysis": "RQ06:contributors_count:recovery_median_hours",
+      "repository": "dani-garcia/vaultwarden",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing"
+    },
+    {
+      "analysis": "RQ06:contributors_count:recovery_median_hours",
+      "repository": "docling-project/docling",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing"
+    },
+    {
+      "analysis": "RQ06:contributors_count:recovery_median_hours",
+      "repository": "microsoft/autogen",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing"
+    },
+    {
+      "analysis": "RQ06:contributors_count:recovery_median_hours",
+      "repository": "typst/typst",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing"
+    },
+    {
+      "analysis": "RQ06:contributors_count:recovery_median_hours",
+      "repository": "bmad-code-org/BMAD-METHOD",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing"
+    },
+    {
+      "analysis": "RQ06:contributors_count:recovery_median_hours",
+      "repository": "ionic-team/ionic-framework",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing"
+    },
+    {
+      "analysis": "RQ06:contributors_count:recovery_median_hours",
+      "repository": "AlistGo/alist",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing"
+    },
+    {
+      "analysis": "RQ06:contributors_count:recovery_median_hours",
+      "repository": "Aider-AI/aider",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing"
+    },
+    {
+      "analysis": "RQ06:contributors_count:recovery_median_hours",
+      "repository": "JuliaLang/julia",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing"
+    },
+    {
+      "analysis": "RQ06:contributors_count:recovery_median_hours",
+      "repository": "pixijs/pixijs",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing"
+    },
+    {
+      "analysis": "RQ06:contributors_count:recovery_median_hours",
+      "repository": "MHSanaei/3x-ui",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing"
+    },
+    {
+      "analysis": "RQ06:contributors_count:recovery_median_hours",
+      "repository": "grpc/grpc",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing"
+    },
+    {
+      "analysis": "RQ06:contributors_count:recovery_median_hours",
+      "repository": "pyenv/pyenv",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing"
+    },
+    {
+      "analysis": "RQ06:contributors_count:recovery_median_hours",
+      "repository": "zen-browser/desktop",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing"
+    },
+    {
+      "analysis": "RQ06:contributors_count:recovery_median_hours",
+      "repository": "react-hook-form/react-hook-form",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing"
+    },
+    {
+      "analysis": "RQ06:contributors_count:recovery_median_hours",
+      "repository": "danielmiessler/Fabric",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing"
+    },
+    {
+      "analysis": "RQ06:contributors_count:recovery_median_hours",
+      "repository": "exelban/stats",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing"
+    },
+    {
+      "analysis": "RQ06:contributors_count:recovery_median_hours",
+      "repository": "facebookresearch/faiss",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing"
+    },
+    {
+      "analysis": "RQ06:contributors_count:recovery_median_hours",
+      "repository": "appsmithorg/appsmith",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing"
+    },
+    {
+      "analysis": "RQ06:contributors_count:recovery_median_hours",
+      "repository": "outline/outline",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing"
+    },
+    {
+      "analysis": "RQ06:contributors_count:recovery_median_hours",
+      "repository": "pingcap/tidb",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing"
+    },
+    {
+      "analysis": "RQ06:contributors_count:recovery_median_hours",
+      "repository": "aseprite/aseprite",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing"
+    },
+    {
+      "analysis": "RQ06:contributors_count:recovery_median_hours",
+      "repository": "google/langextract",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing"
+    },
+    {
+      "analysis": "RQ06:contributors_count:recovery_median_hours",
+      "repository": "harness/harness",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing"
+    },
+    {
+      "analysis": "RQ06:contributors_count:recovery_median_hours",
+      "repository": "pbatard/rufus",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing"
+    },
+    {
+      "analysis": "RQ06:contributors_count:recovery_median_hours",
+      "repository": "Textualize/textual",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing"
+    },
+    {
+      "analysis": "RQ06:contributors_count:recovery_median_hours",
+      "repository": "firecracker-microvm/firecracker",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing"
+    },
+    {
+      "analysis": "RQ06:contributors_count:recovery_median_hours",
+      "repository": "ItzCrazyKns/Vane",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing"
+    },
+    {
+      "analysis": "RQ06:contributors_count:recovery_median_hours",
+      "repository": "markedjs/marked",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing"
+    },
+    {
+      "analysis": "RQ06:contributors_count:recovery_median_hours",
+      "repository": "huggingface/pytorch-image-models",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing"
+    },
+    {
+      "analysis": "RQ06:contributors_count:recovery_median_hours",
+      "repository": "casey/just",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing"
+    },
+    {
+      "analysis": "RQ06:contributors_count:recovery_median_hours",
+      "repository": "bumptech/glide",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing"
+    },
+    {
+      "analysis": "RQ06:contributors_count:recovery_median_hours",
+      "repository": "SillyTavern/SillyTavern",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing"
+    },
+    {
+      "analysis": "RQ06:contributors_count:recovery_median_hours",
+      "repository": "python-poetry/poetry",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing"
+    },
+    {
+      "analysis": "RQ06:age_days:lead_time_commit_median_hours",
+      "repository": "tw93/Mole",
+      "column": "lead_time_commit_median_hours",
+      "raw_value": "'-14.639722222222222",
+      "reason": "negative_value"
+    },
+    {
+      "analysis": "RQ06:age_days:recovery_median_hours",
+      "repository": "microsoft/PowerToys",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing"
+    },
+    {
+      "analysis": "RQ06:age_days:recovery_median_hours",
+      "repository": "rust-lang/rust",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing"
+    },
+    {
+      "analysis": "RQ06:age_days:recovery_median_hours",
+      "repository": "mrdoob/three.js",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing"
+    },
+    {
+      "analysis": "RQ06:age_days:recovery_median_hours",
+      "repository": "microsoft/terminal",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing"
+    },
+    {
+      "analysis": "RQ06:age_days:recovery_median_hours",
+      "repository": "oven-sh/bun",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing"
+    },
+    {
+      "analysis": "RQ06:age_days:recovery_median_hours",
+      "repository": "ventoy/Ventoy",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing"
+    },
+    {
+      "analysis": "RQ06:age_days:recovery_median_hours",
+      "repository": "nestjs/nest",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing"
+    },
+    {
+      "analysis": "RQ06:age_days:recovery_median_hours",
+      "repository": "expressjs/express",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing"
+    },
+    {
+      "analysis": "RQ06:age_days:recovery_median_hours",
+      "repository": "dani-garcia/vaultwarden",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing"
+    },
+    {
+      "analysis": "RQ06:age_days:recovery_median_hours",
+      "repository": "docling-project/docling",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing"
+    },
+    {
+      "analysis": "RQ06:age_days:recovery_median_hours",
+      "repository": "microsoft/autogen",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing"
+    },
+    {
+      "analysis": "RQ06:age_days:recovery_median_hours",
+      "repository": "typst/typst",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing"
+    },
+    {
+      "analysis": "RQ06:age_days:recovery_median_hours",
+      "repository": "bmad-code-org/BMAD-METHOD",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing"
+    },
+    {
+      "analysis": "RQ06:age_days:recovery_median_hours",
+      "repository": "ionic-team/ionic-framework",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing"
+    },
+    {
+      "analysis": "RQ06:age_days:recovery_median_hours",
+      "repository": "AlistGo/alist",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing"
+    },
+    {
+      "analysis": "RQ06:age_days:recovery_median_hours",
+      "repository": "Aider-AI/aider",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing"
+    },
+    {
+      "analysis": "RQ06:age_days:recovery_median_hours",
+      "repository": "JuliaLang/julia",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing"
+    },
+    {
+      "analysis": "RQ06:age_days:recovery_median_hours",
+      "repository": "pixijs/pixijs",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing"
+    },
+    {
+      "analysis": "RQ06:age_days:recovery_median_hours",
+      "repository": "MHSanaei/3x-ui",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing"
+    },
+    {
+      "analysis": "RQ06:age_days:recovery_median_hours",
+      "repository": "grpc/grpc",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing"
+    },
+    {
+      "analysis": "RQ06:age_days:recovery_median_hours",
+      "repository": "pyenv/pyenv",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing"
+    },
+    {
+      "analysis": "RQ06:age_days:recovery_median_hours",
+      "repository": "zen-browser/desktop",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing"
+    },
+    {
+      "analysis": "RQ06:age_days:recovery_median_hours",
+      "repository": "react-hook-form/react-hook-form",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing"
+    },
+    {
+      "analysis": "RQ06:age_days:recovery_median_hours",
+      "repository": "danielmiessler/Fabric",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing"
+    },
+    {
+      "analysis": "RQ06:age_days:recovery_median_hours",
+      "repository": "exelban/stats",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing"
+    },
+    {
+      "analysis": "RQ06:age_days:recovery_median_hours",
+      "repository": "facebookresearch/faiss",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing"
+    },
+    {
+      "analysis": "RQ06:age_days:recovery_median_hours",
+      "repository": "appsmithorg/appsmith",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing"
+    },
+    {
+      "analysis": "RQ06:age_days:recovery_median_hours",
+      "repository": "outline/outline",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing"
+    },
+    {
+      "analysis": "RQ06:age_days:recovery_median_hours",
+      "repository": "pingcap/tidb",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing"
+    },
+    {
+      "analysis": "RQ06:age_days:recovery_median_hours",
+      "repository": "aseprite/aseprite",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing"
+    },
+    {
+      "analysis": "RQ06:age_days:recovery_median_hours",
+      "repository": "google/langextract",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing"
+    },
+    {
+      "analysis": "RQ06:age_days:recovery_median_hours",
+      "repository": "harness/harness",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing"
+    },
+    {
+      "analysis": "RQ06:age_days:recovery_median_hours",
+      "repository": "pbatard/rufus",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing"
+    },
+    {
+      "analysis": "RQ06:age_days:recovery_median_hours",
+      "repository": "Textualize/textual",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing"
+    },
+    {
+      "analysis": "RQ06:age_days:recovery_median_hours",
+      "repository": "firecracker-microvm/firecracker",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing"
+    },
+    {
+      "analysis": "RQ06:age_days:recovery_median_hours",
+      "repository": "ItzCrazyKns/Vane",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing"
+    },
+    {
+      "analysis": "RQ06:age_days:recovery_median_hours",
+      "repository": "markedjs/marked",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing"
+    },
+    {
+      "analysis": "RQ06:age_days:recovery_median_hours",
+      "repository": "huggingface/pytorch-image-models",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing"
+    },
+    {
+      "analysis": "RQ06:age_days:recovery_median_hours",
+      "repository": "casey/just",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing"
+    },
+    {
+      "analysis": "RQ06:age_days:recovery_median_hours",
+      "repository": "bumptech/glide",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing"
+    },
+    {
+      "analysis": "RQ06:age_days:recovery_median_hours",
+      "repository": "SillyTavern/SillyTavern",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing"
+    },
+    {
+      "analysis": "RQ06:age_days:recovery_median_hours",
+      "repository": "python-poetry/poetry",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing"
+    }
+  ],
+  "quality": [
+    {
+      "repository": "microsoft/PowerToys",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing",
+      "action": "exclude_from_affected_analysis_only"
+    },
+    {
+      "repository": "rust-lang/rust",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing",
+      "action": "exclude_from_affected_analysis_only"
+    },
+    {
+      "repository": "mrdoob/three.js",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing",
+      "action": "exclude_from_affected_analysis_only"
+    },
+    {
+      "repository": "microsoft/terminal",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing",
+      "action": "exclude_from_affected_analysis_only"
+    },
+    {
+      "repository": "oven-sh/bun",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing",
+      "action": "exclude_from_affected_analysis_only"
+    },
+    {
+      "repository": "ventoy/Ventoy",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing",
+      "action": "exclude_from_affected_analysis_only"
+    },
+    {
+      "repository": "nestjs/nest",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing",
+      "action": "exclude_from_affected_analysis_only"
+    },
+    {
+      "repository": "tw93/Mole",
+      "column": "lead_time_commit_median_hours",
+      "raw_value": "'-14.639722222222222",
+      "reason": "negative_value",
+      "action": "exclude_from_affected_analysis_only"
+    },
+    {
+      "repository": "expressjs/express",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing",
+      "action": "exclude_from_affected_analysis_only"
+    },
+    {
+      "repository": "dani-garcia/vaultwarden",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing",
+      "action": "exclude_from_affected_analysis_only"
+    },
+    {
+      "repository": "docling-project/docling",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing",
+      "action": "exclude_from_affected_analysis_only"
+    },
+    {
+      "repository": "microsoft/autogen",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing",
+      "action": "exclude_from_affected_analysis_only"
+    },
+    {
+      "repository": "typst/typst",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing",
+      "action": "exclude_from_affected_analysis_only"
+    },
+    {
+      "repository": "bmad-code-org/BMAD-METHOD",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing",
+      "action": "exclude_from_affected_analysis_only"
+    },
+    {
+      "repository": "ionic-team/ionic-framework",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing",
+      "action": "exclude_from_affected_analysis_only"
+    },
+    {
+      "repository": "AlistGo/alist",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing",
+      "action": "exclude_from_affected_analysis_only"
+    },
+    {
+      "repository": "Aider-AI/aider",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing",
+      "action": "exclude_from_affected_analysis_only"
+    },
+    {
+      "repository": "JuliaLang/julia",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing",
+      "action": "exclude_from_affected_analysis_only"
+    },
+    {
+      "repository": "pixijs/pixijs",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing",
+      "action": "exclude_from_affected_analysis_only"
+    },
+    {
+      "repository": "MHSanaei/3x-ui",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing",
+      "action": "exclude_from_affected_analysis_only"
+    },
+    {
+      "repository": "grpc/grpc",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing",
+      "action": "exclude_from_affected_analysis_only"
+    },
+    {
+      "repository": "pyenv/pyenv",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing",
+      "action": "exclude_from_affected_analysis_only"
+    },
+    {
+      "repository": "zen-browser/desktop",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing",
+      "action": "exclude_from_affected_analysis_only"
+    },
+    {
+      "repository": "react-hook-form/react-hook-form",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing",
+      "action": "exclude_from_affected_analysis_only"
+    },
+    {
+      "repository": "danielmiessler/Fabric",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing",
+      "action": "exclude_from_affected_analysis_only"
+    },
+    {
+      "repository": "exelban/stats",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing",
+      "action": "exclude_from_affected_analysis_only"
+    },
+    {
+      "repository": "facebookresearch/faiss",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing",
+      "action": "exclude_from_affected_analysis_only"
+    },
+    {
+      "repository": "appsmithorg/appsmith",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing",
+      "action": "exclude_from_affected_analysis_only"
+    },
+    {
+      "repository": "outline/outline",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing",
+      "action": "exclude_from_affected_analysis_only"
+    },
+    {
+      "repository": "pingcap/tidb",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing",
+      "action": "exclude_from_affected_analysis_only"
+    },
+    {
+      "repository": "aseprite/aseprite",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing",
+      "action": "exclude_from_affected_analysis_only"
+    },
+    {
+      "repository": "google/langextract",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing",
+      "action": "exclude_from_affected_analysis_only"
+    },
+    {
+      "repository": "harness/harness",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing",
+      "action": "exclude_from_affected_analysis_only"
+    },
+    {
+      "repository": "pbatard/rufus",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing",
+      "action": "exclude_from_affected_analysis_only"
+    },
+    {
+      "repository": "Textualize/textual",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing",
+      "action": "exclude_from_affected_analysis_only"
+    },
+    {
+      "repository": "firecracker-microvm/firecracker",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing",
+      "action": "exclude_from_affected_analysis_only"
+    },
+    {
+      "repository": "ItzCrazyKns/Vane",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing",
+      "action": "exclude_from_affected_analysis_only"
+    },
+    {
+      "repository": "markedjs/marked",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing",
+      "action": "exclude_from_affected_analysis_only"
+    },
+    {
+      "repository": "huggingface/pytorch-image-models",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing",
+      "action": "exclude_from_affected_analysis_only"
+    },
+    {
+      "repository": "casey/just",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing",
+      "action": "exclude_from_affected_analysis_only"
+    },
+    {
+      "repository": "bumptech/glide",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing",
+      "action": "exclude_from_affected_analysis_only"
+    },
+    {
+      "repository": "SillyTavern/SillyTavern",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing",
+      "action": "exclude_from_affected_analysis_only"
+    },
+    {
+      "repository": "python-poetry/poetry",
+      "column": "recovery_median_hours",
+      "raw_value": "",
+      "reason": "missing",
+      "action": "exclude_from_affected_analysis_only"
+    }
+  ]
+}
