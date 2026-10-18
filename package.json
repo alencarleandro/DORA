@@ -13,7 +13,9 @@
     "test": "node --test --experimental-test-coverage --test-coverage-include=lib/metrics.mjs --test-coverage-include=lib/agreement.mjs --test-coverage-include=lib/corrective.mjs --test-coverage-lines=80 --test-coverage-branches=80 tests/*.test.mjs",
     "cfr-b": "node scripts/calculate-cfr-b.mjs",
     "rq07": "node scripts/analyze-rq07-rq08.mjs",
-    "rq01": "node scripts/analyze-rq01-rq04.mjs"
+    "rq01": "node scripts/analyze-rq01-rq04.mjs",
+    "rq05": "python scripts/analyze-rq05-rq06.py",
+    "test:rq05": "python -m pytest tests/test_rq05_rq06.py -q"
   }
 }
 

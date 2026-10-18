@@ -9,3 +9,8 @@ data/*
 coverage/
 *.log
 tmp/analysis-python-deps/
+tmp/rq05-rq06-deps/
+tmp/rq05-rq06-tests/
+.venv-rq05-rq06/
+__pycache__/
+.pytest_cache/
