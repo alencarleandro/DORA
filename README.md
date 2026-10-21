@@ -540,3 +540,10 @@ A análise de associação de Isabella usa o dataset local dos 300 projetos: dua
 # 📄 Licença
 
 Distribuído sob a licença [MIT](LICENSE).
+
+
+### Consenso, calibração e relatório atualizado em 20/10/2026
+
+Os três arquivos de rótulos da amostra final estão preenchidos; o [consenso operacional e suas limitações](data/gold-standard-final-300-2025/consensus_summary.md) estão registrados. A [calibração do CFR (b)](data/dataset-s02-final/validacao/cfr-b/REPORT.md) verificou 300/300 referências, com precisão de 46,34%, recall de 67,86% e F1 de 55,07% na melhor versão. **O corte de F1 >= 0,70 não foi atingido; os resultados continuam exploratórios.**
+
+O [Word editável e os PDFs da atualização](docs/relatorio-calibracao/README.md) estão disponíveis separadamente. O relatório com gráficos já enviado pelo grupo foi mantido intacto; o guia explica as diferenças entre as versões e a incorporação dos resultados novos.

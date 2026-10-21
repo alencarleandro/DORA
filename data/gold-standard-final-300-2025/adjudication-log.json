@@ -1,0 +1,349 @@
+{
+  "date": "2026-10-20",
+  "protocol": "Evidence-based delegated AI adjudication; no automatic two-vote majority because of shared proposal origin.",
+  "sample_sha256": "1b912e772066c477bdf8dc686a2e6afdf43bc4809026dd9daaa90cc869a3e686",
+  "rater_hashes": {
+    "leandro": "9264dbad0c8db13afabf0d2c60c232aff77e728cdfcd9de5ec085c8c9e5ae577",
+    "luis": "2df546ee9346cc7518c7e51480871ae0df937e5077ff4dd01f8380c11323ea61",
+    "isabella": "b92325b4531d8d21d121d6c2d036523854acdd2a77d5c69e3d9cb8eddbdfa3bb"
+  },
+  "consensus_sha256": "33980fc4ea1916943eb3c3e60fd999207b07cddf5e0cd15792b2cabc5c92d594",
+  "decisions": [
+    {
+      "key": "agno-agi/agno\u0000*\u0000real_delivery",
+      "repository": "agno-agi/agno",
+      "release_tag": "*",
+      "field": "real_delivery",
+      "votes": {
+        "leandro": "incerto",
+        "luis": "incerto",
+        "isabella": "sim"
+      },
+      "decision": "sim",
+      "reason": "SDK instalável entrega capacidade utilizável por desenvolvedores; usuário inclui consumidor técnico da biblioteca.",
+      "evidence": "https://github.com/agno-agi/agno",
+      "adjudicator": "AI assistant, delegated by user on 2026-10-20",
+      "human_discussion_claimed": false
+    },
+    {
+      "key": "typeorm/typeorm\u00000.3.25\u0000is_corrective",
+      "repository": "typeorm/typeorm",
+      "release_tag": "0.3.25",
+      "field": "is_corrective",
+      "votes": {
+        "leandro": "não",
+        "luis": "não",
+        "isabella": "sim"
+      },
+      "decision": "sim",
+      "reason": "Notas enumeram correções de SQL, limites, relações, datas e desconexão; julgo predominância corretiva apesar de funcionalidades.",
+      "evidence": "https://github.com/typeorm/typeorm/releases/tag/0.3.25",
+      "adjudicator": "AI assistant, delegated by user on 2026-10-20",
+      "human_discussion_claimed": false
+    },
+    {
+      "key": "vitejs/vite\u0000*\u0000real_delivery",
+      "repository": "vitejs/vite",
+      "release_tag": "*",
+      "field": "real_delivery",
+      "votes": {
+        "leandro": "incerto",
+        "luis": "incerto",
+        "isabella": "sim"
+      },
+      "decision": "sim",
+      "reason": "Ferramenta npm/CLI de build utilizável por desenvolvedores; a release distribui a ferramenta, não apenas metadados de desenvolvimento.",
+      "evidence": "https://github.com/vitejs/vite",
+      "adjudicator": "AI assistant, delegated by user on 2026-10-20",
+      "human_discussion_claimed": false
+    },
+    {
+      "key": "TanStack/query\u0000*\u0000real_delivery",
+      "repository": "TanStack/query",
+      "release_tag": "*",
+      "field": "real_delivery",
+      "votes": {
+        "leandro": "incerto",
+        "luis": "incerto",
+        "isabella": "sim"
+      },
+      "decision": "sim",
+      "reason": "Pacotes versionados por framework são artefatos consumíveis pelos desenvolvedores, inclusive atualizações transitivas.",
+      "evidence": "https://github.com/TanStack/query",
+      "adjudicator": "AI assistant, delegated by user on 2026-10-20",
+      "human_discussion_claimed": false
+    },
+    {
+      "key": "TanStack/query\u0000@tanstack/query-persist-client-core@5.91.10\u0000is_corrective",
+      "repository": "TanStack/query",
+      "release_tag": "@tanstack/query-persist-client-core@5.91.10",
+      "field": "is_corrective",
+      "votes": {
+        "leandro": "não",
+        "luis": "não",
+        "isabella": "sim"
+      },
+      "decision": "sim",
+      "reason": "Única mudança é atualização de query-core 5.90.11, cuja nota no cache identifica correção de loop infinito; correção transitiva explícita.",
+      "evidence": "https://github.com/TanStack/query/releases/tag/%40tanstack%2Fquery-persist-client-core%405.91.10",
+      "adjudicator": "AI assistant, delegated by user on 2026-10-20",
+      "human_discussion_claimed": false
+    },
+    {
+      "key": "TanStack/query\u0000@tanstack/solid-query@5.90.4\u0000is_corrective",
+      "repository": "TanStack/query",
+      "release_tag": "@tanstack/solid-query@5.90.4",
+      "field": "is_corrective",
+      "votes": {
+        "leandro": "não",
+        "luis": "não",
+        "isabella": "sim"
+      },
+      "decision": "sim",
+      "reason": "Única mudança é atualização de query-core 5.90.3, cuja nota no cache corrige rejeição de promises na hidratação; correção transitiva explícita.",
+      "evidence": "https://github.com/TanStack/query/releases/tag/%40tanstack%2Fsolid-query%405.90.4",
+      "adjudicator": "AI assistant, delegated by user on 2026-10-20",
+      "human_discussion_claimed": false
+    },
+    {
+      "key": "run-llama/llama_index\u0000v0.14.9\u0000is_corrective",
+      "repository": "run-llama/llama_index",
+      "release_tag": "v0.14.9",
+      "field": "is_corrective",
+      "votes": {
+        "leandro": "sim",
+        "luis": "sim",
+        "isabella": "não"
+      },
+      "decision": "não",
+      "reason": "Release agrega novos modelos, provedores, integrações e alterações funcionais a correções; não identifico finalidade corretiva predominante do conjunto.",
+      "evidence": "https://github.com/run-llama/llama_index/releases/tag/v0.14.9",
+      "adjudicator": "AI assistant, delegated by user on 2026-10-20",
+      "human_discussion_claimed": false
+    },
+    {
+      "key": "oven-sh/bun\u0000*\u0000project_type",
+      "repository": "oven-sh/bun",
+      "release_tag": "*",
+      "field": "project_type",
+      "votes": {
+        "leandro": "ferramenta cli",
+        "luis": "ferramenta cli",
+        "isabella": "outro"
+      },
+      "decision": "outro",
+      "reason": "Convenção de adjudicação: runtimes e interpretadores de linguagem ficam em outro; distribuição por executável não define finalidade principal como ferramenta CLI.",
+      "evidence": "https://github.com/oven-sh/bun",
+      "adjudicator": "AI assistant, delegated by user on 2026-10-20",
+      "human_discussion_claimed": false
+    },
+    {
+      "key": "php/php-src\u0000*\u0000project_type",
+      "repository": "php/php-src",
+      "release_tag": "*",
+      "field": "project_type",
+      "votes": {
+        "leandro": "ferramenta cli",
+        "luis": "ferramenta cli",
+        "isabella": "outro"
+      },
+      "decision": "outro",
+      "reason": "Mesma convenção para runtimes/interpretadores: outro; finalidade principal é executar a linguagem.",
+      "evidence": "https://github.com/php/php-src",
+      "adjudicator": "AI assistant, delegated by user on 2026-10-20",
+      "human_discussion_claimed": false
+    },
+    {
+      "key": "rails/rails\u0000v7.0.10\u0000is_corrective",
+      "repository": "rails/rails",
+      "release_tag": "v7.0.10",
+      "field": "is_corrective",
+      "votes": {
+        "leandro": "não",
+        "luis": "não",
+        "isabella": "sim"
+      },
+      "decision": "não",
+      "reason": "A referência a 7.0.9 não transfere suas correções para 7.0.10; os dois commits locais são publicação npm e preparação da versão.",
+      "evidence": "https://github.com/rails/rails/releases/tag/v7.0.10",
+      "adjudicator": "AI assistant, delegated by user on 2026-10-20",
+      "human_discussion_claimed": false
+    },
+    {
+      "key": "huggingface/pytorch-image-models\u0000v1.0.14\u0000is_corrective",
+      "repository": "huggingface/pytorch-image-models",
+      "release_tag": "v1.0.14",
+      "field": "is_corrective",
+      "votes": {
+        "leandro": "não",
+        "luis": "não",
+        "isabella": "sim"
+      },
+      "decision": "sim",
+      "reason": "Nota afirma explicitamente que 1.0.14 foi publicada para distribuir o conserto de carregamento de pesos LeViT; prevalece a intenção declarada.",
+      "evidence": "https://github.com/huggingface/pytorch-image-models/releases/tag/v1.0.14",
+      "adjudicator": "AI assistant, delegated by user on 2026-10-20",
+      "human_discussion_claimed": false
+    },
+    {
+      "key": "moby/moby\u0000*\u0000real_delivery",
+      "repository": "moby/moby",
+      "release_tag": "*",
+      "field": "real_delivery",
+      "votes": {
+        "leandro": "sim",
+        "luis": "sim",
+        "isabella": "incerto"
+      },
+      "decision": "incerto",
+      "reason": "A amostra mistura tags de engine e biblioteca cliente; mantém-se incerteza na dimensão agregada por repositório.",
+      "evidence": "https://github.com/moby/moby",
+      "adjudicator": "AI assistant, delegated by user on 2026-10-20",
+      "human_discussion_claimed": false
+    },
+    {
+      "key": "moby/moby\u0000docker-v29.1.0\u0000is_corrective",
+      "repository": "moby/moby",
+      "release_tag": "docker-v29.1.0",
+      "field": "is_corrective",
+      "votes": {
+        "leandro": "não",
+        "luis": "não",
+        "isabella": "sim"
+      },
+      "decision": "sim",
+      "reason": "Página de release em cache destaca correções de resolv.conf, portas e reconexão; atualizações de empacotamento não afastam a predominância corretiva.",
+      "evidence": "https://github.com/moby/moby/releases/tag/docker-v29.1.0",
+      "adjudicator": "AI assistant, delegated by user on 2026-10-20",
+      "human_discussion_claimed": false
+    },
+    {
+      "key": "nodejs/node\u0000*\u0000project_type",
+      "repository": "nodejs/node",
+      "release_tag": "*",
+      "field": "project_type",
+      "votes": {
+        "leandro": "ferramenta cli",
+        "luis": "ferramenta cli",
+        "isabella": "outro"
+      },
+      "decision": "outro",
+      "reason": "Mesma convenção para runtimes/interpretadores: outro; comandos CLI são interface de um runtime.",
+      "evidence": "https://github.com/nodejs/node",
+      "adjudicator": "AI assistant, delegated by user on 2026-10-20",
+      "human_discussion_claimed": false
+    },
+    {
+      "key": "react-hook-form/react-hook-form\u0000v7.59.0\u0000is_corrective",
+      "repository": "react-hook-form/react-hook-form",
+      "release_tag": "v7.59.0",
+      "field": "is_corrective",
+      "votes": {
+        "leandro": "sim",
+        "luis": "sim",
+        "isabella": "não"
+      },
+      "decision": "sim",
+      "reason": "Notas descrevem múltiplos defeitos de dados, envio e observação, com uma funcionalidade de comparação circular; julgo predominância corretiva.",
+      "evidence": "https://github.com/react-hook-form/react-hook-form/releases/tag/v7.59.0",
+      "adjudicator": "AI assistant, delegated by user on 2026-10-20",
+      "human_discussion_claimed": false
+    },
+    {
+      "key": "colinhacks/zod\u0000v3.25.17\u0000is_corrective",
+      "repository": "colinhacks/zod",
+      "release_tag": "v3.25.17",
+      "field": "is_corrective",
+      "votes": {
+        "leandro": "sim",
+        "luis": "sim",
+        "isabella": "não"
+      },
+      "decision": "sim",
+      "reason": "Fix de wildcard de locale e distribuição de tipos CommonJS sustentam correção de resolução/publicação; classificação subjetiva de confiança baixa.",
+      "evidence": "https://github.com/colinhacks/zod/releases/tag/v3.25.17",
+      "adjudicator": "AI assistant, delegated by user on 2026-10-20",
+      "human_discussion_claimed": false
+    },
+    {
+      "key": "Dokploy/dokploy\u0000v0.17.7\u0000is_corrective",
+      "repository": "Dokploy/dokploy",
+      "release_tag": "v0.17.7",
+      "field": "is_corrective",
+      "votes": {
+        "leandro": "não",
+        "luis": "não",
+        "isabella": "sim"
+      },
+      "decision": "sim",
+      "reason": "Correção da branch de preview remoto afeta o comportamento de deploy; demais mudanças atualizam templates e tradução. Predominância corretiva é julgamento de confiança baixa.",
+      "evidence": "https://github.com/Dokploy/dokploy/releases/tag/v0.17.7",
+      "adjudicator": "AI assistant, delegated by user on 2026-10-20",
+      "human_discussion_claimed": false
+    },
+    {
+      "key": "bumptech/glide\u0000v5.0.0-rc05\u0000is_corrective",
+      "repository": "bumptech/glide",
+      "release_tag": "v5.0.0-rc05",
+      "field": "is_corrective",
+      "votes": {
+        "leandro": "sim",
+        "luis": "sim",
+        "isabella": "não"
+      },
+      "decision": "sim",
+      "reason": "Reversão de Compose e seção Bugs indicam estabilização de carregamento, AVIF e gainmaps. A condição RC é preservada como limitação da amostra, sem exclusão pós-hoc.",
+      "evidence": "https://github.com/bumptech/glide/releases/tag/v5.0.0-rc05",
+      "adjudicator": "AI assistant, delegated by user on 2026-10-20",
+      "human_discussion_claimed": false
+    },
+    {
+      "key": "bitcoin/bitcoin\u0000v29.1\u0000is_corrective",
+      "repository": "bitcoin/bitcoin",
+      "release_tag": "v29.1",
+      "field": "is_corrective",
+      "votes": {
+        "leandro": "sim",
+        "luis": "sim",
+        "isabella": "não"
+      },
+      "decision": "sim",
+      "reason": "Notas oficiais suplementares no cache declaram finalidade de bug fixes e performance, apesar de mudanças de política; prevalece intenção declarada de manutenção.",
+      "evidence": "https://github.com/bitcoin/bitcoin/releases/tag/v29.1",
+      "adjudicator": "AI assistant, delegated by user on 2026-10-20",
+      "human_discussion_claimed": false
+    },
+    {
+      "key": "bitcoin/bitcoin\u0000v28.3\u0000is_corrective",
+      "repository": "bitcoin/bitcoin",
+      "release_tag": "v28.3",
+      "field": "is_corrective",
+      "votes": {
+        "leandro": "sim",
+        "luis": "sim",
+        "isabella": "não"
+      },
+      "decision": "sim",
+      "reason": "Notas oficiais suplementares no cache declaram bug fixes e performance; mudanças de política são documentadas, sem suprimir finalidade de manutenção declarada.",
+      "evidence": "https://github.com/bitcoin/bitcoin/releases/tag/v28.3",
+      "adjudicator": "AI assistant, delegated by user on 2026-10-20",
+      "human_discussion_claimed": false
+    },
+    {
+      "key": "FuelLabs/fuel-core\u0000v0.41.4\u0000is_corrective",
+      "repository": "FuelLabs/fuel-core",
+      "release_tag": "v0.41.4",
+      "field": "is_corrective",
+      "votes": {
+        "leandro": "não",
+        "luis": "não",
+        "isabella": "sim"
+      },
+      "decision": "sim",
+      "reason": "Commit da própria release contém seção Fixed: Downgrade STF (#2628). O aviso sobre bug corrigido só em 0.41.6 não foi usado como evidência corretiva.",
+      "evidence": "https://github.com/FuelLabs/fuel-core/releases/tag/v0.41.4",
+      "adjudicator": "AI assistant, delegated by user on 2026-10-20",
+      "human_discussion_claimed": false
+    }
+  ]
+}

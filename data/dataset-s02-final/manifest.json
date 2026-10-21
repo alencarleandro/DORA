@@ -5,7 +5,7 @@
   "source_job_id": "1deaa513-2c06-4949-bd54-2c591b0eef12",
   "b_job_id": "23e61b32-c4ef-4864-b0ac-7bcadd6de91b",
   "c_job_id": "6d27f028-cd1f-4565-a15a-7d95781cdc0f",
-  "cfr_b_validation": "pending_independent_labels",
+  "cfr_b_validation": "calibrated_below_threshold_assisted_reference",
   "unavailable_comparisons": 2,
   "missing_values": "blank, never substituted with zero",
   "generated_at": "2026-10-11T17:16:10.357Z",
@@ -21,5 +21,14 @@
   },
   "quality_report": "validacao/quality-report.json",
   "dictionary": "dictionary.csv",
-  "comparison_quality": "metricas/comparison-quality.json"
+  "comparison_quality": "metricas/comparison-quality.json",
+  "cfr_b_calibration": {
+    "report": "validacao/cfr-b/validation.json",
+    "consensus": "../gold-standard-final-300-2025/consensus.csv",
+    "consensus_sha256": "33980fc4ea1916943eb3c3e60fd999207b07cddf5e0cd15792b2cabc5c92d594",
+    "heuristic": "fix-majority-v3",
+    "f1": 0.5507246376811594,
+    "threshold_met": false,
+    "independent_test": false
+  }
 }

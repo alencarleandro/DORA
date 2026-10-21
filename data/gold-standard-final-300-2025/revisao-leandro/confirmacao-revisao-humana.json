@@ -1,0 +1,15 @@
+{
+  "rater": "leandro",
+  "human_review_status": "confirmed_by_rater",
+  "confirmation_date": "2026-10-20",
+  "confirmation_source": "User statement in conversation: a minha eu revisei pode confirmar ela",
+  "method": "AI-assisted labels reviewed and accepted by Leandro; strict blinding not established",
+  "rows": 300,
+  "corrective_yes": 106,
+  "corrective_no": 194,
+  "sample_sha256": "1b912e772066c477bdf8dc686a2e6afdf43bc4809026dd9daaa90cc869a3e686",
+  "assisted_source_sha256": "11b61133df1c7beaf8b64ce046bf253fd17dd1a15e68a9fbf7c88395cde937ad",
+  "previous_official_sha256": "300b383e940de9fe9235d5f910491cd935c57cd328983c2091d3b9f288721c63",
+  "official_sha256": "9264dbad0c8db13afabf0d2c60c232aff77e728cdfcd9de5ec085c8c9e5ae577",
+  "consensus_created": false
+}

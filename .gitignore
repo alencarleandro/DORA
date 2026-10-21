@@ -14,3 +14,11 @@ tmp/rq05-rq06-tests/
 .venv-rq05-rq06/
 __pycache__/
 .pytest_cache/
+
+# Artefatos locais de autoria, renderização e consulta (entregas em docs/)
+tmp/pdfs/
+tmp/relatorio-lab03/
+output/pdf/relatorio-calibracao/
+output/relatorio-lab03/Relatorio_Lab03_DORA.docx
+output/relatorio-lab03/manifesto-relatorio.json
+data/gold-standard-final-300-2025/revisao-luis/consulta-releases.html

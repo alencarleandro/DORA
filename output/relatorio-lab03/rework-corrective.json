@@ -1,0 +1,3006 @@
+{
+  "method": "corrective releases / all releases; heuristic fix-majority-v3; exploratory, not validated; unknown count yields interval",
+  "dataset_sha256": "c109078a7ba40e3c982749a5cdb638b700dd1d6bbe21d0e868287ae9115a8fc5",
+  "results": [
+    {
+      "repository": "openclaw/openclaw",
+      "total": 11,
+      "corrective": 0,
+      "unknown": 0,
+      "rate": 0,
+      "lower": 0,
+      "upper": 0,
+      "raw_sha256": "04284d4011a0cae60b27453e313692407b64223635f4b0b159e8ba910dfb8987"
+    },
+    {
+      "repository": "react/react",
+      "total": 12,
+      "corrective": 0,
+      "unknown": 0,
+      "rate": 0,
+      "lower": 0,
+      "upper": 0,
+      "raw_sha256": "d76e2ca578505c0b8884a5349779ff5300da2445a05bafbf216ebaa411944307"
+    },
+    {
+      "repository": "anomalyco/opencode",
+      "total": 645,
+      "corrective": 139,
+      "unknown": 0,
+      "rate": 0.21550387596899226,
+      "lower": 0.21550387596899226,
+      "upper": 0.21550387596899226,
+      "raw_sha256": "b3accac085d0385156d467ac8f933cfe659bbab99d0e619c3d21d84d12c0179e"
+    },
+    {
+      "repository": "n8n-io/n8n",
+      "total": 135,
+      "corrective": 66,
+      "unknown": 0,
+      "rate": 0.4888888888888889,
+      "lower": 0.4888888888888889,
+      "upper": 0.4888888888888889,
+      "raw_sha256": "968318df412941bddc9a13c42dd7a1df3397e9fe17712613ea99ca556c5d416b"
+    },
+    {
+      "repository": "yt-dlp/yt-dlp",
+      "total": 26,
+      "corrective": 2,
+      "unknown": 0,
+      "rate": 0.07692307692307693,
+      "lower": 0.07692307692307693,
+      "upper": 0.07692307692307693,
+      "raw_sha256": "9d8b9be7ae1f34aec9fe52ce6e52e0542c02f778f9107dc5d6ca6f422ae619bc"
+    },
+    {
+      "repository": "microsoft/vscode",
+      "total": 38,
+      "corrective": 12,
+      "unknown": 0,
+      "rate": 0.3157894736842105,
+      "lower": 0.3157894736842105,
+      "upper": 0.3157894736842105,
+      "raw_sha256": "b621bcbddd62b615633c0c9cfda6de2d248bd45c4eca8acab0a69ff535f62964"
+    },
+    {
+      "repository": "firecrawl/firecrawl",
+      "total": 28,
+      "corrective": 7,
+      "unknown": 0,
+      "rate": 0.25,
+      "lower": 0.25,
+      "upper": 0.25,
+      "raw_sha256": "1739defcfc17cba580ed9a1bcfb0ef5ee826c7aedd48713e3e5ab744677fb861"
+    },
+    {
+      "repository": "Significant-Gravitas/AutoGPT",
+      "total": 52,
+      "corrective": 37,
+      "unknown": 0,
+      "rate": 0.7115384615384616,
+      "lower": 0.7115384615384616,
+      "upper": 0.7115384615384616,
+      "raw_sha256": "480aa459abd2f36b4f749483b5557ae7fc2823e8be1b5a298ed3da4dd5f58451"
+    },
+    {
+      "repository": "twbs/bootstrap",
+      "total": 5,
+      "corrective": 1,
+      "unknown": 0,
+      "rate": 0.2,
+      "lower": 0.2,
+      "upper": 0.2,
+      "raw_sha256": "c4a3facd8645fad29a8090d7b474b3c386e51468df687138c90459837d6cc29a"
+    },
+    {
+      "repository": "huggingface/transformers",
+      "total": 60,
+      "corrective": 47,
+      "unknown": 0,
+      "rate": 0.7833333333333333,
+      "lower": 0.7833333333333333,
+      "upper": 0.7833333333333333,
+      "raw_sha256": "60ea5a463a327281973043423a32d3b0bc60babbcdf56d8a20e26462fc81ec07"
+    },
+    {
+      "repository": "langgenius/dify",
+      "total": 36,
+      "corrective": 21,
+      "unknown": 0,
+      "rate": 0.5833333333333334,
+      "lower": 0.5833333333333334,
+      "upper": 0.5833333333333334,
+      "raw_sha256": "56e8e1354ffb8cac981d3e05ae193525000ba39fb81d9e2875ad4a5537c0e806"
+    },
+    {
+      "repository": "langflow-ai/langflow",
+      "total": 29,
+      "corrective": 17,
+      "unknown": 0,
+      "rate": 0.5862068965517241,
+      "lower": 0.5862068965517241,
+      "upper": 0.5862068965517241,
+      "raw_sha256": "6960d1abb7f7102b4158242a85229e6106ffacaa943a87f385c24d1bd49cf8fe"
+    },
+    {
+      "repository": "open-webui/open-webui",
+      "total": 61,
+      "corrective": 3,
+      "unknown": 0,
+      "rate": 0.04918032786885246,
+      "lower": 0.04918032786885246,
+      "upper": 0.04918032786885246,
+      "raw_sha256": "c0b4f6bc936f149f5119fc2767a1da1a3b9d5ada66db428e6eda336f0fc648b3"
+    },
+    {
+      "repository": "langchain-ai/langchain",
+      "total": 382,
+      "corrective": 26,
+      "unknown": 0,
+      "rate": 0.06806282722513089,
+      "lower": 0.06806282722513089,
+      "upper": 0.06806282722513089,
+      "raw_sha256": "ecaa041efa4d8dad3f87a6b4172bb1aa6b92514884d90a11df265dee19af8387"
+    },
+    {
+      "repository": "vercel/next.js",
+      "total": 73,
+      "corrective": 12,
+      "unknown": 0,
+      "rate": 0.1643835616438356,
+      "lower": 0.1643835616438356,
+      "upper": 0.1643835616438356,
+      "raw_sha256": "b7322f6db804916f1bfff01e193eed0dca0e9283a493271c13f40697ed807180"
+    },
+    {
+      "repository": "github/spec-kit",
+      "total": 90,
+      "corrective": 26,
+      "unknown": 0,
+      "rate": 0.28888888888888886,
+      "lower": 0.28888888888888886,
+      "upper": 0.28888888888888886,
+      "raw_sha256": "d2e0e199c2cd66f1f6a46e185d37f74386f98b033bd45c12cbad52100c19f9d2"
+    },
+    {
+      "repository": "microsoft/PowerToys",
+      "total": 16,
+      "corrective": 9,
+      "unknown": 0,
+      "rate": 0.5625,
+      "lower": 0.5625,
+      "upper": 0.5625,
+      "raw_sha256": "5702d2882d501a6d7e4b78e188c47264b133c7923d0bba40f01dfb946bf06dd4"
+    },
+    {
+      "repository": "Comfy-Org/ComfyUI",
+      "total": 67,
+      "corrective": 3,
+      "unknown": 0,
+      "rate": 0.04477611940298507,
+      "lower": 0.04477611940298507,
+      "upper": 0.04477611940298507,
+      "raw_sha256": "68f94e080798a9ba0673b410b35f774047b625d2aec0f1b83e7c0a1f457e204c"
+    },
+    {
+      "repository": "ggml-org/llama.cpp",
+      "total": 2251,
+      "corrective": 1000,
+      "unknown": 0,
+      "rate": 0.44424700133274103,
+      "lower": 0.44424700133274103,
+      "upper": 0.44424700133274103,
+      "raw_sha256": "abb8efd02f0a6fafa6be339d9c86ce090d7ded7c88239a2115cc275a86aa0023"
+    },
+    {
+      "repository": "openai/codex",
+      "total": 68,
+      "corrective": 4,
+      "unknown": 0,
+      "rate": 0.058823529411764705,
+      "lower": 0.058823529411764705,
+      "upper": 0.058823529411764705,
+      "raw_sha256": "19078ce287a45230190669f34c1aae51b418085aa901d3c4c985a47600a21e2c"
+    },
+    {
+      "repository": "react/react-native",
+      "total": 35,
+      "corrective": 17,
+      "unknown": 0,
+      "rate": 0.4857142857142857,
+      "lower": 0.4857142857142857,
+      "upper": 0.4857142857142857,
+      "raw_sha256": "5beda62a048cb30726a2ada39ac73c42779f35110ad6f15d27213b4af9d04643"
+    },
+    {
+      "repository": "rustdesk/rustdesk",
+      "total": 8,
+      "corrective": 1,
+      "unknown": 0,
+      "rate": 0.125,
+      "lower": 0.125,
+      "upper": 0.125,
+      "raw_sha256": "d37fa733405b767de254e7b47b4d1d4c3048d0ae72e10ee6ed4adc902567647c"
+    },
+    {
+      "repository": "shadcn-ui/ui",
+      "total": 31,
+      "corrective": 15,
+      "unknown": 0,
+      "rate": 0.4838709677419355,
+      "lower": 0.4838709677419355,
+      "upper": 0.4838709677419355,
+      "raw_sha256": "20f019958f3f109af798809cb36ac96ffac09163d584356cc7c19364ddb791fb"
+    },
+    {
+      "repository": "electron/electron",
+      "total": 137,
+      "corrective": 10,
+      "unknown": 0,
+      "rate": 0.072992700729927,
+      "lower": 0.072992700729927,
+      "upper": 0.072992700729927,
+      "raw_sha256": "4ed895a731e051bd49f6a8e0047214f7495ee6dcb7213f018b972160c103e339"
+    },
+    {
+      "repository": "nodejs/node",
+      "total": 54,
+      "corrective": 1,
+      "unknown": 0,
+      "rate": 0.018518518518518517,
+      "lower": 0.018518518518518517,
+      "upper": 0.018518518518518517,
+      "raw_sha256": "8f18a0c0c3df4ceb4b693480a01e288952d32f578298cdc49c4a5f6202656f44"
+    },
+    {
+      "repository": "rust-lang/rust",
+      "total": 12,
+      "corrective": 0,
+      "unknown": 0,
+      "rate": 0,
+      "lower": 0,
+      "upper": 0,
+      "raw_sha256": "71ee0f06247bef3c595078e9eca4fa45079212f9f54e185cee9e53a8ffe6735e"
+    },
+    {
+      "repository": "godotengine/godot",
+      "total": 6,
+      "corrective": 1,
+      "unknown": 0,
+      "rate": 0.16666666666666666,
+      "lower": 0.16666666666666666,
+      "upper": 0.16666666666666666,
+      "raw_sha256": "1d9f56523817c4e0f28de2837c9a0d1487a7b35267488764fd2b93290765cbab"
+    },
+    {
+      "repository": "2dust/v2rayN",
+      "total": 30,
+      "corrective": 2,
+      "unknown": 0,
+      "rate": 0.06666666666666667,
+      "lower": 0.06666666666666667,
+      "upper": 0.06666666666666667,
+      "raw_sha256": "024fb5ef19d7fd5bc9a190cc6f9c5c1a3f7761a70fab3dd3d0dfeae5c9146b6b"
+    },
+    {
+      "repository": "browser-use/browser-use",
+      "total": 86,
+      "corrective": 6,
+      "unknown": 0,
+      "rate": 0.06976744186046512,
+      "lower": 0.06976744186046512,
+      "upper": 0.06976744186046512,
+      "raw_sha256": "d2264cca0b84ffbc0db4d7318f0a8df197116cf966316f3e28c8ce9b85084bdf"
+    },
+    {
+      "repository": "mrdoob/three.js",
+      "total": 10,
+      "corrective": 0,
+      "unknown": 0,
+      "rate": 0,
+      "lower": 0,
+      "upper": 0,
+      "raw_sha256": "2c2cf0359e7dd2b82fc4c01d304fd7da7cb152dfb75a9fec145a7d6ef54f1313"
+    },
+    {
+      "repository": "immich-app/immich",
+      "total": 60,
+      "corrective": 35,
+      "unknown": 0,
+      "rate": 0.5833333333333334,
+      "lower": 0.5833333333333334,
+      "upper": 0.5833333333333334,
+      "raw_sha256": "84144abd3ec1749cebd0f5cc2b2dab7cf1cc0a3f5bf97d7dac387ad571d66201"
+    },
+    {
+      "repository": "earendil-works/pi",
+      "total": 76,
+      "corrective": 17,
+      "unknown": 0,
+      "rate": 0.2236842105263158,
+      "lower": 0.2236842105263158,
+      "upper": 0.2236842105263158,
+      "raw_sha256": "0425b2c066bd947eea280ecf2e338c49c834e5ae632afdfe5387d8025d33c25d"
+    },
+    {
+      "repository": "tauri-apps/tauri",
+      "total": 225,
+      "corrective": 14,
+      "unknown": 0,
+      "rate": 0.06222222222222222,
+      "lower": 0.06222222222222222,
+      "upper": 0.06222222222222222,
+      "raw_sha256": "860836549a4fef112c8ccb63fd09a4a24bfcba39be77a3fb6881e0539df0dd53"
+    },
+    {
+      "repository": "microsoft/TypeScript",
+      "total": 5,
+      "corrective": 0,
+      "unknown": 0,
+      "rate": 0,
+      "lower": 0,
+      "upper": 0,
+      "raw_sha256": "8d82697a607184952d2e47b78aefdf90db97bc2cb9b4aa380ddfad92435673d2"
+    },
+    {
+      "repository": "supabase/supabase",
+      "total": 6,
+      "corrective": 0,
+      "unknown": 0,
+      "rate": 0,
+      "lower": 0,
+      "upper": 0,
+      "raw_sha256": "7fd1c5fc5ed1a7d02a1152d78afcff8211dede99e43ac8482e6404ab05289b8d"
+    },
+    {
+      "repository": "axios/axios",
+      "total": 17,
+      "corrective": 5,
+      "unknown": 0,
+      "rate": 0.29411764705882354,
+      "lower": 0.29411764705882354,
+      "upper": 0.29411764705882354,
+      "raw_sha256": "55ef6a4293d73d8355c1e65334c0bcd941385a796e7eadefee9b4dd969abfbfc"
+    },
+    {
+      "repository": "denoland/deno",
+      "total": 51,
+      "corrective": 46,
+      "unknown": 0,
+      "rate": 0.9019607843137255,
+      "lower": 0.9019607843137255,
+      "upper": 0.9019607843137255,
+      "raw_sha256": "b5099ed444d86752320238a18e2b0aa26b8cbdd9c83fd292fad9b858a956128a"
+    },
+    {
+      "repository": "google-gemini/gemini-cli",
+      "total": 238,
+      "corrective": 52,
+      "unknown": 0,
+      "rate": 0.2184873949579832,
+      "lower": 0.2184873949579832,
+      "upper": 0.2184873949579832,
+      "raw_sha256": "3de047799900a9ece0353d9e615fe20411a529d84f640007a0808c194fbfe165"
+    },
+    {
+      "repository": "microsoft/terminal",
+      "total": 10,
+      "corrective": 2,
+      "unknown": 0,
+      "rate": 0.2,
+      "lower": 0.2,
+      "upper": 0.2,
+      "raw_sha256": "3e7313a54745771ac3baadf0570ea88b2a796887ed2a311fa6449d67e956df4b"
+    },
+    {
+      "repository": "pytorch/pytorch",
+      "total": 6,
+      "corrective": 2,
+      "unknown": 0,
+      "rate": 0.3333333333333333,
+      "lower": 0.3333333333333333,
+      "upper": 0.3333333333333333,
+      "raw_sha256": "2a7a7b9416bedef58c2802863a490dd413d99090cdc1d8321ee24593de0a8059"
+    },
+    {
+      "repository": "neovim/neovim",
+      "total": 7,
+      "corrective": 6,
+      "unknown": 0,
+      "rate": 0.8571428571428571,
+      "lower": 0.8571428571428571,
+      "upper": 0.8571428571428571,
+      "raw_sha256": "5f15cacbda413a92560bcd2a8bde6371aade111524a3f2042bf8d69024aad932"
+    },
+    {
+      "repository": "fastapi/fastapi",
+      "total": 51,
+      "corrective": 0,
+      "unknown": 0,
+      "rate": 0,
+      "lower": 0,
+      "upper": 0,
+      "raw_sha256": "4bf2aa9ffe216c5136aa3cc34cde4618b981c602cffc59db55b488da30941244"
+    },
+    {
+      "repository": "angular/angular",
+      "total": 78,
+      "corrective": 3,
+      "unknown": 0,
+      "rate": 0.038461538461538464,
+      "lower": 0.038461538461538464,
+      "upper": 0.038461538461538464,
+      "raw_sha256": "221364bcb22b8d5e819a154399d359e253421ea35f850d0879879057afd8f384"
+    },
+    {
+      "repository": "ant-design/ant-design",
+      "total": 47,
+      "corrective": 5,
+      "unknown": 0,
+      "rate": 0.10638297872340426,
+      "lower": 0.10638297872340426,
+      "upper": 0.10638297872340426,
+      "raw_sha256": "a13f1b140293e7f1be82b64d19590ea4e061764da7b8739922bbf53c54b5d9eb"
+    },
+    {
+      "repository": "mui/material-ui",
+      "total": 33,
+      "corrective": 2,
+      "unknown": 0,
+      "rate": 0.06060606060606061,
+      "lower": 0.06060606060606061,
+      "upper": 0.06060606060606061,
+      "raw_sha256": "9f8482ca1734160857128a92d83453fb097a8c16c40f08c827f2ff623fe66366"
+    },
+    {
+      "repository": "tailwindlabs/tailwindcss",
+      "total": 39,
+      "corrective": 14,
+      "unknown": 0,
+      "rate": 0.358974358974359,
+      "lower": 0.358974358974359,
+      "upper": 0.358974358974359,
+      "raw_sha256": "f9ec436ef0d1d4c976238c221ee80998f2fa2cb9c276e5b281d9d033b5fa66b1"
+    },
+    {
+      "repository": "microsoft/playwright",
+      "total": 16,
+      "corrective": 4,
+      "unknown": 0,
+      "rate": 0.25,
+      "lower": 0.25,
+      "upper": 0.25,
+      "raw_sha256": "541a55ea916c0978906734ca24c15970a5616d13088af56dce59ef7d778db19d"
+    },
+    {
+      "repository": "oven-sh/bun",
+      "total": 33,
+      "corrective": 11,
+      "unknown": 0,
+      "rate": 0.3333333333333333,
+      "lower": 0.3333333333333333,
+      "upper": 0.3333333333333333,
+      "raw_sha256": "c7827525e557ec4e574d91bab37a0e553b0a7d614336e206c522ed65b92773ce"
+    },
+    {
+      "repository": "puppeteer/puppeteer",
+      "total": 139,
+      "corrective": 8,
+      "unknown": 0,
+      "rate": 0.05755395683453238,
+      "lower": 0.05755395683453238,
+      "upper": 0.05755395683453238,
+      "raw_sha256": "e0f03d418e4d63cf758b07932ce904c61092fcf7eda404681adb28d123ec140a"
+    },
+    {
+      "repository": "Stirling-Tools/Stirling-PDF",
+      "total": 49,
+      "corrective": 5,
+      "unknown": 0,
+      "rate": 0.10204081632653061,
+      "lower": 0.10204081632653061,
+      "upper": 0.10204081632653061,
+      "raw_sha256": "158291f9152855913745f70eb7ffe5c39cb65d4545e2af948a80309aaa7e80b6"
+    },
+    {
+      "repository": "vllm-project/vllm",
+      "total": 24,
+      "corrective": 2,
+      "unknown": 0,
+      "rate": 0.08333333333333333,
+      "lower": 0.08333333333333333,
+      "upper": 0.08333333333333333,
+      "raw_sha256": "ef71ce32356a7f4d6299ce7c6694190525dc1bc36e7bbb0b362acc3e3d233f82"
+    },
+    {
+      "repository": "infiniflow/ragflow",
+      "total": 18,
+      "corrective": 4,
+      "unknown": 0,
+      "rate": 0.2222222222222222,
+      "lower": 0.2222222222222222,
+      "upper": 0.2222222222222222,
+      "raw_sha256": "47012c842f097e1c4b5bb1a3e468af651633c2ac5885b70b9abc850634d42634"
+    },
+    {
+      "repository": "zed-industries/zed",
+      "total": 180,
+      "corrective": 84,
+      "unknown": 0,
+      "rate": 0.4666666666666667,
+      "lower": 0.4666666666666667,
+      "upper": 0.4666666666666667,
+      "raw_sha256": "ba73ae629c26f8ab16a004ec6531860a712d131c1019cb460928c92575a904bb"
+    },
+    {
+      "repository": "home-assistant/core",
+      "total": 58,
+      "corrective": 0,
+      "unknown": 0,
+      "rate": 0,
+      "lower": 0,
+      "upper": 0,
+      "raw_sha256": "5bbd54f6a29860a6607895be04aae144910ac02fd721896a39c51056f33b4f02"
+    },
+    {
+      "repository": "storybookjs/storybook",
+      "total": 82,
+      "corrective": 4,
+      "unknown": 0,
+      "rate": 0.04878048780487805,
+      "lower": 0.04878048780487805,
+      "upper": 0.04878048780487805,
+      "raw_sha256": "44bc513e5238df5986104a9e6fd4927c7d2a4cd62564b28811f36b90d037f366"
+    },
+    {
+      "repository": "modelcontextprotocol/servers",
+      "total": 9,
+      "corrective": 0,
+      "unknown": 0,
+      "rate": 0,
+      "lower": 0,
+      "upper": 0,
+      "raw_sha256": "dc00448a3a819ebf3b49a9bda65e86fb945861a35f9c585d4fd527dc0cceb3c5"
+    },
+    {
+      "repository": "PaddlePaddle/PaddleOCR",
+      "total": 11,
+      "corrective": 1,
+      "unknown": 0,
+      "rate": 0.09090909090909091,
+      "lower": 0.09090909090909091,
+      "upper": 0.09090909090909091,
+      "raw_sha256": "7ce9b405e5ff1b0d63dd1d77ce34f5cd1fea8efe985f07dd80e919b798b40246"
+    },
+    {
+      "repository": "mermaid-js/mermaid",
+      "total": 33,
+      "corrective": 0,
+      "unknown": 0,
+      "rate": 0,
+      "lower": 0,
+      "upper": 0,
+      "raw_sha256": "44828e0a2539be6ade91b4a48aefa56617bd63042629f6a7919aa3fef1b8a5ce"
+    },
+    {
+      "repository": "astral-sh/uv",
+      "total": 105,
+      "corrective": 6,
+      "unknown": 0,
+      "rate": 0.05714285714285714,
+      "lower": 0.05714285714285714,
+      "upper": 0.05714285714285714,
+      "raw_sha256": "0106692dd8b62c6f0e250b961f0e10b962cc775541de2b3eaae9f95a5e9868fa"
+    },
+    {
+      "repository": "bitcoin/bitcoin",
+      "total": 7,
+      "corrective": 0,
+      "unknown": 0,
+      "rate": 0,
+      "lower": 0,
+      "upper": 0,
+      "raw_sha256": "e93e0e8f5c2badc51dbd4183f019138ab183287de549a4654a0ca5af8a000279"
+    },
+    {
+      "repository": "OpenHands/OpenHands",
+      "total": 61,
+      "corrective": 2,
+      "unknown": 0,
+      "rate": 0.03278688524590164,
+      "lower": 0.03278688524590164,
+      "upper": 0.03278688524590164,
+      "raw_sha256": "0cb5fc999aa1e29e03ab1d83ff9272ca376a25a06be8d0e83d0dd6dce60eece5"
+    },
+    {
+      "repository": "gohugoio/hugo",
+      "total": 46,
+      "corrective": 6,
+      "unknown": 0,
+      "rate": 0.13043478260869565,
+      "lower": 0.13043478260869565,
+      "upper": 0.13043478260869565,
+      "raw_sha256": "a674faad570025de9ddcf2f46893ee96819c8fd661f8ddf38d2ec1bcfcf46356"
+    },
+    {
+      "repository": "syncthing/syncthing",
+      "total": 22,
+      "corrective": 6,
+      "unknown": 0,
+      "rate": 0.2727272727272727,
+      "lower": 0.2727272727272727,
+      "upper": 0.2727272727272727,
+      "raw_sha256": "4b9d5b6922723b437c66d9f1aacdf2b493a97009d56e46463e191709a4018ddf"
+    },
+    {
+      "repository": "sveltejs/svelte",
+      "total": 208,
+      "corrective": 121,
+      "unknown": 0,
+      "rate": 0.5817307692307693,
+      "lower": 0.5817307692307693,
+      "upper": 0.5817307692307693,
+      "raw_sha256": "b14c4a0f6a9571a24b0415ba80034e48a9764c909043534a2d9528d387240fce"
+    },
+    {
+      "repository": "junegunn/fzf",
+      "total": 19,
+      "corrective": 1,
+      "unknown": 0,
+      "rate": 0.05263157894736842,
+      "lower": 0.05263157894736842,
+      "upper": 0.05263157894736842,
+      "raw_sha256": "7010428d049cfd7141609b9eecca9f6c5451bb45778629b33de25c29e60dfd53"
+    },
+    {
+      "repository": "vitejs/vite",
+      "total": 114,
+      "corrective": 30,
+      "unknown": 0,
+      "rate": 0.2631578947368421,
+      "lower": 0.2631578947368421,
+      "upper": 0.2631578947368421,
+      "raw_sha256": "c0b9409379d970cca19096431aeb942ab222947a9fb1d772e1cc6c8ba40c1aa5"
+    },
+    {
+      "repository": "jesseduffield/lazygit",
+      "total": 19,
+      "corrective": 2,
+      "unknown": 0,
+      "rate": 0.10526315789473684,
+      "lower": 0.10526315789473684,
+      "upper": 0.10526315789473684,
+      "raw_sha256": "01fbbb423d754723cdc93302807e35d9a41ab5ef92aad0f41fea83d89c7862c7"
+    },
+    {
+      "repository": "spring-projects/spring-boot",
+      "total": 30,
+      "corrective": 0,
+      "unknown": 0,
+      "rate": 0,
+      "lower": 0,
+      "upper": 0,
+      "raw_sha256": "3239d08734e92e31d3e69d97061b0f8fedeb176a50f8d45aad327a30b1691779"
+    },
+    {
+      "repository": "opendatalab/MinerU",
+      "total": 48,
+      "corrective": 5,
+      "unknown": 0,
+      "rate": 0.10416666666666667,
+      "lower": 0.10416666666666667,
+      "upper": 0.10416666666666667,
+      "raw_sha256": "3e1df075d759e747d85f347dd0aa93ae98a381966dc40052c42baa4fdbe6a2af"
+    },
+    {
+      "repository": "netdata/netdata",
+      "total": 30,
+      "corrective": 4,
+      "unknown": 0,
+      "rate": 0.13333333333333333,
+      "lower": 0.13333333333333333,
+      "upper": 0.13333333333333333,
+      "raw_sha256": "7f933efae7b2eca661c01bdbcc4f996bd13ad28052330c74bdf1d86f7e8fb7c3"
+    },
+    {
+      "repository": "ventoy/Ventoy",
+      "total": 11,
+      "corrective": 3,
+      "unknown": 0,
+      "rate": 0.2727272727272727,
+      "lower": 0.2727272727272727,
+      "upper": 0.2727272727272727,
+      "raw_sha256": "7ae90c21dda94699b14178022ba45da7b910a0724acd0c36be4152310d58052a"
+    },
+    {
+      "repository": "elastic/elasticsearch",
+      "total": 59,
+      "corrective": 0,
+      "unknown": 0,
+      "rate": 0,
+      "lower": 0,
+      "upper": 0,
+      "raw_sha256": "6cd513fbf568f437a8f018215b1f4c16581acc06b7a6612587f1a9e233ad1593"
+    },
+    {
+      "repository": "grafana/grafana",
+      "total": 90,
+      "corrective": 0,
+      "unknown": 0,
+      "rate": 0,
+      "lower": 0,
+      "upper": 0,
+      "raw_sha256": "2e3bbad2f66261d4a509f873af46e82debfd8612dbbbd6952fe8995821f729a4"
+    },
+    {
+      "repository": "obsproject/obs-studio",
+      "total": 12,
+      "corrective": 3,
+      "unknown": 0,
+      "rate": 0.25,
+      "lower": 0.25,
+      "upper": 0.25,
+      "raw_sha256": "3429eb5982e61ffc0d4b4c21c7ccc8d999a672ad69ae74b70ddad283bbc661c9"
+    },
+    {
+      "repository": "nestjs/nest",
+      "total": 31,
+      "corrective": 4,
+      "unknown": 0,
+      "rate": 0.12903225806451613,
+      "lower": 0.12903225806451613,
+      "upper": 0.12903225806451613,
+      "raw_sha256": "bc55b4676125a605ec07423393178cc06ba9ac786eddfec7575919563e75cfb0"
+    },
+    {
+      "repository": "redis/redis",
+      "total": 28,
+      "corrective": 3,
+      "unknown": 0,
+      "rate": 0.10714285714285714,
+      "lower": 0.10714285714285714,
+      "upper": 0.10714285714285714,
+      "raw_sha256": "6ed38b933ec9d3c7af270ba55af2c5c11b225579f3df6111a2952282563dd74c"
+    },
+    {
+      "repository": "ocornut/imgui",
+      "total": 11,
+      "corrective": 1,
+      "unknown": 0,
+      "rate": 0.09090909090909091,
+      "lower": 0.09090909090909091,
+      "upper": 0.09090909090909091,
+      "raw_sha256": "3bbca7a16a03da6693a4a0ac271dda310507b46feb5279902211fb22582705f1"
+    },
+    {
+      "repository": "apache/superset",
+      "total": 12,
+      "corrective": 5,
+      "unknown": 0,
+      "rate": 0.4166666666666667,
+      "lower": 0.4166666666666667,
+      "upper": 0.4166666666666667,
+      "raw_sha256": "911f65a833f65bc14105ad3027132049fe6dff4c05ccac7a46463c3e1dc6b15c"
+    },
+    {
+      "repository": "Eugeny/tabby",
+      "total": 12,
+      "corrective": 4,
+      "unknown": 0,
+      "rate": 0.3333333333333333,
+      "lower": 0.3333333333333333,
+      "upper": 0.3333333333333333,
+      "raw_sha256": "9a9be10cf457b2eb1a3ceecf4d628c3f69925d7fcd82d00d557fd1c9590334ef"
+    },
+    {
+      "repository": "unionlabs/union",
+      "total": 7,
+      "corrective": 0,
+      "unknown": 0,
+      "rate": 0,
+      "lower": 0,
+      "upper": 0,
+      "raw_sha256": "35e2a08839e4139cc5357c78fde3ad1560d7a2cf8bce83c88e1e25b51dfa747c"
+    },
+    {
+      "repository": "toeverything/AFFiNE",
+      "total": 28,
+      "corrective": 18,
+      "unknown": 0,
+      "rate": 0.6428571428571429,
+      "lower": 0.6428571428571429,
+      "upper": 0.6428571428571429,
+      "raw_sha256": "358968cb2452878d31aea35a41dbbb14283896b0603066a0fad22ebfad2448a8"
+    },
+    {
+      "repository": "strapi/strapi",
+      "total": 66,
+      "corrective": 21,
+      "unknown": 0,
+      "rate": 0.3181818181818182,
+      "lower": 0.3181818181818182,
+      "upper": 0.3181818181818182,
+      "raw_sha256": "6e180dc13622d243ef45b7af20bc4a366801eb54418bebf3dcfaf5d467dcf8d3"
+    },
+    {
+      "repository": "moby/moby",
+      "total": 41,
+      "corrective": 2,
+      "unknown": 0,
+      "rate": 0.04878048780487805,
+      "lower": 0.04878048780487805,
+      "upper": 0.04878048780487805,
+      "raw_sha256": "9f105afd27d540bcc536327932d06faf04e4ef6ffc58e983da59c06bcc02b041"
+    },
+    {
+      "repository": "protocolbuffers/protobuf",
+      "total": 16,
+      "corrective": 0,
+      "unknown": 0,
+      "rate": 0,
+      "lower": 0,
+      "upper": 0,
+      "raw_sha256": "65cd1f484754ce1f6df8de66a9ac236dfa68a92ee54e1062ecb62a962ce0f197"
+    },
+    {
+      "repository": "Fission-AI/OpenSpec",
+      "total": 22,
+      "corrective": 5,
+      "unknown": 0,
+      "rate": 0.22727272727272727,
+      "lower": 0.22727272727272727,
+      "upper": 0.22727272727272727,
+      "raw_sha256": "ee486b48ee0a8f139a85c9a1b40669de0ff501417228c1beae9d372b78211b51"
+    },
+    {
+      "repository": "cline/cline",
+      "total": 166,
+      "corrective": 32,
+      "unknown": 0,
+      "rate": 0.1927710843373494,
+      "lower": 0.1927710843373494,
+      "upper": 0.1927710843373494,
+      "raw_sha256": "790fbefd64f3cd4d1286955421408d1d1769366347a340446b733af27e17b3a8"
+    },
+    {
+      "repository": "code-yeongyu/oh-my-openagent",
+      "total": 75,
+      "corrective": 20,
+      "unknown": 0,
+      "rate": 0.26666666666666666,
+      "lower": 0.26666666666666666,
+      "upper": 0.26666666666666666,
+      "raw_sha256": "cb22cdcfd9de33e46e8559f18f7a05ace650ca448c5f14e58fe99fbe9ab8644c"
+    },
+    {
+      "repository": "tw93/Mole",
+      "total": 14,
+      "corrective": 0,
+      "unknown": 0,
+      "rate": 0,
+      "lower": 0,
+      "upper": 0,
+      "raw_sha256": "5a03861881c8caaa589744124c95b6abdcd669359bb3d6b2071288e9520b6fa2"
+    },
+    {
+      "repository": "expressjs/express",
+      "total": 5,
+      "corrective": 1,
+      "unknown": 0,
+      "rate": 0.2,
+      "lower": 0.2,
+      "upper": 0.2,
+      "raw_sha256": "8451e9ac11511154aa778459db14f99b913ae88d9a231010c88db34d7d4d5dad"
+    },
+    {
+      "repository": "dani-garcia/vaultwarden",
+      "total": 9,
+      "corrective": 5,
+      "unknown": 0,
+      "rate": 0.5555555555555556,
+      "lower": 0.5555555555555556,
+      "upper": 0.5555555555555556,
+      "raw_sha256": "49d26b65db000ecb0758d5d3195134fbed13093fbb128b6a5e1fca04ab7b630a"
+    },
+    {
+      "repository": "docling-project/docling",
+      "total": 73,
+      "corrective": 65,
+      "unknown": 0,
+      "rate": 0.8904109589041096,
+      "lower": 0.8904109589041096,
+      "upper": 0.8904109589041096,
+      "raw_sha256": "4d08d74cc04cafe6bcce9c7ae8ff5b8487c75c54b233cae23583fe7ec1914032"
+    },
+    {
+      "repository": "scikit-learn/scikit-learn",
+      "total": 5,
+      "corrective": 0,
+      "unknown": 0,
+      "rate": 0,
+      "lower": 0,
+      "upper": 0,
+      "raw_sha256": "a2f0ab80afdfb3238d4dae40d73d7b364bd321253e65160c337b9eda5c0a365a"
+    },
+    {
+      "repository": "Mintplex-Labs/anything-llm",
+      "total": 13,
+      "corrective": 1,
+      "unknown": 0,
+      "rate": 0.07692307692307693,
+      "lower": 0.07692307692307693,
+      "upper": 0.07692307692307693,
+      "raw_sha256": "b755e7c06fb5c0def3688527b68b94404c0a6b8edf4427685cce04e0d1ce4e4f"
+    },
+    {
+      "repository": "xtekky/gpt4free",
+      "total": 180,
+      "corrective": 47,
+      "unknown": 0,
+      "rate": 0.2611111111111111,
+      "lower": 0.2611111111111111,
+      "upper": 0.2611111111111111,
+      "raw_sha256": "cbd38032bf77730941fcfe04552ec6e4801ef3b83276965e19afbe0272b5ee92"
+    },
+    {
+      "repository": "facebook/docusaurus",
+      "total": 6,
+      "corrective": 0,
+      "unknown": 0,
+      "rate": 0,
+      "lower": 0,
+      "upper": 0,
+      "raw_sha256": "59939462d892b2320c3f26b03bb4a97bd6725949f5371b2000ab3c2f24608a3f"
+    },
+    {
+      "repository": "prometheus/prometheus",
+      "total": 18,
+      "corrective": 5,
+      "unknown": 0,
+      "rate": 0.2777777777777778,
+      "lower": 0.2777777777777778,
+      "upper": 0.2777777777777778,
+      "raw_sha256": "893b1ba1c64e38c115f4eb6bf3a11c69952371a7632bdfc799d2887b291cf79c"
+    },
+    {
+      "repository": "webpack/webpack",
+      "total": 23,
+      "corrective": 8,
+      "unknown": 0,
+      "rate": 0.34782608695652173,
+      "lower": 0.34782608695652173,
+      "upper": 0.34782608695652173,
+      "raw_sha256": "c75f9b0fc2549f69f4d8e1792152257359d2da6158c8905ba02f8c8a1e9862c6"
+    },
+    {
+      "repository": "nocodb/nocodb",
+      "total": 24,
+      "corrective": 8,
+      "unknown": 0,
+      "rate": 0.3333333333333333,
+      "lower": 0.3333333333333333,
+      "upper": 0.3333333333333333,
+      "raw_sha256": "1f6ab1a40821b674d28f3ef9f0b86bafcf5c6471e1950a2415094ff3bf4d7608"
+    },
+    {
+      "repository": "traefik/traefik",
+      "total": 46,
+      "corrective": 0,
+      "unknown": 0,
+      "rate": 0,
+      "lower": 0,
+      "upper": 0,
+      "raw_sha256": "f1fcd2d88e5c835f13e301a349a459ef8bd797df24a12057750d76fab5e97e1f"
+    },
+    {
+      "repository": "scrapy/scrapy",
+      "total": 5,
+      "corrective": 0,
+      "unknown": 0,
+      "rate": 0,
+      "lower": 0,
+      "upper": 0,
+      "raw_sha256": "4071e3a0c14927441ca6ebbc1ae9b451a6926b7d4fdaf1cbab83600b469a12ce"
+    },
+    {
+      "repository": "keras-team/keras",
+      "total": 11,
+      "corrective": 10,
+      "unknown": 0,
+      "rate": 0.9090909090909091,
+      "lower": 0.9090909090909091,
+      "upper": 0.9090909090909091,
+      "raw_sha256": "920016f9871db86955c276ac2494340bb23b189ad615cb2dc9dfe40a15ba8715"
+    },
+    {
+      "repository": "commaai/openpilot",
+      "total": 6,
+      "corrective": 1,
+      "unknown": 0,
+      "rate": 0.16666666666666666,
+      "lower": 0.16666666666666666,
+      "upper": 0.16666666666666666,
+      "raw_sha256": "74ac827d113111a89cc7f747de717625cabce7b794e9f37a12b2b6df3b8078c3"
+    },
+    {
+      "repository": "ChrisTitusTech/winutil",
+      "total": 11,
+      "corrective": 9,
+      "unknown": 0,
+      "rate": 0.8181818181818182,
+      "lower": 0.8181818181818182,
+      "upper": 0.8181818181818182,
+      "raw_sha256": "8be62fa7d9c31d152de8495fa40cf408c8757caf114dc806bdecbf6d63369122"
+    },
+    {
+      "repository": "2dust/v2rayNG",
+      "total": 18,
+      "corrective": 0,
+      "unknown": 0,
+      "rate": 0,
+      "lower": 0,
+      "upper": 0,
+      "raw_sha256": "cd4b63057f8f11b75f5905588214eea39d76f6a1ac54c9e0b2eafaab525a42b8"
+    },
+    {
+      "repository": "usememos/memos",
+      "total": 10,
+      "corrective": 9,
+      "unknown": 0,
+      "rate": 0.9,
+      "lower": 0.9,
+      "upper": 0.9,
+      "raw_sha256": "0e25199a14bcc852c61aac7d8cb5f12a46693622b63a7a045e36d17135015feb"
+    },
+    {
+      "repository": "withastro/astro",
+      "total": 449,
+      "corrective": 195,
+      "unknown": 0,
+      "rate": 0.43429844097995546,
+      "lower": 0.43429844097995546,
+      "upper": 0.43429844097995546,
+      "raw_sha256": "1d5ee4d033d8e62c955645e96e4da0ee85d7a0b8a7ca0e734ac2fede11e66491"
+    },
+    {
+      "repository": "upstash/context7",
+      "total": 31,
+      "corrective": 8,
+      "unknown": 0,
+      "rate": 0.25806451612903225,
+      "lower": 0.25806451612903225,
+      "upper": 0.25806451612903225,
+      "raw_sha256": "594a1e70768c511227090eda33aae6d9a2cffba57a77328252231087ed38a77b"
+    },
+    {
+      "repository": "remotion-dev/remotion",
+      "total": 125,
+      "corrective": 89,
+      "unknown": 0,
+      "rate": 0.712,
+      "lower": 0.712,
+      "upper": 0.712,
+      "raw_sha256": "e8309d5ae5f7f8c32a19ebb6ab21b935b73a632e1a75df76d9c42c877fef1bf5"
+    },
+    {
+      "repository": "ultralytics/ultralytics",
+      "total": 188,
+      "corrective": 152,
+      "unknown": 0,
+      "rate": 0.8085106382978723,
+      "lower": 0.8085106382978723,
+      "upper": 0.8085106382978723,
+      "raw_sha256": "ba2bb39426662f904c810fc8f757b657a936dd22ccf7f18db5fb8f5a0c520e4d"
+    },
+    {
+      "repository": "pathwaycom/pathway",
+      "total": 28,
+      "corrective": 16,
+      "unknown": 0,
+      "rate": 0.5714285714285714,
+      "lower": 0.5714285714285714,
+      "upper": 0.5714285714285714,
+      "raw_sha256": "71dec3a860d52c445462957790b6928b1327d59151f721b512f6d24efbc591a1"
+    },
+    {
+      "repository": "tw93/Pake",
+      "total": 8,
+      "corrective": 6,
+      "unknown": 0,
+      "rate": 0.75,
+      "lower": 0.75,
+      "upper": 0.75,
+      "raw_sha256": "ca75917a1e9a4ddea00da82e65b4b211b95c7def6c89fec5ca9777bfedce3a65"
+    },
+    {
+      "repository": "FuelLabs/sway",
+      "total": 25,
+      "corrective": 23,
+      "unknown": 0,
+      "rate": 0.92,
+      "lower": 0.92,
+      "upper": 0.92,
+      "raw_sha256": "549a948fd6b7f22834bc0108d6aecd02013cc78cbaf7f6f8ec3c0c40f3dc26fe"
+    },
+    {
+      "repository": "microsoft/autogen",
+      "total": 31,
+      "corrective": 19,
+      "unknown": 0,
+      "rate": 0.6129032258064516,
+      "lower": 0.6129032258064516,
+      "upper": 0.6129032258064516,
+      "raw_sha256": "374d9a67782278990fd43f18c3eb8cbd801e68df56639b0a1c6233dadfa05622"
+    },
+    {
+      "repository": "nuxt/nuxt",
+      "total": 35,
+      "corrective": 31,
+      "unknown": 0,
+      "rate": 0.8857142857142857,
+      "lower": 0.8857142857142857,
+      "upper": 0.8857142857142857,
+      "raw_sha256": "a02a761f1399ec3c93e99220278e59c8dd2d7d1818ef5ba9052db40de07fffca"
+    },
+    {
+      "repository": "penpot/penpot",
+      "total": 24,
+      "corrective": 21,
+      "unknown": 0,
+      "rate": 0.875,
+      "lower": 0.875,
+      "upper": 0.875,
+      "raw_sha256": "5529bbd43d8121d3aefcb59dff3776ed14d30cb9f539970d67021a435f637dbe"
+    },
+    {
+      "repository": "makeplane/plane",
+      "total": 13,
+      "corrective": 12,
+      "unknown": 0,
+      "rate": 0.9230769230769231,
+      "lower": 0.9230769230769231,
+      "upper": 0.9230769230769231,
+      "raw_sha256": "8d66752f299884b66c344e8a72de1dfab71af6b445140004e8af2a9891080c7a"
+    },
+    {
+      "repository": "BerriAI/litellm",
+      "total": 430,
+      "corrective": 372,
+      "unknown": 0,
+      "rate": 0.8651162790697674,
+      "lower": 0.8651162790697674,
+      "upper": 0.8651162790697674,
+      "raw_sha256": "baad43d312cbba9743b1e0807112e9c5e2c4d8fad93cb5fb184b9891c987f6e1"
+    },
+    {
+      "repository": "spring-projects/spring-framework",
+      "total": 22,
+      "corrective": 18,
+      "unknown": 0,
+      "rate": 0.8181818181818182,
+      "lower": 0.8181818181818182,
+      "upper": 0.8181818181818182,
+      "raw_sha256": "23945867cfec67fb82d2b0008d02a2bb2e1168b79530a1ad602c281f982bdd9f"
+    },
+    {
+      "repository": "rclone/rclone",
+      "total": 13,
+      "corrective": 3,
+      "unknown": 0,
+      "rate": 0.23076923076923078,
+      "lower": 0.23076923076923078,
+      "upper": 0.23076923076923078,
+      "raw_sha256": "00d54fd19b0225f34ba28a6cc5d3b28d8fe24cbd630c4b9dc208dc3cf613f2b6"
+    },
+    {
+      "repository": "meilisearch/meilisearch",
+      "total": 40,
+      "corrective": 25,
+      "unknown": 0,
+      "rate": 0.625,
+      "lower": 0.625,
+      "upper": 0.625,
+      "raw_sha256": "5cdd919281e3191d0a19831b1ef0d2bce81c57afacd7b999391fc4bc023dd223"
+    },
+    {
+      "repository": "crewAIInc/crewAI",
+      "total": 52,
+      "corrective": 50,
+      "unknown": 0,
+      "rate": 0.9615384615384616,
+      "lower": 0.9615384615384616,
+      "upper": 0.9615384615384616,
+      "raw_sha256": "6e79bb54581a912e0901c7a3e5070acbcead4ac7fd38037b41715aa43e4039ee"
+    },
+    {
+      "repository": "rails/rails",
+      "total": 12,
+      "corrective": 8,
+      "unknown": 0,
+      "rate": 0.6666666666666666,
+      "lower": 0.6666666666666666,
+      "upper": 0.6666666666666666,
+      "raw_sha256": "ebdbd6098b79523c5854c1f5f905ccb88bc206b6bf43b8463f2af929e2e629ce"
+    },
+    {
+      "repository": "pmndrs/zustand",
+      "total": 9,
+      "corrective": 5,
+      "unknown": 0,
+      "rate": 0.5555555555555556,
+      "lower": 0.5555555555555556,
+      "upper": 0.5555555555555556,
+      "raw_sha256": "5a80f1391feaf22f7933cd23360ef8ed145fb2ef5f3f74ee828c8188364392bb"
+    },
+    {
+      "repository": "go-gitea/gitea",
+      "total": 21,
+      "corrective": 19,
+      "unknown": 0,
+      "rate": 0.9047619047619048,
+      "lower": 0.9047619047619048,
+      "upper": 0.9047619047619048,
+      "raw_sha256": "08a429f82094519f7526e4868c0375406147305a40902ed33496e6fa6011e0a0"
+    },
+    {
+      "repository": "twentyhq/twenty",
+      "total": 26,
+      "corrective": 20,
+      "unknown": 0,
+      "rate": 0.7692307692307693,
+      "lower": 0.7692307692307693,
+      "upper": 0.7692307692307693,
+      "raw_sha256": "d873ae3ec4064fe1a23153b13b0df867cf8efc9fe40a9470dbf485bb7bf38570"
+    },
+    {
+      "repository": "jellyfin/jellyfin",
+      "total": 10,
+      "corrective": 9,
+      "unknown": 0,
+      "rate": 0.9,
+      "lower": 0.9,
+      "upper": 0.9,
+      "raw_sha256": "18d274960a50ff2ad5cf104ca8b0cc037e99145daf3fa6ed8b7ba3b8409f1beb"
+    },
+    {
+      "repository": "FuelLabs/fuel-core",
+      "total": 21,
+      "corrective": 17,
+      "unknown": 0,
+      "rate": 0.8095238095238095,
+      "lower": 0.8095238095238095,
+      "upper": 0.8095238095238095,
+      "raw_sha256": "3a3c44a6ee6fe7e8befa3268802360ec2a11118222396ab89f1a5268eb151811"
+    },
+    {
+      "repository": "laurent22/joplin",
+      "total": 9,
+      "corrective": 9,
+      "unknown": 0,
+      "rate": 1,
+      "lower": 1,
+      "upper": 1,
+      "raw_sha256": "c63a0cec698ea36fccf59e10f243d6bc56bdb189f109adf3296d1f964a7ef300"
+    },
+    {
+      "repository": "remix-run/react-router",
+      "total": 36,
+      "corrective": 0,
+      "unknown": 0,
+      "rate": 0,
+      "lower": 0,
+      "upper": 0,
+      "raw_sha256": "8e592e647c75b055559f55c6b6cf07bb5fca3e23a763be78c00f4c6933e42d21"
+    },
+    {
+      "repository": "typst/typst",
+      "total": 5,
+      "corrective": 3,
+      "unknown": 0,
+      "rate": 0.6,
+      "lower": 0.6,
+      "upper": 0.6,
+      "raw_sha256": "3d05224c86a8b27a6293969828f4f6811115978ac57f7d9f345930c0d2e47000"
+    },
+    {
+      "repository": "PowerShell/PowerShell",
+      "total": 10,
+      "corrective": 7,
+      "unknown": 0,
+      "rate": 0.7,
+      "lower": 0.7,
+      "upper": 0.7,
+      "raw_sha256": "aa62bc001fa0e7ab52c8db0396c702746e8fe1c5dc04fd2a147314fcae3e7682"
+    },
+    {
+      "repository": "TryGhost/Ghost",
+      "total": 95,
+      "corrective": 80,
+      "unknown": 0,
+      "rate": 0.8421052631578947,
+      "lower": 0.8421052631578947,
+      "upper": 0.8421052631578947,
+      "raw_sha256": "9c767a716dde687b7de3c912ef0f2d611c3f1e2bafa087aa2d924beb3eccab39"
+    },
+    {
+      "repository": "freqtrade/freqtrade",
+      "total": 16,
+      "corrective": 7,
+      "unknown": 0,
+      "rate": 0.4375,
+      "lower": 0.4375,
+      "upper": 0.4375,
+      "raw_sha256": "b53df48ba678fed0bed515aaf282130fa58160e6f5d1de757692a11fc9a7312a"
+    },
+    {
+      "repository": "aaif-goose/goose",
+      "total": 78,
+      "corrective": 49,
+      "unknown": 0,
+      "rate": 0.6282051282051282,
+      "lower": 0.6282051282051282,
+      "upper": 0.6282051282051282,
+      "raw_sha256": "302986078674e97ca668281d51337858dccba6de53ee394f2adc1658af867b11"
+    },
+    {
+      "repository": "WerWolv/ImHex",
+      "total": 7,
+      "corrective": 7,
+      "unknown": 0,
+      "rate": 1,
+      "lower": 1,
+      "upper": 1,
+      "raw_sha256": "94b2bd8df6a2516884f7d6f1c2c2cb37195dbff22caea385ebc2d1b5a8fa894a"
+    },
+    {
+      "repository": "vuejs/core",
+      "total": 13,
+      "corrective": 5,
+      "unknown": 0,
+      "rate": 0.38461538461538464,
+      "lower": 0.38461538461538464,
+      "upper": 0.38461538461538464,
+      "raw_sha256": "bdae6acc34dd0b9c645b103162eecbc2db0d27da8271db09c1f8d7e929cf1ff3"
+    },
+    {
+      "repository": "ggml-org/whisper.cpp",
+      "total": 7,
+      "corrective": 4,
+      "unknown": 0,
+      "rate": 0.5714285714285714,
+      "lower": 0.5714285714285714,
+      "upper": 0.5714285714285714,
+      "raw_sha256": "e3e83dd62a89565c6afde30a7acaffb288e0ae9a785975b1568e5fd04f47f391"
+    },
+    {
+      "repository": "bmad-code-org/BMAD-METHOD",
+      "total": 8,
+      "corrective": 4,
+      "unknown": 0,
+      "rate": 0.5,
+      "lower": 0.5,
+      "upper": 0.5,
+      "raw_sha256": "cace0da30361e8d9b5f9cece48753fe687eea96977bb6a7cbd0f1fed874bc7fc"
+    },
+    {
+      "repository": "mozilla/pdf.js",
+      "total": 12,
+      "corrective": 11,
+      "unknown": 0,
+      "rate": 0.9166666666666666,
+      "lower": 0.9166666666666666,
+      "upper": 0.9166666666666666,
+      "raw_sha256": "9211c909f5ec76999ca2983aa9eb2dce8a5cba73eba55a091c3307ee2c21c709"
+    },
+    {
+      "repository": "ChromeDevTools/chrome-devtools-mcp",
+      "total": 26,
+      "corrective": 23,
+      "unknown": 0,
+      "rate": 0.8846153846153846,
+      "lower": 0.8846153846153846,
+      "upper": 0.8846153846153846,
+      "raw_sha256": "c8a4e88e0701c3828692fcd75664e8da61c9fb2686ec3ce7795433f8cf867bd1"
+    },
+    {
+      "repository": "ionic-team/ionic-framework",
+      "total": 40,
+      "corrective": 36,
+      "unknown": 0,
+      "rate": 0.9,
+      "lower": 0.9,
+      "upper": 0.9,
+      "raw_sha256": "0475784c793948a9af9c3ec8bf327700bce030e49324b55aa564e0a087c7bcb1"
+    },
+    {
+      "repository": "run-llama/llama_index",
+      "total": 76,
+      "corrective": 34,
+      "unknown": 0,
+      "rate": 0.4473684210526316,
+      "lower": 0.4473684210526316,
+      "upper": 0.4473684210526316,
+      "raw_sha256": "af365a635b3d05a4f3fb5ca88f1b9899c5233e9051e09b41270e66207bc907f5"
+    },
+    {
+      "repository": "prettier/prettier",
+      "total": 12,
+      "corrective": 5,
+      "unknown": 0,
+      "rate": 0.4166666666666667,
+      "lower": 0.4166666666666667,
+      "upper": 0.4166666666666667,
+      "raw_sha256": "e65f1eb89f76ed3211004b631771e9eea9469b90334323ed7a174f6ae808bfbc"
+    },
+    {
+      "repository": "etcd-io/etcd",
+      "total": 22,
+      "corrective": 0,
+      "unknown": 0,
+      "rate": 0,
+      "lower": 0,
+      "upper": 0,
+      "raw_sha256": "9b0a58706b02c591e0e38861102c294ab6b7a9c163bd546d9a20346c7fd55ac8"
+    },
+    {
+      "repository": "dbeaver/dbeaver",
+      "total": 24,
+      "corrective": 24,
+      "unknown": 0,
+      "rate": 1,
+      "lower": 1,
+      "upper": 1,
+      "raw_sha256": "0174206ddfa75efbadb9e92fd5a911df44c473de86f02509cccd5b99707174ae"
+    },
+    {
+      "repository": "google/guava",
+      "total": 9,
+      "corrective": 6,
+      "unknown": 0,
+      "rate": 0.6666666666666666,
+      "lower": 0.6666666666666666,
+      "upper": 0.6666666666666666,
+      "raw_sha256": "a9cfc2a6e9f8e7fac2bf71efe10875131aadefea9f06876e5f99cdb6efeda8b1"
+    },
+    {
+      "repository": "ethereum/go-ethereum",
+      "total": 21,
+      "corrective": 19,
+      "unknown": 0,
+      "rate": 0.9047619047619048,
+      "lower": 0.9047619047619048,
+      "upper": 0.9047619047619048,
+      "raw_sha256": "efd108ac4ada006747681ace387b4a1edf8f3fad45e4da2f29dff98be315043c"
+    },
+    {
+      "repository": "tldraw/tldraw",
+      "total": 40,
+      "corrective": 40,
+      "unknown": 0,
+      "rate": 1,
+      "lower": 1,
+      "upper": 1,
+      "raw_sha256": "ba867c7893e8f73fdb0f6fe4dd137b651aff9b6cc77f8466e5070b1343e71370"
+    },
+    {
+      "repository": "apple/container",
+      "total": 8,
+      "corrective": 5,
+      "unknown": 0,
+      "rate": 0.625,
+      "lower": 0.625,
+      "upper": 0.625,
+      "raw_sha256": "6e984f33386bd9dc07537f3c14521046e05ffea54a479086150e17c5a440e342"
+    },
+    {
+      "repository": "TanStack/query",
+      "total": 350,
+      "corrective": 117,
+      "unknown": 0,
+      "rate": 0.3342857142857143,
+      "lower": 0.3342857142857143,
+      "upper": 0.3342857142857143,
+      "raw_sha256": "e9d868de812a79e9393ca6a39f05e49e8abd0f373cec9d4e6209f95d945b72ae"
+    },
+    {
+      "repository": "mastodon/mastodon",
+      "total": 47,
+      "corrective": 43,
+      "unknown": 0,
+      "rate": 0.9148936170212766,
+      "lower": 0.9148936170212766,
+      "upper": 0.9148936170212766,
+      "raw_sha256": "f1d4f1019e1ed241c4c242672937aa8253b29f579f91e9188057ae1fa04be4aa"
+    },
+    {
+      "repository": "ClickHouse/ClickHouse",
+      "total": 110,
+      "corrective": 41,
+      "unknown": 0,
+      "rate": 0.37272727272727274,
+      "lower": 0.37272727272727274,
+      "upper": 0.37272727272727274,
+      "raw_sha256": "759bf768e803651812093bedea6975a2b7eb9ccc41792fcbb5747cbbe8d1f910"
+    },
+    {
+      "repository": "AlistGo/alist",
+      "total": 18,
+      "corrective": 14,
+      "unknown": 0,
+      "rate": 0.7777777777777778,
+      "lower": 0.7777777777777778,
+      "upper": 0.7777777777777778,
+      "raw_sha256": "eeab80f690480afc5e84ceac6a557cf614a534cbca0247788ec15ea73e60814f"
+    },
+    {
+      "repository": "moeru-ai/airi",
+      "total": 30,
+      "corrective": 22,
+      "unknown": 0,
+      "rate": 0.7333333333333333,
+      "lower": 0.7333333333333333,
+      "upper": 0.7333333333333333,
+      "raw_sha256": "163346ef7f0f7a10729d15d3296ea08ed4de06c7144e9d10af34f0a2b7577e67"
+    },
+    {
+      "repository": "astral-sh/ruff",
+      "total": 55,
+      "corrective": 49,
+      "unknown": 0,
+      "rate": 0.8909090909090909,
+      "lower": 0.8909090909090909,
+      "upper": 0.8909090909090909,
+      "raw_sha256": "adaaed5749c82a99bab5fe7977531198c0a54555f479586872f4af3e05e3e5c6"
+    },
+    {
+      "repository": "Homebrew/brew",
+      "total": 62,
+      "corrective": 53,
+      "unknown": 0,
+      "rate": 0.8548387096774194,
+      "lower": 0.8548387096774194,
+      "upper": 0.8548387096774194,
+      "raw_sha256": "e340f6203d6d1bd0e9f9dc954928fe345497c0bc796dc6660f5d36c05aa6cab5"
+    },
+    {
+      "repository": "hashicorp/terraform",
+      "total": 20,
+      "corrective": 20,
+      "unknown": 0,
+      "rate": 1,
+      "lower": 1,
+      "upper": 1,
+      "raw_sha256": "15ef3d78d5f48919b3bd3beea1f41aaa2c9ae8eb54b7e4522b1ea0f1f61414f4"
+    },
+    {
+      "repository": "metabase/metabase",
+      "total": 99,
+      "corrective": 53,
+      "unknown": 0,
+      "rate": 0.5353535353535354,
+      "lower": 0.5353535353535354,
+      "upper": 0.5353535353535354,
+      "raw_sha256": "e1e6838ef005f4612b4c543be7abf68465305227302d068725b0ff0283740147"
+    },
+    {
+      "repository": "mudler/LocalAI",
+      "total": 25,
+      "corrective": 24,
+      "unknown": 0,
+      "rate": 0.96,
+      "lower": 0.96,
+      "upper": 0.96,
+      "raw_sha256": "f0d05e77537d905a85fab2e6afe7eaf07d1027efd06db6a4132fa6a2df6cc1b0"
+    },
+    {
+      "repository": "Aider-AI/aider",
+      "total": 16,
+      "corrective": 13,
+      "unknown": 0,
+      "rate": 0.8125,
+      "lower": 0.8125,
+      "upper": 0.8125,
+      "raw_sha256": "77b0051827884eafe1ba78dc14e47398cd396230581d0dc804ba1346dc5052cf"
+    },
+    {
+      "repository": "JuliaLang/julia",
+      "total": 13,
+      "corrective": 2,
+      "unknown": 0,
+      "rate": 0.15384615384615385,
+      "lower": 0.15384615384615385,
+      "upper": 0.15384615384615385,
+      "raw_sha256": "6b526f502307ecbe7626fb56c4b29f3d68e145f613b2480c5637445dfee7715f"
+    },
+    {
+      "repository": "slidevjs/slidev",
+      "total": 40,
+      "corrective": 34,
+      "unknown": 0,
+      "rate": 0.85,
+      "lower": 0.85,
+      "upper": 0.85,
+      "raw_sha256": "8af59e7e2f04a7a4ceb6a1b343696f3cfe410e9a9a69a8ff3330bc912865a732"
+    },
+    {
+      "repository": "calcom/cal.diy",
+      "total": 225,
+      "corrective": 216,
+      "unknown": 0,
+      "rate": 0.96,
+      "lower": 0.96,
+      "upper": 0.96,
+      "raw_sha256": "b5240f549664e9ced4796b9f341c564a0c61fdff952ccac5fe8e8903ddadce95"
+    },
+    {
+      "repository": "bevyengine/bevy",
+      "total": 9,
+      "corrective": 7,
+      "unknown": 0,
+      "rate": 0.7777777777777778,
+      "lower": 0.7777777777777778,
+      "upper": 0.7777777777777778,
+      "raw_sha256": "4cb07e61ffcd104c973939fba32f8a5aa94ac3ede27e6d388853c4d6ad6e23b4"
+    },
+    {
+      "repository": "pixijs/pixijs",
+      "total": 22,
+      "corrective": 21,
+      "unknown": 0,
+      "rate": 0.9545454545454546,
+      "lower": 0.9545454545454546,
+      "upper": 0.9545454545454546,
+      "raw_sha256": "dbbf9b06594836d1b2681f535714bcf4cdacdbcca3e9e4174e43f2a3aec5be29"
+    },
+    {
+      "repository": "vectorize-io/hindsight",
+      "total": 19,
+      "corrective": 9,
+      "unknown": 0,
+      "rate": 0.47368421052631576,
+      "lower": 0.47368421052631576,
+      "upper": 0.47368421052631576,
+      "raw_sha256": "c509dbc3eca07023cbd8d7f3936ab38960794052c21dd99723ab2e60fc32c5aa"
+    },
+    {
+      "repository": "MHSanaei/3x-ui",
+      "total": 22,
+      "corrective": 21,
+      "unknown": 0,
+      "rate": 0.9545454545454546,
+      "lower": 0.9545454545454546,
+      "upper": 0.9545454545454546,
+      "raw_sha256": "90c2d1579033ef241f68855b8ec9f7769b175f8daf95ccb156c1da900d4c04f2"
+    },
+    {
+      "repository": "prisma/orm",
+      "total": 34,
+      "corrective": 29,
+      "unknown": 0,
+      "rate": 0.8529411764705882,
+      "lower": 0.8529411764705882,
+      "upper": 0.8529411764705882,
+      "raw_sha256": "489d1e7105a6b49af32df6e2aeabb90a60eec2bbe2e4da9b67af2f52d75f11fe"
+    },
+    {
+      "repository": "usebruno/bruno",
+      "total": 32,
+      "corrective": 30,
+      "unknown": 0,
+      "rate": 0.9375,
+      "lower": 0.9375,
+      "upper": 0.9375,
+      "raw_sha256": "a1966fcbd52238a97825eff60a642d2e72312d4d08d449c888b2806cbfe82600"
+    },
+    {
+      "repository": "apache/airflow",
+      "total": 17,
+      "corrective": 15,
+      "unknown": 0,
+      "rate": 0.8823529411764706,
+      "lower": 0.8823529411764706,
+      "upper": 0.8823529411764706,
+      "raw_sha256": "c5dfc55cf7306faeaf51c6f577ca8d8f8636ebdc04a2c3dcd8a459c5392ca58b"
+    },
+    {
+      "repository": "cli/cli",
+      "total": 31,
+      "corrective": 26,
+      "unknown": 0,
+      "rate": 0.8387096774193549,
+      "lower": 0.8387096774193549,
+      "upper": 0.8387096774193549,
+      "raw_sha256": "556c9d04295dea8464b48b81425e5f1662ee77468c7de0c98f2e9c59ab52419f"
+    },
+    {
+      "repository": "jgm/pandoc",
+      "total": 11,
+      "corrective": 8,
+      "unknown": 0,
+      "rate": 0.7272727272727273,
+      "lower": 0.7272727272727273,
+      "upper": 0.7272727272727273,
+      "raw_sha256": "6d3935002a4ea535e357d7e7663d7993558f048da0b2f6190d740db9face7c99"
+    },
+    {
+      "repository": "paperless-ngx/paperless-ngx",
+      "total": 34,
+      "corrective": 32,
+      "unknown": 0,
+      "rate": 0.9411764705882353,
+      "lower": 0.9411764705882353,
+      "upper": 0.9411764705882353,
+      "raw_sha256": "b74e6e04ddf496da321c8fdc63f277275e085767399205af0a6685b669c7aadd"
+    },
+    {
+      "repository": "milvus-io/milvus",
+      "total": 43,
+      "corrective": 37,
+      "unknown": 0,
+      "rate": 0.8604651162790697,
+      "lower": 0.8604651162790697,
+      "upper": 0.8604651162790697,
+      "raw_sha256": "4c52674b18fb7ed7ade164e3484c29b4754dbc4849aff35faf20c8d921cc7b6b"
+    },
+    {
+      "repository": "RocketChat/Rocket.Chat",
+      "total": 86,
+      "corrective": 79,
+      "unknown": 0,
+      "rate": 0.9186046511627907,
+      "lower": 0.9186046511627907,
+      "upper": 0.9186046511627907,
+      "raw_sha256": "2085b04ece92d36c8f6d6a78fdbfbefc801f867d86a73f04bb200db926d82199"
+    },
+    {
+      "repository": "streamlit/streamlit",
+      "total": 23,
+      "corrective": 20,
+      "unknown": 0,
+      "rate": 0.8695652173913043,
+      "lower": 0.8695652173913043,
+      "upper": 0.8695652173913043,
+      "raw_sha256": "6e6e2dfe7b783717049410b113a52bd561f88fab8f1728cf743b7727bc232642"
+    },
+    {
+      "repository": "files-community/Files",
+      "total": 8,
+      "corrective": 0,
+      "unknown": 0,
+      "rate": 0,
+      "lower": 0,
+      "upper": 0,
+      "raw_sha256": "98aefdfe1fb5b40947bcab6de649df8108c8970e63f633601c532e8f470de9b0"
+    },
+    {
+      "repository": "google/zx",
+      "total": 23,
+      "corrective": 11,
+      "unknown": 0,
+      "rate": 0.4782608695652174,
+      "lower": 0.4782608695652174,
+      "upper": 0.4782608695652174,
+      "raw_sha256": "251efbade93878751e92857bd2d28d30901face8c3437a9542e139ac78c3e6f6"
+    },
+    {
+      "repository": "jestjs/jest",
+      "total": 8,
+      "corrective": 8,
+      "unknown": 0,
+      "rate": 1,
+      "lower": 1,
+      "upper": 1,
+      "raw_sha256": "2b8ed0345cd839fb69e0d393c854918ec66993b5308c3d07637c64e5c9f4b4c2"
+    },
+    {
+      "repository": "getsentry/sentry",
+      "total": 18,
+      "corrective": 14,
+      "unknown": 0,
+      "rate": 0.7777777777777778,
+      "lower": 0.7777777777777778,
+      "upper": 0.7777777777777778,
+      "raw_sha256": "645ee7195c551278af86fc774f143dd6e0679e1b460175f7912051c427f891ac"
+    },
+    {
+      "repository": "mitmproxy/mitmproxy",
+      "total": 10,
+      "corrective": 1,
+      "unknown": 0,
+      "rate": 0.1,
+      "lower": 0.1,
+      "upper": 0.1,
+      "raw_sha256": "ce1382e3f0fb932253defd448987c94803dc8e1c514f131d900223d93a78aa86"
+    },
+    {
+      "repository": "grpc/grpc",
+      "total": 16,
+      "corrective": 16,
+      "unknown": 0,
+      "rate": 1,
+      "lower": 1,
+      "upper": 1,
+      "raw_sha256": "d5069ffccfdea4cb8152e793ba87afa7efe303399a4b6db14ce8af84861a4cad"
+    },
+    {
+      "repository": "juspay/hyperswitch",
+      "total": 8,
+      "corrective": 8,
+      "unknown": 0,
+      "rate": 1,
+      "lower": 1,
+      "upper": 1,
+      "raw_sha256": "d54ca86bb04650b51c3ba2c2c8db003d2f68722e73c209e42cb4b297824b1789"
+    },
+    {
+      "repository": "logseq/logseq",
+      "total": 5,
+      "corrective": 5,
+      "unknown": 0,
+      "rate": 1,
+      "lower": 1,
+      "upper": 1,
+      "raw_sha256": "c39da8690f6363dafc4e98b97df7eb57c1a61e71cf3c81686b15fd135f13b4cd"
+    },
+    {
+      "repository": "payloadcms/payload",
+      "total": 77,
+      "corrective": 64,
+      "unknown": 0,
+      "rate": 0.8311688311688312,
+      "lower": 0.8311688311688312,
+      "upper": 0.8311688311688312,
+      "raw_sha256": "b53e66023f8dfe09f3967fc3267cc00ac04805468f2959e0380ad810e989af54"
+    },
+    {
+      "repository": "pyenv/pyenv",
+      "total": 25,
+      "corrective": 9,
+      "unknown": 0,
+      "rate": 0.36,
+      "lower": 0.36,
+      "upper": 0.36,
+      "raw_sha256": "0dc0d0e4e7db849a6f00ebbf20e27ea0399b6808a8585d2469c60fd2b0a33547"
+    },
+    {
+      "repository": "zen-browser/desktop",
+      "total": 76,
+      "corrective": 64,
+      "unknown": 0,
+      "rate": 0.8421052631578947,
+      "lower": 0.8421052631578947,
+      "upper": 0.8421052631578947,
+      "raw_sha256": "3d7dd13d29f5659f149422f6353f16e47859604f12de00809e7ab4d0e0070a9b"
+    },
+    {
+      "repository": "react-hook-form/react-hook-form",
+      "total": 22,
+      "corrective": 18,
+      "unknown": 0,
+      "rate": 0.8181818181818182,
+      "lower": 0.8181818181818182,
+      "upper": 0.8181818181818182,
+      "raw_sha256": "fe64486f0d20ac9d0cc7fdd7b5ecdd9ddcfdc5fb5ee35c36367142d7be7ead41"
+    },
+    {
+      "repository": "juanfont/headscale",
+      "total": 10,
+      "corrective": 9,
+      "unknown": 0,
+      "rate": 0.9,
+      "lower": 0.9,
+      "upper": 0.9,
+      "raw_sha256": "3fb6273c221c6c5693b6ad6aef91d6e6accecb800d13abe05966ea3136197d85"
+    },
+    {
+      "repository": "ccxt/ccxt",
+      "total": 83,
+      "corrective": 61,
+      "unknown": 0,
+      "rate": 0.7349397590361446,
+      "lower": 0.7349397590361446,
+      "upper": 0.7349397590361446,
+      "raw_sha256": "0849cbfd8c6615c089c8210b76fb91882fec01962ae9b695654a92fd60a96852"
+    },
+    {
+      "repository": "danielmiessler/Fabric",
+      "total": 229,
+      "corrective": 80,
+      "unknown": 0,
+      "rate": 0.34934497816593885,
+      "lower": 0.34934497816593885,
+      "upper": 0.34934497816593885,
+      "raw_sha256": "fb7de6716e99c6e29c245f36efa3107b6c74a02ffadcdd67f6d14dc7b8250a3a"
+    },
+    {
+      "repository": "babel/babel",
+      "total": 20,
+      "corrective": 17,
+      "unknown": 0,
+      "rate": 0.85,
+      "lower": 0.85,
+      "upper": 0.85,
+      "raw_sha256": "0d3ba5b295a7d7936ad7bec3528e68a4521cfb1ecf4b4f0121a2f3302bec9323"
+    },
+    {
+      "repository": "colinhacks/zod",
+      "total": 107,
+      "corrective": 59,
+      "unknown": 0,
+      "rate": 0.5514018691588785,
+      "lower": 0.5514018691588785,
+      "upper": 0.5514018691588785,
+      "raw_sha256": "f7c8f44a4b0bdf6ad804bc3c8b2de0207891b37b7030fa9b5724488e681a25be"
+    },
+    {
+      "repository": "gradio-app/gradio",
+      "total": 1821,
+      "corrective": 477,
+      "unknown": 0,
+      "rate": 0.26194398682042835,
+      "lower": 0.26194398682042835,
+      "upper": 0.26194398682042835,
+      "raw_sha256": "1f83e93c7616c7e130f288548a309427553bb73da54ba5cb2e68a850f2e2929a"
+    },
+    {
+      "repository": "deepspeedai/DeepSpeed",
+      "total": 18,
+      "corrective": 14,
+      "unknown": 0,
+      "rate": 0.7777777777777778,
+      "lower": 0.7777777777777778,
+      "upper": 0.7777777777777778,
+      "raw_sha256": "20f0994c00ae87cf6f98b6d9ae7764e3aeadd8587b7240b93ada03e8401198c7"
+    },
+    {
+      "repository": "curl/curl",
+      "total": 8,
+      "corrective": 0,
+      "unknown": 0,
+      "rate": 0,
+      "lower": 0,
+      "upper": 0,
+      "raw_sha256": "2213fad711d8d24788eb1ef61ce533b25a0fcb6503e9d2f80f9819f75023c1c1"
+    },
+    {
+      "repository": "langchain-ai/langgraph",
+      "total": 257,
+      "corrective": 121,
+      "unknown": 0,
+      "rate": 0.4708171206225681,
+      "lower": 0.4708171206225681,
+      "upper": 0.4708171206225681,
+      "raw_sha256": "6f2829f5a693123f5fc3caa6f39738b0a1147d19b97d2fdfa4cb0462fe348b38"
+    },
+    {
+      "repository": "sxyazi/yazi",
+      "total": 8,
+      "corrective": 6,
+      "unknown": 0,
+      "rate": 0.75,
+      "lower": 0.75,
+      "upper": 0.75,
+      "raw_sha256": "7f70db55ad38236475325364f28216a92d168f877e6a809a159574f4f1458633"
+    },
+    {
+      "repository": "gkd-kit/gkd",
+      "total": 10,
+      "corrective": 0,
+      "unknown": 0,
+      "rate": 0,
+      "lower": 0,
+      "upper": 0,
+      "raw_sha256": "841fb2f7684ef732feecc4916bec458b5f326ee09af38148b880e4b441c0c3fd"
+    },
+    {
+      "repository": "agno-agi/agno",
+      "total": 150,
+      "corrective": 139,
+      "unknown": 0,
+      "rate": 0.9266666666666666,
+      "lower": 0.9266666666666666,
+      "upper": 0.9266666666666666,
+      "raw_sha256": "bd74163b25f76c500da7454db6e76e3e85f33f3483c346647e3e6f615168a13a"
+    },
+    {
+      "repository": "saadeghi/daisyui",
+      "total": 126,
+      "corrective": 38,
+      "unknown": 0,
+      "rate": 0.30158730158730157,
+      "lower": 0.30158730158730157,
+      "upper": 0.30158730158730157,
+      "raw_sha256": "0ff46f322e09b14dba3286ae8979e88fdaaf3ea0f38a1db0ef15f70328c97fc3"
+    },
+    {
+      "repository": "exelban/stats",
+      "total": 41,
+      "corrective": 37,
+      "unknown": 0,
+      "rate": 0.9024390243902439,
+      "lower": 0.9024390243902439,
+      "upper": 0.9024390243902439,
+      "raw_sha256": "c95313726e8109b048617c74f7129b5d6771baff575818b971f87fa25cc1c5f8"
+    },
+    {
+      "repository": "LizardByte/Sunshine",
+      "total": 5,
+      "corrective": 5,
+      "unknown": 0,
+      "rate": 1,
+      "lower": 1,
+      "upper": 1,
+      "raw_sha256": "1230b4a951a997bd288072a968081dfd9293b30325a3da4a05d44cc18ba31b68"
+    },
+    {
+      "repository": "XTLS/Xray-core",
+      "total": 12,
+      "corrective": 9,
+      "unknown": 0,
+      "rate": 0.75,
+      "lower": 0.75,
+      "upper": 0.75,
+      "raw_sha256": "412e2b3c244ac4a338a55dbf3294ab4228ca485dacbaf27633414c8d5f182dcb"
+    },
+    {
+      "repository": "tabler/tabler",
+      "total": 5,
+      "corrective": 4,
+      "unknown": 0,
+      "rate": 0.8,
+      "lower": 0.8,
+      "upper": 0.8,
+      "raw_sha256": "7fed750570414b623035e1781353c192b09592215f5dd4347175cc8940f3217c"
+    },
+    {
+      "repository": "AstrBotDevs/AstrBot",
+      "total": 105,
+      "corrective": 56,
+      "unknown": 0,
+      "rate": 0.5333333333333333,
+      "lower": 0.5333333333333333,
+      "upper": 0.5333333333333333,
+      "raw_sha256": "a4b1363faf90c428f59a93554028f7468ec5c30987ee52040c0b2f22496cb35b"
+    },
+    {
+      "repository": "apache/dubbo",
+      "total": 7,
+      "corrective": 7,
+      "unknown": 0,
+      "rate": 1,
+      "lower": 1,
+      "upper": 1,
+      "raw_sha256": "47ebcec3dbb0fa9375349d52b247c388f93e73d40abc8528415293a9a3ecdb2e"
+    },
+    {
+      "repository": "facebookresearch/faiss",
+      "total": 6,
+      "corrective": 5,
+      "unknown": 0,
+      "rate": 0.8333333333333334,
+      "lower": 0.8333333333333334,
+      "upper": 0.8333333333333334,
+      "raw_sha256": "a649f12f0757291dcceb4a16a16cc1522bbb63bd936c4f140d1f59f33d6a24d6"
+    },
+    {
+      "repository": "appsmithorg/appsmith",
+      "total": 40,
+      "corrective": 38,
+      "unknown": 0,
+      "rate": 0.95,
+      "lower": 0.95,
+      "upper": 0.95,
+      "raw_sha256": "2d25c6a802a2ae948dca99c0b4770f1d96269912b09a94141768d1929612e0e6"
+    },
+    {
+      "repository": "vuetifyjs/vuetify",
+      "total": 53,
+      "corrective": 53,
+      "unknown": 0,
+      "rate": 1,
+      "lower": 1,
+      "upper": 1,
+      "raw_sha256": "d8174ec9eb42461819eaf11dd944ef5a77e28a198408bd24452da10499a4d92b"
+    },
+    {
+      "repository": "llvm/llvm-project",
+      "total": 19,
+      "corrective": 16,
+      "unknown": 0,
+      "rate": 0.8421052631578947,
+      "lower": 0.8421052631578947,
+      "upper": 0.8421052631578947,
+      "raw_sha256": "8e84ec9666ee8c84abf4891fa5e66b2c5a2c09a3cbedab51e873d3883fa1587b"
+    },
+    {
+      "repository": "outline/outline",
+      "total": 13,
+      "corrective": 13,
+      "unknown": 0,
+      "rate": 1,
+      "lower": 1,
+      "upper": 1,
+      "raw_sha256": "c250b99689b0b5cdb27e3190c2912bc722de7026478a0e8524b4a876ece51349"
+    },
+    {
+      "repository": "trpc/trpc",
+      "total": 26,
+      "corrective": 24,
+      "unknown": 0,
+      "rate": 0.9230769230769231,
+      "lower": 0.9230769230769231,
+      "upper": 0.9230769230769231,
+      "raw_sha256": "3308835a6710a9be369a818ea35c5b31a35e05576568f875a55c8008d9e328d6"
+    },
+    {
+      "repository": "chakra-ui/chakra-ui",
+      "total": 166,
+      "corrective": 51,
+      "unknown": 0,
+      "rate": 0.3072289156626506,
+      "lower": 0.3072289156626506,
+      "upper": 0.3072289156626506,
+      "raw_sha256": "9e17ae8f47226249873b48bb2634b4cd66a26335e2df3b06c0ddfc17f7b3a283"
+    },
+    {
+      "repository": "nushell/nushell",
+      "total": 12,
+      "corrective": 8,
+      "unknown": 0,
+      "rate": 0.6666666666666666,
+      "lower": 0.6666666666666666,
+      "upper": 0.6666666666666666,
+      "raw_sha256": "39db0f29740ade1031e0d0792b7485123778c6b047ee208e91e10a0b7e7f6031"
+    },
+    {
+      "repository": "pingcap/tidb",
+      "total": 8,
+      "corrective": 8,
+      "unknown": 0,
+      "rate": 1,
+      "lower": 1,
+      "upper": 1,
+      "raw_sha256": "4412d3740939b548c84e3239a61f182a9236dad222ffc9301b0df1e050b0ef42"
+    },
+    {
+      "repository": "schollz/croc",
+      "total": 8,
+      "corrective": 6,
+      "unknown": 0,
+      "rate": 0.75,
+      "lower": 0.75,
+      "upper": 0.75,
+      "raw_sha256": "d2d7b10250440c2f474bbe9f9b5bd5b52d574c2e035cc0b2dca34075157edcf5"
+    },
+    {
+      "repository": "php/php-src",
+      "total": 34,
+      "corrective": 25,
+      "unknown": 0,
+      "rate": 0.7352941176470589,
+      "lower": 0.7352941176470589,
+      "upper": 0.7352941176470589,
+      "raw_sha256": "0037dd340f70469701c702f5e381413c3792734fe8a0cddd33c0c0decae02e46"
+    },
+    {
+      "repository": "PostHog/posthog",
+      "total": 45,
+      "corrective": 7,
+      "unknown": 0,
+      "rate": 0.15555555555555556,
+      "lower": 0.15555555555555556,
+      "upper": 0.15555555555555556,
+      "raw_sha256": "d0f8bc2889fa7d858029fa23ce9072b0246a7a6ab978262d789b23db66cf710a"
+    },
+    {
+      "repository": "novuhq/novu",
+      "total": 50,
+      "corrective": 29,
+      "unknown": 0,
+      "rate": 0.58,
+      "lower": 0.58,
+      "upper": 0.58,
+      "raw_sha256": "a709811baa99f5b6271cbfaaff9a25e5d1d410c9a4648e48b1b24654c6147ea1"
+    },
+    {
+      "repository": "pola-rs/polars",
+      "total": 36,
+      "corrective": 25,
+      "unknown": 0,
+      "rate": 0.6944444444444444,
+      "lower": 0.6944444444444444,
+      "upper": 0.6944444444444444,
+      "raw_sha256": "a87ba8452707c420c2742d967c7294bfa366bc7a54f7740b7729c6590fa85811"
+    },
+    {
+      "repository": "evanw/esbuild",
+      "total": 17,
+      "corrective": 13,
+      "unknown": 0,
+      "rate": 0.7647058823529411,
+      "lower": 0.7647058823529411,
+      "upper": 0.7647058823529411,
+      "raw_sha256": "0ca33188d864319823c33aab3fe5330eff533126b6c30e499ee13c4152620a30"
+    },
+    {
+      "repository": "HKUDS/LightRAG",
+      "total": 56,
+      "corrective": 46,
+      "unknown": 0,
+      "rate": 0.8214285714285714,
+      "lower": 0.8214285714285714,
+      "upper": 0.8214285714285714,
+      "raw_sha256": "7dd75921bb4ffdeefa184a959a6ba8d2eeb5c88049c3b3066d6315b79617cc7e"
+    },
+    {
+      "repository": "lfnovo/open-notebook",
+      "total": 8,
+      "corrective": 6,
+      "unknown": 0,
+      "rate": 0.75,
+      "lower": 0.75,
+      "upper": 0.75,
+      "raw_sha256": "cf4f76d39a8a04952b60d8275238ac8dfb7aa6754b8ad659cf4e2ef60707dc7a"
+    },
+    {
+      "repository": "Kong/insomnia",
+      "total": 15,
+      "corrective": 13,
+      "unknown": 0,
+      "rate": 0.8666666666666667,
+      "lower": 0.8666666666666667,
+      "upper": 0.8666666666666667,
+      "raw_sha256": "75a75908bc6b7c0ab0e2c79c32fc8706a43bd63c25496954dad91ccf3731e677"
+    },
+    {
+      "repository": "aseprite/aseprite",
+      "total": 10,
+      "corrective": 10,
+      "unknown": 0,
+      "rate": 1,
+      "lower": 1,
+      "upper": 1,
+      "raw_sha256": "ac70daaf954186db0eea058f6cbac9f01079880cfe198ba2a644c5484f5c5f4f"
+    },
+    {
+      "repository": "halo-dev/halo",
+      "total": 25,
+      "corrective": 11,
+      "unknown": 0,
+      "rate": 0.44,
+      "lower": 0.44,
+      "upper": 0.44,
+      "raw_sha256": "b9aa420ccd78a793f6cf6c698da8d78b75048ab7e731340419c71bdd0f897cc1"
+    },
+    {
+      "repository": "DioxusLabs/dioxus",
+      "total": 5,
+      "corrective": 5,
+      "unknown": 0,
+      "rate": 1,
+      "lower": 1,
+      "upper": 1,
+      "raw_sha256": "70344ffc7e20a3e1ab33746f103e9e852481b010aa965da03bfcf2af7852a2f3"
+    },
+    {
+      "repository": "mattermost/mattermost",
+      "total": 85,
+      "corrective": 73,
+      "unknown": 0,
+      "rate": 0.8588235294117647,
+      "lower": 0.8588235294117647,
+      "upper": 0.8588235294117647,
+      "raw_sha256": "87a0108a314886ad05ea7f013dc4573b0bd33c923f09e1b2ab14dfdec8fe57d8"
+    },
+    {
+      "repository": "bytedance/UI-TARS-desktop",
+      "total": 29,
+      "corrective": 21,
+      "unknown": 0,
+      "rate": 0.7241379310344828,
+      "lower": 0.7241379310344828,
+      "upper": 0.7241379310344828,
+      "raw_sha256": "6a99671cf958fdf4eb53e5db498c37d002c00c0a37bd998e76b85ba24d39a65a"
+    },
+    {
+      "repository": "RSSNext/Folo",
+      "total": 48,
+      "corrective": 43,
+      "unknown": 0,
+      "rate": 0.8958333333333334,
+      "lower": 0.8958333333333334,
+      "upper": 0.8958333333333334,
+      "raw_sha256": "e1a90a0d26e461d8e9042e02fb4cc7e7047b3144e981ba26e68dd8809822f2b0"
+    },
+    {
+      "repository": "google/langextract",
+      "total": 12,
+      "corrective": 10,
+      "unknown": 0,
+      "rate": 0.8333333333333334,
+      "lower": 0.8333333333333334,
+      "upper": 0.8333333333333334,
+      "raw_sha256": "cabd5d2f05cda6fc305f5f6b86d76b09688537ded0ae78cd59d2a5112ea72102"
+    },
+    {
+      "repository": "hyprwm/Hyprland",
+      "total": 14,
+      "corrective": 9,
+      "unknown": 0,
+      "rate": 0.6428571428571429,
+      "lower": 0.6428571428571429,
+      "upper": 0.6428571428571429,
+      "raw_sha256": "2c3b25a5fb8929702d33c76a932e1eae0ed88498fffb6e9392827b1419037f04"
+    },
+    {
+      "repository": "ueberdosis/tiptap",
+      "total": 76,
+      "corrective": 59,
+      "unknown": 0,
+      "rate": 0.7763157894736842,
+      "lower": 0.7763157894736842,
+      "upper": 0.7763157894736842,
+      "raw_sha256": "906e044c2e888cca9c894f8a35ec9c2deb2eda52ad3135ec042888a28ff9361a"
+    },
+    {
+      "repository": "xyflow/xyflow",
+      "total": 84,
+      "corrective": 36,
+      "unknown": 0,
+      "rate": 0.42857142857142855,
+      "lower": 0.42857142857142855,
+      "upper": 0.42857142857142855,
+      "raw_sha256": "16636ef89285b9ec4c0571cfe2ccb558894d49d33b0f8e264edd375a066207e4"
+    },
+    {
+      "repository": "stanfordnlp/dspy",
+      "total": 38,
+      "corrective": 29,
+      "unknown": 0,
+      "rate": 0.7631578947368421,
+      "lower": 0.7631578947368421,
+      "upper": 0.7631578947368421,
+      "raw_sha256": "22ec24713cd6c04bab0d1f9bc0f95652f6a8d458dec296852a6829a5ec280e02"
+    },
+    {
+      "repository": "harness/harness",
+      "total": 5,
+      "corrective": 2,
+      "unknown": 2,
+      "rate": null,
+      "lower": 0.4,
+      "upper": 0.8,
+      "raw_sha256": "d490e461c33ee990280203a847fb4bd66b1282220f48fa2da3d3c24dc50ade09"
+    },
+    {
+      "repository": "directus/directus",
+      "total": 25,
+      "corrective": 25,
+      "unknown": 0,
+      "rate": 1,
+      "lower": 1,
+      "upper": 1,
+      "raw_sha256": "067bbbf13464bebd45bdc82c5d8d8529bd5200a6b14c6f2f1f1af222eebff70e"
+    },
+    {
+      "repository": "docker/compose",
+      "total": 29,
+      "corrective": 25,
+      "unknown": 0,
+      "rate": 0.8620689655172413,
+      "lower": 0.8620689655172413,
+      "upper": 0.8620689655172413,
+      "raw_sha256": "51a0ada21b56ef4d3d221e38574fd70f7f7f11ccd99305b631fdb345be00276d"
+    },
+    {
+      "repository": "TriliumNext/Trilium",
+      "total": 28,
+      "corrective": 22,
+      "unknown": 0,
+      "rate": 0.7857142857142857,
+      "lower": 0.7857142857142857,
+      "upper": 0.7857142857142857,
+      "raw_sha256": "1f7c7323c81876656e01a9969dbef37bcad7098d1ca91243126a403f95d00847"
+    },
+    {
+      "repository": "microsoft/playwright-mcp",
+      "total": 46,
+      "corrective": 20,
+      "unknown": 0,
+      "rate": 0.43478260869565216,
+      "lower": 0.43478260869565216,
+      "upper": 0.43478260869565216,
+      "raw_sha256": "bec70bcd684be2f79a2699f231fb448d6cfbdb56f9678fa2f286148931461ce2"
+    },
+    {
+      "repository": "vlang/v",
+      "total": 56,
+      "corrective": 25,
+      "unknown": 0,
+      "rate": 0.44642857142857145,
+      "lower": 0.44642857142857145,
+      "upper": 0.44642857142857145,
+      "raw_sha256": "3891564fa532eb4b34a582c0fb7ec0275cb818530398f64668463823b36f6f11"
+    },
+    {
+      "repository": "pbatard/rufus",
+      "total": 5,
+      "corrective": 5,
+      "unknown": 0,
+      "rate": 1,
+      "lower": 1,
+      "upper": 1,
+      "raw_sha256": "f2028dd42395ccb0683a337b1d8acc83fc31d096a9bbe5990e69429c8cc2cddf"
+    },
+    {
+      "repository": "CopilotKit/CopilotKit",
+      "total": 57,
+      "corrective": 39,
+      "unknown": 0,
+      "rate": 0.6842105263157895,
+      "lower": 0.6842105263157895,
+      "upper": 0.6842105263157895,
+      "raw_sha256": "73e73897128376c3a06e14637ec112d755a478f83224e4c571a61f3a90180017"
+    },
+    {
+      "repository": "Dokploy/dokploy",
+      "total": 79,
+      "corrective": 59,
+      "unknown": 0,
+      "rate": 0.7468354430379747,
+      "lower": 0.7468354430379747,
+      "upper": 0.7468354430379747,
+      "raw_sha256": "29866b437e919003956f50c1e29782fd26f173c4c466cb4f0e32673bb47b58d3"
+    },
+    {
+      "repository": "chatwoot/chatwoot",
+      "total": 15,
+      "corrective": 15,
+      "unknown": 0,
+      "rate": 1,
+      "lower": 1,
+      "upper": 1,
+      "raw_sha256": "5075232ccb62c087f3abb39caca15f6d631e3452fac8bb4da3a038d8bf5559e9"
+    },
+    {
+      "repository": "khoj-ai/khoj",
+      "total": 32,
+      "corrective": 25,
+      "unknown": 0,
+      "rate": 0.78125,
+      "lower": 0.78125,
+      "upper": 0.78125,
+      "raw_sha256": "ffeefc3e283bef6dad262b4670270fbcf5e58811afbc00685347b45db18d7248"
+    },
+    {
+      "repository": "alibaba/arthas",
+      "total": 6,
+      "corrective": 3,
+      "unknown": 0,
+      "rate": 0.5,
+      "lower": 0.5,
+      "upper": 0.5,
+      "raw_sha256": "1b409e0afd5845fe85f85bc19f617f6e2bdd2c3d61f0669a9f64ee70aaf02670"
+    },
+    {
+      "repository": "Textualize/textual",
+      "total": 40,
+      "corrective": 34,
+      "unknown": 0,
+      "rate": 0.85,
+      "lower": 0.85,
+      "upper": 0.85,
+      "raw_sha256": "4f84586b69c0282d78c5fbca8e778f16ff28e9a3170c0fe88d36a10b0f81b023"
+    },
+    {
+      "repository": "tailscale/tailscale",
+      "total": 23,
+      "corrective": 8,
+      "unknown": 0,
+      "rate": 0.34782608695652173,
+      "lower": 0.34782608695652173,
+      "upper": 0.34782608695652173,
+      "raw_sha256": "211b17995566aeec38d67b0a1945752b4edc362e39d9f20931cd87e11f8c8da1"
+    },
+    {
+      "repository": "AdguardTeam/AdGuardHome",
+      "total": 16,
+      "corrective": 16,
+      "unknown": 0,
+      "rate": 1,
+      "lower": 1,
+      "upper": 1,
+      "raw_sha256": "d4a4fefa65ee6f286613907831c0f5b0fc9432884ef2b0c0fef80532fdc57a05"
+    },
+    {
+      "repository": "keycloak/keycloak",
+      "total": 26,
+      "corrective": 9,
+      "unknown": 0,
+      "rate": 0.34615384615384615,
+      "lower": 0.34615384615384615,
+      "upper": 0.34615384615384615,
+      "raw_sha256": "51adec17fcf2e2f54954cdd9a208d6c447f783fe98d5dad3110f55aec6040654"
+    },
+    {
+      "repository": "firecracker-microvm/firecracker",
+      "total": 6,
+      "corrective": 4,
+      "unknown": 0,
+      "rate": 0.6666666666666666,
+      "lower": 0.6666666666666666,
+      "upper": 0.6666666666666666,
+      "raw_sha256": "0b05c61cb8227a93c5142c46c5dbc6d82061bfb5095fa91f6f81dc6776861aac"
+    },
+    {
+      "repository": "fastify/fastify",
+      "total": 12,
+      "corrective": 8,
+      "unknown": 0,
+      "rate": 0.6666666666666666,
+      "lower": 0.6666666666666666,
+      "upper": 0.6666666666666666,
+      "raw_sha256": "8a8db70cbb3017f2b335b22a4b676db0d34ebd425bf4b6e453202b5686f38455"
+    },
+    {
+      "repository": "ItzCrazyKns/Vane",
+      "total": 8,
+      "corrective": 7,
+      "unknown": 0,
+      "rate": 0.875,
+      "lower": 0.875,
+      "upper": 0.875,
+      "raw_sha256": "36a8cd03b4a0ff3d75fb60b402c76f475a16a8d28463d0850c0a57a8f63ad2ea"
+    },
+    {
+      "repository": "markedjs/marked",
+      "total": 20,
+      "corrective": 17,
+      "unknown": 0,
+      "rate": 0.85,
+      "lower": 0.85,
+      "upper": 0.85,
+      "raw_sha256": "f90f57b22cd78c5953714b66dd0fffb6aa613df9b23112a4f03e04b37a6ab340"
+    },
+    {
+      "repository": "huggingface/pytorch-image-models",
+      "total": 10,
+      "corrective": 9,
+      "unknown": 0,
+      "rate": 0.9,
+      "lower": 0.9,
+      "upper": 0.9,
+      "raw_sha256": "d12e3d28eb79c8973f6c64cb5ce285faeb6c36c693336647455c2c4aa0da6063"
+    },
+    {
+      "repository": "1Panel-dev/1Panel",
+      "total": 28,
+      "corrective": 23,
+      "unknown": 0,
+      "rate": 0.8214285714285714,
+      "lower": 0.8214285714285714,
+      "upper": 0.8214285714285714,
+      "raw_sha256": "cfd1011161acd09b60750876ce8245a017234931a33f37694da1ced5ec07a2ad"
+    },
+    {
+      "repository": "nextcloud/server",
+      "total": 36,
+      "corrective": 32,
+      "unknown": 0,
+      "rate": 0.8888888888888888,
+      "lower": 0.8888888888888888,
+      "upper": 0.8888888888888888,
+      "raw_sha256": "788d1079a83df5f553115c2d5e48c6f6aad54e85a4b7305427a3dd383c03b589"
+    },
+    {
+      "repository": "gitroomhq/postiz-app",
+      "total": 137,
+      "corrective": 71,
+      "unknown": 0,
+      "rate": 0.5182481751824818,
+      "lower": 0.5182481751824818,
+      "upper": 0.5182481751824818,
+      "raw_sha256": "3589d513efd2e6e67c3917f6121dc952150291a6dabc9ea0a692a4e366d941f0"
+    },
+    {
+      "repository": "sgl-project/sglang",
+      "total": 23,
+      "corrective": 10,
+      "unknown": 0,
+      "rate": 0.43478260869565216,
+      "lower": 0.43478260869565216,
+      "upper": 0.43478260869565216,
+      "raw_sha256": "4565a8af408ba649fdc24b4a1a48d20960b67636752d306edd3b475c509f11ff"
+    },
+    {
+      "repository": "pnpm/pnpm",
+      "total": 58,
+      "corrective": 46,
+      "unknown": 0,
+      "rate": 0.7931034482758621,
+      "lower": 0.7931034482758621,
+      "upper": 0.7931034482758621,
+      "raw_sha256": "19988e2cf79a2d8c6fdfd25b95b148b1ce3d500f70074a2d4a13fe4ec7be7393"
+    },
+    {
+      "repository": "medusajs/medusa",
+      "total": 33,
+      "corrective": 17,
+      "unknown": 0,
+      "rate": 0.5151515151515151,
+      "lower": 0.5151515151515151,
+      "upper": 0.5151515151515151,
+      "raw_sha256": "e7fb0856fc6a829c4671c393c7a8acea17b4455ac3ef2564a52381be36c3d302"
+    },
+    {
+      "repository": "typeorm/typeorm",
+      "total": 8,
+      "corrective": 5,
+      "unknown": 0,
+      "rate": 0.625,
+      "lower": 0.625,
+      "upper": 0.625,
+      "raw_sha256": "001a856d8a6af9ed574c344d6045eb1eb852e9f28162512c220b4c737ccc4754"
+    },
+    {
+      "repository": "permissionlesstech/bitchat",
+      "total": 12,
+      "corrective": 7,
+      "unknown": 0,
+      "rate": 0.5833333333333334,
+      "lower": 0.5833333333333334,
+      "upper": 0.5833333333333334,
+      "raw_sha256": "676f94dc815b5a4c94b2c5ef4075f6b45690e2a2b288b389017e9e0bcd90aabd"
+    },
+    {
+      "repository": "wailsapp/wails",
+      "total": 6,
+      "corrective": 4,
+      "unknown": 0,
+      "rate": 0.6666666666666666,
+      "lower": 0.6666666666666666,
+      "upper": 0.6666666666666666,
+      "raw_sha256": "3a7510bd43433b6fe801915bd32f8a0a950205b1f554d4f7459dffa57d8686ac"
+    },
+    {
+      "repository": "blakeblackshear/frigate",
+      "total": 7,
+      "corrective": 7,
+      "unknown": 0,
+      "rate": 1,
+      "lower": 1,
+      "upper": 1,
+      "raw_sha256": "15e18e5f7bb879ca5a79a57b09d9eddab4452fc74d5f318ee1f98b9b5c45119c"
+    },
+    {
+      "repository": "jax-ml/jax",
+      "total": 13,
+      "corrective": 6,
+      "unknown": 0,
+      "rate": 0.46153846153846156,
+      "lower": 0.46153846153846156,
+      "upper": 0.46153846153846156,
+      "raw_sha256": "827223abdac914ab44083a6b7c8a5289ec5c869ecd277dc0f403ab3ccf2199fa"
+    },
+    {
+      "repository": "hashicorp/vault",
+      "total": 15,
+      "corrective": 10,
+      "unknown": 0,
+      "rate": 0.6666666666666666,
+      "lower": 0.6666666666666666,
+      "upper": 0.6666666666666666,
+      "raw_sha256": "e75607e6e5d49beef7d7edd30a20c66f28ae8d28788f52d6b3e712e061098836"
+    },
+    {
+      "repository": "microsoft/graphrag",
+      "total": 13,
+      "corrective": 11,
+      "unknown": 0,
+      "rate": 0.8461538461538461,
+      "lower": 0.8461538461538461,
+      "upper": 0.8461538461538461,
+      "raw_sha256": "c8517099c6b8e6ed695416f35814971b0fd8bd03c0e7ee3fb6695b27823dcdb5"
+    },
+    {
+      "repository": "casey/just",
+      "total": 13,
+      "corrective": 13,
+      "unknown": 0,
+      "rate": 1,
+      "lower": 1,
+      "upper": 1,
+      "raw_sha256": "f3c157a01502eb5fe936d6c0c8f5a29cb46485adc056b8f68fb42f395c53fdd8"
+    },
+    {
+      "repository": "continuedev/continue",
+      "total": 198,
+      "corrective": 136,
+      "unknown": 0,
+      "rate": 0.6868686868686869,
+      "lower": 0.6868686868686869,
+      "upper": 0.6868686868686869,
+      "raw_sha256": "74356b089641ad5bb49ade86bb7366ebe34b5cbf5aad1712b0e120b85756a9ae"
+    },
+    {
+      "repository": "DayuanJiang/next-ai-draw-io",
+      "total": 9,
+      "corrective": 9,
+      "unknown": 0,
+      "rate": 1,
+      "lower": 1,
+      "upper": 1,
+      "raw_sha256": "377d0f10b5d7a80a63a375927a4a60db3649f6b20f08ec11f046174e224b11cd"
+    },
+    {
+      "repository": "refinedev/refine",
+      "total": 115,
+      "corrective": 40,
+      "unknown": 0,
+      "rate": 0.34782608695652173,
+      "lower": 0.34782608695652173,
+      "upper": 0.34782608695652173,
+      "raw_sha256": "cc92a709c245f397560f648193b0293ae0f361603c6408f259375ea4dcd0eb0a"
+    },
+    {
+      "repository": "langfuse/langfuse",
+      "total": 233,
+      "corrective": 196,
+      "unknown": 0,
+      "rate": 0.8412017167381974,
+      "lower": 0.8412017167381974,
+      "upper": 0.8412017167381974,
+      "raw_sha256": "6030622416ed4370c2780746d664ce62e8e691ba4125ff6d225449dac9dc155d"
+    },
+    {
+      "repository": "seaweedfs/seaweedfs",
+      "total": 24,
+      "corrective": 22,
+      "unknown": 0,
+      "rate": 0.9166666666666666,
+      "lower": 0.9166666666666666,
+      "upper": 0.9166666666666666,
+      "raw_sha256": "8b5fe8ddded1462fbb1143f7da148ab38227bf3c4d0ac92812206100ad6d9ed9"
+    },
+    {
+      "repository": "kovidgoyal/kitty",
+      "total": 13,
+      "corrective": 0,
+      "unknown": 0,
+      "rate": 0,
+      "lower": 0,
+      "upper": 0,
+      "raw_sha256": "a2200eca731f238e6362bd287929a53516968830e26acfc2562fe16300710da0"
+    },
+    {
+      "repository": "qdrant/qdrant",
+      "total": 20,
+      "corrective": 20,
+      "unknown": 0,
+      "rate": 1,
+      "lower": 1,
+      "upper": 1,
+      "raw_sha256": "f07c5c9dea6aaf5b1406d1638c36a4dbb8c59b01d447b84e80cb86d2a5ea7cb9"
+    },
+    {
+      "repository": "bumptech/glide",
+      "total": 7,
+      "corrective": 6,
+      "unknown": 0,
+      "rate": 0.8571428571428571,
+      "lower": 0.8571428571428571,
+      "upper": 0.8571428571428571,
+      "raw_sha256": "3bf8e50384fa12b083c17749a97d6d8fd5dbb2d057d722c99dea26c5ea876d23"
+    },
+    {
+      "repository": "aristocratos/btop",
+      "total": 6,
+      "corrective": 4,
+      "unknown": 0,
+      "rate": 0.6666666666666666,
+      "lower": 0.6666666666666666,
+      "upper": 0.6666666666666666,
+      "raw_sha256": "113afdb96c755934f5d35d2224d8696919bff91ab5346ede6e7db657b82beacb"
+    },
+    {
+      "repository": "jdx/mise",
+      "total": 193,
+      "corrective": 162,
+      "unknown": 0,
+      "rate": 0.8393782383419689,
+      "lower": 0.8393782383419689,
+      "upper": 0.8393782383419689,
+      "raw_sha256": "42adb792178db8674f316b60be6a11e8c9ed5ca47102bc009befe68e6748d910"
+    },
+    {
+      "repository": "dgtlmoon/changedetection.io",
+      "total": 67,
+      "corrective": 49,
+      "unknown": 0,
+      "rate": 0.7313432835820896,
+      "lower": 0.7313432835820896,
+      "upper": 0.7313432835820896,
+      "raw_sha256": "68e9a0a7afbda957ff6331ea8e9a6acae4add0514fa71b51009a8731eb33118e"
+    },
+    {
+      "repository": "huggingface/diffusers",
+      "total": 8,
+      "corrective": 4,
+      "unknown": 0,
+      "rate": 0.5,
+      "lower": 0.5,
+      "upper": 0.5,
+      "raw_sha256": "d3e681fac7826f0faefe8c6a70d9147582c0f015a2233099f4854a6b5c1d3ba6"
+    },
+    {
+      "repository": "v2fly/v2ray-core",
+      "total": 18,
+      "corrective": 12,
+      "unknown": 0,
+      "rate": 0.6666666666666666,
+      "lower": 0.6666666666666666,
+      "upper": 0.6666666666666666,
+      "raw_sha256": "907c61d447759c88619c53230b3feb52791d30facae1e0f3f73c390b6cdaaa09"
+    },
+    {
+      "repository": "backstage/backstage",
+      "total": 36,
+      "corrective": 34,
+      "unknown": 0,
+      "rate": 0.9444444444444444,
+      "lower": 0.9444444444444444,
+      "upper": 0.9444444444444444,
+      "raw_sha256": "3411a61d3f0a6f047cae8d0e43af42da7137b5ca9cf95ab1cf97db48dbfdcbca"
+    },
+    {
+      "repository": "SeleniumHQ/selenium",
+      "total": 12,
+      "corrective": 9,
+      "unknown": 0,
+      "rate": 0.75,
+      "lower": 0.75,
+      "upper": 0.75,
+      "raw_sha256": "eed8daf4439713a8b4e71261eed143d42cfa76945920b0423459a32bd653f5a6"
+    },
+    {
+      "repository": "SillyTavern/SillyTavern",
+      "total": 13,
+      "corrective": 10,
+      "unknown": 0,
+      "rate": 0.7692307692307693,
+      "lower": 0.7692307692307693,
+      "upper": 0.7692307692307693,
+      "raw_sha256": "1206316b779828ada32be14d2a855273fa79f8dcdebe060d9859a2cad4f6b673"
+    },
+    {
+      "repository": "python-poetry/poetry",
+      "total": 9,
+      "corrective": 9,
+      "unknown": 0,
+      "rate": 1,
+      "lower": 1,
+      "upper": 1,
+      "raw_sha256": "38090626aed0a5073de0c6d5ffe5498440d7441966ce882546249e4838e8eb06"
+    },
+    {
+      "repository": "fish-shell/fish-shell",
+      "total": 14,
+      "corrective": 14,
+      "unknown": 0,
+      "rate": 1,
+      "lower": 1,
+      "upper": 1,
+      "raw_sha256": "9aadeca452ac1a3a497eafb2536d0569bb4a45c74bf1df351e84173dc8606e68"
+    },
+    {
+      "repository": "swc-project/swc",
+      "total": 167,
+      "corrective": 3,
+      "unknown": 0,
+      "rate": 0.017964071856287425,
+      "lower": 0.017964071856287425,
+      "upper": 0.017964071856287425,
+      "raw_sha256": "2e02e03a55b8420f1d3bd16e9a72362448287290189c7e9f373a94b2ad10b140"
+    },
+    {
+      "repository": "k3s-io/k3s",
+      "total": 44,
+      "corrective": 44,
+      "unknown": 0,
+      "rate": 1,
+      "lower": 1,
+      "upper": 1,
+      "raw_sha256": "ff9e1716f37f2720d2c8189f45705e0b85602f278e805af5f918671a07ac123c"
+    },
+    {
+      "repository": "microsoft/WSL",
+      "total": 10,
+      "corrective": 6,
+      "unknown": 0,
+      "rate": 0.6,
+      "lower": 0.6,
+      "upper": 0.6,
+      "raw_sha256": "0bc17f05d0b0939e82e631d73c0326f78e0d7d79bf8c382932351f9b912655fe"
+    },
+    {
+      "repository": "nicolargo/glances",
+      "total": 7,
+      "corrective": 2,
+      "unknown": 0,
+      "rate": 0.2857142857142857,
+      "lower": 0.2857142857142857,
+      "upper": 0.2857142857142857,
+      "raw_sha256": "9c225db2f2512887d34e56d89983432f8303926bd558fafaa6432170244943de"
+    },
+    {
+      "repository": "pear-devs/pear-desktop",
+      "total": 9,
+      "corrective": 8,
+      "unknown": 0,
+      "rate": 0.8888888888888888,
+      "lower": 0.8888888888888888,
+      "upper": 0.8888888888888888,
+      "raw_sha256": "4f70466bb98a39a91df22b7aae8d2f914199e3737369575ba4cf061cb8f29dfd"
+    },
+    {
+      "repository": "VSCodium/vscodium",
+      "total": 50,
+      "corrective": 29,
+      "unknown": 0,
+      "rate": 0.58,
+      "lower": 0.58,
+      "upper": 0.58,
+      "raw_sha256": "863e32327dc86d967dee57b83ef36f6efde6e844dcfea4ee645a2cfdfee90240"
+    },
+    {
+      "repository": "vbenjs/vue-vben-admin",
+      "total": 7,
+      "corrective": 7,
+      "unknown": 0,
+      "rate": 1,
+      "lower": 1,
+      "upper": 1,
+      "raw_sha256": "26244bba9dfb89aa14081aa2fd33c580b1517d8665e0f80a1a5aa3da99785cc4"
+    },
+    {
+      "repository": "github/github-mcp-server",
+      "total": 38,
+      "corrective": 19,
+      "unknown": 0,
+      "rate": 0.5,
+      "lower": 0.5,
+      "upper": 0.5,
+      "raw_sha256": "0c37017ddd529b481e05240526720ca745663a2bc17edbfdffa3b7e9326076f4"
+    },
+    {
+      "repository": "alibaba/nacos",
+      "total": 10,
+      "corrective": 10,
+      "unknown": 0,
+      "rate": 1,
+      "lower": 1,
+      "upper": 1,
+      "raw_sha256": "0bb35a5e2c94d683563dbf5606f0a797e5caec2fdffeb4dd5f487ce517630065"
+    },
+    {
+      "repository": "iOfficeAI/AionUi",
+      "total": 32,
+      "corrective": 26,
+      "unknown": 0,
+      "rate": 0.8125,
+      "lower": 0.8125,
+      "upper": 0.8125,
+      "raw_sha256": "ab4cd93873edc3470b319e555650cf03e55c670b32c9b7501418f3c2c0ecd990"
+    },
+    {
+      "repository": "tokio-rs/tokio",
+      "total": 14,
+      "corrective": 14,
+      "unknown": 0,
+      "rate": 1,
+      "lower": 1,
+      "upper": 1,
+      "raw_sha256": "2d7dc46cc8be36f7be10ec45db69e0e136aceb98426e2f83eba0ccedaeb7b863"
+    }
+  ]
+}

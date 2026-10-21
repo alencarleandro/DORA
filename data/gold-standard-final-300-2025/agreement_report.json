@@ -1,0 +1,86 @@
+{
+  "raters": [
+    "leandro",
+    "luis",
+    "isabella"
+  ],
+  "dimensions": {
+    "project_type": {
+      "name": "Tipo de Projeto",
+      "categories": [
+        "biblioteca/framework",
+        "aplicação/serviço",
+        "ferramenta cli",
+        "outro"
+      ],
+      "kappa": 0.9490229396771451,
+      "observedAgreement": 0.9666666666666667,
+      "chanceAgreement": 0.3461111111111111,
+      "subjectsCount": 60,
+      "ratersCount": 3,
+      "categoriesCount": 4,
+      "raters": [
+        "isabella",
+        "leandro",
+        "luis"
+      ],
+      "interpretation": {
+        "code": "quase_perfeita",
+        "label": "Quase perfeita",
+        "description": "Concordância quase perfeita (0,81 a 1,00)"
+      }
+    },
+    "real_delivery": {
+      "name": "Entregas Reais ao Usuário",
+      "categories": [
+        "sim",
+        "não",
+        "incerto"
+      ],
+      "kappa": 0.40545004128818984,
+      "observedAgreement": 0.9555555555555555,
+      "chanceAgreement": 0.925246913580247,
+      "subjectsCount": 60,
+      "ratersCount": 3,
+      "categoriesCount": 3,
+      "raters": [
+        "isabella",
+        "leandro",
+        "luis"
+      ],
+      "interpretation": {
+        "code": "moderada",
+        "label": "Moderada",
+        "description": "Concordância moderada (0,41 a 0,60)"
+      }
+    },
+    "is_corrective": {
+      "name": "Release Corretiva (CFR b)",
+      "categories": [
+        "sim",
+        "não"
+      ],
+      "kappa": 0.932112068965517,
+      "observedAgreement": 0.9688888888888888,
+      "chanceAgreement": 0.5417283950617284,
+      "subjectsCount": 300,
+      "ratersCount": 3,
+      "categoriesCount": 2,
+      "raters": [
+        "isabella",
+        "leandro",
+        "luis"
+      ],
+      "interpretation": {
+        "code": "quase_perfeita",
+        "label": "Quase perfeita",
+        "description": "Concordância quase perfeita (0,81 a 1,00)"
+      }
+    }
+  },
+  "methodological_limitations": [
+    "Luis reused the same AI proposals as Leandro; labels were reviewed/accepted as reported in conversation.",
+    "Fleiss kappa is descriptive for these assisted labels, not evidence of independent human reliability.",
+    "Agreement measured before adjudication; adjudication did not overwrite original votes."
+  ]
+}

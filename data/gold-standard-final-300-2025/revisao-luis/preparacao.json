@@ -1,0 +1,12 @@
+{
+  "prepared_on": "2026-10-20",
+  "sample_sha256": "1b912e772066c477bdf8dc686a2e6afdf43bc4809026dd9daaa90cc869a3e686",
+  "rows": 300,
+  "repositories": 60,
+  "window_start": "2025-01-01",
+  "window_end": "2025-12-31",
+  "matching_cached_releases": 300,
+  "rater_labels_included": false,
+  "heuristic_predictions_included": false,
+  "official_labels_modified": false
+}

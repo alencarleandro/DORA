@@ -1,5 +1,11 @@
 # Revisão assistida de Leandro — Issue #5
 
+## Atualização — 20/10/2026
+
+Leandro declarou que revisou sua avaliação e confirmou as 300 decisões. Os rótulos foram incorporados a `../rotulos-leandro.csv`, com uso de IA registrado nas notas. A confirmação e os hashes constam em `confirmacao-revisao-humana.json`. O rascunho e a descrição original abaixo foram preservados como histórico anterior à confirmação. A avaliação de Luis e o consenso permanecem pendentes; não há afirmação de cegamento estrito.
+
+## Histórico do rascunho
+
 Foram examinadas as referências públicas das 300 releases da amostra final (60 projetos × 5), mantendo tags, datas e ordem. Os rótulos abaixo são **sugestões de IA, ainda sem revisão humana**. Não são uma avaliação humana independente nem uma amostra-ouro validada.
 
 - `rotulos-leandro-assistidos.csv`: sugestões no mesmo formato da planilha individual.

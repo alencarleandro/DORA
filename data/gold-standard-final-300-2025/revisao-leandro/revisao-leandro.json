@@ -1,7 +1,7 @@
 {
   "rater": "leandro",
   "method": "AI-assisted source review with subjective tie decisions; NOT independent human annotation",
-  "human_review_status": "pending",
+  "human_review_status": "confirmed_by_rater",
   "generated_at": "2026-10-14T19:26:26.203Z",
   "sample_sha256": "1b912e772066c477bdf8dc686a2e6afdf43bc4809026dd9daaa90cc869a3e686",
   "source_job_id": "1deaa513-2c06-4949-bd54-2c591b0eef12",
@@ -22,8 +22,10 @@
     "Did not read other raters classification CSVs or call CFR classification/prediction code for these judgments.",
     "Prior conversation included heuristic descriptions; strict assessor blinding is not established.",
     "Quoted evidence is brief; inspect linked full notes and changelogs before accepting.",
-    "38 initially ambiguous cases were assigned subjective AI labels on user request, with low/medium confidence; this is not human review or consensus."
+    "38 initially ambiguous cases were assigned subjective AI labels on user request, with low/medium confidence; this is not human review or consensus.",
+    "On 2026-10-20 Leandro declared his review complete and accepted all 300 assisted labels; recorded separately. No claim of strict blinding or group consensus."
   ],
   "ai_resolved_ambiguous": 38,
-  "resolved_low_confidence": 30
+  "resolved_low_confidence": 30,
+  "human_review_confirmation": "confirmacao-revisao-humana.json"
 }

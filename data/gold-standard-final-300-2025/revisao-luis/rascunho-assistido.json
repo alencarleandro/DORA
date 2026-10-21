@@ -1,0 +1,23 @@
+{
+  "prepared_on": "2026-10-20",
+  "rater_target": "luis",
+  "status": "ai_suggestions_pending_luis_review",
+  "source": "data/gold-standard-final-300-2025/revisao-leandro/rotulos-leandro-assistidos.csv",
+  "source_sha256": "11b61133df1c7beaf8b64ce046bf253fd17dd1a15e68a9fbf7c88395cde937ad",
+  "sample_sha256": "1b912e772066c477bdf8dc686a2e6afdf43bc4809026dd9daaa90cc869a3e686",
+  "output_sha256": "8333b144cb525f2f01ae6bf6fb4e5a5563273770c5c5295a21ef5cc6a5b8f7b9",
+  "rows": 300,
+  "corrective_yes": 106,
+  "corrective_no": 194,
+  "independent_annotation": false,
+  "human_review_confirmed": false,
+  "official_modified": false,
+  "official_sha256": "300b383e940de9fe9235d5f910491cd935c57cd328983c2091d3b9f288721c63",
+  "limitations": [
+    "Reuses the same AI proposals previously supplied to Leandro; agreement is not independent human agreement.",
+    "38 originally ambiguous judgments require attention; consult source evidence.",
+    "No consensus or validation score computed."
+  ],
+  "current_review_status": "accepted_by_luis_as_reported_by_leandro",
+  "confirmation_record": "confirmacao-revisao-humana.json"
+}

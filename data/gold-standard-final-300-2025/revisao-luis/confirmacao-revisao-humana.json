@@ -1,0 +1,20 @@
+{
+  "rater": "luis",
+  "human_review_status": "confirmed_by_leandro_on_behalf_of_luis",
+  "confirmation_date": "2026-10-20",
+  "confirmation_source": "Leandro stated in conversation: revisou aq pode incorporar",
+  "method": "AI proposals reused from Leandro assisted draft; reviewed and accepted by Luis according to Leandro",
+  "independent_annotation": false,
+  "rows": 300,
+  "corrective_yes": 106,
+  "corrective_no": 194,
+  "sample_sha256": "1b912e772066c477bdf8dc686a2e6afdf43bc4809026dd9daaa90cc869a3e686",
+  "assisted_source_sha256": "8333b144cb525f2f01ae6bf6fb4e5a5563273770c5c5295a21ef5cc6a5b8f7b9",
+  "previous_official_sha256": "300b383e940de9fe9235d5f910491cd935c57cd328983c2091d3b9f288721c63",
+  "official_sha256": "2df546ee9346cc7518c7e51480871ae0df937e5077ff4dd01f8380c11323ea61",
+  "consensus_created": false,
+  "limitations": [
+    "Shared AI proposal origin must be disclosed; agreement cannot be interpreted as fully independent human annotation.",
+    "Review confirmation reported by Leandro on behalf of Luis, not independently observed by the assistant."
+  ]
+}
